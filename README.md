@@ -7,3 +7,5 @@ Para rodar esse projeto:
 ```
 precisa do XAMPP, versão v3.3.0
 ```
+
+finalizar o Front
