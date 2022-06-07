@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>perfil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/style/reset.css">
+    <link rel="stylesheet" href="assets/style/home.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__title">Infinity darkness</h1>
+        <div class="header__perfil">
+            <a class="header__perfil__img" href="perfil.html"><i class="fa-solid fa-user fa-2xl"></i></a>
+            <a class="header__perfil__log" href="app/login.php">Logout</a> <!-- esse link tem que chamar a função de deslogar do perfil -->
+        </div>
+    </header>
+
+    <nav class="top-menu">
+        <ul class="top-menu__list">
+            <li class="top-menu__item"><a class="top-menu__item__link" href="index.html"><i class="fa-solid fa-house"></i></a></li>
+            <li class="top-menu__item"><a class="top-menu__item__link" href="">Sistema</a></li>
+            <li class="top-menu__item"><a class="top-menu__item__link" href="">Tabelas</a></li>
+            <li class="top-menu__item"><a class="top-menu__item__link" href="">Classes</a></li>
+            <li class="top-menu__item"><a class="top-menu__item__link" href="">Personagens</a></li>
+            <li class="top-menu__item"><a class="top-menu__item__link" href="">Mapa</a></li>
+            <li class="top-menu__item"><a class="top-menu__item__link" href="">Table Top</a></li>
+            <li class="top-menu__item"><a class="top-menu__item__link" href="">Worshop</a></li>
+            <li class="top-menu__item"><a class="top-menu__item__link" href="">Pesquisa</a></li>
+        </ul>
+    </nav>
+
+    <img src="assets/img/logo.png" alt="Logo de Infinity darkness" class="logo">
+
+    <main class="main">
+
+        <button><a href="/perfil">Cancelar</a></button>
+
+        <form class="caixa">
+
+            <img src="/textPerfil.jfif" alt="" class="caixa__foto__perfil">
+
+            <label for="nick" class="caixa__label__nick">Nick:</label>
+            <input type="text" id="nick" class="caixa__input__nick" required>
+
+            <label for="nomeSobreno" class="caixa__label__nome">Nome:</label>
+            <input type="text" id="nomeSobreno" class="caixa__input__nome" required>
+
+            <label for="email" class="caixa__label__email">Email</label>
+			<input type="email" id="email" class="caixa__input__email" required>
+
+            <label for="senha" class="caixa__label__senha">Senha:</label>
+            <input type="text" id="senha" class="caixa__input__senha" required>
+
+            <label for="mensagem" class="caixa__label__bio">Biografia</label>
+			<textarea cols="70" rows="10" id="mensagem" class="caixa__input__bio" required></textarea>
+
+            <input type="submit" value="Enviar formulário" class="enviar">
+
+        </form>
+    </main>
+
+    <footer class="rodape__pai">
+        <div class="rodape__caixa">
+
+            <h2 class="rodape__caixa__h2"><i class="fa-solid fa-copyright"></i>Infinity Darkness</h2>
+
+            <a class="rodape__caixa__but" href="">Comentarios</a>
+
+
+            <a class="rodape__caixa_link" href="link do twiter"><i class="fa-brands fa-twitter fa-2xl"></i></a>
+            <a class="rodape__caixa_link" href="link do instagram"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+
+        </div>
+    </footer>
+</body>
+</html>
