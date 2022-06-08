@@ -38,28 +38,30 @@
 
         <button><a href="/perfil">Cancelar</a></button>
 
-        <form class="caixa">
+        <div class="caixa__pai">
+            <form class="caixa__filho">
 
-            <img src="/textPerfil.jfif" alt="" class="caixa__foto__perfil">
+                    <img src="/textPerfil.jfif" alt="" class="caixa__foto__perfil">
+                    
+                    <label for="nick" class="caixa__label__nick">Nick:</label>
+                    <input type="text" id="nick" class="caixa__input__nick" required>
 
-            <label for="nick" class="caixa__label__nick">Nick:</label>
-            <input type="text" id="nick" class="caixa__input__nick" required>
+                    <label for="nomeSobreno" class="caixa__label__nome">Nome:</label>
+                    <input type="text" id="nomeSobreno" class="caixa__input__nome" required>
 
-            <label for="nomeSobreno" class="caixa__label__nome">Nome:</label>
-            <input type="text" id="nomeSobreno" class="caixa__input__nome" required>
+                    <label for="email" class="caixa__label__email">Email:</label>
+                    <input type="email" id="email" class="caixa__input__email" required>
 
-            <label for="email" class="caixa__label__email">Email</label>
-			<input type="email" id="email" class="caixa__input__email" required>
+                    <label for="senha" class="caixa__label__senha">Senha:</label>
+                    <input type="text" id="senha" class="caixa__input__senha" required>
 
-            <label for="senha" class="caixa__label__senha">Senha:</label>
-            <input type="text" id="senha" class="caixa__input__senha" required>
+                    <label for="mensagem" class="caixa__label__bio">Biografia</label>
+                    <textarea cols="100" rows="10" id="mensagem" class="caixa__input__bio" required></textarea>
 
-            <label for="mensagem" class="caixa__label__bio">Biografia</label>
-			<textarea cols="70" rows="10" id="mensagem" class="caixa__input__bio" required></textarea>
+                    <input type="submit" value="Enviar formulário" class="caixa__input__enviar">
 
-            <input type="submit" value="Enviar formulário" class="enviar">
-
-        </form>
+                </form>
+            </div>
     </main>
 
     <footer class="rodape__pai">

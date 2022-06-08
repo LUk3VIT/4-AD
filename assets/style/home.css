@@ -154,60 +154,104 @@ body {
   height: 100%;
 }
 
-.caixa{
-  text-align: center;
-  margin: 60px 60px 125px 60px;
-  border: solid 1px black;
-  padding: 5px;
-  display: block;
+.caixa__pai{
+  align-items: center;
+  border: black solid 1px;
+  margin: 80px 180px;
+ 
+}
+
+.caixa__filho{
+  display: inline-block;
 }
 
 .caixa__foto__perfil{
+  width: 200px;
+  border-radius: 50%;
   border: solid 1px black;
   position: absolute;
-  left: 145px;
-  top: 300px
+  right: 1120px;
+  top: 315px;
 }
 
 .caixa__label__nick{
   position: absolute;
-  right: 830px;
   top: 340px;
+  right: 980px;
+  margin-bottom: 15px;
 }
 
 .caixa__input__nick{
   position: absolute;
-  right: 690px;
-  top: 360px;
+  top: 338px;
+  right: 780px;
+  margin-bottom: 15px;
 }
 
 .caixa__label__nome{
   position: absolute;
-  right: 823px;
-  top: 390px;
+  top: 400px;
+  right: 980px;
+  margin-bottom: 15px;
 }
 
 .caixa__input__nome{
   position: absolute;
-  right: 690px;
-  top: 410px;
+  top: 397px;
+  right: 780px;
+  margin-bottom: 15px;
 }
 
 .caixa__label__email{
   position: absolute;
-  right: 828px;
-  top: 440px;
+  top: 460px;
+  right: 980px;
+  margin-bottom: 15px;
 }
 
 .caixa__input__email{
   position: absolute;
-  right: 690px;
-  top: 460px;
+  top: 458px;
+  right: 780px;
+  margin-bottom: 15px;
 }
 
+.caixa__label__senha{
+  position: absolute;
+  top: 520px;
+  right: 980px;
+  margin-bottom: 15px;
+}
 
+.caixa__input__senha{
+  position: absolute;
+  top: 517px;
+  right: 780px;
+  margin-bottom: 15px;
+}
 
+.caixa__label__bio{
+  float: left;
+  margin-top: 260px;
+  margin-left: 20px;
+  display: block;
+}
 
+.caixa__input__bio{
+  float: inline-end;
+  margin-top: 300px;
+  margin-left: 5px;
+  margin-bottom: 50px;
+  
+}
+
+.caixa__input__enviar{
+  margin-top: 10px;
+  margin-right: 20px;
+  margin-left: 180px;
+  margin-bottom: 50px;
+  display: inline;
+}
 
 
 
