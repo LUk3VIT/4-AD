@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Perfil_edit</title>
+    <title>Perfil</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/style/reset.css">
     <link rel="stylesheet" href="assets/style/home.css">
     <link rel="stylesheet" href="assets/style/perfil.css">
 </head>
 <body>
+    
     <header class="header">
         <h1 class="header__title">Infinity darkness</h1>
         <div class="header__perfil">
@@ -37,40 +38,23 @@
 
     <main class="main">
 
-        <div class="bot"><a class="bot__link" href="perfil.html">Cancelar</a></div>
-        
-
-        <div class="caixa__pai">
-            <form class="caixa__form">
-
-                    <div class="caixa__foto">
-                        <img src="/textPerfil.jfif" alt="" class="caixa__foto__perfil">
-                        <button class="caixa__foto__edit"><i class="fa-solid fa-user-pen"></i></button>
-                    </div>
-                    
-                    <div class="caixa__campo">
-                        <label for="nick" class="caixa__label">Nick:</label>
-                        <input type="text" id="nick" class="caixa__input" required>
-
-                        <label for="nomeSobreno" class="caixa__label">Nome:</label>
-                        <input type="text" id="nomeSobreno" class="caixa__input" required>
-
-                        <label for="email" class="caixa__label">Email:</label>
-                        <input type="email" id="email" class="caixa__input" required>
-
-                        <label for="senha" class="caixa__label">Senha:</label>
-                        <input type="text" id="senha" class="caixa__input" required>
-                    </div>
-                 
-                    <div class="caixa_bio">
-                        <label for="mensagem" class="caixa__bio__label">Biografia:</label>
-                        <textarea cols="100" rows="10" id="mensagem" class="caixa__bio__input" required></textarea>
-                    </div>
-
-                    <input type="submit" value="Enviar formulário" class="caixa__input__enviar">
-
-                </form>
+        <div class="apresentacao">
+            <div class="caixa__foto">
+                <img src="/textPerfil.jfif" alt="" class="caixa__foto__perfil">
             </div>
+            <div class="informacao">
+                <p class="informacao__label">Nick</p>
+                <p class="informacao__input">0000</p>
+                <p class="informacao__label">Nome</p>
+                <p class="informacao__input">000000</p>
+                <p class="informacao__label">Bio</p>
+                <p class="informacao__input__bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni iure voluptatum magnam id provident laboriosam dolores in inventore suscipit debitis alias animi, incidunt reiciendis. Suscipit libero tempore esse delectus natus!</p>
+            </div>
+        </div>
+
+        <div class="botao">
+            <button class="botao__edit"><a class="botao__edit__link" href="/perfil-edit.html">Editar</a></button>
+        </div>
     </main>
 
     <footer class="rodape__pai">

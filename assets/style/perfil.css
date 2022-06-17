@@ -1,3 +1,88 @@
+.apresentacao{
+    border: solid black 3px;
+    margin: 100px 50px 100px 250px;
+    display: inline-block;
+    padding: 15px;
+}
+
+.informacao{
+    float: right;
+    display: inline;
+}
+
+.informacao__label{
+    display: block;
+    margin-left: 390px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.informacao__input{
+    display: block;
+    margin-left: 390px;
+    margin-bottom: 40px;
+    margin-right: 15px;
+    padding: 10px 15px;
+    width: 400px;
+    border: solid black 3px;
+}
+
+.informacao__input__bio {
+    display: block;
+    margin-left: 390px;
+    margin-bottom: 40px;
+    margin-right: 15px;
+    padding: 10px 15px;
+    width: 400px;
+    border: solid black 3px;
+    width: 700px;
+    height: 200px;
+    font-size: 20px;
+}
+
+.botao{
+    margin-left: 165px;
+    margin-top: 350px;
+    position: absolute;
+    left: 1580px;
+    top: 487px;
+    
+}
+
+.botao__edit{
+    border-radius: 10px 10px;
+    font-size: 20px;
+    background: #32CD32;
+}
+
+.botao__edit__link{
+    text-decoration: none;
+    color: aliceblue;
+    background: #32CD32;
+}
+
+.botao__edit__link:hover{
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .bot{
    margin: 450px 10px;
@@ -5,7 +90,6 @@
 }
 
 .bot__link{
-    
     text-decoration: none;
     color: #fa4747;
     background: black;
