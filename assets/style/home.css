@@ -154,6 +154,38 @@ body {
   height: 100%;
 }
 
+.sistemas{
+  grid-area: container;
+  display: inline-flex;
+  align-items: center;
+  margin: 40px;
+}
+
+.sistemas__caixas{
+  margin: 15px 85px 15px 15px;
+  display: inline-block;
+  border: solid black 2px; 
+  background: skyblue;
+  align-items: center;
+}
+
+.sistemas__caixas__img{
+  border: black solid 2px;
+  object-fit: contain;
+  border-radius: 50%;
+  width: 400px;
+  margin: 10px;
+}
+
+.sistemas__caixas__img3{
+  border: black solid 2px;
+  object-fit: contain;
+  border-radius: 50%;
+  width: 400px;
+  margin: 10px;
+}
+
+
 .rodape__pai{
   grid-area: rodape;
   display: block;
