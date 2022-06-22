@@ -161,12 +161,31 @@ body {
   margin: 40px;
 }
 
-.sistemas__caixas{
-  margin: 15px 85px 15px 15px;
-  display: inline-block;
+.sistemas__caixas1{
+  margin: 15px 65px 0px 15px;
+  display: block;
   border: solid black 2px; 
   background: skyblue;
   align-items: center;
+  text-align: center;
+}
+
+.sistemas__caixas2{
+  margin: 15px 15px 0px 15px;
+  display: block;
+  border: solid black 2px; 
+  background: skyblue;
+  align-items: center;
+  text-align: center;
+}
+
+.sistemas__caixas3{
+  margin: 15px 15px 0px 65px;
+  display: block;
+  border: solid black 2px; 
+  background: skyblue;
+  align-items: center;
+  text-align: center;
 }
 
 .sistemas__caixas__img{
@@ -177,14 +196,24 @@ body {
   margin: 10px;
 }
 
-.sistemas__caixas__img3{
-  border: black solid 2px;
-  object-fit: contain;
-  border-radius: 50%;
-  width: 400px;
-  margin: 10px;
+.sistemas__caixas__h2{
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin: 15px 0px 15px 0px;
 }
 
+.sistemas__caixas__p{
+  font-size: 17px;
+  margin: 10px 0px 20px 0px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.sistemas__caixas__a{
+  text-decoration: none;
+  margin: 0px 0px 80px 0px;
+  font-size: 25;
+  padding: 15px;
+}
 
 .rodape__pai{
   grid-area: rodape;
