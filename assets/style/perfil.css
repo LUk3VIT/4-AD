@@ -1,25 +1,35 @@
 .apresentacao{
     border: solid black 3px;
-    margin: 100px 50px 100px 250px;
-    display: inline-block;
+    margin: 100px 80px 100px 80px;
+    display: flex;
     padding: 15px;
 }
 
+.caixa__foto {
+    margin: 100px 0px 170px 120px;
+    display: inline-block;
+}
+
+.caixa__foto__perfil{
+    border: solid 2px black;
+    border-radius: 50%;
+    margin: 0px 0px 0px 0px;
+
+}
 .informacao{
     float: right;
-    display: inline;
 }
 
 .informacao__label{
     display: block;
-    margin-left: 390px;
+    margin-left: 180px;
     margin-bottom: 10px;
     font-size: 20px;
 }
 
 .informacao__input{
     display: block;
-    margin-left: 390px;
+    margin-left: 180px;
     margin-bottom: 40px;
     margin-right: 15px;
     padding: 10px 15px;
@@ -29,7 +39,7 @@
 
 .informacao__input__bio {
     display: block;
-    margin-left: 390px;
+    margin-left: 180px;
     margin-bottom: 40px;
     margin-right: 15px;
     padding: 10px 15px;
@@ -43,9 +53,7 @@
 .botao{
     margin-left: 165px;
     margin-top: 350px;
-    position: absolute;
-    left: 1580px;
-    top: 487px;
+    
     
 }
 
@@ -63,132 +71,4 @@
 
 .botao__edit__link:hover{
     color: black;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.bot{
-   margin: 450px 10px;
-   
-}
-
-.bot__link{
-    text-decoration: none;
-    color: #fa4747;
-    background: black;
-    font-size: 20px;
-    border: solid 1px black;
-}
-
-.bot__link:hover{
-    color: black;
-    background: #fa4747;
-}
-
-.caixa__pai{
-    border: solid black 1px;
-    margin: 100px 50px 100px 365px; 
-    padding: 15px;
-    display: inline-block;
-}
-
-.caixa__form{
-    display: inline-block;
-}
-
-.caixa__foto {
-    margin: 100px 0px 100px 160px;
-    display: inline-block;
-}
-
-.caixa__foto__perfil{
-    border: solid 2px black;
-    border-radius: 50%;
-    margin: 0px 0px 0px 0px;
-    
-}
-
-.caixa__foto__edit{
-    color: white;
-    background: black;
-    transition: 1s;
-    margin: 0px 0px 5px 0px;
-    position: relative;
-    left: -60px;
-    top: -20px;
-}
-
-.caixa__foto__edit:hover{
-    color: chartreuse;
-    transform: translateX(10px) scale(1.2);
-}
-
-.caixa__campo{
-    float: right;
-    display: inline;
-}
-
-.caixa__label{
-    display: block;
-    margin-left: 20px;
-    margin-bottom: 10px;
-    font-size: 20px;
-}
-
-.caixa__input{
-    display: block;
-    margin-left: 20px;
-    margin-bottom: 40px;
-    padding: 10px 15px;
-    width: 400px;
-}
-
-.caixa__bio{
-    display: inline;
-    margin: 10px;
-}
-
-.caixa__bio__label{
-    display: block;
-    margin-left: 5px;
-    margin-bottom: 30px;
-    font-size: 20px;
-}
-
-.caixa__bio__input{
-    display: block;
-    margin: 0px 0px 20px 20px;
-    width: 1000px;
-    height: 200px;   
-}
-
-.caixa__input__enviar{
-    float: right;
-    border-radius: 10px 20px;
-    padding: 10px;
-    color: black;
-    font-size: 20px;
-    background: #B22222;
-    transition: 0.5s;
-}
-
-.caixa__input__enviar:hover{
-    background: #32CD32;
 }
