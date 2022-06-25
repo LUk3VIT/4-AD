@@ -121,6 +121,14 @@ body {
   top: 0;
 }
 
+.top-menu-bar{
+  background: #363636;
+}
+
+.top-menu-bar__icon{
+  background: #363636;
+}
+
 .top-menu__list{
   display: flex;
   justify-content: space-evenly;
@@ -128,11 +136,13 @@ body {
 
 .top-menu__item{
   margin-top: 5px;
+  margin:  70px;
 }
 
 .top-menu__item__link{
   color: #ffffff;
   text-decoration: none;
+  font-size: 20px;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
