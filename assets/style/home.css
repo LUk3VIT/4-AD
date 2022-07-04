@@ -4,7 +4,7 @@ body {
   /*quantidade de coluna, o "auto" e pra diacordo com o que tem  */
   grid-template-columns: 250px auto;
   /*quantidade de linha*/
-  grid-template-rows: 190px 35px auto 150px ;  
+  grid-template-rows: 190px 35px auto 150px;  
   grid-template-areas: 
   "logo header"
   "top-menu top-menu"
@@ -12,7 +12,9 @@ body {
   "rodape rodape";  
    /*VH View Height = que dizer que vai esticar para a tela inteira */
    height: 100vh;
-   
+   flex: 1;
+   justify-content: space-between;
+
 }
 
 .header {   
@@ -35,25 +37,25 @@ body {
   flex-direction: row;
   justify-content: end;
   align-items: center;
-  background: black;
+  background: rgb(255, 255, 255);
 }
 
 .header__title{
-  margin-right: 950px;
-  color: #ffffff;
+  margin-right: 1000px;
+  color: #000000;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 28px;
 }
 
 .header__perfil{
   display: flex;
-  flex-direction: column;
+  align-self: flex-end;
   gap: 10px;
   margin-right: 10px;
 }
 
 .header__perfil__item{
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
   position: absolute;
   right: 25px;
@@ -65,7 +67,7 @@ body {
 }
 
 .header__perfil__login{
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
   position: absolute;
   right: 85px;
@@ -78,7 +80,7 @@ body {
 }
 
 .header__perfil__cadastrar{
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
   position: absolute;
   top: 80px;
@@ -91,7 +93,7 @@ body {
 }
 
 .header__perfil__img{
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
   position: absolute;
   top: 55px;
@@ -116,27 +118,18 @@ body {
 .top-menu {
   grid-area: top-menu;
   background-color: #363636;
-  padding: 5px 0;
-  position: sticky;
-  top: 0;
-}
-
-.top-menu-bar{
-  background: #363636;
-}
-
-.top-menu-bar__icon{
-  background: #363636;
+  padding: 25px 5px; 
+  flex: 1;
 }
 
 .top-menu__list{
-  display: flex;
+  flex: 1;
   justify-content: space-evenly;
+  background: #363636;
 }
 
 .top-menu__item{
   margin-top: 5px;
-  margin:  70px;
 }
 
 .top-menu__item__link{
@@ -149,6 +142,7 @@ body {
 .top-menu__item__link:hover{
   color: #ee82ee;
 }
+
 
 .logo {
   width: 100%;
@@ -165,38 +159,48 @@ body {
   height: 100%;
 }
 
-.sistemas{
+.pai__sist{
   grid-area: container;
-  display: inline-flex;
-  align-items: center;
-  margin: 40px;
+  display: flex;
+}
+
+.sistemas{
+  flex: 1;
+  margin: 40px 50px;
+  
 }
 
 .sistemas__caixas1{
-  margin: 15px 65px 0px 15px;
-  display: block;
+  margin: auto;
+  margin: 40px;
+  flex: 1;
   border: solid black 2px; 
   background: skyblue;
   align-items: center;
   text-align: center;
+  padding: 30px;
 }
 
 .sistemas__caixas2{
-  margin: 15px 15px 0px 15px;
-  display: block;
+  margin: auto;
+  margin: 40px;
+  flex: 1;
   border: solid black 2px; 
   background: skyblue;
   align-items: center;
   text-align: center;
+  padding: 30px;
 }
 
 .sistemas__caixas3{
-  margin: 15px 15px 0px 65px;
-  display: block;
+  margin: auto;
+  margin: 40px;
+  flex: 1;
   border: solid black 2px; 
   background: skyblue;
   align-items: center;
   text-align: center;
+  padding: 30px;
 }
 
 .sistemas__caixas__img{
@@ -221,16 +225,17 @@ body {
 
 .sistemas__caixas__a{
   text-decoration: none;
-  margin: 0px 0px 80px 0px;
+  margin-bottom: 30px;
   font-size: 25;
   padding: 15px;
 }
 
 .rodape__pai{
   grid-area: rodape;
-  display: block;
-  text-align: center;
+  display: flex;
+  justify-content: center;
   background: #363636;
+  position: static;
 }
 
 .rodape__caixa{

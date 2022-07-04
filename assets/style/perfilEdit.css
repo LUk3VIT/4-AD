@@ -1,27 +1,12 @@
-main{
-    display: flex;
+.main{
+    flex: 1;
+    grid-area: container;
+    justify-self: center;
 }
-
-.bot{
-    margin: 450px 10px;
- }
- 
- .bot__link{
-    text-decoration: none;
-     color: #fa4747;
-     background: black;
-     font-size: 20px;
-    border: solid 1px black;
- }
- 
- .bot__link:hover{
-     color: black;
-     background: #fa4747;
- }
  
  .caixa__pai{
-     border: solid black 1px;
-     margin: 100px 50px 100px 200px; 
+    border: solid black 1px;
+     margin: 80px 0px;
      padding: 15px;
      display: inline-block;
  }
@@ -108,4 +93,27 @@ main{
  
  .caixa__input__enviar:hover{
      background: #32CD32;
+ }
+
+ .bot{
+    margin-top: 11px;
+    margin-bottom: 0px;
+    margin-left: 750px;
+    border-radius: 10px 20px;
+    position: absolute;
+ }
+ 
+ .bot__link{
+    padding: 10px;
+    text-decoration: none;
+    color: #fa4747;
+    background: black;
+    font-size: 20px;
+    border: solid 1px black;
+    border-radius: 10px 20px;
+ }
+ 
+ .bot__link:hover{
+     color: black;
+     background: #fa4747;
  }

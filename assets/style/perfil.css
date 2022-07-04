@@ -1,6 +1,12 @@
+.main{
+    flex: 1;
+    grid-area: container;
+    justify-self: center;
+}
+
 .apresentacao{
     border: solid black 3px;
-    margin: 100px 80px 100px 80px;
+    margin: 80px 0px;
     display: flex;
     padding: 15px;
 }
@@ -50,14 +56,11 @@
     font-size: 20px;
 }
 
-.botao{
-    margin-left: 165px;
-    margin-top: 350px;
-    
-    
+.botao__edit{
+   margin-top: 480px;
 }
 
-.botao__edit{
+.botao__edit__button{
     border-radius: 10px 10px;
     font-size: 20px;
     background: #32CD32;
