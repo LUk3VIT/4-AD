@@ -4,7 +4,7 @@ body {
   /*quantidade de coluna, o "auto" e pra diacordo com o que tem  */
   grid-template-columns: 220px auto;
   /*quantidade de linha*/
-  grid-template-rows: 190px 50px auto 150px;  
+  grid-template-rows: 190px 80px auto 150px;  
   grid-template-areas: 
   "logo header"
   "top-menu top-menu"
@@ -13,7 +13,7 @@ body {
    /*VH View Height = que dizer que vai esticar para a tela inteira */
    height: 100vh;
    flex: 1;
-   justify-content: space-between;
+   justify-content: ;
    background: #16047ef6;
 
 }
@@ -40,12 +40,14 @@ body {
 }
 
 .caixa__header__titulo{
-  margin-right: 800px;
-  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0px ;
 }
 
 .header__title{
-  margin-left: 700px;
+
   color: #484848;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 70px;
@@ -146,7 +148,6 @@ body {
 .top-menu__item__link:hover{
   color: #ee82ee;
 }
-
 
 .logo {
   width: 100%;
