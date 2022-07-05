@@ -5,7 +5,7 @@
 }
  
  .caixa__pai{
-    border: solid black 1px;
+    border: solid rgb(255, 255, 255) 3px;
      margin: 80px 0px;
      padding: 15px;
      display: inline-block;
@@ -29,7 +29,7 @@
  
  .caixa__foto__edit{
      color: white;
-     background: black;
+     background: rgb(0, 0, 0);
      transition: 1s;
      margin: 0px 0px 5px 0px;
      position: relative;
@@ -52,6 +52,7 @@
      margin-left: 20px;
      margin-bottom: 10px;
      font-size: 20px;
+     color: #ffffff;
  }
  
  .caixa__input{
@@ -65,6 +66,7 @@
  .caixa__bio{
      display: inline;
      margin: 10px;
+     color: #ffffff;
  }
  
  .caixa__bio__label{
@@ -72,6 +74,7 @@
      margin-left: 5px;
      margin-bottom: 30px;
      font-size: 20px;
+     color: #ffffff;
  }
  
  .caixa__bio__input{
@@ -85,7 +88,7 @@
      float: right;
      border-radius: 10px 20px;
      padding: 10px;
-     color: black;
+     color: rgb(255, 255, 255);
      font-size: 20px;
      background: #B22222;
      transition: 0.5s;
