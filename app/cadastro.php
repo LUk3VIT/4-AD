@@ -32,7 +32,7 @@
     </main>
 
     <footer class="foo-bot">
-        <img class="foo-img" src="../assets/img/logo.png" alt="Logo de Infinity darkness">
+        <img class="foo-img" src="../assets/img/logo.png" alt="Logo de Unending Darkness">
         <p class="copyright">&copy; Copyright Infinity darkness - 2019</p>
     </footer>
 </body>

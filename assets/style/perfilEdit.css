@@ -6,9 +6,11 @@
  
  .caixa__pai{
     border: solid rgb(255, 255, 255) 3px;
-     margin: 80px 0px;
-     padding: 15px;
-     display: inline-block;
+    margin: 80px 0px;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
  }
  
  .caixa__form{
@@ -44,11 +46,13 @@
  
  .caixa__campo{
      float: right;
-     display: inline;
+     display: flex;
+     flex-direction: column;
+
  }
  
  .caixa__label{
-     display: block;
+     display: flex;
      margin-left: 20px;
      margin-bottom: 10px;
      font-size: 20px;
@@ -56,7 +60,7 @@
  }
  
  .caixa__input{
-     display: block;
+     display: flex;
      margin-left: 20px;
      margin-bottom: 40px;
      padding: 10px 15px;
@@ -64,13 +68,14 @@
  }
  
  .caixa__bio{
-     display: inline;
+     display: flex;
      margin: 10px;
      color: #ffffff;
+     align-items: baseline;
  }
  
  .caixa__bio__label{
-     display: block;
+     display: flex;
      margin-left: 5px;
      margin-bottom: 30px;
      font-size: 20px;
@@ -78,32 +83,31 @@
  }
  
  .caixa__bio__input{
-     display: block;
+     display: flex;
      margin: 0px 0px 20px 20px;
-     width: 1000px;
+     width: 900px;
      height: 200px;   
  }
  
  .caixa__input__enviar{
-     float: right;
-     border-radius: 10px 20px;
-     padding: 10px;
-     color: rgb(255, 255, 255);
-     font-size: 20px;
-     background: #B22222;
-     transition: 0.5s;
+    
+    border-radius: 10px 20px;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    background: #B22222;
+    transition: 0.5s;
  }
  
  .caixa__input__enviar:hover{
-     background: #32CD32;
+    background: #32CD32;
  }
 
  .bot{
-    margin-top: 11px;
-    margin-bottom: 0px;
-    margin-left: 750px;
+    display: flex;
+    align-items: center;
     border-radius: 10px 20px;
-    position: absolute;
+    justify-content: space-between;
  }
  
  .bot__link{
