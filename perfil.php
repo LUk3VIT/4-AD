@@ -1,34 +1,42 @@
+<?php
+    session_start();
+    require_once './classes/repositorioUsuario.php';
+    $repositorio = new RepositorioUsuariosMySQL();
+    $nome_usuario = $_SESSION['nome_usuario'];
+    $informacoes = $repositorio->ListarDados($nome_usuario);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Perfil_edit</title>
+    <title>Perfil</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/style/reset.css">
     <link rel="stylesheet" href="assets/style/home.css">
-    <link rel="stylesheet" href="assets/style/perfilEdit.css">
+    <link rel="stylesheet" href="assets/style/perfil.css">
 </head>
 <body>
-  
-  <header class="header">
-    <div class="caixa__header__titulo">
-      <h1 class="header__title">Unending Darkness</h1>
-    </div>
-    <div class="header__perfil">
-        <a class="header__perfil__item" href="perfil.html"><i class="fa-solid fa-user fa-2xl"></i></a>
-        <a class="header__perfil__login" href="app/login.php">Login</a>
-        <a class="header__perfil__cadastrar" href="app/cadastro.php">Cadastrar</a>
-    </div>
-</header>
+    
+    <header class="header">
+        <div class="caixa__header__titulo">
+          <h1 class="header__title">Unending Darkness</h1>
+        </div>
+        <div class="header__perfil">
+            <a class="header__perfil__item" href="perfil.html"><i class="fa-solid fa-user fa-2xl"></i></a>
+            <a class="header__perfil__login" href="app/login.php">Login</a>
+            <a class="header__perfil__cadastrar" href="app/cadastro.php">Cadastrar</a>
+        </div>
+    </header>
 
     <nav class="navbar navbar-expand-lg top-menu ">
-        <div class="container-fluid top-menu-bar">
-          <button class="navbar-toggler top-menu-botton" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon top-menu-bar__icon"></span>
-          </button>
+      <div class="container-fluid top-menu-bar">
+        <button class="navbar-toggler top-menu-botton" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon top-menu-bar__icon"></span>
+        </button>
           <div class="collapse navbar-collapse justify-content-evenly top-menu-caixaList" id="navbarNav">
             <ul class="navbar-nav top-menu__list">
               <li class="nav-item top-menu__item">
@@ -58,49 +66,35 @@
               <li class="nav-item top-menu__item">
                 <a class="nav-link top-menu__item__link">Pesquisa</a>
               </li>
-            </ul>
-          </div>
+          </ul>
         </div>
-      </nav>
-
-    <div class="caixa__logo">
+      </div>
+    </nav>
+    
+  <div class="caixa__logo">
       <img src="assets/img/logo.png" alt="Logo de Infinity darkness" class="logo">
     </div>
 
     <main class="main">
-        <div class="caixa__pai">
-            <form class="caixa__form">
-
-                    <div class="caixa__foto">
-                        <img src="/textPerfil.jfif" alt="" class="caixa__foto__perfil">
-                        <button class="caixa__foto__edit"><i class="fa-solid fa-user-pen"></i></button>
-                    </div>
-                    
-                    <div class="caixa__campo">
-                        <label for="nick" class="caixa__label">Nick:</label>
-                        <input type="text" id="nick" class="caixa__input" required>
-
-                        <label for="nomeSobreno" class="caixa__label">Nome:</label>
-                        <input type="text" id="nomeSobreno" class="caixa__input" required>
-
-                        <label for="email" class="caixa__label">Email:</label>
-                        <input type="email" id="email" class="caixa__input" required>
-
-                        <label for="senha" class="caixa__label">Senha:</label>
-                        <input type="text" id="senha" class="caixa__input" required>
-                    </div>
-                 
-                    <div class="caixa_bio">
-                        <label for="mensagem" class="caixa__bio__label">Biografia:</label>
-                        <textarea cols="100" rows="10" id="mensagem" class="caixa__bio__input" required></textarea>
-                    </div>
-
-                    <div class="bot">
-                      <a class="bot__link" href="perfil.html">Cancelar</a>
-                      <input type="submit" value="Enviar formulário" class="caixa__input__enviar">
-                    </div>
-                </form>
+        <div class="apresentacao">
+            <div class="caixa__foto">
+                <img src="/textPerfil.jfif" alt="" class="caixa__foto__perfil">
             </div>
+            <div class="informacao">
+              <?php   
+                $dados = array_shift($informacoes);
+                  echo "<p class='informacao__label'>Nick</p>";
+                  echo "<p class='informacao__input'>".$dados->getNickUsuario()."</p>";
+                  echo "<p class='informacao__label'>Nome</p>";
+                  echo "<p class='informacao__input'>".$dados->getNomeUsuario()."</p>";
+                  echo "<p class='informacao__label'>Bio</p>";
+                  echo "<p class='informacao__input__bio'>".$dados->getBioUsuario()."</p>";
+              ?>
+            </div>
+            <div class="botao__edit">
+                <button class="botao__edit__button"><a class="botao__edit__link" href="/perfil-edit.html">Editar</a></button>
+            </div>
+        </div>   
     </main>
 
     <footer class="rodape__pai">
@@ -116,6 +110,7 @@
 
         </div>
     </footer>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>
