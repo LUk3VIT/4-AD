@@ -89,8 +89,13 @@
      height: 200px;   
  }
  
+ .bot{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ }
+
  .caixa__input__enviar{
-    
     border-radius: 10px 20px;
     padding: 10px;
     color: rgb(255, 255, 255);
@@ -101,13 +106,6 @@
  
  .caixa__input__enviar:hover{
     background: #32CD32;
- }
-
- .bot{
-    display: flex;
-    align-items: center;
-    border-radius: 10px 20px;
-    justify-content: space-between;
  }
  
  .bot__link{

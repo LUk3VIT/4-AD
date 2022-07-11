@@ -63,7 +63,8 @@
 }
 
 .botao__edit{
-   margin-top: 480px;
+   display: flex;
+   
 }
 
 .botao__edit__button{

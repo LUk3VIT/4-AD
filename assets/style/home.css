@@ -183,36 +183,37 @@ body {
 }
 
 .sistemas__caixas1{
-  margin: auto;
-  margin: 40px;
-  flex: 1;
-  border: solid black 2px; 
-  background: skyblue;
+  margin: 100px 50px;
+  display: flex;
+  flex-direction: column;
+  border: solid #000000 3px; 
+  background: #753f03c5;
   align-items: center;
-  text-align: center;
   padding: 30px;
+  color: #000000;
 }
 
 .sistemas__caixas2{
-  margin: auto;
-  margin: 40px;
-  flex: 1;
-  border: solid black 2px; 
-  background: skyblue;
+  margin: 100px 50px;
+  display: flex;
+  flex-direction: column;
+  border: solid black 3px; 
+  background: rgb(1, 62, 86);
   align-items: center;
   text-align: center;
   padding: 30px;
+  color: #000000;
 }
 
 .sistemas__caixas3{
-  margin: auto;
-  margin: 40px;
-  flex: 1;
+  margin: 100px 50px;
+  display: flex;
+  flex-direction: column;
   border: solid black 2px; 
-  background: skyblue;
+  background: rgb(184, 226, 243);
   align-items: center;
-  text-align: center;
   padding: 30px;
+  color: #000000;
 }
 
 .sistemas__caixas__img{

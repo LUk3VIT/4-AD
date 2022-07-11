@@ -76,45 +76,42 @@
     </div>
 
     <main class="main">
-        <div class="caixa__pai">
-            <form class="caixa__form" action="app/atualiza_perfil.php" method="post">
+      <div class="caixa__pai">
+        <form class="caixa__form" action="app/atualiza_perfil.php" method="post">
+          <div class="caixa__foto">
+            <img src="/textPerfil.jfif" alt="" class="caixa__foto__perfil">
+              <button class="caixa__foto__edit"><i class="fa-solid fa-user-pen"></i></button>
+          </div>
               
-              <div class="caixa__foto">
-                  <img src="/textPerfil.jfif" alt="" class="caixa__foto__perfil">
-                  <button class="caixa__foto__edit"><i class="fa-solid fa-user-pen"></i></button>
-              </div>
-              
-              <div class="caixa__campo">
-                  <?php   
-                      $dados = array_shift($informacoes);
-                      echo "<label for='nick class='caixa__label'>Nick:</label>";
-                      echo "<input type='text' id='nick' name='nick' class='caixa__input' value='".$dados->getNickUsuario()."' required>";
+          <div class="caixa__campo">
+            <?php   
+              $dados = array_shift($informacoes);
+              echo "<label for='nick class='caixa__label'>Nick:</label>";
+              echo "<input type='text' id='nick' name='nick' class='caixa__input' value='".$dados->getNickUsuario()."' required>";
 
-                      echo "<label for='nomeSobreno' class='caixa__label'>Nome:</label>";
-                      echo "<input type='text' id='nomeSobreno' name='nome' class='caixa__input' value='".$dados->getNomeUsuario()."' required>";
+              echo "<label for='nomeSobreno' class='caixa__label'>Nome:</label>";
+              echo "<input type='text' id='nomeSobreno' name='nome' class='caixa__input' value='".$dados->getNomeUsuario()."' required>";
 
-                      echo "<label for='email' class='caixa__label'>Email:</label>";
-                      echo "<input type='email' id='email' name='email' class='caixa__input' value='".$dados->getEmailUsuario()."' required>";
+              echo "<label for='email' class='caixa__label'>Email:</label>";
+              echo "<input type='email' id='email' name='email' class='caixa__input' value='".$dados->getEmailUsuario()."' required>";
 
-                      echo "<label for='senha' class='caixa__label'>Senha:</label>";
-                      echo "<input type='password' id='senha' name='senha' class='caixa__input' value='".$dados->getSenhaUsuario()."' required>";
-                  ?>
-                </div>
+              echo "<label for='senha' class='caixa__label'>Senha:</label>";
+              echo "<input type='password' id='senha' name='senha' class='caixa__input' value='".$dados->getSenhaUsuario()."' required>";
+            ?>
+          </div>
                  
-                <div class="caixa_bio">
-                  <label for="mensagem" class="caixa__bio__label">Biografia:</label>
-                  <?php
-                  echo "<input cols='100' rows='10' id='bio' name='bio' class='caixa__bio__input' value='".$dados->getBioUsuario()."' required>"
-                  ?>
-                </div>
-
-                <div class="bot">
-                  <a class="bot__link" href="perfil.php">Cancelar</a>
-                  <input type="submit" value="Enviar formulário" class="caixa__input__enviar">
-                </div>
-                </form>
-            </div>
-    
+          <div class="caixa_bio">
+            <label for="mensagem" class="caixa__bio__label">Biografia:</label>
+              <?php
+                echo "<input cols='100' rows='10' id='bio' name='bio' class='caixa__bio__input' value='".$dados->getBioUsuario()."' required>"
+              ?>
+          </div>
+          <div class="bot">
+            <a class="bot__link" href="perfil.html">Cancelar</a>
+            <input type="submit" value="Enviar formulário" class="caixa__input__enviar">
+          </div>
+        </form>
+      </div>
     </main>
 
     <footer class="rodape__pai">
