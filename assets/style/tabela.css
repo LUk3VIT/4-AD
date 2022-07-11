@@ -1,0 +1,52 @@
+.caixa__tabela{
+    display: flex;
+    flex-direction: column;
+    margin: 80px 5px;
+    flex-wrap: wrap;
+    background: #333333;
+    padding: 50px;
+}
+
+.tabela__select{
+    display: flex;
+    width: 700px;
+    height: 40px;
+    margin-bottom: 35px;
+}
+
+.tabela__h1{
+    color: #ffffff;
+    margin: 10px;
+}
+
+.tabela__informacao{
+    display: flex;
+    border: solid 3px #ffffff;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.tabela__informacao__p{
+    width: 800px;
+    height: 150px;
+    color: aliceblue;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tabela__informacao__img{
+    border-radius: 5%;
+}
+
+.tabela__sistema{
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0px;
+    flex-wrap: wrap;
+}
+
+.sistema__select{
+    width: 200px;
+}
