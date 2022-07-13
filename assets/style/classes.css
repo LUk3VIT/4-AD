@@ -1,0 +1,50 @@
+.mani{
+    grid-area: container;
+    display: flex;
+    justify-content: center;
+}
+
+.carrosel{
+    display: flex;
+    justify-content: center;
+    margin: 80px 30px;
+    align-items: center;
+    background-color: #000000;
+}
+
+.apresentacao{
+    display: flex;
+    justify-content: space-between;
+    padding: 120px;
+}
+
+.apresentacao__caixa{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-left: 220px;
+    width: 200px;
+}
+
+.apresentacao__caixa__img{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-right: 220px;
+}
+
+.caixa__img__style{
+    width: 600px;
+}
+
+.apresentacao__caixa__h1{
+    margin-top: 30px;
+    margin-bottom: 40px;
+    font-size: 60px;
+    color: #ffffff;
+}
+
+.apresentacao__caixa__p{
+    font-size: 20px;
+    color: #ffffff;
+}

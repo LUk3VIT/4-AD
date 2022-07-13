@@ -14,7 +14,7 @@ body {
    height: 100vh;
    flex: 1;
    
-   background: #16047ef6;
+   background: #1b153ff6;
 
 }
 
@@ -168,7 +168,9 @@ body {
 .main{
   grid-area: container ;
   height: 100%;
-  
+  color: #ffffff;
+  text-align: justify;
+  margin: 9%;
 }
 
 .pai__sist{
@@ -210,7 +212,7 @@ body {
   display: flex;
   flex-direction: column;
   border: solid black 2px; 
-  background: rgb(184, 226, 243);
+  background: #756331;
   align-items: center;
   padding: 30px;
   color: #000000;
