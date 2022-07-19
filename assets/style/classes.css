@@ -7,7 +7,7 @@
 .carrosel{
     display: flex;
     justify-content: center;
-    margin: 80px 30px;
+    margin: 30px;
     align-items: center;
     background-color: #000000;
 }
@@ -15,26 +15,27 @@
 .apresentacao{
     display: flex;
     justify-content: space-between;
-    padding: 120px;
+    padding: 60px 160px;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .apresentacao__caixa{
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    margin-left: 220px;
-    width: 200px;
+    width: 400px;
+    margin-left: 70px;
+    margin-bottom: 25px;
 }
 
 .apresentacao__caixa__img{
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
-    margin-right: 220px;
+    margin-right: 70px;
 }
 
 .caixa__img__style{
-    width: 600px;
+    width: 500px;
 }
 
 .apresentacao__caixa__h1{
@@ -45,6 +46,6 @@
 }
 
 .apresentacao__caixa__p{
-    font-size: 20px;
+    font-size: 25px;
     color: #ffffff;
 }
