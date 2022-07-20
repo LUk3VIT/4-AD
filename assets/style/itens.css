@@ -1,0 +1,46 @@
+.caixa{
+    background: #000000;
+    margin: 25px 40px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.caixa__tabela{
+    display: flex;
+    flex-direction: column;
+}
+
+.caixa__tabela__h2{
+    font-size: 30px;
+    margin: 15px 290px;
+}
+
+.caixa__tabela__p{
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 35px;
+}
+
+.tabela{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 25px;
+    justify-content: center;
+}
+
+.tabela__coluna{
+    border: solid 1px #ffffff;
+    padding: 25px;
+    justify-content: center;
+}
+
+.tabela__p{
+    margin: 0px 20px;
+}
+
+.tabela__valor{
+    margin-left: 5px;
+}

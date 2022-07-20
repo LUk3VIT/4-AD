@@ -251,10 +251,11 @@ body {
   justify-content: center;
   background: #363636;
   position: static;
+  height: 190px;
 }
 
 .rodape__caixa{
-  margin-top: 45px;
+  margin-top: 65px;
 }
 
 .rodape__caixa__h2{
