@@ -1,0 +1,50 @@
+.caixa__main{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    margin: 45px 0px;
+    background: black;
+    padding: 45px;
+}
+
+.caixa__main__h1{
+    font-size: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 10px;
+}
+
+.caixa__main__p{
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 30px;
+}
+
+.caixa__principal{
+    padding: 10px;
+}
+
+.table{
+    margin: 35px 0px;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.linha{
+    margin: 0px 25px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.coluna{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.imgmap{
+    width: 200px;
+    height: 213px;
+}

@@ -169,8 +169,8 @@ body {
   grid-area: container ;
   height: 100%;
   color: #ffffff;
-  text-align: justify;
-  margin: 9%;
+margin: 0% 9%;
+ 
 }
 
 .pai__sist{
