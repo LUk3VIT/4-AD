@@ -11,15 +11,18 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    flex-direction: row;
  }
  
  .caixa__form{
-     display: inline-block;
+     margin: 20px 40px;
+     display: flex;
+     flex-direction: column;
  }
  
  .caixa__foto {
-     margin: 100px 0px 100px 160px;
-     display: inline-block;
+     margin: 100px 100px;
+
  }
  
  .caixa__foto__perfil{
@@ -45,7 +48,6 @@
  }
  
  .caixa__campo{
-     float: right;
      display: flex;
      flex-direction: column;
 
@@ -91,17 +93,22 @@
  
  .bot{
     display: flex;
+    flex-direction: co;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
  }
 
  .caixa__input__enviar{
     border-radius: 10px 20px;
-    padding: 10px;
     color: rgb(255, 255, 255);
     font-size: 20px;
     background: #B22222;
     transition: 0.5s;
+    width: 180px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center
  }
  
  .caixa__input__enviar:hover{
@@ -116,6 +123,11 @@
     font-size: 20px;
     border: solid 1px black;
     border-radius: 10px 20px;
+    width: 120px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
  }
  
  .bot__link:hover{

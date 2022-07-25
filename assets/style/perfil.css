@@ -2,7 +2,7 @@
     display: flex;
     flex: 1;
     grid-area: container;
-    justify-self: center;
+    justify-self: center;   
 }
 
 .apresentacao{
@@ -11,11 +11,17 @@
     display: flex;
     flex-wrap: wrap;
     padding: 15px;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .caixa__foto {
-    margin: 100px 0px 170px 120px;
-    display: inline-block;
+    margin-top: 30px;
+    margin-left: 35px;
+    margin-bottom: 50px;
+    width: 220px;
+    height: 220px;
+    display: flex;
 }
 
 .caixa__foto__perfil{
@@ -64,6 +70,8 @@
 
 .botao__edit{
    display: flex;
+   justify-content: flex-end;
+   margin: 0px 15px;
    
 }
 
@@ -71,6 +79,12 @@
     border-radius: 10px 10px;
     font-size: 20px;
     background: #32CD32;
+    width: 120px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
 }
 
 .botao__edit__link{
