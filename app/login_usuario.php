@@ -8,7 +8,8 @@
 
     $numeroLinhas = $repositorio->LoginUsuario($nome_usuario,$senha_usuario);
     if($numeroLinhas < 1){
-        header('Location: ../perfil.php');
+        $_SESSION['nome_usuario'] = $nome_usuario;
+        header('Location: perfil.php');
     } else {
         session_start();
         $mensagem = "Login inválido!!!!";

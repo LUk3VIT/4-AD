@@ -1,10 +1,10 @@
 <?php
 
-class Usuario
+class Usuario 
 {
     private $nome_usuario;
     private $nick_usuario;
-    private $email_usuario; 
+    private $email_usuario;  
     private $senha_usuario;
     private $bio_usuario;
 

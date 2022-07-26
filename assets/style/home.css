@@ -36,7 +36,7 @@ body {
   grid-area: header;
   display: flex;
   flex-direction: row;
-  background-image: url('/assets/img/FaixaSite.png');
+  background-image: url('../img/FaixaSite.png');
 }
 
 .caixa__header__titulo{
@@ -152,7 +152,7 @@ body {
 
 .caixa__logo{
   display: flex;
-  background-image: url('/assets/img/MetalLogo.png');
+  background-image: url('../img/MetalLogo.png');
   grid-area: logo
 }
 

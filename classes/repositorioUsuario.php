@@ -67,7 +67,7 @@ class RepositorioUsuariosMySQL implements IRepositorioUsuarios
         $arrayDados = array();
         while($linha = mysqli_fetch_array($listagem)){
             $perfil = new Usuario(
-                $linha['nome_usuario'],
+                $linha['nome_usuario'], 
                 $linha['nick_usuario'],
                 $linha['email_usuario'],
                 $linha['senha_usuario'],

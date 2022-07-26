@@ -18,13 +18,13 @@
     <main class="conteudo-cadastro">
         <form action="insere_usuario.php" method="post" class="form">
             <label class="form-label" for="nome">Nome</label>
-            <input class="form-input" type="text" id="nome" placeholder="boby Barbaro061" required>
+            <input class="form-input" type="text" id="nome" name="nome" placeholder="boby Barbaro061" required>
 
             <label class="form-label" for="email">E-mail</label>
-            <input class="form-input" type="email" id="email" placeholder="exemplo123@gmail.com" required>
+            <input class="form-input" type="email" id="email" name="email" placeholder="exemplo123@gmail.com" required>
 
             <label class="form-label" for="password">Senha</label>
-            <input class="form-input" type="password" id="password" required>
+            <input class="form-input" type="password" id="password" name="senha" required>
 
             <a class="form-link__login" href="login.php">Login</a>
             <input type="submit" value="cadastrar" class="enviar">

@@ -19,6 +19,18 @@ fazer a pagina de personagem
 
 fazer um botão que muda a imagem do perfil, e salvar para quando oi usuario loga muda a imagem que esta lá 
 
+Chat
+
+Arrumar Perfil
+
+Arrumar Editar Perfil
+
+Criar Login onde logout apareça quando estiver conectado
+
+Colocar tabelas no banco de dados
+
+Selecionar
+
 
 
 :>
