@@ -48,7 +48,7 @@ body {
 
 .header__title{
 
-  color: #484848;
+  color: #ffffff;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 70px;
 }
@@ -62,7 +62,7 @@ body {
 }
 
 .header__perfil__item{
-  color: #484848;
+  color: #ffffff;
   text-decoration: none;
   position: absolute;
   right: 25px;
@@ -74,7 +74,7 @@ body {
 }
 
 .header__perfil__login{
-  color: #484848;
+  color: #ffffff;
   text-decoration: none;
   position: absolute;
   right: 85px;
@@ -87,7 +87,7 @@ body {
 }
 
 .header__perfil__cadastrar{
-  color: #484848;
+  color: #ffffff;
   text-decoration: none;
   position: absolute;
   top: 80px;
