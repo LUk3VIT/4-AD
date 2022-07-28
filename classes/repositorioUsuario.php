@@ -11,7 +11,7 @@ interface IRepositorioUsuarios {
 }
 
 class RepositorioUsuariosMySQL implements IRepositorioUsuarios
-{
+{ 
     private $conexao; 
     public function __construct()
     {
@@ -28,9 +28,6 @@ class RepositorioUsuariosMySQL implements IRepositorioUsuarios
         $sql = "SELECT * FROM tbl_usuario WHERE nome_usuario = '$nome_usuario' AND senha_usuario = '$senha_usuario'";
         $linha = $this->conexao->obtemNumeroLinhas($sql);
         return $linha;
-        $id = $linha->getIdUsuario();
-        session_start();
-        $_SESSION['id'] = $id;
     }
 
     public function VerificarNome($nome_usuario)

@@ -74,8 +74,10 @@
         <div class="informacao">
           <?php   
             $dados = array_shift($informacoes);
-            echo "<p class='informacao__label'>Nick</p>";
-            echo "<p class='informacao__input'>".$dados->getNickUsuario()."</p>";
+            if(isset($nick_usuario)){
+              echo "<p class='informacao__label'>Nick</p>";
+              echo "<p class='informacao__input'>".$dados->getNickUsuario()."</p>";
+            }
             echo "<p class='informacao__label'>Nome</p>";
             echo "<p class='informacao__input'>".$dados->getNomeUsuario()."</p>";
             echo "<p class='informacao__label'>Bio</p>";

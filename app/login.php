@@ -17,10 +17,10 @@
     <main class="conteudo-login">
         <form action="login_usuario.php" method="post" class="form">
             <label class="form-label" for="nome">Nome</label>
-            <input class="form-input" type="text" id="nome" required>
+            <input class="form-input" type="text" id="nome" name="nome" required>
 
             <label class="form-label" for="password">Senha</label>
-            <input class="form-input" type="password" id="password" required>
+            <input class="form-input" type="password" id="password" name="senha" required>
 
             <a class="form-link__cadastra" href="../app/cadastro.php">Cadastrar</a>
             <a class="form-link__esqueceu" href="">Esqueceu sua senha?</a>

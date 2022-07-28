@@ -2,7 +2,7 @@
 
 require_once '../classes/repositorioUsuario.php';
 $repositorio = new RepositorioUsuariosMySQL();
-
+ 
 $nome_usuario =$_POST['nome'];
 $email_usuario = $_POST['email']; 
 $senha_usuario = $_POST['senha'];
