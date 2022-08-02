@@ -5,8 +5,11 @@ require_once 'conexao.php';
 
 interface IRepositorioUsuarios {
     public function LoginUsuario($nome_usuario,$senha_usuario);
+    public function GuardaID($nome_usuario,$senha_usuario);
+    public function VerificarNome($nome_usuario);
+    public function VerificarNick($nick_usuario);
     public function CadastraUsuario($Usuario);
-    public function ListarDados($nome_usuario);
+    public function ListarDados($id_usuario); 
     public function atualizarPerfil($Usuario);
 }
 
@@ -18,7 +21,7 @@ class RepositorioUsuariosMySQL implements IRepositorioUsuarios
         $this->conexao = new Conexao("localhost","root","","4ad");
        
         if($this->conexao->conectar()==false){
-            echo "Erro de conexao ".mysqli_connect_error();
+            echo "Erro de conexao ".mysqli_connect_error(); 
         }
 
     }
@@ -28,6 +31,14 @@ class RepositorioUsuariosMySQL implements IRepositorioUsuarios
         $sql = "SELECT * FROM tbl_usuario WHERE nome_usuario = '$nome_usuario' AND senha_usuario = '$senha_usuario'";
         $linha = $this->conexao->obtemNumeroLinhas($sql);
         return $linha;
+    }
+
+    public function GuardaID($nome_usuario,$senha_usuario){
+        $sql = "SELECT * FROM tbl_usuario WHERE nome_usuario = '$nome_usuario' AND senha_usuario = '$senha_usuario'";
+        $consulta = $this->conexao->executarQuery($sql);
+        $registro = mysqli_fetch_array($consulta);
+        $id_registro = $registro[0];
+        return $id_registro;
     }
 
     public function VerificarNome($nome_usuario)
@@ -48,7 +59,7 @@ class RepositorioUsuariosMySQL implements IRepositorioUsuarios
     {
         $nome_usuario = $Usuario->getNomeUsuario();
         $nick_usuario = $Usuario->getNickUsuario();
-        $email_usuario = $Usuario->getEmailUsuario();
+        $email_usuario = $Usuario->getEmailUsuario(); 
         $senha_usuario = $Usuario->getSenhaUsuario();
         $bio_usuario = $Usuario->getBioUsuario();
 
@@ -57,9 +68,9 @@ class RepositorioUsuariosMySQL implements IRepositorioUsuarios
     }
 
     
-    public function ListarDados($nome_usuario)
+    public function ListarDados($id_usuario)
     {
-        $sql = "SELECT * FROM tbl_usuario WHERE nome_usuario = '$nome_usuario'";
+        $sql = "SELECT * FROM tbl_usuario WHERE id_usuario = '$id_usuario'";
         $listagem = $this->conexao->executarQuery($sql);
         $arrayDados = array();
         while($linha = mysqli_fetch_array($listagem)){
@@ -82,7 +93,7 @@ class RepositorioUsuariosMySQL implements IRepositorioUsuarios
         $senha_usuario = $Usuario->getSenhaUsuario();
         $bio_usuario = $Usuario->getBioUsuario();
 
-        $sql = "UPDATE tbl_usuario SET nome_usuario='$nome_usuario',nick_usuario='$nick_usuario',email_usuario='$email_usuario',senha_usuario='$senha_usuario',bio_usuario='$bio_usuario' WHERE tbl_usuario . nome_usuario='$nome_usuario'";
+        $sql = "UPDATE tbl_usuario SET nome_usuario='$nome_usuario',nick_usuario='$nick_usuario',email_usuario='$email_usuario',senha_usuario='$senha_usuario',bio_usuario='$bio_usuario'";
 
         $this->conexao->executarQuery($sql);
     } 

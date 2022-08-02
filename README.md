@@ -21,9 +21,9 @@ fazer um botão que muda a imagem do perfil, e salvar para quando oi usuario log
 
 Chat
 
-Arrumar Perfil
+Arrumar Perfil: certo
 
-Arrumar Editar Perfil
+Arrumar Editar Perfil: certo
 
 Criar Login onde logout apareça quando estiver conectado
 

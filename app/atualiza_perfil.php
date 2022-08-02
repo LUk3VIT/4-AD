@@ -13,5 +13,5 @@ $bio_usuario = $_POST['bio'];
 
     $Usuario = new Usuario($nome_usuario,$nick_usuario,$email_usuario,$senha_usuario,$bio_usuario);
     $atualiza_perfil = $repositorio->atualizarPerfil($Usuario);
-    header('Location: ../perfil.php');
+    header('Location: perfil.php');
  

@@ -1,14 +1,14 @@
 <?php
     session_start();
-    require_once './classes/repositorioUsuario.php';
+    require_once '../classes/repositorioUsuario.php';
     $repositorio = new RepositorioUsuariosMySQL();
-    $nome_usuario = $_SESSION['nome_usuario']; 
-    $informacoes = $repositorio->ListarDados($nome_usuario);
+    $id_usuario = $_SESSION['id_usuario']; 
+    $informacoes = $repositorio->ListarDados($id_usuario);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -63,7 +63,7 @@
     </nav>
     
     <div class="caixa__logo">
-      <img src="/assets/img/Logo.png" alt="Logo de Infinity darkness" class="logo">
+      <img src="../assets/img/Logo.png" alt="Logo de Infinity darkness" class="logo">
     </div>
 
     <main class="main">
@@ -72,7 +72,7 @@
           <img src="/textPerfil.jfif" alt="" class="caixa__foto__perfil">
           <button class="caixa__foto__edit"><i class="fa-solid fa-user-pen"></i></button>
         </div>
-        <form class="caixa__form" action="app/atualiza_perfil.php" method="post">
+        <form class="caixa__form" action="atualiza_perfil.php" method="post">
               
           <div class="caixa__campo">
             <?php   
@@ -98,7 +98,7 @@
               ?>
           </div>
           <div class="bot">
-            <a class="bot__link" href="perfil.html">Cancelar</a>
+            <a class="bot__link" href="perfil.php">Cancelar</a>
             <input type="submit" value="Enviar formulário" class="caixa__input__enviar">
           </div>
         </form>

@@ -2,12 +2,12 @@
     session_start();
     require_once '../classes/repositorioUsuario.php';
     $repositorio = new RepositorioUsuariosMySQL();
-    $nome_usuario = $_SESSION['nome_usuario'];
-    $informacoes = $repositorio->ListarDados($nome_usuario);
-?>
+    $id_usuario = $_SESSION['id_usuario'];
+    $informacoes = $repositorio->ListarDados($id_usuario);
+?> 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -68,23 +68,21 @@
       <div class="apresentacao">
         
         <div class="caixa__foto">
-            <img src="/textPerfil.jfif" alt="" class="caixa__foto__perfil">
+            <img src="../assets/img/textPerfil.jfif" alt="" class="caixa__foto__perfil">
         </div>
 
         <div class="informacao">
           <?php   
             $dados = array_shift($informacoes);
-            if(isset($nick_usuario)){
-              echo "<p class='informacao__label'>Nick</p>";
-              echo "<p class='informacao__input'>".$dados->getNickUsuario()."</p>";
-            }
+            echo "<p class='informacao__label'>Nick</p>";
+            echo "<p class='informacao__input'>".$dados->getNickUsuario()."</p>";
             echo "<p class='informacao__label'>Nome</p>";
             echo "<p class='informacao__input'>".$dados->getNomeUsuario()."</p>";
             echo "<p class='informacao__label'>Bio</p>";
             echo "<p class='informacao__input__bio'>".$dados->getBioUsuario()."</p>";
           ?>
           <div class="botao__edit">
-            <button class="botao__edit__button"><a class="botao__edit__link" href="perfil-edit.html">Editar</a></button>
+            <button class="botao__edit__button"><a class="botao__edit__link" href="perfil-edit.php">Editar</a></button>
           </div>
       </div>   
   </main>

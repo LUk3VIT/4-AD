@@ -20,7 +20,7 @@ class Conexao{
             $this->host,
             $this->usuario,
             $this->senha,
-            $this->banco
+            $this->banco 
         );
 
         if ($this->conexao->connect_error) {
