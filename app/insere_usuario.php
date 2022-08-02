@@ -8,7 +8,7 @@ $email_usuario = $_POST['email'];
 $senha_usuario = $_POST['senha'];
 
     $numeroLinhas = $repositorio->VerificarNome($nome_usuario);
-    if($numeroLinhas > 0){
+    if($numeroLinhas < 1){
         $Usuario = new Usuario($nome_usuario,NULL,$email_usuario,$senha_usuario,NULL);
         $cadastra_usuario = $repositorio->CadastraUsuario($Usuario);
         header('Location: login.php');

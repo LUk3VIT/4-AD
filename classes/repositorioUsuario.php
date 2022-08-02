@@ -10,7 +10,7 @@ interface IRepositorioUsuarios {
     public function VerificarNick($nick_usuario);
     public function CadastraUsuario($Usuario);
     public function ListarDados($id_usuario); 
-    public function atualizarPerfil($Usuario);
+    public function atualizarPerfil($Usuario, $id_usuario);
 }
 
 class RepositorioUsuariosMySQL implements IRepositorioUsuarios
@@ -85,7 +85,7 @@ class RepositorioUsuariosMySQL implements IRepositorioUsuarios
         return $arrayDados;
     }
 
-    public function atualizarPerfil($Usuario)
+    public function atualizarPerfil($Usuario, $id_usuario)
     {
         $nome_usuario = $Usuario->getNomeUsuario();
         $nick_usuario = $Usuario->getNickUsuario();
@@ -93,7 +93,7 @@ class RepositorioUsuariosMySQL implements IRepositorioUsuarios
         $senha_usuario = $Usuario->getSenhaUsuario();
         $bio_usuario = $Usuario->getBioUsuario();
 
-        $sql = "UPDATE tbl_usuario SET nome_usuario='$nome_usuario',nick_usuario='$nick_usuario',email_usuario='$email_usuario',senha_usuario='$senha_usuario',bio_usuario='$bio_usuario'";
+        $sql = "UPDATE tbl_usuario SET nome_usuario='$nome_usuario',nick_usuario='$nick_usuario',email_usuario='$email_usuario',senha_usuario='$senha_usuario',bio_usuario='$bio_usuario' WHERE tbl_usuario . id_usuario = '$id_usuario'";
 
         $this->conexao->executarQuery($sql);
     } 
