@@ -25,7 +25,7 @@ Arrumar Perfil: certo
 
 Arrumar Editar Perfil: certo
 
-Criar Login onde logout apareça quando estiver conectado
+Criar Login onde logout apareça quando estiver conectado --->> Fazer isso em todas as páginas, tirando no index que já ta feito
 
 Colocar tabelas no banco de dados
 

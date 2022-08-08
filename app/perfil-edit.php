@@ -40,7 +40,7 @@
         <div class="collapse navbar-collapse justify-content-evenly top-menu-caixaList" id="navbarNav">
           <ul class="navbar-nav top-menu__list">
             <li class="nav-item top-menu__item">
-              <a class="nav-link active top-menu__item__link" aria-current="page" href="index.html"><i class="fa-solid fa-house"></i></a>
+              <a class="nav-link active top-menu__item__link" aria-current="page" href="index.php"><i class="fa-solid fa-house"></i></a>
             </li>
             <li class="nav-item top-menu__item">
               <a class="nav-link top-menu__item__link" href="sistemas.html">Sistema</a>
@@ -69,7 +69,7 @@
     <main class="main">
       <div class="caixa__pai">
         <div class="caixa__foto">
-          <img src="/textPerfil.jfif" alt="" class="caixa__foto__perfil">
+          <img src="../assets/img/textPerfil.jfif" alt="" class="caixa__foto__perfil">
           <button class="caixa__foto__edit"><i class="fa-solid fa-user-pen"></i></button>
         </div>
         <form class="caixa__form" action="atualiza_perfil.php" method="post">

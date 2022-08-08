@@ -7,7 +7,7 @@ interface IRepositorioUsuarios {
     public function LoginUsuario($nome_usuario,$senha_usuario);
     public function GuardaID($nome_usuario,$senha_usuario);
     public function VerificarNome($nome_usuario);
-    public function VerificarNick($nick_usuario);
+    public function VerificarNick($nick_usuario); 
     public function CadastraUsuario($Usuario);
     public function ListarDados($id_usuario); 
     public function atualizarPerfil($Usuario, $id_usuario);
