@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/style/reset.css">
     <link rel="stylesheet" href="assets/style/home.css">
-</head>
+</head> 
 <body>
 
     <header class="header">
@@ -43,19 +43,19 @@
                 <a class="nav-link active top-menu__item__link" aria-current="page" href="index.html"><i class="fa-solid fa-house"></i></a>
               </li>
               <li class="nav-item top-menu__item">
-                <a class="nav-link top-menu__item__link" href="nav/sistemas.html">Sistema</a>
+                <a class="nav-link top-menu__item__link" href="nav/sistemas.php">Sistema</a>
               </li>
               <li class="nav-item top-menu__item">
-                <a class="nav-link top-menu__item__link" href="nav/tabelas.html">Tabelas</a>
+                <a class="nav-link top-menu__item__link" href="nav/tabelas.php">Tabelas</a>
               </li>
               <li class="nav-item top-menu__item">
-                <a class="nav-link top-menu__item__link" href="nav/classes.html">Classes</a>
+                <a class="nav-link top-menu__item__link" href="nav/classes.php">Classes</a>
               </li>
               <li class="nav-item top-menu__item">
-                <a class="nav-link top-menu__item__link" href="nav/mapas.html">Mapa</a>
+                <a class="nav-link top-menu__item__link" href="nav/mapas.php">Mapa</a>
               </li>
               <li class="nav-item top-menu__item">
-                <a class="nav-link top-menu__item__link" href="nav/itens.html">Itens</a>
+                <a class="nav-link top-menu__item__link" href="nav/itens.php">Itens</a>
               </li>
             </ul>
           </div>
