@@ -1,6 +1,3 @@
-1,1D6 + 2 esqueletos ou 1d6 zumbis (50% de chance de cada um), Mortos-vivos, nível 3, Nenhum tesouro, Armas esmagadoras atacam Esqueletos em +1. As setas estão em - 1 contra esqueletos e zumbis. Esqueletos e zumbis nunca testam moral, Reações: sempre lutar até a morte,
-2, 1d6 + 3 Goblins. Nível 3, tesouro -1. Goblins têm uma chance de 1 em 6 de ganho surpresa, agindo assim antes do grupo. Se eles agirem antes do grupo, role 1d6 em sua tabela de reações abaixo. Reações (1d6): 1 fugir se em menor número, 2-3 suborno (5 PO por goblin), 4-6 luta.
-3, 1d6 hobgoblins. Nível 4, Tesouro +1. Reações (1d6): 1 fugir se em menor número, 2–3 suborno (10 PO por hobgoblin), 4-5 lutar, 6 lutar até a morte.
-4, 1D6 + 1 orcs. Nível 4. Orcs têm medo de magia e devem testar o moral de cada tempo um ou mais é morto por um feitiço. Se um feitiço causasse o número deles cair abaixo de 50%, eles vão testar o moral em -1. Eles nunca têm magia itens em seu tesouro: trate qualquer magia encontrada como peças de ouro 1d6 x 1d6. Reações (1d6): 1-2 suborno (10 PO por orc), 3-5 luta, 6 lutam até a morte
-5, 1d3 trolls. Nível 5, Tesouro: normal. Trolls regeneram, a menos que mortos por um feitiço, ou a menos que um personagem use um ataque para cortar um troll para morto. Se isso não acontecer, jogue um dado para cada troll morto em seu próximo turno. Em um 5 ou 6, o troll vai voltar à vida e continuar a luta. Reações (1d6): 1–2 lutar, 3-6 lutar até a morte. Se um anão está presente no grupo, os trolls vão lutar automaticamente até a morte.
-6, 2d6 Fungi Folk. Nível 3, Tesouro: normal. Qualquer personagem tomando dano do povo fungos deve se salvar contra o veneno nível 3 ou perder 1 vida. Halflings adicionam seu nível neste save. Reações (d6): 1-2 pedir suborno (d6 PO por fungo), 3-6 lutar.
+asas;
+ssss;
+ffff;

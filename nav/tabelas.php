@@ -72,21 +72,22 @@
           <select class="form-select tabela__select" aria-label="Default select example">
             <option selected>
               <h2 class="tabela__select__h2">Tabela de Minions</h2>
-              <?php
-                $_SESSION['tbl'] = "tbl_minions";
-              ?>
             </option>
           </select>
           <h1 class="tabela__h1">Tabela de Minions D6</h1>
           <div class="tabela__informacao">
             <p class="tabela__informacao__p">
-              1
-              <br>
-              <br>
-              1D6 + 2 esqueletos ou 1d6 zumbis (50% de chance de cada um). 
-              Mortos-vivos nível 3. Nenhum tesouro. Armas esmagadoras atacam
-              Esqueletos em +1. As setas estão em - 1 contra esqueletos e zumbis.
-              Esqueletos e zumbis nunca testam moral. Reações: sempre lutar até a morte.
+              <?php
+                echo"<li>".$_SESSION['campo0']."</li>";
+                echo "<br>";
+                echo"<li>".$_SESSION['campo1']."</li>";
+                echo"<li>".$_SESSION['campo2']."</li>";
+                echo"<li>".$_SESSION['campo3']."</li>";
+                echo"<li>".$_SESSION['campo4']."</li>";
+                echo"<li>".$_SESSION['campo5']."</li>";
+                echo"<li>".$_SESSION['campo6']."</li>";
+                echo"<li>".$_SESSION['campo7']."</li>";
+              ?>
             </p>
             <img class="tabela__informacao__img" src="/assets/img/Minions.png" alt="">
           </div>
