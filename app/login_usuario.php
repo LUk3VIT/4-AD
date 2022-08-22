@@ -13,7 +13,7 @@
         $_SESSION['id_usuario'] = $id_usuario;
         header('Location: perfil.php');
     } else {
-        $mensagem = "Login invalido!!!!"; 
+        $mensagem = "Login invalido!!!!";  
         $_SESSION['mensagem']=$mensagem;
         header('Location: cadastro.php');
 }

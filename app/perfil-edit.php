@@ -2,8 +2,13 @@
     session_start();
     require_once '../classes/repositorioUsuario.php';
     $repositorio = new RepositorioUsuariosMySQL();
-    $id_usuario = $_SESSION['id_usuario']; 
-    $informacoes = $repositorio->ListarDados($id_usuario);
+    if($_SESSION['id_usuario'] != NULL){
+      $id_usuario = $_SESSION['id_usuario']; 
+      $informacoes = $repositorio->ListarDados($id_usuario);
+    } else {
+      header('Location: ../app/index.php');
+    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -29,10 +34,10 @@
           <?php
             if(isset($_SESSION['id_usuario'])){
               echo"<a class='header__perfil__item' href='perfil.php'><i class='fa-solid fa-user fa-2xl'></i></a>";
-              echo"<a class='header__perfil__login' href='app/logout.php'>Logout</a>";
+              echo"<a class='header__perfil__login' href='logout.php'>Logout</a>";
             } else {
               echo"<a class='header__perfil__login' href='app/login.php'>Login</a>";
-              echo"<a class='header__perfil__cadastrar' href='app/cadastro.php'>Cadastrar</a>";
+              echo"<a class='header__perfil__cadastrar' href='cadastro.php'>Cadastrar</a>";
             }
           ?>
         </div>

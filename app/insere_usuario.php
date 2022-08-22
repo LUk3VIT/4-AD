@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 require_once '../classes/repositorioUsuario.php';
 $repositorio = new RepositorioUsuariosMySQL();
  
@@ -11,7 +12,10 @@ $senha_usuario = $_POST['senha'];
     if($numeroLinhas < 1){
         $Usuario = new Usuario($nome_usuario,NULL,$email_usuario,$senha_usuario,NULL);
         $cadastra_usuario = $repositorio->CadastraUsuario($Usuario);
-        header('Location: login.php');
+        $numeroLinhas = $repositorio->LoginUsuario($nome_usuario,$senha_usuario);
+        $id_usuario = $repositorio->GuardaID($nome_usuario,$senha_usuario);
+        $_SESSION['id_usuario'] = $id_usuario;
+        header('Location: perfil.php');
     } else {
         $_SESSION['mensagem'] = "Nome de usuário não disponível, tente outro!!!";
     }
