@@ -46,7 +46,11 @@
      color: chartreuse;
      transform: translateX(10px) scale(1.2);
  }
- 
+
+ input[type='file']{ 
+     display: none;
+ }
+
  .caixa__campo{
      display: flex;
      flex-direction: column;
