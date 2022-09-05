@@ -11,7 +11,7 @@
 </head>
 <body>
     <header class="header-top">
-        <a class="header-top__link" href="../index.html">X</a>
+        <a class="header-top__link" href="../index.php">X</a>
     </header>
 
     <main class="conteudo-login">
@@ -30,7 +30,7 @@
 
     <footer class="foo-bot">
         <img class="foo-img" src="../assets/img/logo.png" alt="Logo de Unending Darkness">
-        <p class="copyright">&copy; Copyright Infinity darkness - 2019</p>
+        <p class="copyright">&copy; Copyright Unending darkness - 2022</p>
     </footer>
 </body>
 </html>

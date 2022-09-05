@@ -98,7 +98,7 @@
     <footer class="rodape__pai">
         <div class="rodape__caixa">
 
-            <h2 class="rodape__caixa__h2"><i class="fa-solid fa-copyright"></i>Infinity Darkness</h2>
+            <h2 class="rodape__caixa__h2"><i class="fa-solid fa-copyright"></i>⠀Unending Darkness</h2>
 
             <a class="rodape__caixa__but" href="">Comentarios</a>
 

@@ -6,7 +6,7 @@
       $id_usuario = $_SESSION['id_usuario']; 
       $informacoes = $repositorio->ListarDados($id_usuario);
     } else {
-      header('Location: ../app/index.php');
+      header('Location: ../index.php');
     }
     
 ?>
@@ -52,7 +52,7 @@
         <div class="collapse navbar-collapse justify-content-evenly top-menu-caixaList" id="navbarNav">
           <ul class="navbar-nav top-menu__list">
             <li class="nav-item top-menu__item">
-              <a class="nav-link active top-menu__item__link" aria-current="page" href="index.php"><i class="fa-solid fa-house"></i></a>
+              <a class="nav-link active top-menu__item__link" aria-current="page" href="../index.php"><i class="fa-solid fa-house"></i></a>
             </li>
             <li class="nav-item top-menu__item">
               <a class="nav-link top-menu__item__link" href="../nav/sistemas.php">Sistema</a>
@@ -121,7 +121,7 @@
     <footer class="rodape__pai">
         <div class="rodape__caixa">
 
-            <h2 class="rodape__caixa__h2"><i class="fa-solid fa-copyright"></i>Infinity Darkness</h2>
+            <h2 class="rodape__caixa__h2"><i class="fa-solid fa-copyright"></i> Unending Darkness </h2>
 
             <a class="rodape__caixa__but" href="">Comentarios</a>
 

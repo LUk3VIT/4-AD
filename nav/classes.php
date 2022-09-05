@@ -90,7 +90,7 @@
                     </p>
                   </div>
                   <div class="apresentacao__caixa__img">
-                    <img src="/assets/img/barbaro.jpg" class="caixa__img__style" alt="">
+                    <img src="../assets/img/barbaro.jpg" class="caixa__img__style" alt="">
                   </div>
                 </div>
               </div>
