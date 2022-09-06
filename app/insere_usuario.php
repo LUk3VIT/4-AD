@@ -6,7 +6,7 @@ $repositorio = new RepositorioUsuariosMySQL();
  
 $nome_usuario = $_POST['nome'];
 $email_usuario = $_POST['email'];  
-$senha_usuario = $_POST['senha'];
+$senha_usuario = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 
     $numeroLinhas = $repositorio->VerificarNome($nome_usuario);
     if($numeroLinhas < 1){

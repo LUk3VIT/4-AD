@@ -4,13 +4,13 @@ include 'usuario.php';
 require_once 'conexao.php'; 
 
 interface IRepositorioUsuarios {
-    public function LoginUsuario($nome_usuario,$senha_usuario);
-    public function GuardaID($nome_usuario,$senha_usuario);
+    public function LoginUsuario($nome_usuario);
+    public function GuardaID($nome_usuario);
     public function VerificarNome($nome_usuario);
     public function VerificarNick($nick_usuario); 
     public function CadastraUsuario($Usuario);
     public function ListarDados($id_usuario); 
-    public function atualizarPerfil($Usuario, $id_usuario);
+    public function atualizarPerfil($Usuario, $id_usuario); 
 }
 
 class RepositorioUsuariosMySQL implements IRepositorioUsuarios
@@ -26,15 +26,24 @@ class RepositorioUsuariosMySQL implements IRepositorioUsuarios
 
     }
 
-   public function LoginUsuario($nome_usuario,$senha_usuario)
+   public function LoginUsuario($nome_usuario)
     {
-        $sql = "SELECT * FROM tbl_usuario WHERE nome_usuario = '$nome_usuario' AND senha_usuario = '$senha_usuario'";
+        $sql = "SELECT * FROM tbl_usuario WHERE nome_usuario = '$nome_usuario'";
         $linha = $this->conexao->obtemNumeroLinhas($sql);
         return $linha;
     }
 
-    public function GuardaID($nome_usuario,$senha_usuario){
-        $sql = "SELECT * FROM tbl_usuario WHERE nome_usuario = '$nome_usuario' AND senha_usuario = '$senha_usuario'";
+    public function VerifSenha($nome_usuario)
+    {
+        $sql = "SELECT * FROM tbl_usuario WHERE nome_usuario = '$nome_usuario'";
+        $consulta = $this->conexao->executarQuery($sql);
+        $registro = mysqli_fetch_array($consulta);
+        $senha_cript = $registro[3];
+        return $senha_cript;
+    }
+
+    public function GuardaID($nome_usuario){
+        $sql = "SELECT * FROM tbl_usuario WHERE nome_usuario = '$nome_usuario'";
         $consulta = $this->conexao->executarQuery($sql);
         $registro = mysqli_fetch_array($consulta);
         $id_registro = $registro[0];

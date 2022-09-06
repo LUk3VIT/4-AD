@@ -100,7 +100,7 @@
               echo "<input type='email' id='email' name='email' class='caixa__input' value='".$dados->getEmailUsuario()."' required>";
 
               echo "<label for='senha' class='caixa__label'>Senha:</label>";
-              echo "<input type='password' id='senha' name='senha' class='caixa__input' value='".$dados->getSenhaUsuario()."' required>";
+              echo "<input type='password' id='senha' name='senha' class='caixa__input' value='".$_SESSION['senha_usuario']."' required>";
             ?>
           </div>
 

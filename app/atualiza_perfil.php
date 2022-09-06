@@ -1,13 +1,13 @@
 <?php
 
 require_once '../classes/repositorioUsuario.php';
-$repositorio = new RepositorioUsuariosMySQL();
+$repositorio = new RepositorioUsuariosMySQL(); 
 session_start();
 
 $nome_usuario =$_POST['nome']; 
 $nick_usuario = $_POST['nick'];
 $email_usuario = $_POST['email']; 
-$senha_usuario = $_POST['senha'];
+$senha_usuario = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 $bio_usuario = $_POST['bio'];
 
 $id_usuario = $_SESSION['id_usuario'];
