@@ -10,7 +10,9 @@ interface IRepositorioUsuarios {
     public function VerificarNick($nick_usuario); 
     public function CadastraUsuario($Usuario);
     public function ListarDados($id_usuario); 
-    public function atualizarPerfil($Usuario, $id_usuario); 
+    public function atualizarPerfil($Usuario, $id_usuario);
+    public function VerificarEmail($email_dig); 
+    public function RedefinirSenha($email_dig,$nova_senha);
 }
 
 class RepositorioUsuariosMySQL implements IRepositorioUsuarios
@@ -23,7 +25,6 @@ class RepositorioUsuariosMySQL implements IRepositorioUsuarios
         if($this->conexao->conectar()==false){
             echo "Erro de conexao ".mysqli_connect_error(); 
         }
-
     }
 
    public function LoginUsuario($nome_usuario)
@@ -105,6 +106,19 @@ class RepositorioUsuariosMySQL implements IRepositorioUsuarios
         $sql = "UPDATE tbl_usuario SET nome_usuario='$nome_usuario',nick_usuario='$nick_usuario',email_usuario='$email_usuario',senha_usuario='$senha_usuario',bio_usuario='$bio_usuario' WHERE tbl_usuario . id_usuario = '$id_usuario'";
 
         $this->conexao->executarQuery($sql);
-    } 
+    }
+    
+    public function VerificarEmail($email_dig)
+    {
+        $sql = "SELECT * FROM tbl_usuario WHERE email_usuario = '$email_dig'";
+        $linha = $this->conexao->obtemNumeroLinhas($sql);
+        return $linha;
+    }
+
+    public function RedefinirSenha($email_dig,$nova_senha)
+    {
+        $sql = "UPDATE tbl_usuario SET senha_usuario = '$nova_senha' WHERE email_usuario = '$email_dig'";
+        $this->conexao->executarQuery($sql);
+    }
 }
    

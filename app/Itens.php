@@ -2,7 +2,7 @@
 
 $itens = [
     [
-      'itens' => 'bandagem',
+      'itens' => 'Bandagem',
       'valor' => '5'
     ],
     [

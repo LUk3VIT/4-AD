@@ -28,10 +28,10 @@ include '../app/Itens.php';
           <?php
             if(isset($_SESSION['id_usuario'])){
               echo"<a class='header__perfil__item' href='perfil.php'><i class='fa-solid fa-user fa-2xl'></i></a>";
-              echo"<a class='header__perfil__login' href='app/logout.php'>Logout</a>";
+              echo"<a class='header__perfil__login' href='../app/logout.php'>Logout</a>";
             } else {
-              echo"<a class='header__perfil__login' href='app/login.php'>Login</a>";
-              echo"<a class='header__perfil__cadastrar' href='app/cadastro.php'>Cadastrar</a>";
+              echo"<a class='header__perfil__login' href='../app/login.php'>Login</a>";
+              echo"<a class='header__perfil__cadastrar' href='../app/cadastro.php'>Cadastrar</a>";
             }
           ?>
         </div>
@@ -45,7 +45,7 @@ include '../app/Itens.php';
         <div class="collapse navbar-collapse justify-content-evenly top-menu-caixaList" id="navbarNav">
           <ul class="navbar-nav top-menu__list">
             <li class="nav-item top-menu__item">
-              <a class="nav-link active top-menu__item__link" aria-current="page" href="../index.html"><i class="fa-solid fa-house"></i></a>
+              <a class="nav-link active top-menu__item__link" aria-current="page" href="../index.php"><i class="fa-solid fa-house"></i></a>
             </li>
             <li class="nav-item top-menu__item">
               <a class="nav-link top-menu__item__link" href="sistemas.php">Sistema</a>
@@ -81,10 +81,10 @@ include '../app/Itens.php';
               <?php foreach($itens as $iten) {?>
               <tr class="tabela__linha">
                 <td class="tabela__coluna">
-                  <p  class="tabela__p">Bandagem <?php echo $iten['itens'];?> </p>
+                  <p  class="tabela__p"> <?php echo $iten['itens'];?> </p>
                 </td>
                 <td class="tabela__coluna">
-                  <p class="tabela__valor"> 5 <?php echo $iten['valor'];?> </p>
+                  <p class="tabela__valor">  <?php echo $iten['valor'];?> </p>
                 </td>
               </tr>
               <?php } ?> 
