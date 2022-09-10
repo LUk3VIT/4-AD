@@ -1,6 +1,7 @@
 <?php
     session_start();
     require_once '../classes/repositorioUsuario.php';
+    require_once 'upload_img.php';
     $repositorio = new RepositorioUsuariosMySQL();
     if($_SESSION['id_usuario'] != NULL){
       $id_usuario = $_SESSION['id_usuario']; 
@@ -80,13 +81,13 @@
 
     <main class="main">
       <div class="caixa__pai">
-        <div class="caixa__foto">
-          <img src="../assets/img/textPerfil.jfif" alt="selecione uma imagem" class="caixa__foto__perfil">
-          <button class="caixa__foto__edit"><i class="fa-solid fa-user-pen" id="imgPhoto"><input type="file" id="flImage" name="fImage" accept="image/*"></i></button> 
-          
-        </div>
-        <form class="caixa__form" action="atualiza_perfil.php" method="post">
+        <form class="caixa__form" enctype="multipart/form-data" action="atualiza_perfil.php" method="post">
               
+          <div class="caixa__foto">
+            <img src="../assets/img/textPerfil.jfif" alt="selecione uma imagem" class="caixa__foto__perfil">
+            <button class="caixa__foto__edit"><i class="fa-solid fa-user-pen" id="imgPhoto"><input type="file" name="pic" accept="image/*"></i></button>
+          </div>
+
           <div class="caixa__campo">
             <?php   
               $dados = array_shift($informacoes);
@@ -102,6 +103,7 @@
               echo "<label for='senha' class='caixa__label'>Senha:</label>";
               echo "<input type='password' id='senha' name='senha' class='caixa__input' value='".$_SESSION['senha_usuario']."' required>";
             ?>
+
           </div>
 
           <div class="caixa_bio">
