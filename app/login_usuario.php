@@ -8,7 +8,7 @@
     $senha_usuario = $_POST['senha'];
 
     $senha = $repositorio->VerifSenha($nome_usuario);
-
+ 
     $numeroLinhas = $repositorio->LoginUsuario($nome_usuario);
     if($numeroLinhas > 0){
         if(password_verify($senha_usuario, $senha)){

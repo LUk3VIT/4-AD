@@ -15,6 +15,7 @@ $senha_usuario = password_hash($_POST['senha'], PASSWORD_DEFAULT);
         $numeroLinhas = $repositorio->LoginUsuario($nome_usuario,$senha_usuario);
         $id_usuario = $repositorio->GuardaID($nome_usuario,$senha_usuario);
         $_SESSION['id_usuario'] = $id_usuario;
+        $_SESSION['senha_usuario'] = $_POST['senha'];
         header('Location: perfil.php');
     } else {
         $_SESSION['mensagem'] = "Nome de usuário não disponível, tente outro!!!";
