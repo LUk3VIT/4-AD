@@ -84,8 +84,7 @@
         <form class="caixa__form" enctype="multipart/form-data" action="atualiza_perfil.php" method="post">
               
           <div class="caixa__foto">
-            <img src="../assets/img/textPerfil.jfif" alt="selecione uma imagem" class="caixa__foto__perfil">
-            <button class="caixa__foto__edit"><i class="fa-solid fa-user-pen" id="imgPhoto"><input type="file" name="pic" accept="image/*"></i></button>
+            <input type="file" name="arquivo" id="arquivo">
           </div>
 
           <div class="caixa__campo">
@@ -134,6 +133,5 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <script src="../src/script.js"></script>
 </body>
 </html>

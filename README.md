@@ -13,11 +13,13 @@ finalizar o Front: front esta finalizado
 
 finalizar back: 
 
+tem que fazer uma conexao com o banco de dados com upload_img onde tem salvar la dentro o caminha de imagen do usuario
+
 detalhes:
 
 fazer a pagina de personagem 
 
-fazer um botão que muda a imagem do perfil, e salvar para quando oi usuario loga muda a imagem que esta lá 
+fazer um botão que muda a imagem do perfil, e salvar para quando o usuario loga muda a imagem que esta lá 
 
 Chat
 
