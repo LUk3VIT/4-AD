@@ -1,25 +1,16 @@
--- phpMyAdmin SQL Dump
--- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+-- Tempo de geração: 06-Set-2022 às 03:46
+-- Versão do servidor: 10.4.21-MariaDB
+-- versão do PHP: 8.0.11
 -- Tempo de geração: 14-Set-2022 às 16:10
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Banco de dados: `4ad`
---
+@@ -23,6 +23,18 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
@@ -38,13 +29,7 @@ CREATE TABLE `img_usuario` (
 --
 -- Estrutura da tabela `tbl_usuario`
 --
-
-CREATE TABLE `tbl_usuario` (
-  `id_usuario` int(11) NOT NULL,
-  `nome_usuario` varchar(40) NOT NULL,
-  `nick_usuario` varchar(40) NOT NULL,
-  `senha_usuario` varchar(255) NOT NULL,
-  `email_usuario` varchar(60) NOT NULL,
+@@ -36,10 +48,23 @@ CREATE TABLE `tbl_usuario` (
   `bio_usuario` varchar(480) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -68,10 +53,7 @@ ALTER TABLE `img_usuario`
 --
 -- Índices para tabela `tbl_usuario`
 --
-ALTER TABLE `tbl_usuario`
-  ADD PRIMARY KEY (`id_usuario`);
-
---
+@@ -50,11 +75,17 @@ ALTER TABLE `tbl_usuario`
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
@@ -85,9 +67,8 @@ ALTER TABLE `img_usuario`
 -- AUTO_INCREMENT de tabela `tbl_usuario`
 --
 ALTER TABLE `tbl_usuario`
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
