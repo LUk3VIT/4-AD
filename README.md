@@ -33,6 +33,14 @@ Colocar tabelas no banco de dados -->>
 
 Selecionar
 
+Rykelmy:
+
+eu fiz o alert que pediu porque não era um popup mais sim um alerte.
+
+https://www.youtube.com/watch?v=Qw0zPUQJ3sU
+
+segue o vidio aqui para fazer o aletr que fala senha correta e senha incoreta talves a senha correta pode ser um pop up 
+
 
 
 :>

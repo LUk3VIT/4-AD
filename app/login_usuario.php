@@ -16,14 +16,12 @@
             $_SESSION['id_usuario'] = $id_usuario;
             $_SESSION['senha_usuario'] = $_POST['senha'];
             header('Location: perfil.php');
-        } else {
-            $mensagem = "Login invalido!!!!";  
-            $_SESSION['mensagem']=$mensagem;
+        } else {  
+            $_SESSION['msg']= "<div class='alert alert-danger'>Login invalido!!!!</div>";
             header('Location: cadastro.php');
         }
-    } else {
-        $mensagem = "Login invalido!!!!";  
-        $_SESSION['mensagem']=$mensagem;
+    } else {  
+        $_SESSION['msg']= "<div class='alert alert-danger'>Login invalido!!!!</div>";
         header('Location: cadastro.php');
 }
 

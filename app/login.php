@@ -23,14 +23,14 @@
             <input class="form-input" type="password" id="password" name="senha" required>
 
             <a class="form-link__cadastra" href="../app/cadastro.php">Cadastrar</a>
-            <a class="form-link__esqueceu" href="esq_senha.php">Esqueceu sua senha?</a>
+            <a class="form-link__esqueceu" href="/esquece_a_senha/esq_senha.php">Esqueceu sua senha?</a>
             <input type="submit" value="Login" class="enviar">
         </form>
     </main>
 
     <footer class="foo-bot">
-        <img class="foo-img" src="../assets/img/logo.png" alt="Logo de Unending Darkness">
         <p class="copyright">&copy; Copyright Unending darkness - 2022</p>
+        <img class="foo-img" src="../assets/img/logo.png" alt="Logo de Unending Darkness">
     </footer>
 </body>
 </html>
