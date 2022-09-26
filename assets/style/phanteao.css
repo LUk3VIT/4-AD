@@ -1,0 +1,50 @@
+
+body {
+    background-image: url(/assets/img/fundo_phanteão.png) ;
+}
+
+.header {
+    background-image: url('../img/heder_phantao.png');
+}
+
+.caixa__header__titulo{
+    margin-left: 30px ;
+}
+
+.header__title{
+    color: rgb(98, 228, 228);
+}
+
+.header__perfil__item{
+    color: rgb(98, 228, 228);
+}
+
+.header__perfil__login{
+    color: rgb(98, 228, 228);
+}
+
+.header__perfil__cadastrar{
+    color: rgb(98, 228, 228);
+}
+
+.top-menu{
+    background: #DAA520;
+}
+
+.top-menu__list{
+    background: #DAA520;
+    
+}
+
+.logo{
+    border: solid 1px black;
+}
+
+.main{
+    color: black;
+    margin-top: 25px; 
+    padding: 15px;
+    background: rgb(255, 219, 128);
+    border: solid 3px black;
+    
+}

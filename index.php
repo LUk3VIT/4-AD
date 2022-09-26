@@ -17,7 +17,7 @@
 
     <header class="header">
         <div class="caixa__header__titulo">
-          <h1 class="header__title">⠀Unending Darkness</h1>
+          <h1 class="header__title">Unending Darkness</h1>
         </div>
         <div class="header__perfil">
           <?php
