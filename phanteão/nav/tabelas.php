@@ -1,6 +1,3 @@
-<?php
-  session_start();
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,9 +7,10 @@
     <title>Tabelas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../assets/style/reset.css">
-    <link rel="stylesheet" href="../assets/style/home.css">
-    <link rel="stylesheet" href="../assets/style/tabela.css">
+    <link rel="stylesheet" href="../../assets/style/reset.css">
+    <link rel="stylesheet" href="../../assets/style/home.css">
+    <link rel="stylesheet" href="../../assets/style/tabela.css">
+    <link rel="stylesheet" href="../../assets/style/phanteao.css">
 </head>
 <body>
 
@@ -21,15 +19,9 @@
         <h1 class="header__title">Unending Darkness</h1>
       </div>
       <div class="header__perfil">
-        <?php
-          if(isset($_SESSION['id_usuario'])){
-            echo"<a class='header__perfil__item' href='perfil.php'><i class='fa-solid fa-user fa-2xl'></i></a>";
-            echo"<a class='header__perfil__login' href='app/logout.php'>Logout</a>";
-          } else {
-            echo"<a class='header__perfil__login' href='app/login.php'>Login</a>";
-            echo"<a class='header__perfil__cadastrar' href='app/cadastro.php'>Cadastrar</a>";
-          }
-        ?>
+        <a class="header__perfil__item" href="perfil.php"><i class="fa-solid fa-user fa-2xl"></i></a>
+        <a class="header__perfil__login" href="app/login.php">Login</a>
+        <a class="header__perfil__cadastrar" href="app/cadastro.php">Cadastrar</a>
       </div>
   </header>
 
@@ -41,10 +33,7 @@
       <div class="collapse navbar-collapse justify-content-evenly top-menu-caixaList" id="navbarNav">
         <ul class="navbar-nav top-menu__list">
           <li class="nav-item top-menu__item">
-            <a class="nav-link active top-menu__item__link" aria-current="page" href="../index.php"><i class="fa-solid fa-house"></i></a>
-          </li>
-          <li class="nav-item top-menu__item">
-            <a class="nav-link top-menu__item__link" href="sistemas.php">Sistema</a>
+            <a class="nav-link active top-menu__item__link" aria-current="page" href="../phanteao.php"><i class="fa-solid fa-house"></i></a>
           </li>
           <li class="nav-item top-menu__item">
             <a class="nav-link top-menu__item__link" href="tabelas.php">Tabelas</a>
@@ -64,21 +53,27 @@
   </nav>
     
   <div class="caixa__logo">
-    <img src="../assets/img/logo.png" alt="Logo de Infinity darkness" class="logo">
+    <img src="../../assets/img/logo-pantheon.png" alt="Logo de Infinity darkness" class="logo">
   </div>
 
     <main class="main">
-        <div class="caixa__tabela">
+        <div class="caixa__tabela__phanteao">
           <select class="form-select tabela__select" aria-label="Default select example">
-            <option selected>
-              <h2 class="tabela__select__h2">Tabela de Minions</h2>
-              
-            </option>
-            <option selected>
-              <h2 class="tabela__select__h2">Tabela de Vermes</h2>
-            </option>
+            <option selected><h2 class="tabela__select__h2">Lista de Tabelas</h2></option>
           </select>
-          
+          <h1 class="tabela__h1">Tabela de Minions D6</h1>
+          <div class="tabela__informacao">
+            <p class="tabela__informacao__p">
+              1
+              <br>
+              <br>
+              1D6 + 2 esqueletos ou 1d6 zumbis (50% de chance de cada um). 
+              Mortos-vivos nível 3. Nenhum tesouro. Armas esmagadoras atacam
+              Esqueletos em +1. As setas estão em - 1 contra esqueletos e zumbis.
+              Esqueletos e zumbis nunca testam moral. Reações: sempre lutar até a morte.
+            </p>
+            <img class="tabela__informacao__img" src="../assets/img/Minions.png" alt="">
+          </div>
 
           <div class="tabela__informacao">
             <p class="tabela__informacao__p">
@@ -90,7 +85,7 @@
               Esqueletos em +1. As setas estão em - 1 contra esqueletos e zumbis.
               Esqueletos e zumbis nunca testam moral. Reações: sempre lutar até a morte.
             </p>
-            <img class="tabela__informacao__img" src="../assets/img/Minions.png" alt="">
+            <img class="tabela__informacao__img" src="/assets/img/Minions.png" alt="">
           </div>
 
           <div class="tabela__sistema">

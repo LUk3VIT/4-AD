@@ -10,7 +10,7 @@
     <title>Sistemas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="assets/style/reset.css">
+    <link rel="stylesheet" href="../assets/style/reset.css">
     <link rel="stylesheet" href="../assets/style/home.css">
 </head>
 
@@ -40,7 +40,7 @@
           <div class="collapse navbar-collapse justify-content-evenly top-menu-caixaList" id="navbarNav">
             <ul class="navbar-nav top-menu__list">
               <li class="nav-item top-menu__item">
-                <a class="nav-link active top-menu__item__link" aria-current="page" href="../index.html"><i class="fa-solid fa-house"></i></a>
+                <a class="nav-link active top-menu__item__link" aria-current="page" href="../index.php"><i class="fa-solid fa-house"></i></a>
               </li>
               <li class="nav-item top-menu__item">
                 <a class="nav-link top-menu__item__link" href="sistemas.php">Sistema</a>
@@ -89,7 +89,7 @@
                 <h2 class="sistemas__caixas__h2">Panteão</h2>
                 <p class="sistemas__caixas__p">REQUESITOS</P>
                 <p class="sistemas__caixas__p">Jogadores: 1-4 <br> Dados: D4 D6 D10</p>
-                <a class="sistemas__caixas__a" href="/panteao.html">Como Jogar</a>
+                <a class="sistemas__caixas__a" href="../phanteão/phanteao.php">Como Jogar</a>
             </div>
         </div>
     </main>

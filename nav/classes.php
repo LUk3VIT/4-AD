@@ -41,7 +41,7 @@
         <div class="collapse navbar-collapse justify-content-evenly top-menu-caixaList" id="navbarNav">
           <ul class="navbar-nav top-menu__list">
             <li class="nav-item top-menu__item">
-              <a class="nav-link active top-menu__item__link" aria-current="page" href="../index.html"><i class="fa-solid fa-house"></i></a>
+              <a class="nav-link active top-menu__item__link" aria-current="page" href="../index.php"><i class="fa-solid fa-house"></i></a>
             </li>
             <li class="nav-item top-menu__item">
               <a class="nav-link top-menu__item__link" href="sistemas.php">Sistema</a>

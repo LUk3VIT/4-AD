@@ -1,6 +1,6 @@
 
 body {
-    background-image: url(/assets/img/fundo_phanteão.png) ;
+    background-image: url('../img/fundo_phanteão.png') ;
 }
 
 .header {
@@ -43,8 +43,58 @@ body {
 .main{
     color: black;
     margin-top: 25px; 
+    margin-bottom: 15px;
     padding: 15px;
     background: rgb(255, 219, 128);
     border: solid 3px black;
-    
+}
+
+.caixa__tabela__phanteao{
+    margin: 25px;
+}
+
+.tabela__h1{
+    color: black;
+}
+
+.tabela__informacao__p{
+    color: black;
+}
+
+.caixa__main__phanteao{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    margin: 45px 0px;
+    padding: 45px;
+}
+
+.caixa__phanteao{
+    margin: 25px 40px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.carrosel__phanteao{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+    align-items: center;
+}
+
+.apresentacao__caixa__h1__phanteao{
+    margin-top: 30px;
+    margin-bottom: 40px;
+    font-size: 60px;
+    color: black;
+}
+
+.apresentacao__caixa__p__phanteao{
+    font-size: 25px;
+    color: black;
+    margin-bottom: 10px;
 }

@@ -1,6 +1,3 @@
-<?php
-    session_start();
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,9 +7,10 @@
     <title>Pagina inicial</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../assets/style/reset.css">
-    <link rel="stylesheet" href="../assets/style/home.css">
-    <link rel="stylesheet" href="../assets/style/mapa.css">
+    <link rel="stylesheet" href="../../assets/style/reset.css">
+    <link rel="stylesheet" href="../../assets/style/home.css">
+    <link rel="stylesheet" href="../../assets/style/mapa.css">
+    <link rel="stylesheet" href="../../assets/style/phanteao.css">
 </head>
 <body>
 
@@ -21,15 +19,9 @@
           <h1 class="header__title">Unending Darkness</h1>
         </div>
         <div class="header__perfil">
-            <?php
-                if(isset($_SESSION['id_usuario'])){
-                    echo"<a class='header__perfil__item' href='perfil.php'><i class='fa-solid fa-user fa-2xl'></i></a>";
-                    echo"<a class='header__perfil__login' href='app/logout.php'>Logout</a>";
-                } else {
-                    echo"<a class='header__perfil__login' href='app/login.php'>Login</a>";
-                    echo"<a class='header__perfil__cadastrar' href='app/cadastro.php'>Cadastrar</a>";
-                }
-            ?>
+            <a class="header__perfil__item" href="perfil.php"><i class="fa-solid fa-user fa-2xl"></i></a>
+            <a class="header__perfil__login" href="app/login.php">Login</a>
+            <a class="header__perfil__cadastrar" href="app/cadastro.php">Cadastrar</a>
         </div>
     </header>
 
@@ -41,10 +33,7 @@
           <div class="collapse navbar-collapse justify-content-evenly top-menu-caixaList" id="navbarNav">
             <ul class="navbar-nav top-menu__list">
               <li class="nav-item top-menu__item">
-                <a class="nav-link active top-menu__item__link" aria-current="page" href="../index.php"><i class="fa-solid fa-house"></i></a>
-              </li>
-              <li class="nav-item top-menu__item">
-                <a class="nav-link top-menu__item__link" href="sistemas.php">Sistema</a>
+                <a class="nav-link active top-menu__item__link" aria-current="page" href="../phanteao.php"><i class="fa-solid fa-house"></i></a>
               </li>
               <li class="nav-item top-menu__item">
                 <a class="nav-link top-menu__item__link" href="tabelas.php">Tabelas</a>
@@ -61,14 +50,14 @@
             </ul>
           </div>
         </div>
-      </nav>
+    </nav>
     
     <div class="caixa__logo">
-        <img src="../assets/img/logo.png" alt="Logo de Infinity darkness" class="logo">
+        <img src="../../assets/img/logo-pantheon.png" alt="Logo de Infinity darkness" class="logo">
     </div>
 
     <main class="main">
-        <div class="caixa__main">
+        <div class="caixa__main__phanteao">
           <h1 class="caixa__main__h1">Mapas</h1>
           <p class="caixa__main__p">Role os dados, para iniciar a masmorra</p>
           <div class="caixa__principal">
@@ -76,32 +65,32 @@
                 <tr class="linha">
                     <td class="coluna">
                         <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala1.png" alt="">
+                            <img class="imgmap" src="../../assets/img__mapa/sala1.png" alt="">
                         </div>
                     </td>
                     <td class="coluna">
                         <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala2.png" alt="">
+                            <img class="imgmap" src="../../assets/img__mapa/sala2.png" alt="">
                         </div>
                     </td>
                     <td class="coluna">
                         <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala3.png" alt="">
+                            <img class="imgmap" src="../../assets/img__mapa/sala3.png" alt="">
                         </div>
                     </td>
                     <td class="coluna">
                         <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala4.png" alt="">
+                            <img class="imgmap" src="../../assets/img__mapa/sala4.png" alt="">
                         </div>
                     </td>
                     <td class="coluna">
                         <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala5.png" alt="">
+                            <img class="imgmap" src="../../assets/img__mapa/sala5.png" alt="">
                         </div>
                     </td>
                     <td class="coluna">
                         <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala6.png" alt="">
+                            <img class="imgmap" src="../../assets/img__mapa/sala6.png" alt="">
                         </div>
                     </td>
                 </tr>
@@ -113,192 +102,192 @@
                 <tr class="linha">
                     <td class="coluna">
                         <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala11.png" alt="">
+                            <img class="imgmap" src="../../assets/img__mapa/sala11.png" alt="">
                         </div>
                     </td>
                     <td class="coluna">
                         <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala12.png" alt="">
+                            <img class="imgmap" src="../../assets/img__mapa/sala12.png" alt="">
                         </div>
                     </td>
                     <td class="coluna">
                         <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala13.png" alt="">
+                            <img class="imgmap" src="../../assets/img__mapa/sala13.png" alt="">
                         </div>
                     </td>
                     <td class="coluna">
                         <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala14.png" alt="">
+                            <img class="imgmap" src="../../assets/img__mapa/sala14.png" alt="">
                         </div>
                     </td>
                     <td class="coluna">
                         <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala15.png" alt="">
+                            <img class="imgmap" src="../../assets/img__mapa/sala15.png" alt="">
                         </div>
                     </td>
                     <td class="coluna">
                         <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala16.png" alt="">
-                        </div>
-                    </td>
-                </tr>
-                <tr class="linha">
-                    <td class="coluna">
-                        <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala21.png" alt="">
-                        </div>
-                    </td>
-                    <td class="coluna">
-                        <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala22.png" alt="">
-                        </div>
-                    </td>
-                    <td class="coluna">
-                        <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala23.png" alt="">
-                        </div>
-                    </td>
-                    <td class="coluna">
-                        <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala24.png" alt="">
-                        </div>
-                    </td>
-                    <td class="coluna">
-                        <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala25.png" alt="">
-                        </div>
-                    </td>
-                    <td class="coluna">
-                        <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala26.png" alt="">
+                            <img class="imgmap" src="../../assets/img__mapa/sala16.png" alt="">
                         </div>
                     </td>
                 </tr>
                 <tr class="linha">
                     <td class="coluna">
                         <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala31.png" alt="">
+                            <img class="imgmap" src="../../assets/img__mapa/sala21.png" alt="">
                         </div>
                     </td>
                     <td class="coluna">
                         <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala32.png" alt="">
+                            <img class="imgmap" src="../../assets/img__mapa/sala22.png" alt="">
                         </div>
                     </td>
                     <td class="coluna">
                         <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala33.png" alt="">
+                            <img class="imgmap" src="../../assets/img__mapa/sala23.png" alt="">
                         </div>
                     </td>
                     <td class="coluna">
                         <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala34.png" alt="">
+                            <img class="imgmap" src="../../assets/img__mapa/sala24.png" alt="">
                         </div>
                     </td>
                     <td class="coluna">
                         <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala35.png" alt="">
+                            <img class="imgmap" src="../../assets/img__mapa/sala25.png" alt="">
                         </div>
                     </td>
                     <td class="coluna">
                         <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala36.png" alt="">
-                        </div>
-                    </td>
-                </tr>
-                <tr class="linha">
-                    <td class="coluna">
-                        <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala41.png" alt="">
-                        </div>
-                    </td>
-                    <td class="coluna">
-                        <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala42.png" alt="">
-                        </div>
-                    </td>
-                    <td class="coluna">
-                        <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala43.png" alt="">
-                        </div>
-                    </td>
-                    <td class="coluna">
-                        <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala44.png" alt="">
-                        </div>
-                    </td>
-                    <td class="coluna">
-                        <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala45.png" alt="">
-                        </div>
-                    </td>
-                    <td class="coluna">
-                        <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala46.png" alt="">
+                            <img class="imgmap" src="../../assets/img__mapa/sala26.png" alt="">
                         </div>
                     </td>
                 </tr>
                 <tr class="linha">
                     <td class="coluna">
                         <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala51.png" alt="">
+                            <img class="imgmap" src="../../assets/img__mapa/sala31.png" alt="">
                         </div>
                     </td>
                     <td class="coluna">
                         <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala52.png" alt="">
+                            <img class="imgmap" src="../../assets/img__mapa/sala32.png" alt="">
                         </div>
                     </td>
                     <td class="coluna">
                         <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala53.png" alt="">
+                            <img class="imgmap" src="../../assets/img__mapa/sala33.png" alt="">
                         </div>
                     </td>
                     <td class="coluna">
                         <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala54.png" alt="">
+                            <img class="imgmap" src="../../assets/img__mapa/sala34.png" alt="">
                         </div>
                     </td>
                     <td class="coluna">
                         <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala55.png" alt="">
+                            <img class="imgmap" src="../../assets/img__mapa/sala35.png" alt="">
                         </div>
                     </td>
                     <td class="coluna">
                         <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala56.png" alt="">
+                            <img class="imgmap" src="../../assets/img__mapa/sala36.png" alt="">
                         </div>
                     </td>
                 </tr>
                 <tr class="linha">
                     <td class="coluna">
                         <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala61.png" alt="">
+                            <img class="imgmap" src="../../assets/img__mapa/sala41.png" alt="">
                         </div>
                     </td>
                     <td class="coluna">
                         <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala62.png" alt="">
+                            <img class="imgmap" src="../../assets/img__mapa/sala42.png" alt="">
                         </div>
                     </td>
                     <td class="coluna">
                         <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala63.png" alt="">
+                            <img class="imgmap" src="../../assets/img__mapa/sala43.png" alt="">
                         </div>
                     </td>
                     <td class="coluna">
                         <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala64.png" alt="">
+                            <img class="imgmap" src="../../assets/img__mapa/sala44.png" alt="">
                         </div>
                     </td>
                     <td class="coluna">
                         <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala65.png" alt="">
+                            <img class="imgmap" src="../../assets/img__mapa/sala45.png" alt="">
                         </div>
                     </td>
                     <td class="coluna">
                         <div class="caixa__img">
-                            <img class="imgmap" src="../assets/img__mapa/sala66.png" alt="">
+                            <img class="imgmap" src="../../assets/img__mapa/sala46.png" alt="">
+                        </div>
+                    </td>
+                </tr>
+                <tr class="linha">
+                    <td class="coluna">
+                        <div class="caixa__img">
+                            <img class="imgmap" src="../../assets/img__mapa/sala51.png" alt="">
+                        </div>
+                    </td>
+                    <td class="coluna">
+                        <div class="caixa__img">
+                            <img class="imgmap" src="../../assets/img__mapa/sala52.png" alt="">
+                        </div>
+                    </td>
+                    <td class="coluna">
+                        <div class="caixa__img">
+                            <img class="imgmap" src="../../assets/img__mapa/sala53.png" alt="">
+                        </div>
+                    </td>
+                    <td class="coluna">
+                        <div class="caixa__img">
+                            <img class="imgmap" src="../../assets/img__mapa/sala54.png" alt="">
+                        </div>
+                    </td>
+                    <td class="coluna">
+                        <div class="caixa__img">
+                            <img class="imgmap" src="../../assets/img__mapa/sala55.png" alt="">
+                        </div>
+                    </td>
+                    <td class="coluna">
+                        <div class="caixa__img">
+                            <img class="imgmap" src="../../assets/img__mapa/sala56.png" alt="">
+                        </div>
+                    </td>
+                </tr>
+                <tr class="linha">
+                    <td class="coluna">
+                        <div class="caixa__img">
+                            <img class="imgmap" src="../../assets/img__mapa/sala61.png" alt="">
+                        </div>
+                    </td>
+                    <td class="coluna">
+                        <div class="caixa__img">
+                            <img class="imgmap" src="../../assets/img__mapa/sala62.png" alt="">
+                        </div>
+                    </td>
+                    <td class="coluna">
+                        <div class="caixa__img">
+                            <img class="imgmap" src="../../assets/img__mapa/sala63.png" alt="">
+                        </div>
+                    </td>
+                    <td class="coluna">
+                        <div class="caixa__img">
+                            <img class="imgmap" src="../../assets/img__mapa/sala64.png" alt="">
+                        </div>
+                    </td>
+                    <td class="coluna">
+                        <div class="caixa__img">
+                            <img class="imgmap" src="../../assets/img__mapa/sala65.png" alt="">
+                        </div>
+                    </td>
+                    <td class="coluna">
+                        <div class="caixa__img">
+                            <img class="imgmap" src="../../assets/img__mapa/sala66.png" alt="">
                         </div>
                     </td>
                 </tr>
