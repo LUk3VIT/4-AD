@@ -1,7 +1,6 @@
 <?php
     session_start();
     require_once '../classes/repositorioUsuario.php';
-    require_once 'upload_img.php';
     $repositorio = new RepositorioUsuariosMySQL();
     if($_SESSION['id_usuario'] != NULL){
       $id_usuario = $_SESSION['id_usuario']; 
@@ -82,10 +81,14 @@
     <main class="main">
       <div class="caixa__pai">
         <form class="caixa__form" enctype="multipart/form-data" action="atualiza_perfil.php" method="post">
-              
-          <div class="caixa__foto">
-            <input type="file" name="arquivo" id="arquivo">
-          </div>
+           
+        <div class="caixa__foto">
+            <img src="../assets/img/textPerfil.jfif" alt="" class="caixa__foto__perfil">
+            <form class="w3-input" action="upload.php" method="POST" enctype="multipart/form-data">
+              <input type="file" name="arquivo" id="arquivo">
+            </form>
+        </div>
+          
 
           <div class="caixa__campo">
             <?php   

@@ -1,6 +1,6 @@
 <?php
 
-include 'usuario.php';
+include 'usuario.php'; 
 require_once 'conexao.php'; 
 
 interface IRepositorioUsuarios {
@@ -24,7 +24,7 @@ class RepositorioUsuariosMySQL implements IRepositorioUsuarios
        
         if($this->conexao->conectar()==false){
             echo "Erro de conexao ".mysqli_connect_error(); 
-        }
+        } 
     }
 
    public function LoginUsuario($nome_usuario)
@@ -39,7 +39,7 @@ class RepositorioUsuariosMySQL implements IRepositorioUsuarios
         $sql = "SELECT * FROM tbl_usuario WHERE nome_usuario = '$nome_usuario'";
         $consulta = $this->conexao->executarQuery($sql);
         $registro = mysqli_fetch_array($consulta);
-        $senha_cript = $registro[3];
+        $senha_cript = $registro[4];
         return $senha_cript;
     }
 

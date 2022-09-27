@@ -23,10 +23,10 @@
             <input class="form-input" type="password" id="password" name="senha" required>
 
             <a class="form-link__cadastra" href="../app/cadastro.php">Cadastrar</a>
-            <a class="form-link__esqueceu" href="/esquece_a_senha/esq_senha.php">Esqueceu sua senha?</a>
+            <a class="form-link__esqueceu" href="./esquece_a_senha/esq_senha.php">Esqueceu sua senha?</a>
             <input type="submit" value="Login" class="enviar">
         </form>
-    </main>
+    </main> 
 
     <footer class="foo-bot">
         <p class="copyright">&copy; Copyright Unending darkness - 2022</p>
