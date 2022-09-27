@@ -1,7 +1,7 @@
 <?php
 
 /******
- * Upload de imagens 
+ * Upload de imagens  
  ******/
 include_once '../../classes/conexao.php'; 
 // verifica se foi enviado um arquivo
@@ -41,7 +41,7 @@ if ( isset( $_FILES[ 'arquivo' ][ 'name' ] ) && $_FILES[ 'arquivo' ][ 'error' ] 
 else
     echo 'Você não enviou nenhum arquivo!';
 
-$sqlinsert = "insert into categoria (nome,foto) values ('$nomefoto','$destino')";
+$sqlinsert = "insert into img_usuario (nome_img,foto_end) values ('$nomefoto','$destino')";
 
 $resultado = mysqli_query($conexao,$sqlinsert);
 
@@ -50,7 +50,7 @@ if (!$resultado){
 } else {
     echo "Registro Cadastrado com sucesso!!!";
 }
-header("Location:principal.php");
+header("Location: ../perfil.php");
 mysqli_close($conexao);
 
 
