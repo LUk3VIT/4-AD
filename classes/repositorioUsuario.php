@@ -13,6 +13,7 @@ interface IRepositorioUsuarios {
     public function atualizarPerfil($Usuario, $id_usuario);
     public function VerificarEmail($email_dig); 
     public function RedefinirSenha($email_dig,$nova_senha);
+    public function UploadImagem($destino);
 }
 
 class RepositorioUsuariosMySQL implements IRepositorioUsuarios
@@ -118,6 +119,12 @@ class RepositorioUsuariosMySQL implements IRepositorioUsuarios
     public function RedefinirSenha($email_dig,$nova_senha)
     {
         $sql = "UPDATE tbl_usuario SET senha_usuario = '$nova_senha' WHERE email_usuario = '$email_dig'";
+        $this->conexao->executarQuery($sql);
+    }
+
+    public function UploadImagem($destino)
+    {
+        $sql = "UPDATE img_usuario SET foto_end = '$destino'";
         $this->conexao->executarQuery($sql);
     }
 }

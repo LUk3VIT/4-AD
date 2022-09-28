@@ -12,7 +12,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +26,6 @@
     
 </head>
 <body>
-
     <header class="header">
         <div class="caixa__header__titulo">
             <h1 class="header__title">Unending Darkness</h1>
@@ -80,17 +79,14 @@
 
     <main class="main">
       <div class="caixa__pai">
-        <form class="caixa__form" enctype="multipart/form-data" action="atualiza_perfil.php" method="post">
-           
         <div class="caixa__foto">
             <img src="../assets/img/textPerfil.jfif" alt="" class="caixa__foto__perfil">
-            <form action="/uploado_img/upload.php" method="POST" enctype="multipart/form-data">
+            <form action="/upload_img/upload.php" method="POST" enctype="multipart/form-data">
+              <label for="arquivo" style="background-color:white; color:red; border: solid 2px black; border-radius: 50px;">Alterar</label>
               <input type="file" name="arquivo" id="arquivo">
-              <input type="submit" name="acao" value="Enviar">
             </form>
         </div>
-          
-
+        <form class="caixa__form" enctype="multipart/form-data" action="atualiza_perfil.php" method="post">
           <div class="caixa__campo">
             <?php   
               $dados = array_shift($informacoes);
