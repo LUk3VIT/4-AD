@@ -1,4 +1,4 @@
-.main{
+.main{ 
     display: flex;
     flex: 1;
     grid-area: container;
@@ -28,7 +28,6 @@
     border: solid 2px rgb(255, 255, 255);
     border-radius: 50%;
     margin: 0px 0px 0px 0px;
-
 }
 .informacao{
     display: flex;

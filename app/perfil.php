@@ -3,6 +3,7 @@
     require_once '../classes/repositorioUsuario.php';
     $repositorio = new RepositorioUsuariosMySQL();
     $id_usuario = $_SESSION['id_usuario'];
+    $img = $_SESSION['img_usuario'];
     $informacoes = $repositorio->ListarDados($id_usuario);
     if($_SESSION['id_usuario'] == NULL){
       header('Location: ../index.php');
@@ -78,7 +79,9 @@
       <div class="apresentacao">
         
         <div class="caixa__foto">
-            <img src="../assets/img/textPerfil.jfif" alt="" class="caixa__foto__perfil">
+          <?php
+            echo "<img src='upload_img/$img' alt='' class='caixa__foto__perfil'>"
+          ?>
         </div>
 
         <div class="informacao">

@@ -1,6 +1,7 @@
 <?php
 
 include '../../app/Itens.php';
+session_start();
 
 ?>
 
@@ -25,9 +26,15 @@ include '../../app/Itens.php';
           <h1 class="header__title">Unending Darkness</h1>
         </div>
         <div class="header__perfil">
-            <a class="header__perfil__item" href="../perfil.php"><i class="fa-solid fa-user fa-2xl"></i></a>
-            <a class="header__perfil__login" href="../app/login.php">Login</a>
-            <a class="header__perfil__cadastrar" href="app/cadastro.php">Cadastrar</a>
+        <?php
+            if(isset($_SESSION['id_usuario'])){
+              echo"<a class='header__perfil__item' href='./app/perfil.php'><i class='fa-solid fa-user fa-2xl'></i></a>";
+              echo"<a class='header__perfil__login' href='app/logout.php'>Logout</a>";
+            } else {
+              echo"<a class='header__perfil__login' href='app/login.php'>Login</a>";
+              echo"<a class='header__perfil__cadastrar' href='app/cadastro.php'>Cadastrar</a>";
+            }
+          ?>
         </div>
     </header>
 

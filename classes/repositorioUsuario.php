@@ -13,9 +13,11 @@ interface IRepositorioUsuarios {
     public function atualizarPerfil($Usuario, $id_usuario);
     public function VerificarEmail($email_dig); 
     public function RedefinirSenha($email_dig,$nova_senha);
-    public function UploadImagem($destino);
+    public function VerificarImagem($id_usuario);
+    public function UploadImagem($destino,$id_usuario);
+    public function UploadImagemNova($destino,$id_usuario);
 }
-
+ 
 class RepositorioUsuariosMySQL implements IRepositorioUsuarios
 { 
     private $conexao; 
@@ -122,9 +124,22 @@ class RepositorioUsuariosMySQL implements IRepositorioUsuarios
         $this->conexao->executarQuery($sql);
     }
 
-    public function UploadImagem($destino)
+    public function VerificarImagem($id_usuario)
     {
-        $sql = "UPDATE img_usuario SET foto_end = '$destino'";
+        $sql = "SELECT * FROM img_usuario WHERE id_usuario = '$id_usuario'";
+        $linha = $this->conexao->obtemNumeroLinhas($sql);
+        return $linha;
+    }
+
+    public function UploadImagem($destino,$id_usuario)
+    {
+        $sql = "INSERT INTO img_usuario (id_img,nome_img,foto_end,id_usuario) VALUES ('','FOTO','$destino','$id_usuario')";
+        $this->conexao->executarQuery($sql);
+    }
+
+    public function UploadImagemNova($destino,$id_usuario)
+    {
+        $sql = "UPDATE img_usuario SET foto_end = '$destino' WHERE id_usuario = '$id_usuario'";
         $this->conexao->executarQuery($sql);
     }
 }

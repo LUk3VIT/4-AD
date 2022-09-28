@@ -2,7 +2,7 @@
 
 /******
  * Upload de imagens   
- ******/
+ ******/ 
 session_start();
 include_once '../../classes/conexao.php'; 
 require_once '../../classes/repositorioUsuario.php';
@@ -42,5 +42,13 @@ if ( isset( $_FILES[ 'arquivo' ][ 'name' ] ) && $_FILES[ 'arquivo' ][ 'error' ] 
 }else{
     echo 'Você não enviou nenhum arquivo!';
 }
-header("Location: ");
-$resultado = $repositorio->UploadImagem($destino);
+
+$id_usuario = $_SESSION['id_usuario'];
+$numeroLinhas = $repositorio->VerificarImagem($id_usuario);
+if($numeroLinhas > 0){
+    $resultado = $repositorio->UploadImagemNova($destino,$id_usuario);
+} else {
+    $resultado = $repositorio->UploadImagem($destino,$id_usuario);
+}
+$_SESSION['img_usuario'] = $destino;
+header("Location: ../perfil.php");

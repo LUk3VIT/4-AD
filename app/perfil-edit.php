@@ -1,6 +1,7 @@
 <?php
     session_start();
-    require_once '../classes/repositorioUsuario.php'; 
+    $img = $_SESSION['img_usuario'];
+    require_once '../classes/repositorioUsuario.php';  
     $repositorio = new RepositorioUsuariosMySQL();
     if($_SESSION['id_usuario'] != NULL){
       $id_usuario = $_SESSION['id_usuario']; 
@@ -80,10 +81,13 @@
     <main class="main">
       <div class="caixa__pai">
         <div class="caixa__foto">
-            <img src="../assets/img/textPerfil.jfif" alt="" class="caixa__foto__perfil">
-            <form action="/upload_img/upload.php" method="POST" enctype="multipart/form-data">
+            <?php
+              echo "<img src='upload_img/$img' alt='' class='caixa__foto__perfil'>"
+            ?>
+            <form action="./upload_img/upload.php" method="POST" enctype="multipart/form-data">
               <label for="arquivo" style="background-color:white; color:red; border: solid 2px black; border-radius: 50px;">Alterar</label>
-              <input type="file" name="arquivo" id="arquivo">
+              <input type="file" name="arquivo" id="arquivo" required>
+              <input type='submit' value='Atualizar'>
             </form>
         </div>
         <form class="caixa__form" enctype="multipart/form-data" action="atualiza_perfil.php" method="post">

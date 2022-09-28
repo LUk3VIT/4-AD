@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 28-Set-2022 às 01:07
--- Versão do servidor: 10.4.24-MariaDB
--- versão do PHP: 8.1.6
+-- Tempo de geração: 28-Set-2022 às 16:22
+-- Versão do servidor: 10.4.22-MariaDB
+-- versão do PHP: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,10 +29,19 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `img_usuario` (
   `id_img` int(11) NOT NULL,
-  `nome_img` varchar(80) NOT NULL,
-  `foto_end` varchar(80) NOT NULL,
-  `id_usuario` int(11) NOT NULL
+  `nome_img` varchar(60) DEFAULT NULL,
+  `foto_end` varchar(90) DEFAULT NULL,
+  `id_usuario` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `img_usuario`
+--
+
+INSERT INTO `img_usuario` (`id_img`, `nome_img`, `foto_end`, `id_usuario`) VALUES
+(1, 'FOTO', '../../assets/img/img_usuario/16643738216334543d2695e.jpg', 2),
+(2, 'FOTO', '../../assets/img/img_usuario/16643738216334543d2695e.jpg', 2),
+(3, 'FOTO', '../../assets/img/img_usuario/1664373470633452de4ce15.jpg', 3);
 
 -- --------------------------------------------------------
 
@@ -54,7 +63,8 @@ CREATE TABLE `tbl_usuario` (
 --
 
 INSERT INTO `tbl_usuario` (`id_usuario`, `nick_usuario`, `nome_usuario`, `email_usuario`, `senha_usuario`, `bio_usuario`) VALUES
-(1, '', '', '', '$2y$10$BWuqCG14chsLfVZxc2DHh.ZYPhrKI8ltVaNgOhrFRlgN2oCHbOla.', '');
+(2, '', 'Rykelmy', 'rykelmy131@gmail.com', '$2y$10$OxvtuY4f5CB4MAZQirfroeM66AknWLYuocr1kkGw9ea8gOFu1MMZa', ''),
+(3, '', 'Lucas', 'lucasdiass@gmail.com', '$2y$10$03.huQrm1GcgTW1Q15Bj.u5V6uFiSc250FDllbgEBtL9M7hQLOSka', '');
 
 --
 -- Índices para tabelas despejadas
@@ -81,13 +91,13 @@ ALTER TABLE `tbl_usuario`
 -- AUTO_INCREMENT de tabela `img_usuario`
 --
 ALTER TABLE `img_usuario`
-  MODIFY `id_img` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_img` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `tbl_usuario`
 --
 ALTER TABLE `tbl_usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restrições para despejos de tabelas

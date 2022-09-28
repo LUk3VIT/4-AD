@@ -1,7 +1,7 @@
 <?php
  
     session_start();
-    require_once '../classes/repositorioUsuario.php';
+    require_once '../classes/repositorioUsuario.php'; 
     $repositorio = new RepositorioUsuariosMySQL();
   
     $nome_usuario = $_POST['nome']; 
