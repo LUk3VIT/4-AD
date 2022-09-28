@@ -29,8 +29,10 @@
     </main> 
 
     <footer class="foo-bot">
-        <p class="copyright">&copy; Copyright Unending darkness - 2022</p>
-        <img class="foo-img" src="../assets/img/logo.png" alt="Logo de Unending Darkness">
+        <div class="foo-caixa">
+            <img class="foo-img" src="../assets/img/logo.png" alt="Logo de Unending Darkness">
+            <p class="copyright">&copy; Copyright Unending darkness - 2019</p>
+        </div>
     </footer>
 </body>
 </html>
