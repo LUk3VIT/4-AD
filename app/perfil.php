@@ -2,11 +2,15 @@
     session_start();
     require_once '../classes/repositorioUsuario.php';
     $repositorio = new RepositorioUsuariosMySQL();
-    $id_usuario = $_SESSION['id_usuario'];
-    $img = $_SESSION['img_usuario'];
+    $id_usuario = $_SESSION['id_usuario']; 
     $informacoes = $repositorio->ListarDados($id_usuario);
     if($_SESSION['id_usuario'] == NULL){
       header('Location: ../index.php');
+    }
+    if(isset($_SESSION['img_usuario'])){
+      $img = $_SESSION['img_usuario'];
+    } else {
+      $img = $repositorio->SetarImagemUsuario($id_usuario);
     }
 ?> 
 

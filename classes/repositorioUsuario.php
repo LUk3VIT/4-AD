@@ -9,11 +9,12 @@ interface IRepositorioUsuarios {
     public function VerificarNome($nome_usuario);
     public function VerificarNick($nick_usuario); 
     public function CadastraUsuario($Usuario);
-    public function ListarDados($id_usuario); 
+    public function ListarDados($id_usuario);  
     public function atualizarPerfil($Usuario, $id_usuario);
     public function VerificarEmail($email_dig); 
     public function RedefinirSenha($email_dig,$nova_senha);
     public function VerificarImagem($id_usuario);
+    public function SetarImagemUsuario($id_usuario);
     public function UploadImagem($destino,$id_usuario);
     public function UploadImagemNova($destino,$id_usuario);
 }
@@ -129,6 +130,15 @@ class RepositorioUsuariosMySQL implements IRepositorioUsuarios
         $sql = "SELECT * FROM img_usuario WHERE id_usuario = '$id_usuario'";
         $linha = $this->conexao->obtemNumeroLinhas($sql);
         return $linha;
+    }
+
+    public function SetarImagemUsuario($id_usuario)
+    {
+        $sql = "SELECT * FROM img_usuario WHERE id_usuario = '$id_usuario'";
+        $consulta = $this->conexao->executarQuery($sql);
+        $registro = mysqli_fetch_array($consulta);
+        $img_end = $registro[2];
+        return $img_end;
     }
 
     public function UploadImagem($destino,$id_usuario)
