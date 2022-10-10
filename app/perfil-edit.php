@@ -84,7 +84,7 @@
     <main class="main">
       <div class="caixa__pai">
         <div class="caixa__foto">
-            <?php
+            <?php 
               echo "<img src='upload_img/$img' alt='' class='caixa__foto__perfil'>"
             ?>
             <form action="./upload_img/upload.php" method="POST" enctype="multipart/form-data">

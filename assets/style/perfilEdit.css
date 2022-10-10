@@ -22,14 +22,14 @@
  
  .caixa__foto {
      margin: 100px 100px;
-
+     max-width: 300px;
+     max-width: 200px;
  }
  
  .caixa__foto__perfil{
      border: solid 2px black;
      border-radius: 50%;
-     margin: 0px 0px 0px 0px;
-     
+     display: flex;
  }
  
  .caixa__foto__edit{

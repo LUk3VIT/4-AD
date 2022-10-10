@@ -81,7 +81,7 @@
                 <h2 class="sistemas__caixas__h2">Ordem</h2>
                 <p class="sistemas__caixas__p">REQUESITOS</p>
                 <p class="sistemas__caixas__p">Jogadores: 2-4 <br> Dados: D4 D6 D10</p>
-                <a class="sistemas__caixas__a"href="/ordem.html">Como Jogar</a>
+                <a class="sistemas__caixas__a"href="../Ordem/ordem.php">Como Jogar</a>
             </div>
 
             <div  class="sistemas__caixas3">
