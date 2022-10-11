@@ -1,8 +1,8 @@
 <?php
- 
+session_destroy();
 session_start();
 require_once '../classes/repositorioUsuario.php';
-$repositorio = new RepositorioUsuariosMySQL();
+$repositorio = new RepositorioUsuariosMySQL(); 
  
 $nome_usuario = $_POST['nome']; 
 $email_usuario = $_POST['email'];  
@@ -18,5 +18,6 @@ $senha_usuario = password_hash($_POST['senha'], PASSWORD_DEFAULT);
         $_SESSION['senha_usuario'] = $_POST['senha'];
         header('Location: perfil.php');
     } else {
-        $_SESSION['mensagem'] = "Nome de usuário não disponível, tente outro!!!";
+        $_SESSION['msg'] = "Nome de usuário não disponível, tente outro!!!";
+        header('Location: cadastro.php');
     }

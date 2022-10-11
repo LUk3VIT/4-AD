@@ -1,11 +1,11 @@
 <?php
- 
+    session_destroy();
     session_start();
     require_once '../classes/repositorioUsuario.php'; 
     $repositorio = new RepositorioUsuariosMySQL();
-  
+   
     $nome_usuario = $_POST['nome']; 
-    $senha_usuario = $_POST['senha'];
+    $senha_usuario = $_POST['senha']; 
 
     $senha = $repositorio->VerifSenha($nome_usuario);
  
@@ -17,12 +17,12 @@
             $_SESSION['senha_usuario'] = $_POST['senha'];
             header('Location: perfil.php');
         } else {  
-            $_SESSION['msg']= "<div class='alert alert-danger'>Login invalido!!!!</div>";
-            header('Location: cadastro.php');
+            $_SESSION['msg']= "Login invalido!!!!";
+            header('Location: login.php');
         }
     } else {  
-        $_SESSION['msg']= "<div class='alert alert-danger'>Login invalido!!!!</div>";
-        header('Location: cadastro.php');
+        $_SESSION['msg']= "Login invalido!!!!";
+        header('Location: login.php');
 }
 
 ?>

@@ -84,7 +84,7 @@
         
         <div class="caixa__foto">
           <?php
-            echo "<img src='upload_img/$img' alt='' class='caixa__foto__perfil'>"
+            echo "<img src='$img' alt='' class='caixa__foto__perfil'>"
           ?>
         </div>
 

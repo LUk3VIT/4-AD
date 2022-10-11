@@ -75,7 +75,7 @@
           </ul>
         </div>
       </div>
-    </nav>
+    </nav> 
     
     <div class="caixa__logo">
       <img src="../assets/img/Logo.png" alt="Logo de Infinity darkness" class="logo">
@@ -83,31 +83,28 @@
 
     <main class="main">
       <div class="caixa__pai">
-        <div class="caixa__foto">
-            <?php 
-              echo "<img src='upload_img/$img' alt='' class='caixa__foto__perfil'>"
-            ?>
-            <form action="./upload_img/upload.php" method="POST" enctype="multipart/form-data">
+        <form class="caixa__form" enctype="multipart/form-data" action="atualiza_perfil.php" method="post" enctype="multipart/form-data">
+          <div class="caixa__campo"> 
+            <div class="caixa__foto">
+              <?php 
+                echo "<img src='$img' alt='' class='caixa__foto__perfil'>"
+              ?>
               <label for="arquivo" style="background-color:white; color:red; border: solid 2px black; border-radius: 50px;">Alterar</label>
-              <input type="file" name="arquivo" id="arquivo" required>
-              <input type='submit' value='Atualizar'>
-            </form>
-        </div>
-        <form class="caixa__form" enctype="multipart/form-data" action="atualiza_perfil.php" method="post">
-          <div class="caixa__campo">
+              <input type="file" name="arquivo" id="arquivo" >
+            </div>
             <?php   
               $dados = array_shift($informacoes);
               echo "<label for='nick class='caixa__label'>Nick:</label>";
-              echo "<input type='text' id='nick' name='nick' class='caixa__input' value='".$dados->getNickUsuario()."' required>";
+              echo "<input type='text' id='nick' name='nick' class='caixa__input' value='".$dados->getNickUsuario()."'>";
 
               echo "<label for='nomeSobreno' class='caixa__label'>Nome:</label>";
-              echo "<input type='text' id='nomeSobreno' name='nome' class='caixa__input' value='".$dados->getNomeUsuario()."' required>";
+              echo "<input type='text' id='nomeSobreno' name='nome' class='caixa__input' value='".$dados->getNomeUsuario()."'>";
 
               echo "<label for='email' class='caixa__label'>Email:</label>";
-              echo "<input type='email' id='email' name='email' class='caixa__input' value='".$dados->getEmailUsuario()."' required>";
+              echo "<input type='email' id='email' name='email' class='caixa__input' value='".$dados->getEmailUsuario()."'>";
 
               echo "<label for='senha' class='caixa__label'>Senha:</label>";
-              echo "<input type='password' id='senha' name='senha' class='caixa__input' value='".$_SESSION['senha_usuario']."' required>";
+              echo "<input type='password' id='senha' name='senha' class='caixa__input' value='".$_SESSION['senha_usuario']."'>";
             ?>
 
           </div>
@@ -115,7 +112,7 @@
           <div class="caixa_bio">
             <label for="mensagem" class="caixa__bio__label">Biografia:</label>
               <?php
-                echo "<input cols='100' rows='10' id='bio' name='bio' class='caixa__bio__input' value='".$dados->getBioUsuario()."' required>"
+                echo "<input cols='100' rows='10' id='bio' name='bio' class='caixa__bio__input' value='".$dados->getBioUsuario()."'>"
               ?>
           </div>
           <div class="bot">

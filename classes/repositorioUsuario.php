@@ -1,5 +1,5 @@
 <?php
-
+ 
 include 'usuario.php'; 
 require_once 'conexao.php'; 
 
@@ -7,6 +7,7 @@ interface IRepositorioUsuarios {
     public function LoginUsuario($nome_usuario);
     public function GuardaID($nome_usuario);
     public function VerificarNome($nome_usuario);
+    public function VerificarNickExist($nick_usuario,$id_usuario);
     public function VerificarNick($nick_usuario); 
     public function CadastraUsuario($Usuario);
     public function ListarDados($id_usuario);  
@@ -26,7 +27,7 @@ class RepositorioUsuariosMySQL implements IRepositorioUsuarios
     {
         $this->conexao = new Conexao("localhost","root","","4ad");
        
-        if($this->conexao->conectar()==false){
+        if($this->conexao->conectar()==false){ 
             echo "Erro de conexao ".mysqli_connect_error(); 
         } 
     }
@@ -62,9 +63,16 @@ class RepositorioUsuariosMySQL implements IRepositorioUsuarios
         return $linha;
     }
 
-    public function VerificarNick($nick_usuario)
+    public function VerificarNickExist($nick_usuario,$id_usuario)
     {
         $sql = "SELECT * FROM tbl_usuario WHERE nick_usuario = '$nick_usuario'";
+        $linha = $this->conexao->obtemNumeroLinhas($sql);
+        return $linha;
+    }
+
+    public function VerificarNick($nick_usuario)
+    {
+        $sql = "SELECT * FROM tbl_usuario WHERE nick_usuario = '$nick_usuario' AND id_usuario = '$id_usuario'";
         $linha = $this->conexao->obtemNumeroLinhas($sql);
         return $linha;
     }

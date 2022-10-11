@@ -1,5 +1,8 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html> 
-<html lang="en">
+<html lang="en"> 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,6 +28,12 @@
 
             <label class="form-label" for="password">Senha</label>
             <input class="form-input" type="password" id="password" name="senha" required>
+
+            <?php
+                if(isset($_SESSION['msg'])){
+                    echo "<div style='background-color: #FF6347;color: #8B0000;padding: 3px;text-align: center' class='alert alert-danger'><h3>Nome de usuário não disponível, tente outro!!!</h3></div>";
+                }
+            ?>
 
             <a class="form-link__login" href="login.php">Login</a>
             <input type="submit" value="cadastrar" class="enviar">
