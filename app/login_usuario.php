@@ -13,6 +13,7 @@
     if($numeroLinhas > 0){
         if(password_verify($senha_usuario, $senha)){
             $id_usuario = $repositorio->GuardaID($nome_usuario);
+            $_SESSION['nome_usuario'] = $nome_usuario;
             $_SESSION['id_usuario'] = $id_usuario;
             $_SESSION['senha_usuario'] = $_POST['senha'];
             header('Location: perfil.php');

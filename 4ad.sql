@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 28-Set-2022 às 16:22
--- Versão do servidor: 10.4.22-MariaDB
--- versão do PHP: 8.1.2
+-- Tempo de geração: 12-Out-2022 às 14:05
+-- Versão do servidor: 10.4.25-MariaDB
+-- versão do PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,9 +39,21 @@ CREATE TABLE `img_usuario` (
 --
 
 INSERT INTO `img_usuario` (`id_img`, `nome_img`, `foto_end`, `id_usuario`) VALUES
-(1, 'FOTO', '../../assets/img/img_usuario/16643738216334543d2695e.jpg', 2),
-(2, 'FOTO', '../../assets/img/img_usuario/16643738216334543d2695e.jpg', 2),
-(3, 'FOTO', '../../assets/img/img_usuario/1664373470633452de4ce15.jpg', 3);
+(1, 'FOTO', '../assets/img/img_usuario/16655102616345ab756c3a2.jpeg', 2),
+(2, 'FOTO', '../assets/img/img_usuario/16655102616345ab756c3a2.jpeg', 2),
+(3, 'FOTO', '../assets/img/img_usuario/16655103296345abb9c4ecb.jpeg', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tbl_amg`
+--
+
+CREATE TABLE `tbl_amg` (
+  `id` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `id_amigo` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -63,8 +75,9 @@ CREATE TABLE `tbl_usuario` (
 --
 
 INSERT INTO `tbl_usuario` (`id_usuario`, `nick_usuario`, `nome_usuario`, `email_usuario`, `senha_usuario`, `bio_usuario`) VALUES
-(2, '', 'Rykelmy', 'rykelmy131@gmail.com', '$2y$10$OxvtuY4f5CB4MAZQirfroeM66AknWLYuocr1kkGw9ea8gOFu1MMZa', ''),
-(3, '', 'Lucas', 'lucasdiass@gmail.com', '$2y$10$03.huQrm1GcgTW1Q15Bj.u5V6uFiSc250FDllbgEBtL9M7hQLOSka', '');
+(2, 'TerraFuscaa', 'Rykelmy', 'rykelmy131@gmail.com', '$2y$10$IR9xKeTSUp2b.VbHobqz1O.ZxMP0c7ki3o.cN9e4SZwTHEjMTiU6W', 'Sou um programador'),
+(3, '', 'Lucas', 'lucasdiass@gmail.com', '$2y$10$WONv.1Rp1IHUmhtVaSIPPOlTx9ItZtaraStW/vWlvYaUsPTewSyrC', ''),
+(4, '', 'Ryciery', 'ryciery@gmail.com', '$2y$10$ccFSHciP97Qh.bH0wmCxe.bMJZ5Yc9KQSUS.cXaJlM.3RBQ04KIMG', '');
 
 --
 -- Índices para tabelas despejadas
@@ -76,6 +89,12 @@ INSERT INTO `tbl_usuario` (`id_usuario`, `nick_usuario`, `nome_usuario`, `email_
 ALTER TABLE `img_usuario`
   ADD PRIMARY KEY (`id_img`),
   ADD KEY `id_usuario` (`id_usuario`);
+
+--
+-- Índices para tabela `tbl_amg`
+--
+ALTER TABLE `tbl_amg`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices para tabela `tbl_usuario`
@@ -94,10 +113,16 @@ ALTER TABLE `img_usuario`
   MODIFY `id_img` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT de tabela `tbl_amg`
+--
+ALTER TABLE `tbl_amg`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de tabela `tbl_usuario`
 --
 ALTER TABLE `tbl_usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restrições para despejos de tabelas
