@@ -7,7 +7,7 @@
     if($_SESSION['id_usuario'] == NULL){
       header('Location: ../index.php');
     }
-    if(isset($_SESSION['img_usuario'])){
+    if(isset($_SESSION['img_usuario'])){ 
       $img = $_SESSION['img_usuario'];
     } else {
       $img = $repositorio->SetarImagemUsuario($id_usuario);

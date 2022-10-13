@@ -1,17 +1,19 @@
 <?php
 
 session_start();
-if(isset($_SESSION['id_usuario'])){
-
+if(isset($_SESSION['id_usuario'])){ 
+	if(isset($_GET['id'])){
+		$_SESSION['id_dest'] = $_GET['id'];
+	} 
 } else {
-	header('Location: ../login.php');
+	header('Location: ../../login.php');
 }
 
 ?>
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 <head>
-	<title>Chat-Geral</title>
+	<title>Chat-Privado</title>
 	<script type="text/javascript"> 
 		function ajax(){
 			var req = new XMLHttpRequest();
@@ -45,7 +47,7 @@ if(isset($_SESSION['id_usuario'])){
 			$mensagem = $_POST['mensagem'];
 			$nome = $_SESSION['nome_usuario'];
 			$id = $_SESSION['id_usuario'];
-			$id_dest = 4;
+			$id_dest = $_SESSION['id_dest'];
 
 			$sql = $pdo->query("INSERT INTO chat_privado SET nome_usuario= '$nome', msg= '$mensagem', id_usuario= '$id', id_dest= '$id_dest'");
 		}

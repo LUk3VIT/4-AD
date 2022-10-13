@@ -12,7 +12,7 @@ $id_usuario = $_SESSION['id_usuario'];
 $informacoes = $repositorio->ListarUsuarios($id_usuario);
 
 ?>
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -24,12 +24,12 @@ $informacoes = $repositorio->ListarUsuarios($id_usuario);
 
         <?php
             foreach ($informacoes as $key) {
+                $x = $key['id_usuario'];
                 echo "<div style='border: solid 2px red'>";
                 echo "<h2>".$key['nome_usuario']."</h2>";
                 echo "<h2>".$key['email_usuario']."</h2>";
-                echo "<h2><a href='A.php'><button onclick='".$_SESSION['id_dest'] = $key['id_usuario']."'>Conversar</button></a></h2>";
-                echo "<h2><a href='#'>Ver Perfil</a></h2>";
-                echo $_SESSION['id_dest'] = $key['id_usuario'];
+                echo "<h2><a href='Chat/chat_privado/index_chat_privado.php?id=$x'>Conversar</a></h2>";
+                echo "<h2><a href='ver_perfil.php?id=$x'>Ver Perfil</a></h2>";
                 echo "</div>";
             }
         ?>

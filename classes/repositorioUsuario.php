@@ -17,7 +17,7 @@ interface IRepositorioUsuarios {
     public function VerificarImagem($id_usuario);
     public function SetarImagemUsuario($id_usuario);
     public function UploadImagem($destino,$id_usuario);
-    public function UploadImagemNova($destino,$id_usuario);
+    public function UploadImagemNova($destino,$id_usuario); 
     public function ListarUsuarios($id_usuario);
 }
  
