@@ -57,6 +57,9 @@
               <li class="nav-item top-menu__item">
                 <a class="nav-link top-menu__item__link" href="itens.php">Itens</a>
               </li>
+              <li class="nav-item top-menu__item">
+                <a class="nav-link top-menu__item__link" href="../app/Chat/chat_geral/index_chat_geral.php">Chat</a>
+              </li>
             </ul>
           </div>
         </div>

@@ -2,7 +2,7 @@
  
 include 'usuario.php'; 
 require_once 'conexao.php'; 
-
+ 
 interface IRepositorioUsuarios {
     public function LoginUsuario($nome_usuario);
     public function GuardaID($nome_usuario);
@@ -18,6 +18,7 @@ interface IRepositorioUsuarios {
     public function SetarImagemUsuario($id_usuario);
     public function UploadImagem($destino,$id_usuario);
     public function UploadImagemNova($destino,$id_usuario);
+    public function ListarUsuarios($id_usuario);
 }
  
 class RepositorioUsuariosMySQL implements IRepositorioUsuarios
@@ -159,6 +160,13 @@ class RepositorioUsuariosMySQL implements IRepositorioUsuarios
     {
         $sql = "UPDATE img_usuario SET foto_end = '$destino' WHERE id_usuario = '$id_usuario'";
         $this->conexao->executarQuery($sql);
+    }
+
+    public function ListarUsuarios($id_usuario)
+    {
+        $sql = "SELECT * FROM tbl_usuario WHERE id_usuario != '$id_usuario'";
+        $listagem = $this->conexao->executarQuery($sql);
+        return $listagem;
     }
 }
    

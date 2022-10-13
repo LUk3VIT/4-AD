@@ -70,6 +70,9 @@
           <li class="nav-item top-menu__item">
             <a class="nav-link top-menu__item__link" href="../nav/itens.php">Itens</a>
           </li>
+          <li class="nav-item top-menu__item">
+                <a class="nav-link top-menu__item__link" href="Chat/chat_geral/index_chat_geral.php">Chat</a>
+              </li>
         </ul>
       </div>
     </div>
@@ -101,6 +104,10 @@
           <div class="botao__edit">
             <button class="botao__edit__button"><a class="botao__edit__link" href="perfil-edit.php">Editar</a></button>
           </div>
+
+          <a href="lista_amigos.php">Lista de Usuários</a>
+
+        </div>
       </div>   
   </main>
 

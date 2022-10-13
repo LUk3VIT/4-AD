@@ -28,6 +28,9 @@ session_start();
                 if(isset($_SESSION['msg'])){
                     echo "<div style='background-color: #FF6347;color: #8B0000;padding: 3px;text-align: center' class='alert alert-danger'><h3>Login Inválido!!!!</h3></div>";
                 }
+                if(isset($_SESSION['mensagem_chat'])){
+                    echo "<div style='background-color: #FF6347;color: #8B0000;padding: 3px;text-align: center' class='alert alert-danger'><h3>".$_SESSION['mensagem_chat']."</h3></div>";
+                }
             ?>
 
             <a class="form-link__cadastra" href="../app/cadastro.php">Cadastrar</a>

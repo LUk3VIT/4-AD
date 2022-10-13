@@ -4,7 +4,8 @@ session_start();
 if(isset($_SESSION['id_usuario'])){
 
 } else {
-	header('Location: ../login.php');
+	$_SESSION['mensagem_chat'] = "Precisa fazer login para participar do Chat Geral!!!";
+	header('Location: ../../login.php');
 }
 
 ?>
