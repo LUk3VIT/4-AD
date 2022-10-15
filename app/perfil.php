@@ -43,7 +43,7 @@
           }
         ?>
     </div>
-    </header>
+  </header>
 
   <nav class="navbar navbar-expand-lg top-menu img-fluid">
     <div class="container-fluid top-menu-bar">
@@ -108,7 +108,7 @@
           <a href="lista_amigos.php">Lista de Usuários</a>
 
         </div>
-      </div>   
+      </div>  
   </main>
 
   <footer class="rodape__pai">

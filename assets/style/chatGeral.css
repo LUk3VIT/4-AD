@@ -1,0 +1,23 @@
+.caixa{
+    display: flex;
+    flex-direction: column;
+    border: solid black 2px;
+    margin: 60px 0px;
+    padding: 30px;
+    background: #000000;
+    border-radius: 30px;
+}
+
+.chat{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.nomeUsuario{
+    background: #FFFFFF;
+    color: #000000;
+
+}
