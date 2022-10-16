@@ -43,7 +43,7 @@
           }
         ?>
     </div>
-    </header>
+  </header>
 
   <nav class="navbar navbar-expand-lg top-menu img-fluid">
     <div class="container-fluid top-menu-bar">
@@ -150,7 +150,7 @@
           </div>
 
         </div>
-      </div>   
+      </div>  
   </main>
 
   <footer class="rodape__pai">
