@@ -63,7 +63,7 @@
             </li>
           </ul>
         </div>
-      </div>
+      </div> 
     </nav>
     
       <div class="caixa__logo">

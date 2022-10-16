@@ -106,6 +106,48 @@
           </div>
 
           <a href="lista_amigos.php">Lista de Usuários</a>
+          <div>
+            <?php
+              $numeroLinhas = $repositorio->VerificarSolicitacao($id_usuario);
+              if($numeroLinhas > 0){
+                $solicitacoes = $repositorio->PegarIdSolicitacoes($id_usuario);
+                echo "<h1>Pedidos de Amizade</h1>";
+                foreach ($solicitacoes as $key) {
+                  $id_usuario = $key['id_usuario'];
+                  $informacoes = $repositorio->MostrarInfo($id_usuario);
+                  foreach ($informacoes as $key) {
+                    echo "<div style='border: solid 2px red'>";
+                    echo "<h2>".$key['nome_usuario']."</h2>";
+                    echo "<h2><a href='aceitar_solic.php?id=$id_usuario'>Aceitar</a></h2>";
+                    echo "<h2><a href='redirecionar.php?id=$id_usuario'>Ver Perfil</a></h2>";
+                    echo "</div>";
+                  }
+                }
+              }
+            ?>
+          </div>
+
+          <div>
+            <h2> Lista de Amigos: </h2>
+            <?php
+              $id_usuario = $_SESSION['id_usuario'];
+
+              $informacoes = $repositorio->PegarIdAmg1($id_usuario);
+              foreach ($informacoes as $key) {
+                $id = $key['id_amigo'];
+                $listar = $repositorio->ListarAmg($id,$id_usuario);
+                foreach ($listar as $key) {
+                  $x = $id;
+                  echo "<div style='border: solid 2px red'>";
+                  echo "<h2>".$key['nome_usuario']."</h2>";
+                  echo "<h2>".$key['email_usuario']."</h2>";
+                  echo "<h2><a href='Chat/chat_privado/index_chat_privado.php?id=$x'>Conversar</a></h2>";
+                  echo "<h2><a href='redirecionar.php?id=$x'>Ver Perfil</a></h2>";
+                  echo "</div>";
+                }
+              }
+            ?>
+          </div>
 
         </div>
       </div>   

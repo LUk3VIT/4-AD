@@ -2,7 +2,7 @@
  
 include 'usuario.php'; 
 require_once 'conexao.php'; 
- 
+  
 interface IRepositorioUsuarios {
     public function LoginUsuario($nome_usuario);
     public function GuardaID($nome_usuario);
@@ -19,6 +19,15 @@ interface IRepositorioUsuarios {
     public function UploadImagem($destino,$id_usuario);
     public function UploadImagemNova($destino,$id_usuario); 
     public function ListarUsuarios($id_usuario);
+    public function VerificarAmgUsuario($id_usuario,$id_amg);
+    public function EnviarSolicitacao($id_usuario,$id_amg);
+    public function VerificarSolicitacao($id_usuario);
+    public function PegarIdSolicitacoes($id_usuario);
+    public function MostrarInfo($id_usuario);
+    public function ApagarSolicitacao($id_usuario,$id_amg);
+    public function AceitarSolicitacao($id_usuario,$id_amg);
+    public function PegarIdAmg1($id_usuario);
+    public function ListarAmg($id,$id_usuario);
 }
  
 class RepositorioUsuariosMySQL implements IRepositorioUsuarios
@@ -165,6 +174,66 @@ class RepositorioUsuariosMySQL implements IRepositorioUsuarios
     public function ListarUsuarios($id_usuario)
     {
         $sql = "SELECT * FROM tbl_usuario WHERE id_usuario != '$id_usuario'";
+        $listagem = $this->conexao->executarQuery($sql);
+        return $listagem;
+    }
+
+    public function VerificarAmgUsuario($id_usuario,$id_amg)
+    {
+        $sql = "SELECT * FROM tbl_amg WHERE id_usuario = '$id_usuario' AND id_amigo = '$id_amg' OR id_usuario = '$id_amg' AND id_amigo = '$id_usuario'";
+        $linha = $this->conexao->obtemNumeroLinhas($sql);
+        return $linha;
+    }
+
+    public function EnviarSolicitacao($id_usuario,$id_amg)
+    {
+        $sql = "INSERT INTO solicitacao_amizade (id,id_usuario,id_amg) VALUES ('','$id_usuario','$id_amg')";
+        $this->conexao->executarQuery($sql);
+    }
+
+    public function VerificarSolicitacao($id_usuario)
+    {
+        $sql = "SELECT * FROM solicitacao_amizade WHERE id_amg = '$id_usuario'";
+        $linha = $this->conexao->obtemNumeroLinhas($sql);
+        return $linha;
+    }
+    
+    public function PegarIdSolicitacoes($id_usuario)
+    {
+        $sql = "SELECT * FROM solicitacao_amizade WHERE id_amg = '$id_usuario'";
+        $listagem = $this->conexao->executarQuery($sql);
+        return $listagem;
+    }
+
+    public function MostrarInfo($id_usuario) 
+    {
+        $sql = "SELECT * FROM tbl_usuario WHERE id_usuario = '$id_usuario'";
+        $listagem = $this->conexao->executarQuery($sql);
+        return $listagem;
+    }
+
+    public function ApagarSolicitacao($id_usuario,$id_amg)
+    {
+        $sql = "DELETE FROM solicitacao_amizade WHERE id_amg = '$id_usuario' AND id_usuario = '$id_amg'";
+        $this->conexao->executarQuery($sql);
+    }
+
+    public function AceitarSolicitacao($id_usuario,$id_amg)
+    {
+        $sql = "INSERT INTO tbl_amg (id,id_usuario,id_amigo) VALUES ('','$id_usuario','$id_amg')";
+        $this->conexao->executarQuery($sql);
+    }
+
+    public function PegarIdAmg1($id_usuario)
+    {
+        $sql = "SELECT * FROM tbl_amg WHERE id_usuario = '$id_usuario'";
+        $listagem = $this->conexao->executarQuery($sql);
+        return $listagem;
+    }
+
+    public function ListarAmg($id,$id_usuario)
+    {
+        $sql = "SELECT * FROM tbl_usuario WHERE id_usuario = '$id' AND id_usuario != '$id_usuario'";
         $listagem = $this->conexao->executarQuery($sql);
         return $listagem;
     }
