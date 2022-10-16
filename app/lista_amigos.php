@@ -35,9 +35,17 @@ $informacoes = $repositorio->ListarUsuarios($id_usuario);
         <?php
             foreach ($informacoes as $key) {
                 $x = $key['id_usuario'];
+                $id_usuario = $x;
+                $verificar = $repositorio->VerificarImagem($id_usuario);
+                
+                
                 echo '<div class="lista__caixa">';
-                echo '<h2 class="lista__caixa">".$key["nome_usuario"]."</h2>';
-                echo '<h2 class="">".$key["email_usuario"]."</h2>';
+                if($verificar > 0){
+                    $setar = $repositorio->SetarImagemUsuario($id_usuario);
+                    echo "<img src=".$setar.">";
+                }
+                echo "<h2>".$key['nome_usuario']."</h2>";
+                echo "<h2 class=''>".$key['email_usuario']."</h2>";
                 echo "<h2><a href='Chat/chat_privado/index_chat_privado.php?id=$x'>Conversar</a></h2>";
                 echo "<h2><a href='ver_perfil.php?id=$x'>Ver Perfil</a></h2>";
                 echo "</div>";

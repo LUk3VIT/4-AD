@@ -45,11 +45,8 @@ if(isset($_SESSION['id_usuario'])){
 		<div class="header__perfil">
 		<?php
 			if(isset($_SESSION['id_usuario'])){
-				echo"<a class='header__perfil__item' href='perfil.php'><i class='fa-solid fa-user fa-2xl'></i></a>";
-				echo"<a class='header__perfil__login' href='logout.php'>Logout</a>";
-			} else {
-				echo"<a class='header__perfil__login' href='app/login.php'>Login</a>";
-				echo"<a class='header__perfil__cadastrar' href='cadastro.php'>Cadastrar</a>";
+				echo"<a class='header__perfil__item' href='../../perfil.php'><i class='fa-solid fa-user fa-2xl'></i></a>";
+				echo"<a class='header__perfil__login' href='../../logout.php'>Logout</a>";
 			}
 			?>
 		</div>
