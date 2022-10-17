@@ -3,11 +3,11 @@
 include 'usuario.php'; 
 require_once 'conexao.php'; 
 
-interface IRepositorioUsuarios {
-    public function VerificarDataMensagem();
+interface IRepositorioChat {
+    public function ApagarMensagens($data_hj);
 }
  
-class RepositorioUsuariosMySQL implements IRepositorioUsuarios
+class RepositorioChatMySQL implements IRepositorioChat
 { 
     private $conexao; 
     public function __construct()
@@ -19,18 +19,11 @@ class RepositorioUsuariosMySQL implements IRepositorioUsuarios
         } 
     }
 
-   public function LoginUsuario($nome_usuario)
+    public function ApagarMensagens($data_hj)
     {
-        $sql = "SELECT * FROM tbl_usuario WHERE nome_usuario = '$nome_usuario'";
-        $linha = $this->conexao->obtemNumeroLinhas($sql);
-        return $linha;
+        $sql = "DELETE FROM chat_geral WHERE data_msg != '$data_hj%'";
+        $this->conexao->executarQuery($sql);
     }
-
-    public function VerificarDataMensagem()
-    {
-        $sql = "SELECT * FROM"
-    }
-
     
 }
    

@@ -60,25 +60,25 @@ if(isset($_SESSION['id_usuario'])){
 		<div class="collapse navbar-collapse justify-content-evenly top-menu-caixaList" id="navbarNav">
 			<ul class="navbar-nav top-menu__list">
 			<li class="nav-item top-menu__item">
-				<a class="nav-link active top-menu__item__link" aria-current="page" href="../index.php"><i class="fa-solid fa-house"></i></a>
+				<a class="nav-link active top-menu__item__link" aria-current="page" href="../../../index.php"><i class="fa-solid fa-house"></i></a>
 			</li>
 			<li class="nav-item top-menu__item">
-				<a class="nav-link top-menu__item__link" href="../nav/sistemas.php">Sistema</a>
+				<a class="nav-link top-menu__item__link" href="../../../nav/sistemas.php">Sistema</a>
 			</li>
 			<li class="nav-item top-menu__item">
-				<a class="nav-link top-menu__item__link" href="../nav/tabelas.php">Tabelas</a>
+				<a class="nav-link top-menu__item__link" href="../../../nav/tabelas.php">Tabelas</a>
 			</li>
 			<li class="nav-item top-menu__item">
-				<a class="nav-link top-menu__item__link" href="../nav/classes.php">Classes</a>
+				<a class="nav-link top-menu__item__link" href="../../../nav/classes.php">Classes</a>
 			</li>
 			<li class="nav-item top-menu__item">
-				<a class="nav-link top-menu__item__link" href="../nav/mapas.php">Mapa</a>
+				<a class="nav-link top-menu__item__link" href="../../../nav/mapas.php">Mapa</a>
 			</li>
 			<li class="nav-item top-menu__item">
-				<a class="nav-link top-menu__item__link" href="../nav/itens.php">Itens</a>
+				<a class="nav-link top-menu__item__link" href="../../../nav/itens.php">Itens</a>
 			</li>
 			<li class="nav-item top-menu__item">
-					<a class="nav-link top-menu__item__link" href="Chat/chat_geral/index_chat_geral.php">Chat</a>
+					<a class="nav-link top-menu__item__link" href="index_chat_geral.php">Chat</a>
 				</li>
 			</ul>
 		</div>
@@ -99,13 +99,15 @@ if(isset($_SESSION['id_usuario'])){
 				<input type="submit" value="Enviar">
 			</form>
 			<?php
+				echo $data = date('d/m/Y');
+				exit;
 				include("../bd_conect.php");
 				if(isset($_POST['mensagem'])){
 					$mensagem = $_POST['mensagem'];
 					$nome = $_SESSION['nome_usuario'];
 					$id = $_SESSION['id_usuario'];
 
-					$sql = $pdo->query("INSERT INTO chat_geral SET nome_usuario= '$nome', msg= '$mensagem', id_usuario= '$id'");
+					$sql = $pdo->query("INSERT INTO chat_geral SET data_msg='$data', nome_usuario= '$nome', msg= '$mensagem', id_usuario= '$id'");
 				}
 			?>
 		</div>

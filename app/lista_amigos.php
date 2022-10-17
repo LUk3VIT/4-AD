@@ -44,10 +44,11 @@ $informacoes = $repositorio->ListarUsuarios($id_usuario);
                     $setar = $repositorio->SetarImagemUsuario($id_usuario);
                     echo "<img src=".$setar.">";
                 }
+                $x = $key['id_usuario'];
                 echo "<h2>".$key['nome_usuario']."</h2>";
                 echo "<h2 class=''>".$key['email_usuario']."</h2>";
                 echo "<h2><a href='Chat/chat_privado/index_chat_privado.php?id=$x'>Conversar</a></h2>";
-                echo "<h2><a href='ver_perfil.php?id=$x'>Ver Perfil</a></h2>";
+                echo "<h2><a href='redirecionar.php?id=$x'>Ver Perfil</a></h2>";
                 echo "</div>";
             }
         ?>

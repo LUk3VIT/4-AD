@@ -1,5 +1,11 @@
-<?php
+<?php 
   session_start(); 
+  require_once 'app/Chat/classes/repositorioChat.php';
+  $repositorio = new RepositorioChatMySQL();
+
+  $data_hj = date('d/m/Y');
+
+  $apagar = $repositorio->ApagarMensagens($data_hj); 
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

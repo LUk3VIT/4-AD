@@ -119,6 +119,7 @@
                     echo "<div style='border: solid 2px red'>";
                     echo "<h2>".$key['nome_usuario']."</h2>";
                     echo "<h2><a href='aceitar_solic.php?id=$id_usuario'>Aceitar</a></h2>";
+                    echo "<h2><a href='recusar_solic.php?id=$id_usuario'>Recusar</a></h2>";
                     echo "<h2><a href='redirecionar.php?id=$id_usuario'>Ver Perfil</a></h2>";
                     echo "</div>";
                   }
