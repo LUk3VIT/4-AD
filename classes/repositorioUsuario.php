@@ -13,7 +13,7 @@ interface IRepositorioUsuarios {
     public function ListarDados($id_usuario);  
     public function atualizarPerfil($Usuario, $id_usuario); 
     public function VerificarEmail($email_dig); 
-    public function RedefinirSenha($email_dig,$nova_senha);
+    public function RedefinirSenha($email_dig,$nova_senha); 
     public function VerificarImagem($id_usuario);
     public function SetarImagemUsuario($id_usuario);
     public function UploadImagem($destino,$id_usuario);

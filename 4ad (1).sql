@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 12-Out-2022 às 14:05
+-- Tempo de geração: 18-Out-2022 às 00:05
 -- Versão do servidor: 10.4.25-MariaDB
 -- versão do PHP: 8.1.10
 
@@ -39,9 +39,25 @@ CREATE TABLE `img_usuario` (
 --
 
 INSERT INTO `img_usuario` (`id_img`, `nome_img`, `foto_end`, `id_usuario`) VALUES
-(1, 'FOTO', '../assets/img/img_usuario/16655102616345ab756c3a2.jpeg', 2),
-(2, 'FOTO', '../assets/img/img_usuario/16655102616345ab756c3a2.jpeg', 2),
-(3, 'FOTO', '../assets/img/img_usuario/16655103296345abb9c4ecb.jpeg', 3);
+(1, 'FOTO', '../assets/img/img_usuario/166569896363488c936b236.jpg', 2),
+(2, 'FOTO', '../assets/img/img_usuario/166569896363488c936b236.jpg', 2),
+(3, 'FOTO', '../assets/img/img_usuario/16655103296345abb9c4ecb.jpeg', 3),
+(4, 'FOTO', '../assets/img/img_usuario/1665959537634c86718fae7.jpg', 4),
+(5, 'FOTO', '../assets/img/img_usuario/1665959608634c86b86fb4c.jpeg', 5),
+(6, 'FOTO', '../assets/img/img_usuario/1665959703634c87177b449.jpg', 6),
+(7, 'FOTO', '../assets/img/img_usuario/1665959742634c873ed6ad3.jpg', 8);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `solicitacao_amizade`
+--
+
+CREATE TABLE `solicitacao_amizade` (
+  `id` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `id_amg` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -54,6 +70,20 @@ CREATE TABLE `tbl_amg` (
   `id_usuario` int(11) NOT NULL,
   `id_amigo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `tbl_amg`
+--
+
+INSERT INTO `tbl_amg` (`id`, `id_usuario`, `id_amigo`) VALUES
+(5, 3, 2),
+(6, 2, 3),
+(7, 4, 2),
+(8, 2, 4),
+(9, 5, 2),
+(10, 2, 5),
+(11, 8, 2),
+(12, 2, 8);
 
 -- --------------------------------------------------------
 
@@ -75,9 +105,12 @@ CREATE TABLE `tbl_usuario` (
 --
 
 INSERT INTO `tbl_usuario` (`id_usuario`, `nick_usuario`, `nome_usuario`, `email_usuario`, `senha_usuario`, `bio_usuario`) VALUES
-(2, 'TerraFuscaa', 'Rykelmy', 'rykelmy131@gmail.com', '$2y$10$IR9xKeTSUp2b.VbHobqz1O.ZxMP0c7ki3o.cN9e4SZwTHEjMTiU6W', 'Sou um programador'),
+(2, 'TerraFuscaa', 'Rykelmy', 'rykelmy131@gmail.com', '$2y$10$OrA2jzcuxqcgnIZMuS8pHuXh668rSYt/80T4rX7vwPHTrYC63xh4C', 'Sou um programador'),
 (3, '', 'Lucas', 'lucasdiass@gmail.com', '$2y$10$WONv.1Rp1IHUmhtVaSIPPOlTx9ItZtaraStW/vWlvYaUsPTewSyrC', ''),
-(4, '', 'Ryciery', 'ryciery@gmail.com', '$2y$10$ccFSHciP97Qh.bH0wmCxe.bMJZ5Yc9KQSUS.cXaJlM.3RBQ04KIMG', '');
+(4, '', 'Ryciery', 'ryciery@gmail.com', '$2y$10$b0ieq0ankzR7Db4UjiDZqO.iDf.ZB06KF2muh66NfnrDjcwMREYCm', ''),
+(5, '', 'Edinaldo', 'edinaldosergio81@gmail.com', '$2y$10$qzsWf0x1WCJXZu5cZhRwf.UEDBKWhtRVIkCnXaF1DfqdCa6BjG4Bm', ''),
+(6, '', 'Riquelme', 'corsinrebaixado@derrapada.com', '$2y$10$p.bQDKrqRC8kpoBd.YugIeCBgzHb.qeJqKWjNi7IAmGADAPN6BlBC', ''),
+(8, '', 'Carla', 'carla@gmail.com', '$2y$10$4YMC/2c6q/.Uk5dlYk4DVOwEr0ZTNkJyrgp7ax1w69l.VIqbTdJ6q', '');
 
 --
 -- Índices para tabelas despejadas
@@ -89,6 +122,12 @@ INSERT INTO `tbl_usuario` (`id_usuario`, `nick_usuario`, `nome_usuario`, `email_
 ALTER TABLE `img_usuario`
   ADD PRIMARY KEY (`id_img`),
   ADD KEY `id_usuario` (`id_usuario`);
+
+--
+-- Índices para tabela `solicitacao_amizade`
+--
+ALTER TABLE `solicitacao_amizade`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices para tabela `tbl_amg`
@@ -110,19 +149,25 @@ ALTER TABLE `tbl_usuario`
 -- AUTO_INCREMENT de tabela `img_usuario`
 --
 ALTER TABLE `img_usuario`
-  MODIFY `id_img` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_img` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT de tabela `solicitacao_amizade`
+--
+ALTER TABLE `solicitacao_amizade`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de tabela `tbl_amg`
 --
 ALTER TABLE `tbl_amg`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de tabela `tbl_usuario`
 --
 ALTER TABLE `tbl_usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Restrições para despejos de tabelas

@@ -9,7 +9,7 @@ if(isset($_SESSION['id_usuario'])){
 }
 
 ?>
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -95,12 +95,11 @@ if(isset($_SESSION['id_usuario'])){
 
 			</div>
 			<form method="post" action="index_chat_geral.php">
-				<input type="text" name="mensagem" placeholder="Digite uma Mensagem">
+				<input type="text" name="mensagem" placeholder="Digite uma Mensagem" required>
 				<input type="submit" value="Enviar">
 			</form>
 			<?php
-				echo $data = date('d/m/Y');
-				exit;
+				$data = date('d/m/Y');
 				include("../bd_conect.php");
 				if(isset($_POST['mensagem'])){
 					$mensagem = $_POST['mensagem'];

@@ -24,7 +24,7 @@ $informacoes = $repositorio->ListarUsuarios($id_usuario);
     <link rel="stylesheet" href="../assets/style/reset.css">
     <link rel="stylesheet" href="../assets/style/listaAmigos.css">
 
-</head>
+</head> 
 <body>
 
     <div class="caixa">

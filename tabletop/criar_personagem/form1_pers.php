@@ -10,7 +10,7 @@
 
     <h1>Criação de Personagem</h1>
 
-    <form action="criar_pers.php" method="post">
+    <form action="defini_classe.php" method="post">
         <label for="nome">Nome do Personagem</label>
         <input type="text" id="nome" name="nome" required>
         <label for="classe">Classe</label>

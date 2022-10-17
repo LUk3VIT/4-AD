@@ -21,7 +21,7 @@ class RepositorioChatMySQL implements IRepositorioChat
 
     public function ApagarMensagens($data_hj)
     {
-        $sql = "DELETE FROM chat_geral WHERE data_msg != '$data_hj%'";
+        $sql = "DELETE FROM chat_geral WHERE data_msg != '$data_hj'";
         $this->conexao->executarQuery($sql);
     }
     
