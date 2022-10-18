@@ -17,7 +17,7 @@
 
 .caixa__foto {
     margin-top: 30px;
-    margin-left: 35px;
+    margin-left: 180px;
     margin-bottom: 50px;
     width: 260px;
     height: 235px;
@@ -97,3 +97,33 @@
 .botao__edit__link:hover{
     color: rgb(0, 0, 0);
 }
+
+.botao__lista{
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 15px;
+    
+ }
+ 
+ .botao__lista__button{
+     padding: 10px;
+     border-radius: 10px 10px;
+     font-size: 20px;
+     background: #32CD32;
+     width: 120px;
+     height: 40px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     
+ }
+ 
+ .botao__lista__link{
+     text-decoration: none;
+     color: aliceblue;
+     background: #32CD32;
+ }
+ 
+ .botao__lista__link:hover{
+     color: rgb(0, 0, 0);
+ }

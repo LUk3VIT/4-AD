@@ -101,11 +101,14 @@
             echo "<p class='informacao__label'>Bio</p>";
             echo "<p class='informacao__input__bio'>".$dados->getBioUsuario()."</p>";
           ?>
+          
           <div class="botao__edit">
             <button class="botao__edit__button"><a class="botao__edit__link" href="perfil-edit.php">Editar</a></button>
           </div>
 
-          <a href="lista_amigos.php">Lista de Usuários</a>
+          <div class="botao__lista">
+            <button class="botao__lista__button"><a class="botao__lista__link" href="lista_amigos.php">Lista de Usuários</a></button>
+          </div>
           <div>
             <?php
               $numeroLinhas = $repositorio->VerificarSolicitacao($id_usuario);
