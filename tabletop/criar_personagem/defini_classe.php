@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-require_once '../classes/repositorioUsuario.php';
-$repositorio = new RepositorioUsuariosMySQL(); 
+require_once '../classes/repositorioTabletop.php'; 
+$repositorio = new RepositorioTabletopMySQL(); 
 
 
 if(isset($_POST['nome'])){

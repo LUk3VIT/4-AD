@@ -1,15 +1,27 @@
 <?php
     session_start();
-    require_once 'classes/repositorioTabletop.php'; 
+    require_once '../classes/repositorioTabletop.php'; 
     $repositorio = new RepositorioTabletopMySQL();
 
     $classe = $_SESSION['classe'];
-    $dinheiro = rand(1,6);
+    $x = 2;
+    $dinheiro = 0;
+
+    $dinheiro = 0;
+        while($x > 0){
+             echo $x = $x - 1;
+            $dinheiro = $dinheiro + rand(1,6);
+            echo $dinheiro; 
+            echo "<br>";
+        }
+        echo $dinheiro;
+    exit;
+    
 
     $consulta = $repositorio->PegarInfoClasse($classe);
-
+ 
     foreach ($consulta as $key) {
-        $x = $key['ouro']
+        $x = 2;
         $item1 = $key['eq1'];
         if($key['eq2'] != NULL){
             $item2 = $key['eq2'];
@@ -23,6 +35,7 @@
         if($key['eq5'] != NULL){
             $item5 = $key['eq5'];
         }
+
     }
 ?>
 
