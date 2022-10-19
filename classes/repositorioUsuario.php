@@ -10,7 +10,7 @@ interface IRepositorioUsuarios {
     public function VerificarNickExist($nick_usuario,$id_usuario);
     public function VerificarNick($nick_usuario); 
     public function CadastraUsuario($Usuario);
-    public function ListarDados($id_usuario);  
+    public function ListarDados($id_usuario);   
     public function atualizarPerfil($Usuario, $id_usuario); 
     public function VerificarEmail($email_dig); 
     public function RedefinirSenha($email_dig,$nova_senha); 

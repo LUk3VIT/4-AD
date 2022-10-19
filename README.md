@@ -4,17 +4,22 @@
 
 Essa versão não tem banco de dados 
 Para rodar esse projeto:
-
+ 
 ```
 precisa do XAMPP, versão v3.3.0
 ```
 
 finalizar o Front: 
 
+forms de código de verificação de email
 ordemn
 Chat
 
 finalizar o back:
+
+Tabletop 2%
+sistema de Online e Offline
+sistema de notificação de mensagem
 
 https://www.youtube.com/watch?v=Qw0zPUQJ3sU
 

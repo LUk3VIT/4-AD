@@ -9,13 +9,11 @@
 
     $dinheiro = 0;
         while($x > 0){
-             echo $x = $x - 1;
-            $dinheiro = $dinheiro + rand(1,6);
-            echo $dinheiro; 
-            echo "<br>";
+            $x = $x - 1;
+            $dinheiro = $dinheiro + rand(1,6); 
+            $dinheiro; 
         }
-        echo $dinheiro;
-    exit;
+        $dinheiro;
     
 
     $consulta = $repositorio->PegarInfoClasse($classe);
@@ -48,6 +46,71 @@
     <title>Definindo itens e outras características</title>
 </head>
 <body>
-    <input type="button" value="">
+        <?php
+        if($_SESSION['classe'] == "Ladino"){
+            $_SESSION['item1'] = "corda";
+            $_SESSION['item2'] = "armadura leve";
+            $_SESSION['item3'] = "arma de uma mão leve";
+        } else if($_SESSION['classe'] == "Mago"){
+            $_SESSION['item1'] = "arma de mão leve";
+            if(isset($_SESSION['magia1'])){
+                echo "<h3>1ª Magia: ".$_SESSION['magia1']."</h3>";
+                if(isset($_SESSION['magia2'])){
+                    echo "<h3>2ª Magia: ".$_SESSION['magia2']."</h3>";
+                    if(isset($_SESSION['magia3'])){
+                        echo "<h3>3ª Magia: ".$_SESSION['magia3']."</h3>";
+                    } else {
+                        ?>
+                            <form action='sortear_magia.php' method='post'>
+                                <input type='submit' value='Sortear 3ª Magia'>
+                            </form>
+                        <?php
+                    }
+                } else {
+                    ?>
+                    <form action='sortear_magia.php' method='post'>
+                        <input type='submit' value='Sortear 2ª Magia'>
+                    </form>
+                <?php
+                } 
+            } else {
+                ?>
+                    <form action='sortear_magia.php' method='post'>
+                        <input type='submit' value='Sortear 1ª Magia'>
+                    </form>
+                <?php
+            }
+        } else if($_SESSION['classe'] == "Elfo"){
+            $_SESSION['item1'] = "arco";
+            $_SESSION['item2'] = "armadura leve";
+            $_SESSION['item3'] = "arma de uma mão leve";
+            if(isset($_SESSION['magia1'])){
+                echo "<h3>Magia: ".$_SESSION['magia1']."</h3>";
+            } else {
+                ?>
+                    <form action='sortear_magia.php' method='post'>
+                        <input type='submit' value='Sortear Magia'>
+                    </form>
+                <?php
+            }
+        } else if($_SESSION['classe'] == "Halfling"){
+            $_SESSION['item1'] = "funda";
+            $_SESSION['item2'] = "arma de uma mão leve";
+        } else {
+            echo "<label for='itens'>Itens Iniciais</label>";
+            $_SESSION['item1'] = $item1;
+            echo "<select name='itens' id='itens'>";
+                    echo "<option value='$item2' >$item2</option>";
+                    echo "<option value='$item3' >$item3</option>";
+                    if(isset($item4)){
+                        echo "<option value='$item4' >$item4</option>";
+                        if(isset($item5)){
+                            echo "<option value='$item5' >$item5</option>";
+                        }
+                    }
+            echo "</select>";
+        }
+       
+        ?>
 </body>
 </html>

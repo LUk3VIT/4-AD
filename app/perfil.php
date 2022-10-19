@@ -107,7 +107,7 @@
           </div>
 
           <div class="botao__lista">
-            <button class="botao__lista__button"><a class="botao__lista__link" href="lista_amigos.php">Lista de Usuários</a></button>
+            <button class="botao__lista__button"><a class="botao__lista__link" href="lista_usuarios.php">Lista de Usuários</a></button>
           </div>
           <div>
             <?php

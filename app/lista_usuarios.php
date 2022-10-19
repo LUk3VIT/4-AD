@@ -48,7 +48,6 @@ $informacoes = $repositorio->ListarUsuarios($id_usuario);
                 }
                 $x = $key['id_usuario'];
                 echo "<h2 class='nome__usuario'>".$key['nome_usuario']."</h2>";
-                echo "<h2 class='info__usuario'>".$key['email_usuario']."</h2>";
                 echo "<h2 class='link'><a class='link_a' href='Chat/chat_privado/index_chat_privado.php?id=$x'>Conversar</a></h2>";
                 echo "<h2 class='link'><a class='link_a' href='redirecionar.php?id=$x'>Ver Perfil</a></h2>";
                 echo "</div>";

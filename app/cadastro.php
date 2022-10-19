@@ -13,7 +13,7 @@ session_start();
     <link rel="stylesheet" href="../assets/style/reset.css">
     <link rel="stylesheet" href="../assets/style/loginCadastrar.css">
 </head>
-<body>
+<body> 
     <header class="header-top">
         <a class="header-top__link" href="../index.php">X</a>
     </header>
@@ -31,7 +31,9 @@ session_start();
 
             <?php
                 if(isset($_SESSION['msg'])){
-                    echo "<div style='background-color: #FF6347;color: #8B0000;padding: 3px;text-align: center' class='alert alert-danger'><h3>Nome de usuário não disponível, tente outro!!!</h3></div>";
+                    ?>
+                        <div style="background-color: #FF6347;color: #8B0000;padding: 3px;text-align: center" class="alert alert-danger"><h3><?php echo $_SESSION['msg']?></h3></div>;
+                    <?php
                 }
             ?>
 
