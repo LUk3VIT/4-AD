@@ -142,18 +142,18 @@
                 $listar = $repositorio->ListarAmg($id,$id_usuario);
                 foreach ($listar as $key) {
                   $x = $id;
-                  echo "<div style='border: solid 2px red'>";
+                  echo "<div class='tabela_amigos'>";
                   echo "<h2>".$key['nome_usuario']."</h2>";
-                  echo "<h2>".$key['email_usuario']."</h2>";
-                  echo "<h2><a href='Chat/chat_privado/index_chat_privado.php?id=$x'>Conversar</a></h2>";
-                  echo "<h2><a href='redirecionar.php?id=$x'>Ver Perfil</a></h2>";
+                  echo "<h2 class='tabela_amigos_h2'>".$key['email_usuario']."</h2>";
+                  echo "<h2 class='tabela_amigos_h2'><a class='tabela_amigos_a' href='Chat/chat_privado/index_chat_privado.php?id=$x'>Conversar</a></h2>";
+                  echo "<h2><a class='tabela_amigos_a' href='redirecionar.php?id=$x'>Ver Perfil</a></h2>";
                   echo "</div>";
                 }
               }
             ?>
           </div>
 
-        </div>
+          </div>
       </div>  
   </main>
 

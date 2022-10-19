@@ -22,27 +22,34 @@
  }
  
  .caixa__foto {
-     display: flex; 
-     margin: 100px 100px;
-     width: 260px;
-     height: 235px;
-     border-radius: 50%;
-     border: solid 2px black;
+    margin-top: 30px;
+    margin-left: 180px;
+    margin-bottom: 50px;
+    width: 260px;
+    height: 260px;
+    display: flex;
  }
  
  .caixa__foto__perfil{
-     max-width: 100%;
-     max-height: 100%;
+    border: solid 2px rgb(255, 255, 255);
+    border-radius: 50%;
+    margin: 0px 0px 0px 0px;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
  }
  
  .caixa__foto__edit{
-     color: white;
-     background: rgb(0, 0, 0);
-     transition: 1s;
-     margin: 0px 0px 5px 0px;
-     position: relative;
-     left: -60px;
-     top: -20px;
+    color: white;
+    background: rgb(0, 0, 0);
+    transition: 1s;
+    position: relative;
+    left: -60px;
+    top: 230px;
+    width: auto;
+    height: 25px;
+    padding: 5px;
+    border-radius: 3px;
  }
  
  .caixa__foto__edit:hover{

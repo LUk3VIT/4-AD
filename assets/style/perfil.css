@@ -20,7 +20,7 @@
     margin-left: 180px;
     margin-bottom: 50px;
     width: 260px;
-    height: 235px;
+    height: 260px;
     display: flex;
 }
 
@@ -30,6 +30,7 @@
     margin: 0px 0px 0px 0px;
     max-width: 100%;
     max-height: 100%;
+    object-fit: cover;
 }
 .informacao{
     display: flex;
@@ -100,8 +101,8 @@
 
 .botao__lista{
     display: flex;
-    justify-content: flex-end;
-    margin: 10px 15px;
+    position: absolute;
+    top: 1201px;
     
  }
  
@@ -127,3 +128,28 @@
  .botao__lista__link:hover{
      color: rgb(0, 0, 0);
  }
+
+ .tabela_amigos{
+    flex-direction: column;
+    margin: 15px 80px;
+    justify-content: center;
+    padding: 10px 0px 10px 80px;
+ }
+
+ .tabela_amigos_h2{
+    margin-bottom: 20px;
+ }
+
+ .tabela_amigos_a{
+     text-decoration: none;
+     color: #FFFFFF;
+     background: #000000;
+     padding: 5px;
+     border-radius: 5px;
+ }
+
+ .tabela_amigos_a:hover{
+    text-decoration: none;
+    color: aliceblue;
+    background: #32CD32;
+}

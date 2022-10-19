@@ -92,7 +92,7 @@
               <?php 
                 echo "<img src='$img' alt='' class='caixa__foto__perfil'>"
               ?>
-              <label for="arquivo" style="background-color:white; color:red; border: solid 2px black; border-radius: 50px;">Alterar</label>
+              <label class="caixa__foto__edit" for="arquivo">Alterar</label>
               <input type="file" name="arquivo" id="arquivo" >
             </div>
             <?php   
