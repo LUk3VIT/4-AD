@@ -1,0 +1,15 @@
+.body__chatPrivado{
+    display: flex;
+    justify-content: center;
+    background: #1b153ff6;
+}
+
+.main{
+    width: 90%;
+}
+
+.caixa{
+    display: flex;
+    flex-wrap: wrap;
+    height: 170%;
+}

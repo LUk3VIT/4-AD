@@ -21,6 +21,7 @@ if(isset($_SESSION['id_usuario'])){
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../../../assets/style/reset.css">
     <link rel="stylesheet" href="../../../assets/style/chatGeral.css">
+	<link rel="stylesheet" href="../../../assets/style/chatPrivado.css">
 	<title>Chat-Privado</title>
 	<script type="text/javascript"> 
 		function ajax(){
@@ -39,7 +40,7 @@ if(isset($_SESSION['id_usuario'])){
  
 	</script>
 </head>
-<body onload="ajax();">
+<body class="body__chatPrivado" onload="ajax();">
 
 	<main class="main">
 		<div class="caixa">
