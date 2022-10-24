@@ -28,6 +28,9 @@ interface IRepositorioUsuarios {
     public function AceitarSolicitacao($id_usuario,$id_amg);
     public function PegarIdAmg1($id_usuario);
     public function ListarAmg($id,$id_usuario);
+    public function FicarOnline($id_usuario);
+    public function AlterarStatus($id_usuario,$status);
+
 }
  
 class RepositorioUsuariosMySQL implements IRepositorioUsuarios
@@ -54,7 +57,7 @@ class RepositorioUsuariosMySQL implements IRepositorioUsuarios
         $sql = "SELECT * FROM tbl_usuario WHERE nome_usuario = '$nome_usuario'";
         $consulta = $this->conexao->executarQuery($sql);
         $registro = mysqli_fetch_array($consulta);
-        $senha_cript = $registro[4];
+        $senha_cript = $registro[5];
         return $senha_cript;
     }
 
@@ -95,7 +98,7 @@ class RepositorioUsuariosMySQL implements IRepositorioUsuarios
         $senha_usuario = $Usuario->getSenhaUsuario();
         $bio_usuario = $Usuario->getBioUsuario();
 
-        $sql = "INSERT INTO tbl_usuario (id_usuario,nome_usuario,nick_usuario,email_usuario,senha_usuario,bio_usuario) VALUES ('','$nome_usuario','$nick_usuario','$email_usuario','$senha_usuario','$bio_usuario')";
+        $sql = "INSERT INTO tbl_usuario (id_usuario,sessao_status,nome_usuario,nick_usuario,email_usuario,senha_usuario,bio_usuario) VALUES ('','Offline','$nome_usuario','$nick_usuario','$email_usuario','$senha_usuario','$bio_usuario')";
         $this->conexao->executarQuery($sql);
     }
 
@@ -236,6 +239,18 @@ class RepositorioUsuariosMySQL implements IRepositorioUsuarios
         $sql = "SELECT * FROM tbl_usuario WHERE id_usuario = '$id' AND id_usuario != '$id_usuario'";
         $listagem = $this->conexao->executarQuery($sql);
         return $listagem;
+    }
+
+    public function FicarOnline($id_usuario)
+    {
+        $sql = "INSERT INTO tbl_online (id,id_usuario,hora_entrada) VALUES ('','$id_usuario','')";
+        $this->conexao->executarQuery($sql);
+    }
+
+    public function AlterarStatus($id_usuario,$status)
+    {
+        $sql = "UPDATE tbl_usuario SET sessao_status = '$status' WHERE id_usuario = '$id_usuario'";
+        $this->conexao->executarQuery($sql);
     }
 }
    

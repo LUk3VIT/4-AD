@@ -1,6 +1,13 @@
 <?php
 
 session_start();
+require_once '../classes/repositorioChat.php'; 
+$repositorio = new RepositorioChatMySQL();
+
+$data_hj = date('d/m/Y');
+
+$apagar = $repositorio->ApagarMensagens($data_hj);
+
 if(isset($_SESSION['id_usuario'])){
 
 } else {

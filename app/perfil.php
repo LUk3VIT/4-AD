@@ -141,9 +141,14 @@
                 $id = $key['id_amigo'];
                 $listar = $repositorio->ListarAmg($id,$id_usuario);
                 foreach ($listar as $key) {
+                  if($key['sessao_status'] == "Online"){
+                    $cor = "green";
+                  } else {
+                    $cor = "red";
+                  }
                   $x = $id;
                   echo "<div class='tabela_amigos'>";
-                  echo "<h2>".$key['nome_usuario']."</h2>";
+                  echo "<h2>".$key['nome_usuario']."   <a style='color:".$cor."'>".$key['sessao_status']."</a></h2>";
                   echo "<h2 class='tabela_amigos_h2'>".$key['email_usuario']."</h2>";
                   echo "<h2 class='tabela_amigos_h2'><a class='tabela_amigos_a' href='Chat/chat_privado/index_chat_privado.php?id=$x'>Conversar</a></h2>";
                   echo "<h2><a class='tabela_amigos_a' href='redirecionar.php?id=$x'>Ver Perfil</a></h2>";
