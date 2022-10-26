@@ -153,3 +153,16 @@
     color: aliceblue;
     background: #32CD32;
 }
+
+.caixa__foto__outroUsuario{
+    margin-top: 30px;
+    margin-left: 350px;
+    margin-bottom: 50px;
+    width: 260px;
+    height: 260px;
+    display: flex;
+}
+
+.caixa__outroUsuario{
+    margin: 80px 180px;
+}

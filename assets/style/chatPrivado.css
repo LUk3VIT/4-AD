@@ -5,11 +5,32 @@
 }
 
 .main{
-    width: 90%;
+    width: 100%;
+    max-width: 90%;
+    max-height: 40rem;
+    height: 100%;
 }
 
 .caixa{
+    width: 100%;
+    max-width: 90%;
+    max-height: 40rem;
+    height: 100%;
+    margin: 10px;
+    padding: 30px;
+    text-align: start;
+    font-size: 25px;
+
+}
+
+.caixa__chat{
     display: flex;
-    flex-wrap: wrap;
-    height: 170%;
+    flex-direction: column;
+    
+}
+
+.caixa__chat__usuario{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
 }

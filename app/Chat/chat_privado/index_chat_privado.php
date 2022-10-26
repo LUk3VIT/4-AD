@@ -44,9 +44,9 @@ if(isset($_SESSION['id_usuario'])){
 
 	<main class="main">
 		<div class="caixa">
-			<div id="chat">
-
+			<div id="chat" class="caixa__chat">
 			</div>
+		</div>
 				<form method="post" action="index_chat_privado.php">
 					<input type="text" name="mensagem" placeholder="Digite uma Mensagem">
 					<input type="submit" value="Enviar">
@@ -62,7 +62,6 @@ if(isset($_SESSION['id_usuario'])){
 						$sql = $pdo->query("INSERT INTO chat_privado SET nome_usuario= '$nome', msg= '$mensagem', id_usuario= '$id', id_dest= '$id_dest'");
 					}
 				?>
-		</div>
 	</main>
 
 </body>
