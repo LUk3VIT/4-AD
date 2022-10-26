@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 18-Out-2022 às 00:05
+-- Tempo de geração: 26-Out-2022 às 14:32
 -- Versão do servidor: 10.4.25-MariaDB
 -- versão do PHP: 8.1.10
 
@@ -34,18 +34,6 @@ CREATE TABLE `chat_geral` (
   `id_usuario` int(11) NOT NULL,
   `nome_usuario` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `chat_geral`
---
-
-INSERT INTO `chat_geral` (`id_msg`, `data_msg`, `msg`, `id_usuario`, `nome_usuario`) VALUES
-(22, '17/10/2022', 'AAAA', 2, 'Rykelmy'),
-(23, '17/10/2022', 'Bao Dia', 2, 'Rykelmy'),
-(25, '17/10/2022', 'Bao Dia', 2, 'Rykelmy'),
-(26, '17/10/2022', 'Bao Dia', 2, 'Rykelmy'),
-(27, '17/10/2022', 'Bao Dia', 2, 'Rykelmy'),
-(28, '17/10/2022', 'Bao Dia', 2, 'Rykelmy');
 
 -- --------------------------------------------------------
 
@@ -131,7 +119,7 @@ ALTER TABLE `chat_privado`
 -- AUTO_INCREMENT de tabela `chat_geral`
 --
 ALTER TABLE `chat_geral`
-  MODIFY `id_msg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_msg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT de tabela `chat_privado`

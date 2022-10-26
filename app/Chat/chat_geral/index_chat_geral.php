@@ -28,7 +28,7 @@ if(isset($_SESSION['id_usuario'])){
     <link rel="stylesheet" href="../../../assets/style/reset.css">
     <link rel="stylesheet" href="../../../assets/style/home.css">
     <link rel="stylesheet" href="../../../assets/style/chatGeral.css">
-	<script type="text/javascript"> 
+	<script type="text/javascript">  
 		function ajax(){
 			var req = new XMLHttpRequest();
 			req.onreadystatechange = function(){

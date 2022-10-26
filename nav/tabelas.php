@@ -1,5 +1,35 @@
 <?php
   session_start();
+  if(isset($_SESSION['tabela'])){
+
+  } else {
+    $_SESSION['tabela'] = "<ul>
+    <li> 1. 3d6 ratos Level 1, sem tesouro. Qualquer personagem ferido tem 1 em 6 chance de
+    perder 1 vida adicional devido a uma ferida infectada.
+    Reações (1d6): 1–3 fugir, 4-6 lutar </li>
+    <br>
+    <li> 2. 3d6 morcegos vampiros, nível 1, sem tesouros. Feitiços são lançados em -1 devido a
+    seus gritos perturbadores.
+    Reações (1d6): 1–3 fugir, 4-6 lutar </li>
+    <br>
+    <li> 3. 2d6 swarmlings de goblins, nível 3, tesouro -1, moral -1 .
+    Reações (1d6): 1 fugir, 2-3 fugir se em menor número, 4 suborno (5 PO x goblin),
+    5–6 luta. </li>
+    <br>
+    <li> 4. D6 centopéias gigantes, nível 3, sem tesouro. Qualquer personagem ferido por uma
+    centopéia gigante deve salvar contra o nível 2 de veneno ou perder 1
+    vida adicional.
+    Reações (1d6): 1 fugir, 2-3 fugir se em desvantagem, 4-6 lutar. </li>
+    <br>
+    <li> 5. D6 sapos vampiros, nível 4, tesouro -1.
+    Reações (1d6): 1 fugir, 2-4 lutar, 5-6 lutar até a morte </li>
+    <br>
+    <li> 6. 2d6 ratos esqueléticos, mortos-vivos nível 3, sem tesouro. Arma de esmagamento
+    ataques estão em +1 contra ratos esqueléticos, mas eles não podem ser atacados
+    por arcos e fundas.
+    Reações (1d6): 1-2 fugir, 3-6 lutar  </li>
+    </ul>";
+  }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -72,26 +102,53 @@
 
     <main class="main">
         <div class="caixa__tabela">
-          <select class="form-select tabela__select" aria-label="Default select example">
-            <option selected>
-              <h2 class="tabela__select__h2">Tabela de Minions</h2>
-              
+          <form action="../app/carregar_tabelas.php" method="post">
+          <select class="form-select tabela__select" name="tabelas" id="tabelas" aria-label="Default select example">
+            <option>
+              <h2 class="tabela__select__h2" >Tabela de Minions (1D6)</h2>
             </option>
-            <option selected>
-              <h2 class="tabela__select__h2">Tabela de Vermes</h2>
+            <option>
+              <h2 class="tabela__select__h2">Tabela de Vermes (1D6)</h2>
+            </option>
+            <option>
+              <h2 class="tabela__select__h2">Tabela de Chefes (1D6)</h2>
+            </option>
+            <option>
+              <h2 class="tabela__select__h2">Tabela de Conteúdos da Sala (2D6)</h2>
+            </option>
+            <option>
+              <h2 class="tabela__select__h2">Tabela de Recursos Especiais (1D6)</h2>
+            </option>
+            <option>
+              <h2 class="tabela__select__h2">Tabela de Eventos Especiais (1D6)</h2>
+            </option>
+            <option>
+              <h2 class="tabela__select__h2">Tabela do Tesouro (1D6)</h2>
+            </option>
+            <option>
+              <h2 class="tabela__select__h2">Tabela do Tesouro Mágico (1D6)</h2>
+            </option>
+            <option>
+              <h2 class="tabela__select__h2">Tabela de Mostros Bizarros (1D6)</h2>
+            </option>
+            <option>
+              <h2 class="tabela__select__h2">Tabela de Missão (1D6)</h2>
+            </option>
+            <option>
+              <h2 class="tabela__select__h2">Tabela de Recompensas Épicas (1D6)</h2>
             </option>
           </select>
+          <input type="submit" value="Atualizar">
+          </form>
           
 
           <div class="tabela__informacao">
             <p class="tabela__informacao__p">
-              2
-              <br>
-              <br>
-              1D6 + 2 esqueletos ou 1d6 zumbis (50% de chance de cada um). 
-              Mortos-vivos nível 3. Nenhum tesouro. Armas esmagadoras atacam
-              Esqueletos em +1. As setas estão em - 1 contra esqueletos e zumbis.
-              Esqueletos e zumbis nunca testam moral. Reações: sempre lutar até a morte.
+            <?php
+
+              echo $_SESSION['tabela'];
+
+            ?>
             </p>
             <img class="tabela__informacao__img" src="../assets/img/Minions.png" alt="">
           </div>
