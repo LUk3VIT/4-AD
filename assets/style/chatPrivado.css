@@ -1,6 +1,6 @@
 .body__chatPrivado{
     display: flex;
-    justify-content: center;
+    
     background: #1b153ff6;
 }
 
@@ -9,17 +9,19 @@
     max-width: 90%;
     max-height: 40rem;
     height: 100%;
+    margin: 60px;
 }
 
 .caixa{
     width: 100%;
-    max-width: 90%;
+    max-width: 100%;
     max-height: 40rem;
     height: 100%;
     margin: 10px;
     padding: 30px;
     text-align: start;
     font-size: 25px;
+    overflow-y: scroll;
 
 }
 
@@ -34,3 +36,28 @@
     flex-wrap: nowrap;
     flex-direction: column;
 }
+
+.nomeUsuario{
+    padding-right: 80%;
+    border-radius: 15px;
+    margin-left: 5px;
+}
+
+.msg{
+    background: #FFFFFF;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 15px;
+}
+
+.form{
+    position: fixed;
+    left: 120px;
+    top: 680px;
+}
+
+.form__class{    
+    
+}
+
+

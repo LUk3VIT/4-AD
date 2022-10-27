@@ -47,8 +47,8 @@ if(isset($_SESSION['id_usuario'])){
 			<div id="chat" class="caixa__chat">
 			</div>
 		</div>
-				<form method="post" action="index_chat_privado.php">
-					<input type="text" name="mensagem" placeholder="Digite uma Mensagem">
+				<form class='form' method="post" action="index_chat_privado.php">
+					<input class='form__calss' type="text" name="mensagem" placeholder="Digite uma Mensagem">
 					<input type="submit" value="Enviar">
 				</form>
 				<?php
