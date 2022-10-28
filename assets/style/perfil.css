@@ -148,6 +148,14 @@
      border-radius: 5px;
  }
 
+ .mostrar__amigos{
+    display: flex;
+    position: absolute;
+    left: 155px;
+    top: 1220px;
+    margin: 40px 5px;
+ }
+
  .tabela_amigos_a:hover{
     text-decoration: none;
     color: aliceblue;

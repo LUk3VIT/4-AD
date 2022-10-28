@@ -6,19 +6,17 @@
     padding: 30px;
     background: #000000;
     border-radius: 30px;
+    
 }
 
 .chat{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 10px;
+    transform: rotate(180deg);;
 }
 
 .nomeUsuario{
     background: #FFFFFF;
     color: #000000;
-    margin: 5px;
-    width: 10px;
+    
 }

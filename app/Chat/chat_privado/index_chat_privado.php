@@ -42,14 +42,18 @@ if(isset($_SESSION['id_usuario'])){
 </head>
 <body class="body__chatPrivado" onload="ajax();">
 
+	<div class="caixa__volta">
+        <button class="caixa__botao"><a href="../../perfil.php" class="caixa__botao__link">Voltar</a></button>
+    </div>
+
 	<main class="main">
-		<div class="caixa">
+		<div id='scroll' class="caixa">
 			<div id="chat" class="caixa__chat">
 			</div>
 		</div>
 				<form class='form' method="post" action="index_chat_privado.php">
-					<input class='form__calss' type="text" name="mensagem" placeholder="Digite uma Mensagem">
-					<input type="submit" value="Enviar">
+					<input class='form__input' type="text" name="mensagem" placeholder="Digite uma Mensagem">
+					<input class='form__enviar' type="submit" value="Enviar">
 				</form>
 				<?php
 					include("../bd_conect.php");

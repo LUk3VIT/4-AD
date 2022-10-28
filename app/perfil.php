@@ -132,7 +132,7 @@
           </div>
 
           <div>
-            <h2> Lista de Amigos: </h2>
+            <h2 class='mostrar__amigos'> Lista de Amigos: </h2>
             <?php
               $id_usuario = $_SESSION['id_usuario'];
 

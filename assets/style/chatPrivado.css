@@ -1,7 +1,27 @@
 .body__chatPrivado{
     display: flex;
-    
     background: #1b153ff6;
+    flex-direction: column;
+}
+
+.caixa__volta{
+    display: flex;
+    justify-content: center;
+    margin: 0px 0px 20px 0px;
+    padding: 10px;
+    background: #363636;
+}
+
+.caixa__botao{
+    background: #00FF7F;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    padding: 5px;
+    box-shadow: 5px 5px #000000;
+}
+
+.caixa__botao:hover{
+    box-shadow: 1px 1px;
 }
 
 .main{
@@ -9,10 +29,12 @@
     max-width: 90%;
     max-height: 40rem;
     height: 100%;
-    margin: 60px;
+    margin: 20px 60px;
 }
 
 .caixa{
+    transform-origin: 50% 50%; 
+    transform: rotate(180deg);
     width: 100%;
     max-width: 100%;
     max-height: 40rem;
@@ -21,14 +43,15 @@
     padding: 30px;
     text-align: start;
     font-size: 25px;
-    overflow-y: scroll;
-
+    overflow-y: auto;
+    direction: rtl;
+    text-align: left;
 }
 
 .caixa__chat{
     display: flex;
     flex-direction: column;
-    
+    transform: rotate(180deg);
 }
 
 .caixa__chat__usuario{
@@ -38,26 +61,42 @@
 }
 
 .nomeUsuario{
-    padding-right: 80%;
-    border-radius: 15px;
-    margin-left: 5px;
+    color: #000000;
 }
 
 .msg{
-    background: #FFFFFF;
+    color: #FFFFFF;
     padding: 5px;
     margin: 5px;
     border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .form{
     position: fixed;
-    left: 120px;
-    top: 680px;
+    left: 410px;
+    top: 670px;
+    display: flex;
+    margin-left: 75px;
+    margin: 5px 0px 30px 75px;
+    width: 100%;
+    
 }
 
-.form__class{    
-    
+.form__input{    
+    width: 515px;
+    border: 2px #636060 solid;
+    border-radius: 20px;
+    padding: 0.1rem;
+    margin-right: 10px;
+}
+
+.form__enviar{
+    border-radius: 5px;
+    color: #FFFFFF;
+    background: #00FF7F;
 }
 
 
