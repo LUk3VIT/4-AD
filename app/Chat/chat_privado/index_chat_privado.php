@@ -47,7 +47,7 @@ if(isset($_SESSION['id_usuario'])){
     </div>
 
 	<main class="main">
-		<div id='scroll' class="caixa">
+		<div class="caixa">
 			<div id="chat" class="caixa__chat">
 			</div>
 		</div>

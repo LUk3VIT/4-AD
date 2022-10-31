@@ -76,10 +76,9 @@
 
 .form{
     position: fixed;
-    left: 410px;
-    top: 670px;
+    left: 350px;
+    top: 690px;
     display: flex;
-    margin-left: 75px;
     margin: 5px 0px 30px 75px;
     width: 100%;
     

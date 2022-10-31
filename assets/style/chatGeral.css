@@ -20,3 +20,28 @@
     color: #000000;
     
 }
+
+
+
+
+.main{
+width: 100%;
+max-width: 90%;
+max-height: 40rem;
+height: 100%;
+margin: 20px 60px;
+}
+
+.form__input{    
+    width: 515px;
+    border: 2px #636060 solid;
+    border-radius: 20px;
+    padding: 0.1rem;
+    margin-right: 10px;
+}
+
+.form__enviar{
+    border-radius: 5px;
+    color: #FFFFFF;
+    background: #00FF7F;
+}
