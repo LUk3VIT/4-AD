@@ -49,6 +49,7 @@ if(isset($_SESSION['id_usuario'])){
 	<main class="main">
 		<div class="caixa">
 			<div id="chat" class="caixa__chat">
+				
 			</div>
 		</div>
 				<form class='form' method="post" action="index_chat_privado.php">

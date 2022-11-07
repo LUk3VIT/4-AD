@@ -21,15 +21,34 @@
     
 }
 
-
-
-
 .main{
-width: 100%;
-max-width: 90%;
-max-height: 40rem;
-height: 100%;
-margin: 20px 60px;
+    width: 100%;
+    max-width: 90%;
+    max-height: 60%;
+    height: 100%;
+    margin: 20px 60px;;
+}
+
+.caixa{
+    transform-origin: 50% 50%; 
+    transform: rotate(180deg);
+    width: 100%;
+    max-width: 100%;
+    max-height: 40rem;
+    height: 100%;
+    margin: 10px;
+    padding: 30px;
+    text-align: start;
+    font-size: 25px;
+    overflow-y: auto;
+    direction: rtl;
+    text-align: left
+}
+
+.chat{
+    display: flex;
+    flex-direction: column;
+    transform: rotate(180deg);
 }
 
 .form__input{    
