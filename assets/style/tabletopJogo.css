@@ -1,0 +1,51 @@
+body{
+    background: #1b153ff6;    
+}
+
+.titulo{
+    display: flex;
+    position: fixed;
+    left: 560px;
+    top: 390px;
+}
+
+.titulo__h2{
+    font-size: 100px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.titulo__link{
+    text-decoration: none;
+    color: #FFFFFF;
+    padding: 5px;
+}
+
+.titulo__link:hover{
+    color: #00FF7F;
+    box-shadow:  3px 3px #000000;
+    border: solid 2px;
+    border-radius: 5px;
+}
+
+.selecao{
+    margin: 20px 0px 20px 800px;
+    color: #FFFFFF;
+    display: flex;
+}
+
+.exbir__personagens{
+    padding: 80px;
+    border: solid 3px red;
+    margin: 0px 10px 10px 10px;
+}
+
+.selecao__aviso{
+    margin: 5px 25px;
+    font-size: 25px;
+    color: #FFFFFF;
+}
+
+.rykelmy__personagem{
+    margin: 5px 25px;
+    
+}

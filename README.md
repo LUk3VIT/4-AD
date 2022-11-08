@@ -9,11 +9,9 @@ Para rodar esse projeto:
 precisa do XAMPP, versão v3.3.0
 ```
 
-finalizar o Front: 
+detalhes Front: 
 
-forms de código de verificação de email
-ordemn
-Chat
+TUDO que for h1 == selecao
 
 finalizar o back:
 

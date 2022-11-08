@@ -101,7 +101,8 @@ if(isset($_SESSION['id_usuario'])){
 			<div id="chat" class="chat">
 
 			</div>
-			<form class='form' method="post" action="index_chat_geral.php">
+		</div>
+		<form class='form' method="post" action="index_chat_geral.php">
 				<input class='form__input' type="text" name="mensagem" placeholder="Digite uma Mensagem" required>
 				<input class='form__enviar' type="submit" value="Enviar">
 			</form>
@@ -116,7 +117,6 @@ if(isset($_SESSION['id_usuario'])){
 					$sql = $pdo->query("INSERT INTO chat_geral SET data_msg='$data', nome_usuario= '$nome', msg= '$mensagem', id_usuario= '$id'");
 				}
 			?>
-		</div>
 	</main>
 
 	<footer class="rodape__pai">

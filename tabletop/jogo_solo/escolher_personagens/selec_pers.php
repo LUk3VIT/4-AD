@@ -15,6 +15,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selecione seus 4 personagens</title>
+    <link rel="stylesheet" href="../../../assets/style/reset.css">
+    <link rel="stylesheet" href="../../../assets/style/tabletopJogo.css">
 </head>
 <body>
     <?php
@@ -54,8 +56,8 @@
                 }                        
             }
 
-            echo "<h1>Personagens Selecionados:</h1>";
-            echo "<div style='border: solid 3px red'>";
+            echo "<h1 class='selecao'>Personagens Selecionados:</h1>";
+            echo "<div class='exbir__personagens'>";
                 if(isset($_SESSION['personagem1'])){
                 $id = $_SESSION['personagem1'];
                 $personagem = $repositorio->MostrarPersonagem($id);
@@ -118,8 +120,8 @@
                 }
             echo "</div>";
 
-            echo "<h1>Você não tem personagens suficientes para iniciar uma aventura sozinho, crie mais personagens clicando no botão abaixo<h1>";
-            echo "<h2><a href='../../criar_personagem/form_pers.php'>Criar mais Personagens</a></h2>";
+            echo "<h1 class='selecao__aviso'>Você não tem personagens suficientes para iniciar uma aventura sozinho, crie mais personagens clicando no botão abaixo:<h1>";
+            echo "<h2 class='rykelmy__personagem'><a href='../../criar_personagem/form_pers.php'>Criar mais Personagens</a></h2>";
         } else {
             echo "<h1>Personagens Selecionados:</h1>";
             echo "<div style='border: solid 3px red'>";

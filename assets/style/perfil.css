@@ -101,8 +101,9 @@
 
 .botao__lista{
     display: flex;
-    position: absolute;
-    top: 1201px;
+    justify-content: flex-end;
+    margin-right: 14px;
+    margin-top: 5px;
     
  }
  
