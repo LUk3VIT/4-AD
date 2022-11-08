@@ -47,5 +47,105 @@ body{
 
 .rykelmy__personagem{
     margin: 5px 25px;
-    
+    font-size: 20px;
+    color: #FFFFFF;
+    text-decoration: none;
+    border: solid black 2px;
+    width: 190px;
+    background: #000000;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.rykelmy__personagem:hover{
+    color: #00FF7F;
+    box-shadow:  5px 5px #000000;
+    border: solid 2px;
+    border-radius: 5px;
+    width: 195px;
+}
+
+.rykelmy__personagem__link{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.selecao__criar{
+    display: flex;
+    justify-content: center;
+    margin: 25px 0px;
+    color: #FFFFFF;
+    font-size: 25px;
+}
+
+.form__criar{
+    display: flex;
+    margin: 25px 15px;
+    flex-direction: column;
+}
+
+.form__criar__nome{
+    margin: 10px 0px;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.form__criar__nomeInput{
+    width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.form__criar__classe{
+    margin: 10px 0px;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.form__criar__classeSelec{
+    width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.form__criar__enviar{
+    width: 130px;
+    margin: 10px 5px;
+    padding: 5px;
+    border-radius: 5px;
+    background: #00FF7F;
+}
+
+.form__criar__enviar:hover{
+    padding: 8px;
+}
+
+.voltar__a{
+    margin: 10px 25px;
+    border: solid 2px #000000;
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    background: #FFFFFF;
+    text-decoration: none;
+    color: #000000;
+}
+
+.voltar__a:hover{
+    padding: 8px;
+    background: #B22222;
+    color: #ffffff;
+}
+
+.informacao__personagem{
+    margin: 20px 25px;
+    border: 8px #ffffff ridge;
+    padding: 10px;
+    background: #F5DEB3;
+    width: 500px;
+}
+
+.informacao__nome{
+    font-size: 20px;
+    margin: 10px 0px;
 }

@@ -121,7 +121,7 @@
             echo "</div>";
 
             echo "<h1 class='selecao__aviso'>Você não tem personagens suficientes para iniciar uma aventura sozinho, crie mais personagens clicando no botão abaixo:<h1>";
-            echo "<h2 class='rykelmy__personagem'><a href='../../criar_personagem/form_pers.php'>Criar mais Personagens</a></h2>";
+            echo "<h2 class='rykelmy__personagem'><a class='rykelmy__personagem__link' href='../../criar_personagem/form_pers.php'>Criar mais Personagens</a></h2>";
         } else {
             echo "<h1>Personagens Selecionados:</h1>";
             echo "<div style='border: solid 3px red'>";

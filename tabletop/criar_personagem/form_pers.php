@@ -5,18 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar Personagem</title>
+    <link rel="stylesheet" href="../../assets/style/reset.css">
+    <link rel="stylesheet" href="../../assets/style/tabletopJogo.css">
 </head>
 <body>
 
-    <h1>Criação de Personagem</h1>
+    <h1 class='selecao__criar'>Criação de Personagem</h1>
 
     <?php
         session_start();
         if(isset($_SESSION['nome_pers']) && isset($_SESSION['classe'])){
             unset($_SESSION['msg']);
-            echo "<a href='voltar_classe.php'>Escolher outra classe</a>";
-            echo "<div>";
-            echo "<h2>Nome do Personagem: ".$_SESSION['nome_pers']."</h2>";
+            echo "<a class='voltar__a' href='voltar_classe.php'>Escolher outra classe</a>";
+            echo "<div class='informacao__personagem'>";
+            echo "<h2 class='informacao__nome'>Nome do Personagem: ".$_SESSION['nome_pers']."</h2>";
             echo "<h2>Classe: ".$_SESSION['classe']."</h2>";
             require_once '../classes/repositorioTabletop.php'; 
             $repositorio = new RepositorioTabletopMySQL();
@@ -285,11 +287,11 @@
             
         } else {
             ?>  
-                <form action="defini_classe.php" method="post">
-                    <label for="nome">Nome do Personagem</label>  
-                    <input type="text" id="nome" name="nome" required>
-                    <label for="classe">Classe</label>
-                    <select name="classe" id="classe">
+                <form class='form__criar' action="defini_classe.php" method="post">
+                    <label class='form__criar__nome' for="nome">Nome do Personagem</label>  
+                    <input class='form__criar__nomeInput' type="text" id="nome" name="nome" required>
+                    <label class='form__criar__classe' for="classe">Classe</label>
+                    <select class='form__criar__classeSelec ls-custom-select' name="classe" id="classe">
                         <option value="Guerreiro" selected>Guerreiro</option>
                         <option value="Clérigo" >Clérigo</option>
                         <option value="Ladino" >Ladino</option>
@@ -299,7 +301,7 @@
                         <option value="Anão" >Anão</option>
                         <option value="Halfling" >Halfling</option>
                     </select>
-                    <input type="submit" value="Criar">
+                    <input class='form__criar__enviar' type="submit" value="Criar">
                     <?php
                         if(isset($_SESSION['msg'])){
                             echo "<h3 style='color: red'>".$_SESSION['msg']."</h3>";
