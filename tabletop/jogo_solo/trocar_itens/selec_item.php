@@ -28,7 +28,7 @@ foreach ($remetente as $key) {
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
             $classe = $key['classe'];
-            $x = 0;
+            $x = 0; 
             $verificar_itens = $repositorio->VerificarItem($classe);
             foreach ($verificar_itens as $key) {
                 if($_SESSION['item'] == $key['nome']){

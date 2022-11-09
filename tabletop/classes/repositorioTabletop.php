@@ -4,7 +4,7 @@ include 'usuario.php';
 require_once 'conexao.php'; 
   
 interface IRepositorioTabletop {
-    public function PegarInfoClasse($classe);
+    public function PegarInfoClasse($classe); 
     public function EscolherMagia($id);
     public function CriarPersonagem($id,$nome,$classe,$nivel,$nivel_maximo,$vida,$dinheiro,$ataque,$defesa,$id_inventario,$mag1,$mag2,$mag3);
     public function CriarInventario($id,$nome_pers,$item1,$item2,$item3,$item4);

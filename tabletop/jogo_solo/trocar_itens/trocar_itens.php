@@ -7,7 +7,7 @@ $repositorio = new RepositorioTabletopMySQL();
 echo $id = $usuario = $_GET['id'];
 $espaco_livre = $repositorio->MostrarInventario($id);
 foreach ($espaco_livre as $key) {
-    if($key['item1'] == NULL){
+    if($key['item1'] == NULL){ 
         $item = "item1";
     } else if($key['item2'] == NULL){
         $item = "item2";
@@ -296,6 +296,6 @@ foreach ($personagem as $key) {
 $apagar_item = $repositorio->ApagarItem($usuario);
 $recolocar_inventario = $repositorio->AdicionarItem($id_inventario,$id_usuario,$nome_pers,$item1,$item2,$item3,$item4,$item5,$item6,$item7,$item8,$item9,$item10,$item11,$item12,$item13,$item14,$item15,$item16,$item17,$item18,$item19,$item20,$item21,$item22,$item23,$item24,$item25);
 $_SESSION['id'] = $x;
-header("Location: index_loja.php");
+header("Location: ver_inventarios.php");
 
 ?>
