@@ -143,7 +143,7 @@
           
 
           <div class="tabela__informacao">
-            <p class="tabela__informacao__p">
+            <p class>
             <?php
 
               echo $_SESSION['tabela'];

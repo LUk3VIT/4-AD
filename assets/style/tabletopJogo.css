@@ -34,10 +34,15 @@ body{
 }
 
 .exbir__personagens{
-    padding: 80px;
+    padding: 40px;
     border: solid 3px red;
-    margin: 0px 10px 10px 10px;
+    margin: 0px 10px 15px 10px;
+    background: #FFFFE0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
+
 
 .selecao__aviso{
     margin: 5px 25px;
@@ -117,7 +122,23 @@ body{
 }
 
 .form__criar__enviar:hover{
-    padding: 8px;
+    padding: 8px 0px; 
+}
+
+.form__criar__voltar{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    width: 120px;
+    margin: 10px 5px;
+    padding: 5px;
+    border-radius: 5px;
+    background: #B22222;
+    color: #000000;
+}
+
+.form__criar__voltar:hover{
+    padding: 8px 0px;
 }
 
 .voltar__a{
@@ -148,4 +169,111 @@ body{
 .informacao__nome{
     font-size: 20px;
     margin: 10px 0px;
+}
+
+h2{
+    font-size: 20px;
+    margin: 10px 5px;
+}
+
+li{
+    margin: 3px 8px;
+}
+
+input{
+    border: #000000 solid 2px;
+    border-radius: 5px;
+    background: #FFFFFF;
+    margin: 8px 0px;
+}
+
+.input__escolher{
+    margin: 0px 0px 0px 5px;
+    background: #FFFFFF;
+}
+
+.input__escolher__criar{
+    background: #FFFFFF;
+    margin: 10px;
+}
+
+.input__escolher__criar:hover{
+    background: #00FF7F;
+    padding: 5px;
+
+}
+
+.mostrar__pers{
+    border: solid black 2px;
+    width: 220px;
+    margin: 20px;
+    padding: 10px;
+    background: #FFFFFF;
+    border-radius: 8px;
+}
+
+.mostrar__pers__td{
+    border: solid black 2px;
+    width: 220px;
+    margin: 40px;
+    padding: 10px;
+    background: #FFFFFF;
+    border-radius: 8px;
+}
+
+.mostrar__pers__info{
+    text-decoration: none;
+    margin: 0px 5px;
+}
+
+.mostrar__pers__info:hover{
+    color: 	#D2691E;
+}
+
+.mostrar__pers__escolher{
+    text-decoration: none;
+    margin: 0px 5px;
+}
+
+.mostrar__pers__escolher:hover{
+    color: #00FF7F;
+}
+
+.tirar__perso{
+    text-decoration: none;
+    margin: 0px 5px;
+    color: #FF0000;
+}
+
+.sala{
+    margin: 10px 25px;
+    padding: 15px;
+}
+
+.sala__preparacao{
+    text-decoration: none;
+    font-size: 25px;
+    border: solid #000000 2px;
+    background: #FFFFFF;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.sala__preparacao:hover{
+    font-size: 30px;
+    background: #00FF7F;
+}
+
+.selecao__prepa{
+    font-size: 30px;
+    margin: 20px 0px 20px 650px;
+    color: #FFFFFF;
+    display: flex;
+}
+
+.rykelmy__entrar{
+    margin: 10px 25px;
+    text-decoration: none;
+    font-size: 23px;
+    color: #FFFFFF
 }

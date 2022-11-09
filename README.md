@@ -12,6 +12,7 @@ precisa do XAMPP, versão v3.3.0
 detalhes Front: 
 
 TUDO que for h1 == selecao
+TUDO que for h2 == rykelmy
 
 finalizar o back:
 

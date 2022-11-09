@@ -120,7 +120,7 @@
                         echo "<option>".$item2."</option>";
                         echo "<option>".$item3."</option>";
                     echo "</select>";
-                    echo "<input type='submit' value='Escolher'>";
+                    echo "<input class='input__escolher' type='submit' value='Escolher'>";
                 echo "</form>";
                 $_SESSION['item4'] = $item4;
             } else if($_SESSION['classe'] == "Mago"){
@@ -129,7 +129,7 @@
                         echo "<option>".$item1."</option>";
                         echo "<option>".$item2."</option>";
                     echo "</select>";
-                    echo "<input type='submit' value='Escolher'>";
+                    echo "<input class='input__escolher' type='submit' value='Escolher'>";
                 echo "</form>";
                 $_SESSION['item1'] = $item3;
                 if(isset($_SESSION['magia1'])){
@@ -167,7 +167,7 @@
                         echo "<option>".$item2."</option>";
                         echo "<option>".$item3."</option>";
                     echo "</select>";
-                    echo "<input type='submit' value='Escolher'>";
+                    echo "<input class='input__escolher' type='submit' value='Escolher'>";
                 echo "</form>";
                 if(isset($_SESSION['magia1'])){
                     echo "<h3>Magia: ".$_SESSION['magia1']."</h3>";
@@ -184,7 +184,7 @@
                         echo "<option>".$item1."</option>";
                         echo "<option>".$item2."</option>";
                     echo "</select>";
-                    echo "<input type='submit' value='Escolher'>";
+                    echo "<input class='input__escolher' type='submit' value='Escolher'>";
                 echo "</form>";
                 $_SESSION['item3'] = $item3;
             } else if($_SESSION['classe'] == "Anão"){
@@ -199,7 +199,7 @@
                         echo "<option>".$item5."</option>";
                         echo "<option>".$item6."</option>";
                     echo "</select>";
-                    echo "<input type='submit' value='Escolher'>";
+                    echo "<input class='input__escolher' type='submit' value='Escolher'>";
                 echo "</form>";
             } else {
                 if($_SESSION['classe'] == "Clérigo"){
@@ -222,7 +222,7 @@
                                 if(isset($item6)){
                                     echo "<option>".$item6."</option>";
                             }
-                            echo "<input type='submit' value='Escolher'>";
+                            echo "<input class='input__escolher' type='submit' value='Escolher'>";
                         echo "</select>";
                     echo "</form>";
             }
@@ -274,7 +274,7 @@
                                 } else {
                                     if(isset($_SESSION['item2'])){
                                         echo "<form action='cria_personagem.php' method='post'>";
-                                            echo "<input type='submit' value='CRIAR'>";
+                                            echo "<input class='input__escolher__criar' type='submit' value='CRIAR'>";
                                         echo "</form>";
                                         echo "</div>";
                                     }
@@ -302,7 +302,7 @@
                         <option value="Halfling" >Halfling</option>
                     </select>
                     <input class='form__criar__enviar' type="submit" value="Criar">
-                    <a href='../jogo_solo/escolher_personagens/escolher_personagem.php'>Jogar</a>
+                    <a class="form__criar__voltar" href='../jogo_solo/escolher_personagens/escolher_personagem.php'>Voltar</a>
                     <?php
                         if(isset($_SESSION['msg'])){
                             echo "<h3 style='color: red'>".$_SESSION['msg']."</h3>";
