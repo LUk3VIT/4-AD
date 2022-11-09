@@ -10,7 +10,7 @@ foreach ($personagem as $key) {
 }
 ?> 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br"> 
 <head> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -567,6 +567,17 @@ foreach ($personagem as $key) {
                     echo "<h2>Nível: ".$key['nivel']."</h2>";
                     echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
                     $classe = $key['classe'];
+                    $x = 0;
+                    $verificar_itens = $repositorio->VerificarItem($classe);
+                    foreach ($verificar_itens as $key) {
+                        $key['nome'];
+                        if($_SESSION['item'] == $key['nome']){
+                            $x = $x + 1;
+                        } 
+                    }
+                    if($x > 0){
+                        echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
+                    } else {
                     $id = $_SESSION['id_remetente'];
                     $personagem = $repositorio->MostrarPersonagem($id);
                     foreach ($personagem as $key) {
@@ -1079,6 +1090,7 @@ foreach ($personagem as $key) {
                                 echo "</ul>";
                             }
                         }
+                        }
                     }
                     $id = $_SESSION['personagem4'];
                     $personagem = $repositorio->MostrarPersonagem($id);
@@ -1089,6 +1101,17 @@ foreach ($personagem as $key) {
                     echo "<h2>Nível: ".$key['nivel']."</h2>";
                     echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
                     $classe = $key['classe'];
+                    $x = 0;
+                    $verificar_itens = $repositorio->VerificarItem($classe);
+                    foreach ($verificar_itens as $key) {
+                        $key['nome'];
+                        if($_SESSION['item'] == $key['nome']){
+                            $x = $x + 1;
+                        } 
+                    }
+                    if($x > 0){
+                        echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
+                    } else {
                     $id = $_SESSION['id_remetente'];
                     $personagem = $repositorio->MostrarPersonagem($id);
                     foreach ($personagem as $key) {
@@ -1600,6 +1623,7 @@ foreach ($personagem as $key) {
                                 }
                                 echo "</ul>";
                             }
+                        }
                         }
                     }
                 } 
@@ -2145,6 +2169,17 @@ foreach ($personagem as $key) {
                     echo "<h2>Nível: ".$key['nivel']."</h2>";
                     echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
                     $classe = $key['classe'];
+                    $x = 0;
+                    $verificar_itens = $repositorio->VerificarItem($classe);
+                    foreach ($verificar_itens as $key) {
+                        $key['nome'];
+                        if($_SESSION['item'] == $key['nome']){
+                            $x = $x + 1;
+                        } 
+                    }
+                    if($x > 0){
+                        echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
+                    } else {
                     $id = $_SESSION['id_remetente'];
                     $personagem = $repositorio->MostrarPersonagem($id);
                     foreach ($personagem as $key) {
@@ -2657,6 +2692,7 @@ foreach ($personagem as $key) {
                             echo "</ul>";
                             }
                         }
+                        }
                     }
                     $id = $_SESSION['personagem4'];
                     $personagem = $repositorio->MostrarPersonagem($id);
@@ -2667,6 +2703,17 @@ foreach ($personagem as $key) {
                     echo "<h2>Nível: ".$key['nivel']."</h2>";
                     echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
                     $classe = $key['classe'];
+                    $x = 0;
+                    $verificar_itens = $repositorio->VerificarItem($classe);
+                    foreach ($verificar_itens as $key) {
+                        $key['nome'];
+                        if($_SESSION['item'] == $key['nome']){
+                            $x = $x + 1;
+                        } 
+                    }
+                    if($x > 0){
+                        echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
+                    } else {
                     $id = $_SESSION['id_remetente'];
                     $personagem = $repositorio->MostrarPersonagem($id);
                     foreach ($personagem as $key) {
@@ -3178,6 +3225,7 @@ foreach ($personagem as $key) {
                                 }
                                 echo "</ul>";
                             }
+                        }
                         }
                     }
                 }
@@ -3723,6 +3771,17 @@ foreach ($personagem as $key) {
                     echo "<h2>Nível: ".$key['nivel']."</h2>";
                     echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
                     $classe = $key['classe'];
+                    $x = 0;
+                    $verificar_itens = $repositorio->VerificarItem($classe);
+                    foreach ($verificar_itens as $key) {
+                        $key['nome'];
+                        if($_SESSION['item'] == $key['nome']){
+                            $x = $x + 1;
+                        } 
+                    }
+                    if($x > 0){
+                        echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
+                    } else {
                     $id = $_SESSION['id_remetente'];
                     $personagem = $repositorio->MostrarPersonagem($id);
                     foreach ($personagem as $key) {
@@ -4235,6 +4294,7 @@ foreach ($personagem as $key) {
                                 echo "</ul>";
                             }
                         }
+                        }
                     }
                     $id = $_SESSION['personagem4'];
                     $personagem = $repositorio->MostrarPersonagem($id);
@@ -4245,6 +4305,17 @@ foreach ($personagem as $key) {
                     echo "<h2>Nível: ".$key['nivel']."</h2>";
                     echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
                     $classe = $key['classe'];
+                    $x = 0;
+                    $verificar_itens = $repositorio->VerificarItem($classe);
+                    foreach ($verificar_itens as $key) {
+                        $key['nome'];
+                        if($_SESSION['item'] == $key['nome']){
+                            $x = $x + 1;
+                        } 
+                    }
+                    if($x > 0){
+                        echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
+                    } else {
                     $id = $_SESSION['id_remetente'];
                     $personagem = $repositorio->MostrarPersonagem($id);
                     foreach ($personagem as $key) {
@@ -4756,6 +4827,7 @@ foreach ($personagem as $key) {
                                 }
                                 echo "</ul>";
                             }
+                        }
                         }
                     }
                 }
@@ -5302,6 +5374,17 @@ foreach ($personagem as $key) {
                     echo "<h2>Nível: ".$key['nivel']."</h2>";
                     echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
                     $classe = $key['classe'];
+                    $x = 0;
+                    $verificar_itens = $repositorio->VerificarItem($classe);
+                    foreach ($verificar_itens as $key) {
+                        $key['nome'];
+                        if($_SESSION['item'] == $key['nome']){
+                            $x = $x + 1;
+                        } 
+                    }
+                    if($x > 0){
+                        echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
+                    } else {
                     $id = $_SESSION['id_remetente'];
                     $personagem = $repositorio->MostrarPersonagem($id);
                     foreach ($personagem as $key) {
@@ -5814,6 +5897,7 @@ foreach ($personagem as $key) {
                                 echo "</ul>";
                             }
                         }
+                        }
                     }
                     $id = $_SESSION['personagem3'];
                     $personagem = $repositorio->MostrarPersonagem($id);
@@ -5824,6 +5908,17 @@ foreach ($personagem as $key) {
                     echo "<h2>Nível: ".$key['nivel']."</h2>";
                     echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
                     $classe = $key['classe'];
+                    $x = 0;
+                    $verificar_itens = $repositorio->VerificarItem($classe);
+                    foreach ($verificar_itens as $key) {
+                        $key['nome'];
+                        if($_SESSION['item'] == $key['nome']){
+                            $x = $x + 1;
+                        } 
+                    }
+                    if($x > 0){
+                        echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
+                    } else {
                     $id = $_SESSION['id_remetente'];
                     $personagem = $repositorio->MostrarPersonagem($id);
                     foreach ($personagem as $key) {
@@ -6335,6 +6430,7 @@ foreach ($personagem as $key) {
                                 }
                                 echo "</ul>";
                             }
+                        }
                         }
                     }
                 }

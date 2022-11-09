@@ -97,18 +97,18 @@ foreach ($personagem as $key) {
         echo "</ul>";
     }
     if(isset($_SESSION['personagem1']) && $_SESSION['personagem1'] == $id){
-        echo "<h1><a href='redirecionar_ver_personagem?tirar=$id'>Tirar</a></h1>";
+        echo "<h1><a href='redirecionar_ver_personagem.php?tirar=$id'>Tirar</a></h1>";
     } else {
         if(isset($_SESSION['personagem2']) && $_SESSION['personagem2'] == $id){
-            echo "<h1><a href='redirecionar_ver_personagem?tirar=$id'>Tirar</a></h1>";
+            echo "<h1><a href='redirecionar_ver_personagem.php?tirar=$id'>Tirar</a></h1>";
         } else {
             if(isset($_SESSION['personagem3']) && $_SESSION['personagem3'] == $id){
-                echo "<h1><a href='redirecionar_ver_personagem?tirar=$id'>Tirar</a></h1>";
+                echo "<h1><a href='redirecionar_ver_personagem.php?tirar=$id'>Tirar</a></h1>";
             } else {
                 if(isset($_SESSION['personagem4']) && $_SESSION['personagem4'] == $id){
-                    echo "<h1><a href='redirecionar_ver_personagem?tirar=$id'>Tirar</a></h1>";
+                    echo "<h1><a href='redirecionar_ver_personagem.php?tirar=$id'>Tirar</a></h1>";
                 } else {
-                    echo "<h1><a href='escolher_personagem.php?ver=$id'>Escolher</a></h1>";
+                    echo "<h1><a href='escolher_personagem.php?id=$id'>Escolher</a></h1>";
                 }
             }
         }

@@ -25,7 +25,7 @@ if($_SESSION['personagem4'] == NULL){
 </head>
 <body>
     <h1>Sala de preparação para iniciar a aventura</h1>
-    <h2> <a href='dentro_da_masmorra/equipar_armas.php'>Adentrar a Masmorra :)</a> </h2>
+    <h2> <a href='dentro_da_masmorra/definindo_itens/equipar_armas.php'>Adentrar a Masmorra :)</a> </h2>
     <h2> <a href='loja_itens/selecionar_personagem.php'>Ir para loja de Itens</a> </h2>
     <br>
     <br>

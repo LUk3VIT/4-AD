@@ -302,6 +302,7 @@
                         <option value="Halfling" >Halfling</option>
                     </select>
                     <input class='form__criar__enviar' type="submit" value="Criar">
+                    <a href='../jogo_solo/escolher_personagens/escolher_personagem.php'>Jogar</a>
                     <?php
                         if(isset($_SESSION['msg'])){
                             echo "<h3 style='color: red'>".$_SESSION['msg']."</h3>";

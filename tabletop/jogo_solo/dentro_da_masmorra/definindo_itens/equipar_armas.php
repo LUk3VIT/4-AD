@@ -1,13 +1,8 @@
 <?php
 
 session_start();
-require_once '../../classes/repositorioTabletop.php'; 
+require_once '../../../classes/repositorioTabletop.php'; 
 $repositorio = new RepositorioTabletopMySQL();
-
-echo $_SESSION['personagem1'];
-echo $_SESSION['personagem2'];
-echo $_SESSION['personagem3'];
-echo $_SESSION['personagem4'];
 
 ?>
 
@@ -24,7 +19,23 @@ echo $_SESSION['personagem4'];
 
         echo "<table>";
             echo "<tr>";
-                $id = $_SESSION['personagem1'];
+                // limpando varáveis
+                unset($armadura_malha);
+                unset($armadura_aco);
+                unset($espada_curta);
+                unset($mangual);
+                unset($escudo);
+                unset($espada_curta_escudo);
+                unset($mangual_escudo);
+                unset($tonfa);
+                unset($adaga);
+                unset($espada_montante);
+                unset($martelo_guerra);
+                unset($arco);
+                unset($funda);
+                unset($livro_feiticos);
+                unset($lanterna);
+                $id_personagem1 = $id = $_SESSION['personagem1'];
                 $personagem = $repositorio->MostrarPersonagem($id);
                 foreach ($personagem as $key) {
                     $nome = $key['nome'];
@@ -46,8 +57,7 @@ echo $_SESSION['personagem4'];
                         }
 
                         if(isset($armadura_malha) && isset($armadura_aco)){
-                            if(isset($_POST['enviar_armadura'])){
-                                $_POST['armadura'] = $_SESSION['armadura_personagem1'];
+                            if(isset($_SESSION['armadura_personagem1'])){
                                 echo "<li>".$_SESSION['armadura_personagem1']."</li>";
                             } else {
                                 echo "<h2>Escolher para utilizar:</h2>";
@@ -56,13 +66,14 @@ echo $_SESSION['personagem4'];
                                         echo "<option value='armadura de malha'>Armadura de Malha</option>";
                                         echo "<option value='armadura de aço'>Armadura de Aço</option>";
                                     echo "</select>";
+                                    echo "<input type='text' name='id1' value='$id_personagem1' hidden>";
                                     echo "<input type='submit' value='Equipar'>";
                                     echo "<br>";
                                 echo "<form>";
                             }
                         } else if(isset($armadura_malha)){
                             $_SESSION['armadura_personagem1'] = "armadura de malha";
-                            echo "<li>".$_SESSION['armadura_personagem1']."</li>";+
+                            echo "<li>".$_SESSION['armadura_personagem1']."</li>";
                             echo "<br>";
                         } else if(isset($armadura_aco)){
                             $_SESSION['armadura_personagem1'] = "armadura de aço";
@@ -119,12 +130,13 @@ echo $_SESSION['personagem4'];
                             if(isset($_SESSION['arma1_personagem1']) && isset($_SESSION['arma2_personagem1'])){
                                 echo "<li>".$_SESSION['arma1_personagem1']."</li>";
                                 echo "<li>".$_SESSION['arma2_personagem1']."</li>";
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($mangual_escudo) || isset($mangual) || isset($adaga) || isset($tonfa) || isset($espada_montante) || isset($martelo_guerra) || isset($arco) || isset($funda) || isset($lanterna)){
                                     echo "<form action='selec_eq.php' method='POST'>";
 
                                     if(isset($mangual_escudo) || isset($espada_montante) || isset($martelo_guerra) || isset($arco)){
-                                        echo "Armas de Duas Mãos (Selecione apenas um)";
+                                        echo "<h3>Armas de Duas Mãos (Selecione apenas um)</h3>";
                                     
                                         echo "<label for='espada_curta_escudo'>Espada Curta e Escudo</label>";
                                         echo "<input type='checkbox' id='espada_curta_escudo' name='espada_curta_escudo'>";
@@ -153,11 +165,13 @@ echo $_SESSION['personagem4'];
                                     }
 
                                     if(isset($mangual) || isset($adaga) || isset($tonfa) || isset($funda)){
-                                        echo "Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.";
+                                        echo "<h3>Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.)</h3>";
                                         echo "<label for='espada_curta'>Espada Curta</label>";
                                         echo "<input type='checkbox' id='espada_curta' name='espada_curta'>";
+                                        echo "<br>";
                                         echo "<label for='escudo'>Escudo</label>";
                                         echo "<input type='checkbox' id='escudo' name='escudo'>";
+                                        echo "<br>";
 
                                         if(isset($mangual)){
                                             echo "<label for='mangual'>Mangual</label>";
@@ -186,6 +200,7 @@ echo $_SESSION['personagem4'];
                                         }
                                     }
 
+                                    echo "<input type='text' name='id1' value='$id_personagem1' hidden>";
                                     echo "<input type='submit' value='Equipar'>";
                                     echo "</form>";
                                 } else {
@@ -193,213 +208,263 @@ echo $_SESSION['personagem4'];
                                     $_SESSION['arma2_personagem1'] = "Escudo";
                                     echo "<li>".$_SESSION['arma1_personagem1']."</li>";
                                     echo "<li>".$_SESSION['arma2_personagem1']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($mangual_escudo)){
                             if(isset($_SESSION['arma1_personagem1']) && isset($_SESSION['arma2_personagem1'])){
                                 echo "<li>".$_SESSION['arma1_personagem1']."</li>";
                                 echo "<li>".$_SESSION['arma2_personagem1']."</li>";
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($espada_montante) || isset($martelo_guerra) || isset($arco) || isset($funda) || isset($lanterna)){
                                     echo "<form action='selec_eq.php' method='POST'>";
 
                                     if(isset($espada_montante) || isset($martelo_guerra) || isset($arco)){
-                                        echo "Armas de Duas Mãos (Selecione apenas um)";
+                                        echo "<h3>Armas de Duas Mãos (Selecione apenas um)</h3>";
                                         
                                         echo "<label for='mangual_escudo'>Mangual e Escudo</label>";
                                         echo "<input type='checkbox' id='mangual_escudo' name='mangual_escudo'>";
+                                        echo "<br>";
 
                                         if(isset($espada_montante)){
                                             echo "<label for='espada_montante'>Espada Montante</label>";
                                             echo "<input type='checkbox' id='espada_montante' name='espada_montante'>";
+                                            echo "<br>";
                                         }
                                         if(isset($martelo_guerra)){
                                             echo "<label for='martelo_guerra'>Martelo de Guerra</label>";
                                             echo "<input type='checkbox' id='martelo_guerra' name='martelo_guerra'>";
+                                            echo "<br>";
                                         }
                                         if(isset($arco)){
                                             echo "<label for='arco'>Arco</label>";
                                             echo "<input type='checkbox' id='arco' name='arco'>";
+                                            echo "<br>";
                                         }
                                     }
                                     
 
                                     if(isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($funda) || isset($lanterna)){
-                                        echo "Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.";
+                                        echo "<h3>Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.)</h3>";
                                         echo "<label for='mangual'>Mangual</label>";
                                         echo "<input type='checkbox' id='mangual' name='mangual'>";
+                                        echo "<br>";
                                         echo "<label for='escudo'>Escudo</label>";
                                         echo "<input type='checkbox' id='escudo' name='escudo'>";
+                                        echo "<br>";
 
                                         if(isset($espada_curta)){
                                             echo "<label for='espada_curta'>Espada Curta</label>";
                                             echo "<input type='checkbox' id='espada_curta' name='espada_curta'>";
+                                            echo "<br>";
                                         }
                                         if(isset($adaga)){
                                             echo "<label for='adaga'>Adaga</label>";
                                             echo "<input type='checkbox' id='adaga' name='adaga'>";
+                                            echo "<br>";
                                         }
                                         if(isset($tonfa)){
                                             echo "<label for='tonfa'>Tonfa</label>";
                                             echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                            echo "<br>";
                                         }
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
                                     }
+                                    echo "<input type='text' name='id1' value='$id_personagem1' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
                                     echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem1'] = "Mangual";
                                     $_SESSION['arma2_personagem1'] = "Escudo";
                                     echo "<li>".$_SESSION['arma1_personagem1']."</li>";
                                     echo "<li>".$_SESSION['arma2_personagem1']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($espada_montante)){
                             if(isset($_SESSION['arma1_personagem1'])){
                                 echo "<li>".$_SESSION['arma1_personagem1']."</li>";
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($mangual) || isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($martelo_guerra) || isset($arco) || isset($funda) || isset($lanterna)){
                                     echo "<form action='selec_eq.php' method='POST'>";
                                     
                                     if(isset($martelo_guerra) || isset($arco)){
-                                        echo "Armas de Duas Mãos (Selecione apenas um)";
+                                        echo "<h3>Armas de Duas Mãos (Selecione apenas um)</h3>";
                                     
                                         echo "<label for='espada_montante'>Espada Montante</label>";
                                         echo "<input type='checkbox' id='espada_montante' name='espada_montante'>";
+                                        echo "<br>";
 
 
                                         if(isset($martelo_guerra)){
                                             echo "<label for='martelo_guerra'>Martelo de Guerra</label>";
                                             echo "<input type='checkbox' id='martelo_guerra' name='martelo_guerra'>";
+                                            echo "<br>";
                                         }
                                         if(isset($arco)){
                                             echo "<label for='arco'>Arco</label>";
                                             echo "<input type='checkbox' id='arco' name='arco'>";
+                                            echo "<br>";
                                         }
                                     }
 
                                     if(isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($funda) || isset($lanterna)){
-                                        echo "Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.";
+                                        echo "<h3>Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.)</h3>";
 
                                         if(isset($espada_curta)){
                                             echo "<label for='espada_curta'>Espada Curta</label>";
                                             echo "<input type='checkbox' id='espada_curta' name='espada_curta'>";
+                                            echo "<br>";
                                         }
                                         if(isset($adaga)){
                                             echo "<label for='adaga'>Adaga</label>";
                                             echo "<input type='checkbox' id='adaga' name='adaga'>";
+                                            echo "<br>";
                                         }
                                         if(isset($tonfa)){
                                             echo "<label for='tonfa'>Tonfa</label>";
                                             echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                            echo "<br>";
                                         }
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
                                     }
+                                    echo "<input type='text' name='id1' value='$id_personagem1' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
                                     echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem1'] = "Espada Montante";
                                     $_SESSION['arma2_personagem1'] = "Espada Montante";
                                     echo "<li>".$_SESSION['arma1_personagem1']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($martelo_guerra)){
                             if(isset($_SESSION['arma1_personagem1'])){
                                 echo "<li>".$_SESSION['arma1_personagem1']."</li>";
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($mangual) || isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($arco) || isset($funda) || isset($lanterna)){
                                     echo "<form action='selec_eq.php' method='POST'>";
 
                                     if(isset($arco)){
-                                        echo "Armas de Duas Mãos (Selecione apenas um)";
+                                        echo "<h3>Armas de Duas Mãos (Selecione apenas um)</h3>";
                                     
                                         echo "<label for='martelo_guerra'>Martelo de Guerra</label>";
                                         echo "<input type='checkbox' id='martelo_guerra' name='martelo_guerra'>";
+                                        echo "<br>";
                                         echo "<label for='arco'>Arco</label>";
                                         echo "<input type='checkbox' id='arco' name='arco'>";
+                                        echo "<br>";
                                     }
 
                                     if(isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($funda) || isset($lanterna)){
-                                        echo "Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.";
+                                        echo "<h3>Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.)</h3>";
 
                                         if(isset($espada_curta)){
                                             echo "<label for='espada_curta'>Espada Curta</label>";
                                             echo "<input type='checkbox' id='espada_curta' name='espada_curta'>";
+                                            echo "<br>";
                                         }
                                         if(isset($adaga)){
                                             echo "<label for='adaga'>Adaga</label>";
                                             echo "<input type='checkbox' id='adaga' name='adaga'>";
+                                            echo "<br>";
                                         }
                                         if(isset($tonfa)){
                                             echo "<label for='tonfa'>Tonfa</label>";
                                             echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                            echo "<br>";
                                         }
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
                                     }
+                                    echo "<input type='text' name='id1' value='$id_personagem1' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
                                     echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem1'] = "Martelo de Guerra";
                                     $_SESSION['arma2_personagem1'] = "Martelo de Guerra";
                                     echo "<li>".$_SESSION['arma1_personagem1']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($arco)){
                             if(isset($_SESSION['arma1_personagem1'])){
                                 echo "<li>".$_SESSION['arma1_personagem1']."</li>";
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($mangual) || isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($funda) || isset($lanterna)){
-                                    echo "O arco conta como arma de duas mãos, então caso selecione ele não poderá equipar mais nenhuma arma!!!";
+                                    echo "<h3>O arco conta como arma de duas mãos, então caso selecione ele não poderá equipar mais nenhuma arma!!!</h3>";
 
                                     echo "<form action='selec_eq.php' method='POST'>";
 
                                     echo "<label for='arco'>Arco</label>";
                                     echo "<input type='checkbox' id='arco' name='arco'>";
+                                    echo "<br>";
 
-                                    echo "Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.";
+                                    echo "<h3>Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.)</h3>";
 
                                         if(isset($espada_curta)){
                                             echo "<label for='espada_curta'>Espada Curta</label>";
                                             echo "<input type='checkbox' id='espada_curta' name='espada_curta'>";
+                                            echo "<br>";
                                         }
                                         if(isset($adaga)){
                                             echo "<label for='adaga'>Adaga</label>";
                                             echo "<input type='checkbox' id='adaga' name='adaga'>";
+                                            echo "<br>";
                                         }
                                         if(isset($tonfa)){
                                             echo "<label for='tonfa'>Tonfa</label>";
                                             echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                            echo "<br>";
                                         }
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
+                                    echo "<input type='text' name='id1' value='$id_personagem1' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
+                                    echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem1'] = "Arco";
                                     $_SESSION['arma2_personagem1'] = "Arco";
                                     echo "<li>".$_SESSION['arma1_personagem1']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($mangual)){
@@ -408,39 +473,50 @@ echo $_SESSION['personagem4'];
                                 if(isset($_SESSION['arma2_personagem1'])){
                                     echo "<li>".$_SESSION['arma2_personagem1']."</li>";
                                 }
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($funda) || isset($lanterna)){
                                     
                                     echo "<form action='selec_eq.php' method='POST'>";
 
-                                    echo "Armas de Uma Mão(Selecione duas das opções abaixo)";
+                                    echo "<h3>Armas de Uma Mão(Selecione duas das opções abaixo)</h3>";
 
                                     echo "<label for='mangual'>Mangual</label>";
                                     echo "<input type='checkbox' id='mangual' name='mangual'>";
+                                    echo "<br>";
 
                                         if(isset($espada_curta)){
                                             echo "<label for='espada_curta'>Espada Curta</label>";
                                             echo "<input type='checkbox' id='espada_curta' name='espada_curta'>";
+                                            echo "<br>";
                                         }
                                         if(isset($adaga)){
                                             echo "<label for='adaga'>Adaga</label>";
                                             echo "<input type='checkbox' id='adaga' name='adaga'>";
+                                            echo "<br>";
                                         }
                                         if(isset($tonfa)){
                                             echo "<label for='tonfa'>Tonfa</label>";
                                             echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                            echo "<br>";
                                         }
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
+                                    echo "<input type='text' name='id1' value='$id_personagem1' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
+                                    echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem1'] = "Mangual";
                                     echo "<li>".$_SESSION['arma1_personagem1']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($espada_curta)){
@@ -449,35 +525,45 @@ echo $_SESSION['personagem4'];
                                 if(isset($_SESSION['arma2_personagem1'])){
                                     echo "<li>".$_SESSION['arma2_personagem1']."</li>";
                                 }
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($adaga) || isset($tonfa) || isset($funda) || isset($lanterna)){
                                     
                                     echo "<form action='selec_eq.php' method='POST'>";
 
-                                    echo "Armas de Uma Mão(Selecione duas das opções abaixo)";
+                                    echo "<h3>Armas de Uma Mão(Selecione duas das opções abaixo)</h3>";
 
                                     echo "<label for='espada_curta'>Espada Curta</label>";
                                     echo "<input type='checkbox' id='espada_curta' name='espada_curta'>";
+                                    echo "<br>";
                                         
                                         if(isset($adaga)){
                                             echo "<label for='adaga'>Adaga</label>";
                                             echo "<input type='checkbox' id='adaga' name='adaga'>";
+                                            echo "<br>";
                                         }
                                         if(isset($tonfa)){
                                             echo "<label for='tonfa'>Tonfa</label>";
                                             echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                            echo "<br>";
                                         }
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
+                                    echo "<input type='text' name='id1' value='$id_personagem1' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
+                                    echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem1'] = "Espada Curta";
                                     echo "<li>".$_SESSION['arma1_personagem1']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($adaga)){
@@ -486,35 +572,45 @@ echo $_SESSION['personagem4'];
                                 if(isset($_SESSION['arma2_personagem1'])){
                                     echo "<li>".$_SESSION['arma2_personagem1']."</li>";
                                 }
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($tonfa) || isset($funda) || isset($livro_feiticos) || isset($lanterna)){
                                     
                                     echo "<form action='selec_eq.php' method='POST'>";
 
-                                    echo "Armas de Uma Mão(Selecione duas das opções abaixo)";
+                                    echo "<h3>Armas de Uma Mão(Selecione duas das opções abaixo)</h3>";
                                         
                                     echo "<label for='adaga'>Adaga</label>";
                                     echo "<input type='checkbox' id='adaga' name='adaga'>";
+                                    echo "<br>";
                                         
                                         if(isset($tonfa)){
                                             echo "<label for='tonfa'>Tonfa</label>";
                                             echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                            echo "<br>";
                                         }
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($livro_feiticos)){
                                             echo "<label for='livro_feiticos'>Livro de Feitiços</label>";
                                             echo "<input type='checkbox' id='livro_feiticos' name='livro_feiticos'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
+                                    echo "<input type='text' name='id1' value='$id_personagem1' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
+                                    echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem1'] = "Adaga";
                                     echo "<li>".$_SESSION['arma1_personagem1']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($tonfa)){
@@ -523,31 +619,40 @@ echo $_SESSION['personagem4'];
                                 if(isset($_SESSION['arma2_personagem1'])){
                                     echo "<li>".$_SESSION['arma2_personagem1']."</li>";
                                 }
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($funda) || isset($livro_feiticos) || isset($lanterna)){
                                     
                                     echo "<form action='selec_eq.php' method='POST'>";
 
-                                    echo "Armas de Uma Mão(Selecione duas das opções abaixo)";
+                                    echo "<h3>Armas de Uma Mão(Selecione duas das opções abaixo)</h3>";
                                         
                                     echo "<label for='tonfa'>Tonfa</label>";
                                     echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                    echo "<br>";
                                         
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($livro_feiticos)){
                                             echo "<label for='livro_feiticos'>Livro de Feitiços</label>";
                                             echo "<input type='checkbox' id='livro_feiticos' name='livro_feiticos'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
+                                        echo "<input type='text' name='id1' value='$id_personagem1' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
+                                    echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem1'] = "Tonfa";
                                     echo "<li>".$_SESSION['arma1_personagem1']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($livro_feiticos)){
@@ -556,27 +661,35 @@ echo $_SESSION['personagem4'];
                                 if(isset($_SESSION['arma2_personagem1'])){
                                     echo "<li>".$_SESSION['arma2_personagem1']."</li>";
                                 }
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($funda) || isset($lanterna)){
                                     
                                     echo "<form action='selec_eq.php' method='POST'>";
 
-                                    echo "Armas de Uma Mão(Selecione duas das opções abaixo)";
+                                    echo "<h3>Armas de Uma Mão(Selecione duas das opções abaixo)<h3>";
                                         
                                     echo "<label for='livro_feiticos'>Livro de Feitiços</label>";
                                     echo "<input type='checkbox' id='livro_feiticos' name='livro_feiticos'>";
+                                    echo "<br>";
                                         
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
+                                    echo "<input type='text' name='id1' value='$id_personagem1' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
+                                    echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem1'] = "Livro de Feitiços";
                                     echo "<li>".$_SESSION['arma1_personagem1']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($funda)){
@@ -585,22 +698,29 @@ echo $_SESSION['personagem4'];
                                 if(isset($_SESSION['arma2_personagem1'])){
                                     echo "<li>".$_SESSION['arma2_personagem1']."</li>";
                                 }
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($lanterna)){
                                     
                                     echo "<form action='selec_eq.php' method='POST'>";
 
-                                    echo "Armas de Uma Mão(Selecione duas das opções abaixo)";
+                                    echo "<h3>Armas de Uma Mão(Selecione duas das opções abaixo)</h3>";
                                         
                                     echo "<label for='funda'>Funda</label>";
                                     echo "<input type='checkbox' id='funda' name='funda'>";
+                                    echo "<br>";
                                     
                                     echo "<label for='lanterna'>Lanterna</label>";
                                     echo "<input type='checkbox' id='lanterna' name='lanterna'>";
-                                        
+                                    echo "<br>";
+                                      
+                                    echo "<input type='text' name='id1' value='$id_personagem1' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
+                                    echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem1'] = "Funda";
                                     echo "<li>".$_SESSION['arma1_personagem1']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         }
@@ -609,7 +729,24 @@ echo $_SESSION['personagem4'];
                     echo "</td>";
                 }
 
-                $id = $_SESSION['personagem2'];
+                $id_personagem2 = $id = $_SESSION['personagem2'];
+                // limpando varáveis
+                unset($armadura_malha);
+                unset($armadura_aco);
+                unset($espada_curta);
+                unset($mangual);
+                unset($escudo);
+                unset($espada_curta_escudo);
+                unset($mangual_escudo);
+                unset($tonfa);
+                unset($adaga);
+                unset($espada_montante);
+                unset($martelo_guerra);
+                unset($arco);
+                unset($funda);
+                unset($livro_feiticos);
+                unset($lanterna);
+
                 $personagem = $repositorio->MostrarPersonagem($id);
                 foreach ($personagem as $key) {
                     $nome = $key['nome'];
@@ -631,8 +768,7 @@ echo $_SESSION['personagem4'];
                         }
 
                         if(isset($armadura_malha) && isset($armadura_aco)){
-                            if(isset($_POST['enviar_armadura'])){
-                                $_POST['armadura'] = $_SESSION['armadura_personagem2'];
+                            if(isset($_SESSION['armadura_personagem2'])){
                                 echo "<li>".$_SESSION['armadura_personagem2']."</li>";
                             } else {
                                 echo "<h2>Escolher para utilizar:</h2>";
@@ -641,6 +777,9 @@ echo $_SESSION['personagem4'];
                                         echo "<option value='armadura de malha'>Armadura de Malha</option>";
                                         echo "<option value='armadura de aço'>Armadura de Aço</option>";
                                     echo "</select>";
+                                    echo "<input type='text' name='id2' value='$id_personagem2' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
+                                    echo "<br>";
                                 echo "<form>";
                             }
                         } else if(isset($armadura_malha)){
@@ -699,276 +838,345 @@ echo $_SESSION['personagem4'];
                             if(isset($_SESSION['arma1_personagem1']) && isset($_SESSION['arma2_personagem2'])){
                                 echo "<li>".$_SESSION['arma1_personagem2']."</li>";
                                 echo "<li>".$_SESSION['arma2_personagem2']."</li>";
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($mangual_escudo) || isset($mangual) || isset($adaga) || isset($tonfa) || isset($espada_montante) || isset($martelo_guerra) || isset($arco) || isset($funda) || isset($lanterna)){
                                     echo "<form action='selec_eq.php' method='POST'>";
 
                                     if(isset($mangual_escudo) || isset($espada_montante) || isset($martelo_guerra) || isset($arco)){
-                                        echo "Armas de Duas Mãos (Selecione apenas um)";
+                                        echo "<h3>Armas de Duas Mãos (Selecione apenas um)</h3>";
                                     
                                         echo "<label for='espada_curta_escudo'>Espada Curta e Escudo</label>";
                                         echo "<input type='checkbox' id='espada_curta_escudo' name='espada_curta_escudo'>";
+                                        echo "<br>";
 
                                         if(isset($mangual_escudo)){
                                             echo "<label for='mangual_escudo'>Mangual e Escudo</label>";
                                             echo "<input type='checkbox' id='mangual_escudo' name='mangual_escudo'>";
+                                            echo "<br>";
                                         }
                                         if(isset($espada_montante)){
                                             echo "<label for='espada_montante'>Espada Montante</label>";
                                             echo "<input type='checkbox' id='espada_montante' name='espada_montante'>";
+                                            echo "<br>";
                                         }
                                         if(isset($martelo_guerra)){
                                             echo "<label for='martelo_guerra'>Martelo de Guerra</label>";
                                             echo "<input type='checkbox' id='martelo_guerra' name='martelo_guerra'>";
+                                            echo "<br>";
                                         }
                                         if(isset($arco)){
                                             echo "<label for='arco'>Arco</label>";
                                             echo "<input type='checkbox' id='arco' name='arco'>";
+                                            echo "<br>";
                                         }
                                     }
 
                                     if(isset($mangual) || isset($adaga) || isset($tonfa) || isset($funda)){
-                                        echo "Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.";
+                                        echo "<h3>Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.)</h3>";
                                         echo "<label for='espada_curta'>Espada Curta</label>";
                                         echo "<input type='checkbox' id='espada_curta' name='espada_curta'>";
+                                        echo "<br>";
                                         echo "<label for='escudo'>Escudo</label>";
                                         echo "<input type='checkbox' id='escudo' name='escudo'>";
+                                        echo "<br>";
 
                                         if(isset($mangual)){
                                             echo "<label for='mangual'>Mangual</label>";
                                             echo "<input type='checkbox' id='mangual' name='mangual'>";
+                                            echo "<br>";
                                         }
                                         if(isset($adaga)){
                                             echo "<label for='adaga'>Adaga</label>";
                                             echo "<input type='checkbox' id='adaga' name='adaga'>";
+                                            echo "<br>";
                                         }
                                         if(isset($tonfa)){
                                             echo "<label for='tonfa'>Tonfa</label>";
                                             echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                            echo "<br>";
                                         }
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
                                     }
 
+                                    echo "<input type='text' name='id2' value='$id_personagem2' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
                                     echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem2'] = "Espada Curta";
                                     $_SESSION['arma2_personagem2'] = "Escudo";
                                     echo "<li>".$_SESSION['arma1_personagem2']."</li>";
                                     echo "<li>".$_SESSION['arma2_personagem2']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($mangual_escudo)){
                             if(isset($_SESSION['arma1_personagem2']) && isset($_SESSION['arma2_personagem2'])){
                                 echo "<li>".$_SESSION['arma1_personagem2']."</li>";
                                 echo "<li>".$_SESSION['arma2_personagem2']."</li>";
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($espada_montante) || isset($martelo_guerra) || isset($arco) || isset($funda) || isset($lanterna)){
                                     echo "<form action='selec_eq.php' method='POST'>";
 
                                     if(isset($espada_montante) || isset($martelo_guerra) || isset($arco)){
-                                        echo "Armas de Duas Mãos (Selecione apenas um)";
+                                        echo "<h3>Armas de Duas Mãos (Selecione apenas um)</h3>";
                                         
                                         echo "<label for='mangual_escudo'>Mangual e Escudo</label>";
                                         echo "<input type='checkbox' id='mangual_escudo' name='mangual_escudo'>";
+                                        echo "<br>";
 
                                         if(isset($espada_montante)){
                                             echo "<label for='espada_montante'>Espada Montante</label>";
                                             echo "<input type='checkbox' id='espada_montante' name='espada_montante'>";
+                                            echo "<br>";
                                         }
                                         if(isset($martelo_guerra)){
                                             echo "<label for='martelo_guerra'>Martelo de Guerra</label>";
                                             echo "<input type='checkbox' id='martelo_guerra' name='martelo_guerra'>";
+                                            echo "<br>";
                                         }
                                         if(isset($arco)){
                                             echo "<label for='arco'>Arco</label>";
                                             echo "<input type='checkbox' id='arco' name='arco'>";
+                                            echo "<br>";
                                         }
                                     }
                                     
 
                                     if(isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($funda) || isset($lanterna)){
-                                        echo "Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.";
+                                        echo "<h3>Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.)</h3>";
                                         echo "<label for='mangual'>Mangual</label>";
                                         echo "<input type='checkbox' id='mangual' name='mangual'>";
+                                        echo "<br>";
                                         echo "<label for='escudo'>Escudo</label>";
                                         echo "<input type='checkbox' id='escudo' name='escudo'>";
+                                        echo "<br>";
 
                                         if(isset($espada_curta)){
                                             echo "<label for='espada_curta'>Espada Curta</label>";
                                             echo "<input type='checkbox' id='espada_curta' name='espada_curta'>";
+                                            echo "<br>";
                                         }
                                         if(isset($adaga)){
                                             echo "<label for='adaga'>Adaga</label>";
                                             echo "<input type='checkbox' id='adaga' name='adaga'>";
+                                            echo "<br>";
                                         }
                                         if(isset($tonfa)){
                                             echo "<label for='tonfa'>Tonfa</label>";
                                             echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                            echo "<br>";
                                         }
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
                                     }
+                                    echo "<input type='text' name='id2' value='$id_personagem2' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
                                     echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem2'] = "Mangual";
                                     $_SESSION['arma2_personagem2'] = "Escudo";
                                     echo "<li>".$_SESSION['arma1_personagem2']."</li>";
                                     echo "<li>".$_SESSION['arma2_personagem2']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($espada_montante)){
                             if(isset($_SESSION['arma1_personagem2'])){
                                 echo "<li>".$_SESSION['arma1_personagem2']."</li>";
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($mangual) || isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($martelo_guerra) || isset($arco) || isset($funda) || isset($lanterna)){
                                     echo "<form action='selec_eq.php' method='POST'>";
                                     
                                     if(isset($martelo_guerra) || isset($arco)){
-                                        echo "Armas de Duas Mãos (Selecione apenas um)";
+                                        echo "<h3>Armas de Duas Mãos (Selecione apenas um)</h3>";
                                     
                                         echo "<label for='espada_montante'>Espada Montante</label>";
                                         echo "<input type='checkbox' id='espada_montante' name='espada_montante'>";
+                                        echo "<br>";
 
 
                                         if(isset($martelo_guerra)){
                                             echo "<label for='martelo_guerra'>Martelo de Guerra</label>";
                                             echo "<input type='checkbox' id='martelo_guerra' name='martelo_guerra'>";
+                                            echo "<br>";
                                         }
                                         if(isset($arco)){
                                             echo "<label for='arco'>Arco</label>";
                                             echo "<input type='checkbox' id='arco' name='arco'>";
+                                            echo "<br>";
                                         }
                                     }
 
                                     if(isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($funda) || isset($lanterna)){
-                                        echo "Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.";
+                                        echo "<h3>Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.)</h3>";
+                                        echo "<br>";
 
                                         if(isset($espada_curta)){
                                             echo "<label for='espada_curta'>Espada Curta</label>";
                                             echo "<input type='checkbox' id='espada_curta' name='espada_curta'>";
+                                            echo "<br>";
                                         }
                                         if(isset($adaga)){
                                             echo "<label for='adaga'>Adaga</label>";
                                             echo "<input type='checkbox' id='adaga' name='adaga'>";
+                                            echo "<br>";
                                         }
                                         if(isset($tonfa)){
                                             echo "<label for='tonfa'>Tonfa</label>";
                                             echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                            echo "<br>";
                                         }
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
                                     }
+                                    echo "<input type='text' name='id2' value='$id_personagem2' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
                                     echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem2'] = "Espada Montante";
                                     $_SESSION['arma2_personagem2'] = "Espada Montante";
                                     echo "<li>".$_SESSION['arma1_personagem2']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($martelo_guerra)){
                             if(isset($_SESSION['arma1_personagem2'])){
                                 echo "<li>".$_SESSION['arma1_personagem2']."</li>";
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($mangual) || isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($arco) || isset($funda) || isset($lanterna)){
                                     echo "<form action='selec_eq.php' method='POST'>";
 
                                     if(isset($arco)){
-                                        echo "Armas de Duas Mãos (Selecione apenas um)";
+                                        echo "<h3>Armas de Duas Mãos (Selecione apenas um)</h3>";
                                     
                                         echo "<label for='martelo_guerra'>Martelo de Guerra</label>";
                                         echo "<input type='checkbox' id='martelo_guerra' name='martelo_guerra'>";
+                                        echo "<br>";
                                         echo "<label for='arco'>Arco</label>";
                                         echo "<input type='checkbox' id='arco' name='arco'>";
-                                    }
+                                    } 
 
                                     if(isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($funda) || isset($lanterna)){
-                                        echo "Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.";
+                                        echo "<h3>(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.)</h3>";
+                                        echo "<br>";
+                                        echo "<label for='martelo_guerra'>Martelo de Guerra</label>";
+                                        echo "<input type='checkbox' id='martelo_guerra' name='martelo_guerra'>";
+                                        echo "<br>";
 
                                         if(isset($espada_curta)){
                                             echo "<label for='espada_curta'>Espada Curta</label>";
                                             echo "<input type='checkbox' id='espada_curta' name='espada_curta'>";
+                                            echo "<br>";
                                         }
                                         if(isset($adaga)){
                                             echo "<label for='adaga'>Adaga</label>";
                                             echo "<input type='checkbox' id='adaga' name='adaga'>";
+                                            echo "<br>";
                                         }
                                         if(isset($tonfa)){
                                             echo "<label for='tonfa'>Tonfa</label>";
                                             echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                            echo "<br>";
                                         }
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
                                     }
+                                    echo "<input type='text' name='id2' value='$id_personagem2' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
                                     echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem2'] = "Martelo de Guerra";
                                     $_SESSION['arma2_personagem2'] = "Martelo de Guerra";
                                     echo "<li>".$_SESSION['arma1_personagem2']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($arco)){
                             if(isset($_SESSION['arma1_personagem2'])){
                                 echo "<li>".$_SESSION['arma1_personagem2']."</li>";
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($mangual) || isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($funda) || isset($lanterna)){
-                                    echo "O arco conta como arma de duas mãos, então caso selecione ele não poderá equipar mais nenhuma arma!!!";
+                                    echo "<h3>O arco conta como arma de duas mãos, então caso selecione ele não poderá equipar mais nenhuma arma!!!</h3>";
 
                                     echo "<form action='selec_eq.php' method='POST'>";
 
                                     echo "<label for='arco'>Arco</label>";
                                     echo "<input type='checkbox' id='arco' name='arco'>";
+                                    echo "<br>";
 
-                                    echo "Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.";
+                                    echo "<h3>Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.)</h3>";
 
                                         if(isset($espada_curta)){
                                             echo "<label for='espada_curta'>Espada Curta</label>";
                                             echo "<input type='checkbox' id='espada_curta' name='espada_curta'>";
+                                            echo "<br>";
                                         }
                                         if(isset($adaga)){
                                             echo "<label for='adaga'>Adaga</label>";
                                             echo "<input type='checkbox' id='adaga' name='adaga'>";
+                                            echo "<br>";
                                         }
                                         if(isset($tonfa)){
                                             echo "<label for='tonfa'>Tonfa</label>";
                                             echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                            echo "<br>";
                                         }
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
+                                    echo "<input type='text' name='id2' value='$id_personagem2' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
+                                    echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem2'] = "Arco";
                                     $_SESSION['arma2_personagem2'] = "Arco";
                                     echo "<li>".$_SESSION['arma1_personagem2']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($mangual)){
@@ -977,39 +1185,50 @@ echo $_SESSION['personagem4'];
                                 if(isset($_SESSION['arma2_personagem2'])){
                                     echo "<li>".$_SESSION['arma2_personagem2']."</li>";
                                 }
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($funda) || isset($lanterna)){
                                     
                                     echo "<form action='selec_eq.php' method='POST'>";
 
-                                    echo "Armas de Uma Mão(Selecione duas das opções abaixo)";
+                                    echo "<h3>Armas de Uma Mão(Selecione duas das opções abaixo)</h3>";
 
                                     echo "<label for='mangual'>Mangual</label>";
                                     echo "<input type='checkbox' id='mangual' name='mangual'>";
+                                    echo "<br>";
 
                                         if(isset($espada_curta)){
                                             echo "<label for='espada_curta'>Espada Curta</label>";
                                             echo "<input type='checkbox' id='espada_curta' name='espada_curta'>";
+                                            echo "<br>";
                                         }
                                         if(isset($adaga)){
                                             echo "<label for='adaga'>Adaga</label>";
                                             echo "<input type='checkbox' id='adaga' name='adaga'>";
+                                            echo "<br>";
                                         }
                                         if(isset($tonfa)){
                                             echo "<label for='tonfa'>Tonfa</label>";
                                             echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                            echo "<br>";
                                         }
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
+                                    echo "<input type='text' name='id2' value='$id_personagem2' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
+                                    echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem2'] = "Mangual";
                                     echo "<li>".$_SESSION['arma1_personagem2']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($espada_curta)){
@@ -1018,35 +1237,45 @@ echo $_SESSION['personagem4'];
                                 if(isset($_SESSION['arma2_personagem2'])){
                                     echo "<li>".$_SESSION['arma2_personagem2']."</li>";
                                 }
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($adaga) || isset($tonfa) || isset($funda) || isset($lanterna)){
                                     
                                     echo "<form action='selec_eq.php' method='POST'>";
 
-                                    echo "Armas de Uma Mão(Selecione duas das opções abaixo)";
+                                    echo "<h3>Armas de Uma Mão(Selecione duas das opções abaixo)</h3>";
 
                                     echo "<label for='espada_curta'>Espada Curta</label>";
                                     echo "<input type='checkbox' id='espada_curta' name='espada_curta'>";
+                                    echo "<br>";
                                         
                                         if(isset($adaga)){
                                             echo "<label for='adaga'>Adaga</label>";
                                             echo "<input type='checkbox' id='adaga' name='adaga'>";
+                                            echo "<br>";
                                         }
                                         if(isset($tonfa)){
                                             echo "<label for='tonfa'>Tonfa</label>";
                                             echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                            echo "<br>";
                                         }
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
+                                    echo "<input type='text' name='id2' value='$id_personagem2' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
+                                    echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem2'] = "Espada Curta";
                                     echo "<li>".$_SESSION['arma1_personagem2']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($adaga)){
@@ -1055,35 +1284,45 @@ echo $_SESSION['personagem4'];
                                 if(isset($_SESSION['arma2_personagem2'])){
                                     echo "<li>".$_SESSION['arma2_personagem2']."</li>";
                                 }
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($tonfa) || isset($funda) || isset($livro_feiticos) || isset($lanterna)){
                                     
                                     echo "<form action='selec_eq.php' method='POST'>";
 
-                                    echo "Armas de Uma Mão(Selecione duas das opções abaixo)";
+                                    echo "<h3>Armas de Uma Mão(Selecione duas das opções abaixo)</h3>";
                                         
                                     echo "<label for='adaga'>Adaga</label>";
                                     echo "<input type='checkbox' id='adaga' name='adaga'>";
+                                    echo "<br>";
                                         
                                         if(isset($tonfa)){
                                             echo "<label for='tonfa'>Tonfa</label>";
                                             echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                            echo "<br>";
                                         }
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($livro_feiticos)){
                                             echo "<label for='livro_feiticos'>Livro de Feitiços</label>";
                                             echo "<input type='checkbox' id='livro_feiticos' name='livro_feiticos'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
+                                    echo "<input type='text' name='id2' value='$id_personagem2' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
+                                    echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem2'] = "Adaga";
                                     echo "<li>".$_SESSION['arma1_personagem2']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($tonfa)){
@@ -1092,31 +1331,40 @@ echo $_SESSION['personagem4'];
                                 if(isset($_SESSION['arma2_personagem2'])){
                                     echo "<li>".$_SESSION['arma2_personagem2']."</li>";
                                 }
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($funda) || isset($livro_feiticos) || isset($lanterna)){
                                     
                                     echo "<form action='selec_eq.php' method='POST'>";
 
-                                    echo "Armas de Uma Mão(Selecione duas das opções abaixo)";
+                                    echo "<h3>Armas de Uma Mão(Selecione duas das opções abaixo)</h3>";
                                         
                                     echo "<label for='tonfa'>Tonfa</label>";
                                     echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                    echo "<br>";
                                         
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($livro_feiticos)){
                                             echo "<label for='livro_feiticos'>Livro de Feitiços</label>";
                                             echo "<input type='checkbox' id='livro_feiticos' name='livro_feiticos'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
+                                    echo "<input type='text' name='id2' value='$id_personagem2' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
+                                    echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem2'] = "Tonfa";
                                     echo "<li>".$_SESSION['arma1_personagem2']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($livro_feiticos)){
@@ -1125,27 +1373,35 @@ echo $_SESSION['personagem4'];
                                 if(isset($_SESSION['arma2_personagem2'])){
                                     echo "<li>".$_SESSION['arma2_personagem2']."</li>";
                                 }
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($funda) || isset($lanterna)){
                                     
                                     echo "<form action='selec_eq.php' method='POST'>";
 
-                                    echo "Armas de Uma Mão(Selecione duas das opções abaixo)";
+                                    echo "<h3>Armas de Uma Mão(Selecione duas das opções abaixo)</h3>";
                                         
                                     echo "<label for='livro_feiticos'>Livro de Feitiços</label>";
                                     echo "<input type='checkbox' id='livro_feiticos' name='livro_feiticos'>";
+                                    echo "<br>";
                                         
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
+                                    echo "<input type='text' name='id2' value='$id_personagem2' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
+                                    echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem2'] = "Livro de Feitiços";
                                     echo "<li>".$_SESSION['arma1_personagem2']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($funda)){
@@ -1154,22 +1410,30 @@ echo $_SESSION['personagem4'];
                                 if(isset($_SESSION['arma2_personagem2'])){
                                     echo "<li>".$_SESSION['arma2_personagem2']."</li>";
                                 }
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($lanterna)){
                                     
                                     echo "<form action='selec_eq.php' method='POST'>";
 
-                                    echo "Armas de Uma Mão(Selecione duas das opções abaixo)";
+                                    echo "<h3>Armas de Uma Mão(Selecione duas das opções abaixo)</h3>";
                                         
                                     echo "<label for='funda'>Funda</label>";
                                     echo "<input type='checkbox' id='funda' name='funda'>";
+                                    echo "<br>";
                                     
                                     echo "<label for='lanterna'>Lanterna</label>";
                                     echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                    echo "<br>";
+
+                                    echo "<input type='text' name='id2' value='$id_personagem2' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
+                                    echo "</form>";
                                         
                                 } else {
                                     $_SESSION['arma1_personagem2'] = "Funda";
                                     echo "<li>".$_SESSION['arma1_personagem2']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         }
@@ -1178,7 +1442,24 @@ echo $_SESSION['personagem4'];
                     echo "</td>";
                 }
 
-                $id = $_SESSION['personagem3'];
+                $id_personagem3 = $id = $_SESSION['personagem3'];
+                // limpando varáveis
+                unset($armadura_malha);
+                unset($armadura_aco);
+                unset($espada_curta);
+                unset($mangual);
+                unset($escudo);
+                unset($espada_curta_escudo);
+                unset($mangual_escudo);
+                unset($tonfa);
+                unset($adaga);
+                unset($espada_montante);
+                unset($martelo_guerra);
+                unset($arco);
+                unset($funda);
+                unset($livro_feiticos);
+                unset($lanterna);
+
                 $personagem = $repositorio->MostrarPersonagem($id);
                 foreach ($personagem as $key) {
                     $nome = $key['nome'];
@@ -1200,8 +1481,7 @@ echo $_SESSION['personagem4'];
                         }
 
                         if(isset($armadura_malha) && isset($armadura_aco)){
-                            if(isset($_POST['enviar_armadura'])){
-                                $_POST['armadura'] = $_SESSION['armadura_personagem3'];
+                            if(isset($_SESSION['armadura_personagem3'])){
                                 echo "<li>".$_SESSION['armadura_personagem3']."</li>";
                             } else {
                                 echo "<h2>Escolher para utilizar:</h2>";
@@ -1210,6 +1490,9 @@ echo $_SESSION['personagem4'];
                                         echo "<option value='armadura de malha'>Armadura de Malha</option>";
                                         echo "<option value='armadura de aço'>Armadura de Aço</option>";
                                     echo "</select>";
+                                    echo "<input type='text' name='id3' value='$id_personagem3' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
+                                    echo "<br>";
                                 echo "<form>";
                             }
                         } else if(isset($armadura_malha)){
@@ -1268,276 +1551,341 @@ echo $_SESSION['personagem4'];
                             if(isset($_SESSION['arma1_personagem3']) && isset($_SESSION['arma2_personagem3'])){
                                 echo "<li>".$_SESSION['arma1_personagem3']."</li>";
                                 echo "<li>".$_SESSION['arma2_personagem3']."</li>";
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($mangual_escudo) || isset($mangual) || isset($adaga) || isset($tonfa) || isset($espada_montante) || isset($martelo_guerra) || isset($arco) || isset($funda) || isset($lanterna)){
                                     echo "<form action='selec_eq.php' method='POST'>";
 
                                     if(isset($mangual_escudo) || isset($espada_montante) || isset($martelo_guerra) || isset($arco)){
-                                        echo "Armas de Duas Mãos (Selecione apenas um)";
+                                        echo "<h3>Armas de Duas Mãos (Selecione apenas um)</h3>";
                                     
                                         echo "<label for='espada_curta_escudo'>Espada Curta e Escudo</label>";
                                         echo "<input type='checkbox' id='espada_curta_escudo' name='espada_curta_escudo'>";
+                                        echo "<br>";
 
                                         if(isset($mangual_escudo)){
                                             echo "<label for='mangual_escudo'>Mangual e Escudo</label>";
                                             echo "<input type='checkbox' id='mangual_escudo' name='mangual_escudo'>";
+                                            echo "<br>";
                                         }
                                         if(isset($espada_montante)){
                                             echo "<label for='espada_montante'>Espada Montante</label>";
                                             echo "<input type='checkbox' id='espada_montante' name='espada_montante'>";
+                                            echo "<br>";
                                         }
                                         if(isset($martelo_guerra)){
                                             echo "<label for='martelo_guerra'>Martelo de Guerra</label>";
                                             echo "<input type='checkbox' id='martelo_guerra' name='martelo_guerra'>";
+                                            echo "<br>";
                                         }
                                         if(isset($arco)){
                                             echo "<label for='arco'>Arco</label>";
                                             echo "<input type='checkbox' id='arco' name='arco'>";
+                                            echo "<br>";
                                         }
                                     }
 
                                     if(isset($mangual) || isset($adaga) || isset($tonfa) || isset($funda)){
-                                        echo "Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.";
+                                        echo "<h3>Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.)</h3>";
                                         echo "<label for='espada_curta'>Espada Curta</label>";
                                         echo "<input type='checkbox' id='espada_curta' name='espada_curta'>";
+                                        echo "<br>";
                                         echo "<label for='escudo'>Escudo</label>";
                                         echo "<input type='checkbox' id='escudo' name='escudo'>";
+                                        echo "<br>";
 
                                         if(isset($mangual)){
                                             echo "<label for='mangual'>Mangual</label>";
                                             echo "<input type='checkbox' id='mangual' name='mangual'>";
+                                            echo "<br>";
                                         }
                                         if(isset($adaga)){
                                             echo "<label for='adaga'>Adaga</label>";
                                             echo "<input type='checkbox' id='adaga' name='adaga'>";
+                                            echo "<br>";
                                         }
                                         if(isset($tonfa)){
                                             echo "<label for='tonfa'>Tonfa</label>";
                                             echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                            echo "<br>";
                                         }
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
                                     }
 
+                                    echo "<input type='text' name='id3' value='$id_personagem3' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
                                     echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem3'] = "Espada Curta";
                                     $_SESSION['arma2_personagem3'] = "Escudo";
                                     echo "<li>".$_SESSION['arma1_personagem3']."</li>";
                                     echo "<li>".$_SESSION['arma2_personagem3']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($mangual_escudo)){
                             if(isset($_SESSION['arma1_personagem3']) && isset($_SESSION['arma2_personagem3'])){
                                 echo "<li>".$_SESSION['arma1_personagem3']."</li>";
                                 echo "<li>".$_SESSION['arma2_personagem3']."</li>";
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($espada_montante) || isset($martelo_guerra) || isset($arco) || isset($funda) || isset($lanterna)){
                                     echo "<form action='selec_eq.php' method='POST'>";
 
                                     if(isset($espada_montante) || isset($martelo_guerra) || isset($arco)){
-                                        echo "Armas de Duas Mãos (Selecione apenas um)";
+                                        echo "<h3>Armas de Duas Mãos (Selecione apenas um)</h3>";
                                         
                                         echo "<label for='mangual_escudo'>Mangual e Escudo</label>";
                                         echo "<input type='checkbox' id='mangual_escudo' name='mangual_escudo'>";
+                                        echo "<br>";
 
                                         if(isset($espada_montante)){
                                             echo "<label for='espada_montante'>Espada Montante</label>";
                                             echo "<input type='checkbox' id='espada_montante' name='espada_montante'>";
+                                            echo "<br>";
                                         }
                                         if(isset($martelo_guerra)){
                                             echo "<label for='martelo_guerra'>Martelo de Guerra</label>";
                                             echo "<input type='checkbox' id='martelo_guerra' name='martelo_guerra'>";
+                                            echo "<br>";
                                         }
                                         if(isset($arco)){
                                             echo "<label for='arco'>Arco</label>";
                                             echo "<input type='checkbox' id='arco' name='arco'>";
+                                            echo "<br>";
                                         }
                                     }
                                     
 
                                     if(isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($funda) || isset($lanterna)){
-                                        echo "Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.";
+                                        echo "<h3>Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.)</h3>";
                                         echo "<label for='mangual'>Mangual</label>";
                                         echo "<input type='checkbox' id='mangual' name='mangual'>";
+                                        echo "<br>";
                                         echo "<label for='escudo'>Escudo</label>";
                                         echo "<input type='checkbox' id='escudo' name='escudo'>";
+                                        echo "<br>";
 
                                         if(isset($espada_curta)){
                                             echo "<label for='espada_curta'>Espada Curta</label>";
                                             echo "<input type='checkbox' id='espada_curta' name='espada_curta'>";
+                                            echo "<br>";
                                         }
                                         if(isset($adaga)){
                                             echo "<label for='adaga'>Adaga</label>";
                                             echo "<input type='checkbox' id='adaga' name='adaga'>";
+                                            echo "<br>";
                                         }
                                         if(isset($tonfa)){
                                             echo "<label for='tonfa'>Tonfa</label>";
                                             echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                            echo "<br>";
                                         }
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
                                     }
+                                    echo "<input type='text' name='id3' value='$id_personagem3' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
                                     echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem3'] = "Mangual";
                                     $_SESSION['arma2_personagem3'] = "Escudo";
                                     echo "<li>".$_SESSION['arma1_personagem3']."</li>";
                                     echo "<li>".$_SESSION['arma2_personagem3']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($espada_montante)){
                             if(isset($_SESSION['arma1_personagem3'])){
                                 echo "<li>".$_SESSION['arma1_personagem3']."</li>";
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($mangual) || isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($martelo_guerra) || isset($arco) || isset($funda) || isset($lanterna)){
                                     echo "<form action='selec_eq.php' method='POST'>";
                                     
                                     if(isset($martelo_guerra) || isset($arco)){
-                                        echo "Armas de Duas Mãos (Selecione apenas um)";
+                                        echo "<h3>Armas de Duas Mãos (Selecione apenas um)</h3>";
                                     
                                         echo "<label for='espada_montante'>Espada Montante</label>";
                                         echo "<input type='checkbox' id='espada_montante' name='espada_montante'>";
+                                        echo "<br>";
 
 
                                         if(isset($martelo_guerra)){
                                             echo "<label for='martelo_guerra'>Martelo de Guerra</label>";
                                             echo "<input type='checkbox' id='martelo_guerra' name='martelo_guerra'>";
+                                            echo "<br>";
                                         }
                                         if(isset($arco)){
                                             echo "<label for='arco'>Arco</label>";
                                             echo "<input type='checkbox' id='arco' name='arco'>";
+                                            echo "<br>";
                                         }
                                     }
 
                                     if(isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($funda) || isset($lanterna)){
-                                        echo "Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.";
+                                        echo "<h3>Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.)</h3>";
 
                                         if(isset($espada_curta)){
                                             echo "<label for='espada_curta'>Espada Curta</label>";
                                             echo "<input type='checkbox' id='espada_curta' name='espada_curta'>";
+                                            echo "<br>";
                                         }
                                         if(isset($adaga)){
                                             echo "<label for='adaga'>Adaga</label>";
                                             echo "<input type='checkbox' id='adaga' name='adaga'>";
+                                            echo "<br>";
                                         }
                                         if(isset($tonfa)){
                                             echo "<label for='tonfa'>Tonfa</label>";
                                             echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                            echo "<br>";
                                         }
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
                                     }
+                                    echo "<input type='text' name='id3' value='$id_personagem3' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
                                     echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem3'] = "Espada Montante";
                                     $_SESSION['arma2_personagem3'] = "Espada Montante";
                                     echo "<li>".$_SESSION['arma1_personagem3']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($martelo_guerra)){
                             if(isset($_SESSION['arma1_personagem3'])){
                                 echo "<li>".$_SESSION['arma1_personagem3']."</li>";
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($mangual) || isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($arco) || isset($funda) || isset($lanterna)){
                                     echo "<form action='selec_eq.php' method='POST'>";
 
                                     if(isset($arco)){
-                                        echo "Armas de Duas Mãos (Selecione apenas um)";
+                                        echo "<h3>Armas de Duas Mãos (Selecione apenas um)</h3>";
                                     
                                         echo "<label for='martelo_guerra'>Martelo de Guerra</label>";
                                         echo "<input type='checkbox' id='martelo_guerra' name='martelo_guerra'>";
+                                        echo "<br>";
                                         echo "<label for='arco'>Arco</label>";
                                         echo "<input type='checkbox' id='arco' name='arco'>";
+                                        echo "<br>";
                                     }
 
                                     if(isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($funda) || isset($lanterna)){
-                                        echo "Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.";
+                                        echo "<h3>Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.)</h3>";
 
                                         if(isset($espada_curta)){
                                             echo "<label for='espada_curta'>Espada Curta</label>";
                                             echo "<input type='checkbox' id='espada_curta' name='espada_curta'>";
+                                            echo "<br>";
                                         }
                                         if(isset($adaga)){
                                             echo "<label for='adaga'>Adaga</label>";
                                             echo "<input type='checkbox' id='adaga' name='adaga'>";
+                                            echo "<br>";
                                         }
                                         if(isset($tonfa)){
                                             echo "<label for='tonfa'>Tonfa</label>";
                                             echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                            echo "<br>";
                                         }
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
                                     }
+                                    echo "<input type='text' name='id3' value='$id_personagem3' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
                                     echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem3'] = "Martelo de Guerra";
                                     $_SESSION['arma2_personagem3'] = "Martelo de Guerra";
                                     echo "<li>".$_SESSION['arma1_personagem3']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($arco)){
                             if(isset($_SESSION['arma1_personagem3'])){
                                 echo "<li>".$_SESSION['arma1_personagem3']."</li>";
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($mangual) || isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($funda) || isset($lanterna)){
-                                    echo "O arco conta como arma de duas mãos, então caso selecione ele não poderá equipar mais nenhuma arma!!!";
+                                    echo "<h3>O arco conta como arma de duas mãos, então caso selecione ele não poderá equipar mais nenhuma arma!!!</h3>";
 
                                     echo "<form action='selec_eq.php' method='POST'>";
 
                                     echo "<label for='arco'>Arco</label>";
                                     echo "<input type='checkbox' id='arco' name='arco'>";
+                                    echo "<br>";
 
-                                    echo "Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.";
+                                    echo "<h3>Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.)</h3>";
 
                                         if(isset($espada_curta)){
                                             echo "<label for='espada_curta'>Espada Curta</label>";
                                             echo "<input type='checkbox' id='espada_curta' name='espada_curta'>";
+                                            echo "<br>";
                                         }
                                         if(isset($adaga)){
                                             echo "<label for='adaga'>Adaga</label>";
                                             echo "<input type='checkbox' id='adaga' name='adaga'>";
+                                            echo "<br>";
                                         }
                                         if(isset($tonfa)){
                                             echo "<label for='tonfa'>Tonfa</label>";
                                             echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                            echo "<br>";
                                         }
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
+                                    echo "<input type='text' name='id3' value='$id_personagem3' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
+                                    echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem3'] = "Arco";
                                     $_SESSION['arma2_personagem3'] = "Arco";
                                     echo "<li>".$_SESSION['arma1_personagem3']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($mangual)){
@@ -1546,39 +1894,50 @@ echo $_SESSION['personagem4'];
                                 if(isset($_SESSION['arma2_personagem3'])){
                                     echo "<li>".$_SESSION['arma2_personagem3']."</li>";
                                 }
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($funda) || isset($lanterna)){
                                     
                                     echo "<form action='selec_eq.php' method='POST'>";
 
-                                    echo "Armas de Uma Mão(Selecione duas das opções abaixo)";
+                                    echo "<h3>Armas de Uma Mão(Selecione duas das opções abaixo)</h3>";
 
                                     echo "<label for='mangual'>Mangual</label>";
                                     echo "<input type='checkbox' id='mangual' name='mangual'>";
+                                    echo "<br>";
 
                                         if(isset($espada_curta)){
                                             echo "<label for='espada_curta'>Espada Curta</label>";
                                             echo "<input type='checkbox' id='espada_curta' name='espada_curta'>";
+                                            echo "<br>";
                                         }
                                         if(isset($adaga)){
                                             echo "<label for='adaga'>Adaga</label>";
                                             echo "<input type='checkbox' id='adaga' name='adaga'>";
+                                            echo "<br>";
                                         }
                                         if(isset($tonfa)){
                                             echo "<label for='tonfa'>Tonfa</label>";
                                             echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                            echo "<br>";
                                         }
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
+                                    echo "<input type='text' name='id3' value='$id_personagem3' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
+                                    echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem3'] = "Mangual";
                                     echo "<li>".$_SESSION['arma1_personagem3']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($espada_curta)){
@@ -1587,35 +1946,45 @@ echo $_SESSION['personagem4'];
                                 if(isset($_SESSION['arma2_personagem3'])){
                                     echo "<li>".$_SESSION['arma2_personagem3']."</li>";
                                 }
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($adaga) || isset($tonfa) || isset($funda) || isset($lanterna)){
                                     
                                     echo "<form action='selec_eq.php' method='POST'>";
 
-                                    echo "Armas de Uma Mão(Selecione duas das opções abaixo)";
+                                    echo "<h3>Armas de Uma Mão(Selecione duas das opções abaixo)</h3>";
 
                                     echo "<label for='espada_curta'>Espada Curta</label>";
                                     echo "<input type='checkbox' id='espada_curta' name='espada_curta'>";
+                                    echo "<br>";
                                         
                                         if(isset($adaga)){
                                             echo "<label for='adaga'>Adaga</label>";
                                             echo "<input type='checkbox' id='adaga' name='adaga'>";
+                                            echo "<br>";
                                         }
                                         if(isset($tonfa)){
                                             echo "<label for='tonfa'>Tonfa</label>";
                                             echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                            echo "<br>";
                                         }
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
+                                    echo "<input type='text' name='id3' value='$id_personagem3' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
+                                    echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem3'] = "Espada Curta";
                                     echo "<li>".$_SESSION['arma1_personagem3']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($adaga)){
@@ -1624,35 +1993,45 @@ echo $_SESSION['personagem4'];
                                 if(isset($_SESSION['arma2_personagem3'])){
                                     echo "<li>".$_SESSION['arma2_personagem3']."</li>";
                                 }
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($tonfa) || isset($funda) || isset($livro_feiticos) || isset($lanterna)){
                                     
                                     echo "<form action='selec_eq.php' method='POST'>";
 
-                                    echo "Armas de Uma Mão(Selecione duas das opções abaixo)";
+                                    echo "<h3>Armas de Uma Mão(Selecione duas das opções abaixo)</h3>";
                                         
                                     echo "<label for='adaga'>Adaga</label>";
                                     echo "<input type='checkbox' id='adaga' name='adaga'>";
+                                    echo "<br>";
                                         
                                         if(isset($tonfa)){
                                             echo "<label for='tonfa'>Tonfa</label>";
                                             echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                            echo "<br>";
                                         }
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($livro_feiticos)){
                                             echo "<label for='livro_feiticos'>Livro de Feitiços</label>";
                                             echo "<input type='checkbox' id='livro_feiticos' name='livro_feiticos'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
+                                    echo "<input type='text' name='id3' value='$id_personagem3' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
+                                    echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem3'] = "Adaga";
                                     echo "<li>".$_SESSION['arma1_personagem3']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($tonfa)){
@@ -1661,31 +2040,40 @@ echo $_SESSION['personagem4'];
                                 if(isset($_SESSION['arma2_personagem3'])){
                                     echo "<li>".$_SESSION['arma2_personagem3']."</li>";
                                 }
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($funda) || isset($livro_feiticos) || isset($lanterna)){
                                     
                                     echo "<form action='selec_eq.php' method='POST'>";
 
-                                    echo "Armas de Uma Mão(Selecione duas das opções abaixo)";
+                                    echo "<h3>Armas de Uma Mão(Selecione duas das opções abaixo)</h3>";
                                         
                                     echo "<label for='tonfa'>Tonfa</label>";
                                     echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                    echo "<br>";
                                         
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($livro_feiticos)){
                                             echo "<label for='livro_feiticos'>Livro de Feitiços</label>";
                                             echo "<input type='checkbox' id='livro_feiticos' name='livro_feiticos'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
+                                    echo "<input type='text' name='id3' value='$id_personagem3' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
+                                    echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem3'] = "Tonfa";
                                     echo "<li>".$_SESSION['arma1_personagem3']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($livro_feiticos)){
@@ -1694,27 +2082,35 @@ echo $_SESSION['personagem4'];
                                 if(isset($_SESSION['arma2_personagem3'])){
                                     echo "<li>".$_SESSION['arma2_personagem3']."</li>";
                                 }
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($funda) || isset($lanterna)){
                                     
                                     echo "<form action='selec_eq.php' method='POST'>";
 
-                                    echo "Armas de Uma Mão(Selecione duas das opções abaixo)";
+                                    echo "<h3>Armas de Uma Mão(Selecione duas das opções abaixo)</h3>";
                                         
                                     echo "<label for='livro_feiticos'>Livro de Feitiços</label>";
                                     echo "<input type='checkbox' id='livro_feiticos' name='livro_feiticos'>";
+                                    echo "<br>";
                                         
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
+                                        echo "<input type='text' name='id3' value='$id_personagem3' hidden>";
+                                        echo "<input type='submit' value='Equipar'>";
+                                        echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem3'] = "Livro de Feitiços";
                                     echo "<li>".$_SESSION['arma1_personagem3']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($funda)){
@@ -1723,22 +2119,30 @@ echo $_SESSION['personagem4'];
                                 if(isset($_SESSION['arma2_personagem3'])){
                                     echo "<li>".$_SESSION['arma2_personagem3']."</li>";
                                 }
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($lanterna)){
                                     
                                     echo "<form action='selec_eq.php' method='POST'>";
 
-                                    echo "Armas de Uma Mão(Selecione duas das opções abaixo)";
+                                    echo "<h3>Armas de Uma Mão(Selecione duas das opções abaixo)</h3>";
                                         
                                     echo "<label for='funda'>Funda</label>";
                                     echo "<input type='checkbox' id='funda' name='funda'>";
+                                    echo "<br>";
                                     
                                     echo "<label for='lanterna'>Lanterna</label>";
                                     echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                    echo "<br>";
+
+                                    echo "<input type='text' name='id3' value='$id_personagem3' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
+                                    echo "</form>";
                                         
                                 } else {
                                     $_SESSION['arma1_personagem3'] = "Funda";
                                     echo "<li>".$_SESSION['arma1_personagem3']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         }
@@ -1747,7 +2151,24 @@ echo $_SESSION['personagem4'];
                     echo "</td>";
                 }
 
-                $id = $_SESSION['personagem4'];
+                $id_personagem4 = $id = $_SESSION['personagem4'];
+                // limpando varáveis
+                unset($armadura_malha);
+                unset($armadura_aco);
+                unset($espada_curta);
+                unset($mangual);
+                unset($escudo);
+                unset($espada_curta_escudo);
+                unset($mangual_escudo);
+                unset($tonfa);
+                unset($adaga);
+                unset($espada_montante);
+                unset($martelo_guerra);
+                unset($arco);
+                unset($funda);
+                unset($livro_feiticos);
+                unset($lanterna);
+
                 $personagem = $repositorio->MostrarPersonagem($id);
                 foreach ($personagem as $key) {
                     $nome = $key['nome'];
@@ -1769,8 +2190,7 @@ echo $_SESSION['personagem4'];
                         }
 
                         if(isset($armadura_malha) && isset($armadura_aco)){
-                            if(isset($_POST['enviar_armadura'])){
-                                $_POST['armadura'] = $_SESSION['armadura_personagem4'];
+                            if(isset($_SESSION['armadura_personagem4'])){
                                 echo "<li>".$_SESSION['armadura_personagem4']."</li>";
                             } else {
                                 echo "<h2>Escolher para utilizar:</h2>";
@@ -1779,6 +2199,9 @@ echo $_SESSION['personagem4'];
                                         echo "<option value='armadura de malha'>Armadura de Malha</option>";
                                         echo "<option value='armadura de aço'>Armadura de Aço</option>";
                                     echo "</select>";
+                                    echo "<input type='text' name='id4' value='$id_personagem4' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
+                                    echo "<br>";
                                 echo "<form>";
                             }
                         } else if(isset($armadura_malha)){
@@ -1837,276 +2260,341 @@ echo $_SESSION['personagem4'];
                             if(isset($_SESSION['arma1_personagem4']) && isset($_SESSION['arma2_personagem4'])){
                                 echo "<li>".$_SESSION['arma1_personagem4']."</li>";
                                 echo "<li>".$_SESSION['arma2_personagem4']."</li>";
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($mangual_escudo) || isset($mangual) || isset($adaga) || isset($tonfa) || isset($espada_montante) || isset($martelo_guerra) || isset($arco) || isset($funda) || isset($lanterna)){
                                     echo "<form action='selec_eq.php' method='POST'>";
 
                                     if(isset($mangual_escudo) || isset($espada_montante) || isset($martelo_guerra) || isset($arco)){
-                                        echo "Armas de Duas Mãos (Selecione apenas um)";
+                                        echo "<h3>Armas de Duas Mãos (Selecione apenas um)</h3>";
                                     
                                         echo "<label for='espada_curta_escudo'>Espada Curta e Escudo</label>";
                                         echo "<input type='checkbox' id='espada_curta_escudo' name='espada_curta_escudo'>";
+                                        echo "<br>";
 
                                         if(isset($mangual_escudo)){
                                             echo "<label for='mangual_escudo'>Mangual e Escudo</label>";
                                             echo "<input type='checkbox' id='mangual_escudo' name='mangual_escudo'>";
+                                            echo "<br>";
                                         }
                                         if(isset($espada_montante)){
                                             echo "<label for='espada_montante'>Espada Montante</label>";
                                             echo "<input type='checkbox' id='espada_montante' name='espada_montante'>";
+                                            echo "<br>";
                                         }
                                         if(isset($martelo_guerra)){
                                             echo "<label for='martelo_guerra'>Martelo de Guerra</label>";
                                             echo "<input type='checkbox' id='martelo_guerra' name='martelo_guerra'>";
+                                            echo "<br>";
                                         }
                                         if(isset($arco)){
                                             echo "<label for='arco'>Arco</label>";
                                             echo "<input type='checkbox' id='arco' name='arco'>";
+                                            echo "<br>";
                                         }
                                     }
 
                                     if(isset($mangual) || isset($adaga) || isset($tonfa) || isset($funda)){
-                                        echo "Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.";
+                                        echo "<h3>Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.)</h3>";
                                         echo "<label for='espada_curta'>Espada Curta</label>";
                                         echo "<input type='checkbox' id='espada_curta' name='espada_curta'>";
+                                        echo "<br>";
                                         echo "<label for='escudo'>Escudo</label>";
                                         echo "<input type='checkbox' id='escudo' name='escudo'>";
+                                        echo "<br>";
 
                                         if(isset($mangual)){
                                             echo "<label for='mangual'>Mangual</label>";
                                             echo "<input type='checkbox' id='mangual' name='mangual'>";
+                                            echo "<br>";
                                         }
                                         if(isset($adaga)){
                                             echo "<label for='adaga'>Adaga</label>";
                                             echo "<input type='checkbox' id='adaga' name='adaga'>";
+                                            echo "<br>";
                                         }
                                         if(isset($tonfa)){
                                             echo "<label for='tonfa'>Tonfa</label>";
                                             echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                            echo "<br>";
                                         }
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
                                     }
 
+                                    echo "<input type='text' name='id4' value='$id_personagem4' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
                                     echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem4'] = "Espada Curta";
                                     $_SESSION['arma2_personagem4'] = "Escudo";
                                     echo "<li>".$_SESSION['arma1_personagem4']."</li>";
                                     echo "<li>".$_SESSION['arma2_personagem4']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($mangual_escudo)){
                             if(isset($_SESSION['arma1_personagem4']) && isset($_SESSION['arma2_personagem4'])){
                                 echo "<li>".$_SESSION['arma1_personagem4']."</li>";
                                 echo "<li>".$_SESSION['arma2_personagem4']."</li>";
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($espada_montante) || isset($martelo_guerra) || isset($arco) || isset($funda) || isset($lanterna)){
                                     echo "<form action='selec_eq.php' method='POST'>";
 
                                     if(isset($espada_montante) || isset($martelo_guerra) || isset($arco)){
-                                        echo "Armas de Duas Mãos (Selecione apenas um)";
+                                        echo "<h3>Armas de Duas Mãos (Selecione apenas um)<h3>";
                                         
                                         echo "<label for='mangual_escudo'>Mangual e Escudo</label>";
                                         echo "<input type='checkbox' id='mangual_escudo' name='mangual_escudo'>";
+                                        echo "<br>";
 
                                         if(isset($espada_montante)){
                                             echo "<label for='espada_montante'>Espada Montante</label>";
                                             echo "<input type='checkbox' id='espada_montante' name='espada_montante'>";
+                                            echo "<br>";
                                         }
                                         if(isset($martelo_guerra)){
                                             echo "<label for='martelo_guerra'>Martelo de Guerra</label>";
                                             echo "<input type='checkbox' id='martelo_guerra' name='martelo_guerra'>";
+                                            echo "<br>";
                                         }
                                         if(isset($arco)){
                                             echo "<label for='arco'>Arco</label>";
                                             echo "<input type='checkbox' id='arco' name='arco'>";
+                                            echo "<br>";
                                         }
                                     }
                                     
 
                                     if(isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($funda) || isset($lanterna)){
-                                        echo "Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.";
+                                        echo "<h3>Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.)</h3>";
                                         echo "<label for='mangual'>Mangual</label>";
                                         echo "<input type='checkbox' id='mangual' name='mangual'>";
+                                        echo "<br>";
                                         echo "<label for='escudo'>Escudo</label>";
                                         echo "<input type='checkbox' id='escudo' name='escudo'>";
+                                        echo "<br>";
 
                                         if(isset($espada_curta)){
                                             echo "<label for='espada_curta'>Espada Curta</label>";
                                             echo "<input type='checkbox' id='espada_curta' name='espada_curta'>";
+                                            echo "<br>";
                                         }
                                         if(isset($adaga)){
                                             echo "<label for='adaga'>Adaga</label>";
                                             echo "<input type='checkbox' id='adaga' name='adaga'>";
+                                            echo "<br>";
                                         }
                                         if(isset($tonfa)){
                                             echo "<label for='tonfa'>Tonfa</label>";
                                             echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                            echo "<br>";
                                         }
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
                                     }
+                                    echo "<input type='text' name='id4' value='$id_personagem4' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
                                     echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem4'] = "Mangual";
                                     $_SESSION['arma2_personagem4'] = "Escudo";
                                     echo "<li>".$_SESSION['arma1_personagem4']."</li>";
                                     echo "<li>".$_SESSION['arma2_personagem4']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($espada_montante)){
                             if(isset($_SESSION['arma1_personagem4'])){
                                 echo "<li>".$_SESSION['arma1_personagem4']."</li>";
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($mangual) || isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($martelo_guerra) || isset($arco) || isset($funda) || isset($lanterna)){
                                     echo "<form action='selec_eq.php' method='POST'>";
                                     
                                     if(isset($martelo_guerra) || isset($arco)){
-                                        echo "Armas de Duas Mãos (Selecione apenas um)";
+                                        echo "<h3>Armas de Duas Mãos (Selecione apenas um)</h3>";
                                     
                                         echo "<label for='espada_montante'>Espada Montante</label>";
                                         echo "<input type='checkbox' id='espada_montante' name='espada_montante'>";
+                                        echo "<br>";
 
 
                                         if(isset($martelo_guerra)){
                                             echo "<label for='martelo_guerra'>Martelo de Guerra</label>";
                                             echo "<input type='checkbox' id='martelo_guerra' name='martelo_guerra'>";
+                                            echo "<br>";
                                         }
                                         if(isset($arco)){
                                             echo "<label for='arco'>Arco</label>";
                                             echo "<input type='checkbox' id='arco' name='arco'>";
+                                            echo "<br>";
                                         }
                                     }
 
                                     if(isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($funda) || isset($lanterna)){
-                                        echo "Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.";
+                                        echo "<h3>Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.)</h3>";
 
                                         if(isset($espada_curta)){
                                             echo "<label for='espada_curta'>Espada Curta</label>";
                                             echo "<input type='checkbox' id='espada_curta' name='espada_curta'>";
+                                            echo "<br>";
                                         }
                                         if(isset($adaga)){
                                             echo "<label for='adaga'>Adaga</label>";
                                             echo "<input type='checkbox' id='adaga' name='adaga'>";
+                                            echo "<br>";
                                         }
                                         if(isset($tonfa)){
                                             echo "<label for='tonfa'>Tonfa</label>";
                                             echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                            echo "<br>";
                                         }
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
                                     }
+                                    echo "<input type='text' name='id4' value='$id_personagem4' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
                                     echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem4'] = "Espada Montante";
                                     $_SESSION['arma2_personagem4'] = "Espada Montante";
                                     echo "<li>".$_SESSION['arma1_personagem4']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($martelo_guerra)){
                             if(isset($_SESSION['arma1_personagem4'])){
                                 echo "<li>".$_SESSION['arma1_personagem4']."</li>";
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($mangual) || isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($arco) || isset($funda) || isset($lanterna)){
                                     echo "<form action='selec_eq.php' method='POST'>";
 
                                     if(isset($arco)){
-                                        echo "Armas de Duas Mãos (Selecione apenas um)";
+                                        echo "<h3>Armas de Duas Mãos (Selecione apenas um)</h3>";
                                     
                                         echo "<label for='martelo_guerra'>Martelo de Guerra</label>";
                                         echo "<input type='checkbox' id='martelo_guerra' name='martelo_guerra'>";
+                                        echo "<br>";
                                         echo "<label for='arco'>Arco</label>";
                                         echo "<input type='checkbox' id='arco' name='arco'>";
+                                        echo "<br>";
                                     }
 
                                     if(isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($funda) || isset($lanterna)){
-                                        echo "Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.";
+                                        echo "<h3>Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.)</h3>";
 
                                         if(isset($espada_curta)){
                                             echo "<label for='espada_curta'>Espada Curta</label>";
                                             echo "<input type='checkbox' id='espada_curta' name='espada_curta'>";
+                                            echo "<br>";
                                         }
                                         if(isset($adaga)){
                                             echo "<label for='adaga'>Adaga</label>";
                                             echo "<input type='checkbox' id='adaga' name='adaga'>";
+                                            echo "<br>";
                                         }
                                         if(isset($tonfa)){
                                             echo "<label for='tonfa'>Tonfa</label>";
                                             echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                            echo "<br>";
                                         }
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
                                     }
+                                    echo "<input type='text' name='id4' value='$id_personagem4' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
                                     echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem4'] = "Martelo de Guerra";
                                     $_SESSION['arma2_personagem4'] = "Martelo de Guerra";
                                     echo "<li>".$_SESSION['arma1_personagem4']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($arco)){
                             if(isset($_SESSION['arma1_personagem4'])){
                                 echo "<li>".$_SESSION['arma1_personagem4']."</li>";
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($mangual) || isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($funda) || isset($lanterna)){
-                                    echo "O arco conta como arma de duas mãos, então caso selecione ele não poderá equipar mais nenhuma arma!!!";
+                                    echo "<h3>O arco conta como arma de duas mãos, então caso selecione ele não poderá equipar mais nenhuma arma!!!</h3>";
 
                                     echo "<form action='selec_eq.php' method='POST'>";
 
                                     echo "<label for='arco'>Arco</label>";
                                     echo "<input type='checkbox' id='arco' name='arco'>";
+                                    echo "<br>";
 
-                                    echo "Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.";
+                                    echo "<h3>Armas de Uma Mão(Caso não tenha selecionado nenhuma arma de duas mãos, Selecione duas das opções abaixo.)</h3>";
 
                                         if(isset($espada_curta)){
                                             echo "<label for='espada_curta'>Espada Curta</label>";
                                             echo "<input type='checkbox' id='espada_curta' name='espada_curta'>";
+                                            echo "<br>";
                                         }
                                         if(isset($adaga)){
                                             echo "<label for='adaga'>Adaga</label>";
                                             echo "<input type='checkbox' id='adaga' name='adaga'>";
+                                            echo "<br>";
                                         }
                                         if(isset($tonfa)){
                                             echo "<label for='tonfa'>Tonfa</label>";
                                             echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                            echo "<br>";
                                         }
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
+                                    echo "<input type='text' name='id4' value='$id_personagem4' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
+                                    echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem4'] = "Arco";
                                     $_SESSION['arma2_personagem4'] = "Arco";
                                     echo "<li>".$_SESSION['arma1_personagem4']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($mangual)){
@@ -2115,39 +2603,50 @@ echo $_SESSION['personagem4'];
                                 if(isset($_SESSION['arma2_personagem4'])){
                                     echo "<li>".$_SESSION['arma2_personagem4']."</li>";
                                 }
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($funda) || isset($lanterna)){
                                     
                                     echo "<form action='selec_eq.php' method='POST'>";
 
-                                    echo "Armas de Uma Mão(Selecione duas das opções abaixo)";
+                                    echo "<h3>Armas de Uma Mão(Selecione duas das opções abaixo)</h3>";
 
                                     echo "<label for='mangual'>Mangual</label>";
                                     echo "<input type='checkbox' id='mangual' name='mangual'>";
+                                    echo "<br>";
 
                                         if(isset($espada_curta)){
                                             echo "<label for='espada_curta'>Espada Curta</label>";
                                             echo "<input type='checkbox' id='espada_curta' name='espada_curta'>";
+                                            echo "<br>";
                                         }
                                         if(isset($adaga)){
                                             echo "<label for='adaga'>Adaga</label>";
                                             echo "<input type='checkbox' id='adaga' name='adaga'>";
+                                            echo "<br>";
                                         }
                                         if(isset($tonfa)){
                                             echo "<label for='tonfa'>Tonfa</label>";
                                             echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                            echo "<br>";
                                         }
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
+                                        echo "<input type='text' name='id4' value='$id_personagem4' hidden>";
+                                        echo "<input type='submit' value='Equipar'>";
+                                        echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem4'] = "Mangual";
                                     echo "<li>".$_SESSION['arma1_personagem4']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($espada_curta)){
@@ -2156,35 +2655,45 @@ echo $_SESSION['personagem4'];
                                 if(isset($_SESSION['arma2_personagem4'])){
                                     echo "<li>".$_SESSION['arma2_personagem4']."</li>";
                                 }
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($adaga) || isset($tonfa) || isset($funda) || isset($lanterna)){
                                     
                                     echo "<form action='selec_eq.php' method='POST'>";
 
-                                    echo "Armas de Uma Mão(Selecione duas das opções abaixo)";
+                                    echo "<h3>Armas de Uma Mão(Selecione duas das opções abaixo)</h3>";
 
                                     echo "<label for='espada_curta'>Espada Curta</label>";
                                     echo "<input type='checkbox' id='espada_curta' name='espada_curta'>";
+                                    echo "<br>";
                                         
                                         if(isset($adaga)){
                                             echo "<label for='adaga'>Adaga</label>";
                                             echo "<input type='checkbox' id='adaga' name='adaga'>";
+                                            echo "<br>";
                                         }
                                         if(isset($tonfa)){
                                             echo "<label for='tonfa'>Tonfa</label>";
                                             echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                            echo "<br>";
                                         }
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
+                                        echo "<input type='text' name='id4' value='$id_personagem4' hidden>";
+                                        echo "<input type='submit' value='Equipar'>";
+                                        echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem4'] = "Espada Curta";
                                     echo "<li>".$_SESSION['arma1_personagem4']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($adaga)){
@@ -2193,35 +2702,45 @@ echo $_SESSION['personagem4'];
                                 if(isset($_SESSION['arma2_personagem4'])){
                                     echo "<li>".$_SESSION['arma2_personagem4']."</li>";
                                 }
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($tonfa) || isset($funda) || isset($livro_feiticos) || isset($lanterna)){
                                     
                                     echo "<form action='selec_eq.php' method='POST'>";
 
-                                    echo "Armas de Uma Mão(Selecione duas das opções abaixo)";
+                                    echo "<h3>Armas de Uma Mão(Selecione duas das opções abaixo)</h3>";
                                         
                                     echo "<label for='adaga'>Adaga</label>";
                                     echo "<input type='checkbox' id='adaga' name='adaga'>";
+                                    echo "<br>";
                                         
                                         if(isset($tonfa)){
                                             echo "<label for='tonfa'>Tonfa</label>";
                                             echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                            echo "<br>";
                                         }
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($livro_feiticos)){
                                             echo "<label for='livro_feiticos'>Livro de Feitiços</label>";
                                             echo "<input type='checkbox' id='livro_feiticos' name='livro_feiticos'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
+                                        echo "<input type='text' name='id4' value='$id_personagem4' hidden>";
+                                        echo "<input type='submit' value='Equipar'>";
+                                        echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem4'] = "Adaga";
                                     echo "<li>".$_SESSION['arma1_personagem4']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($tonfa)){
@@ -2230,31 +2749,40 @@ echo $_SESSION['personagem4'];
                                 if(isset($_SESSION['arma2_personagem4'])){
                                     echo "<li>".$_SESSION['arma2_personagem4']."</li>";
                                 }
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($funda) || isset($livro_feiticos) || isset($lanterna)){
                                     
                                     echo "<form action='selec_eq.php' method='POST'>";
 
-                                    echo "Armas de Uma Mão(Selecione duas das opções abaixo)";
+                                    echo "<h3>Armas de Uma Mão(Selecione duas das opções abaixo)</h3>";
                                         
                                     echo "<label for='tonfa'>Tonfa</label>";
                                     echo "<input type='checkbox' id='tonfa' name='tonfa'>";
+                                    echo "<br>";
                                         
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($livro_feiticos)){
                                             echo "<label for='livro_feiticos'>Livro de Feitiços</label>";
                                             echo "<input type='checkbox' id='livro_feiticos' name='livro_feiticos'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
+                                        echo "<input type='text' name='id4' value='$id_personagem4' hidden>";
+                                        echo "<input type='submit' value='Equipar'>";
+                                        echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem4'] = "Tonfa";
                                     echo "<li>".$_SESSION['arma1_personagem4']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($livro_feiticos)){
@@ -2263,27 +2791,35 @@ echo $_SESSION['personagem4'];
                                 if(isset($_SESSION['arma2_personagem4'])){
                                     echo "<li>".$_SESSION['arma2_personagem4']."</li>";
                                 }
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($funda) || isset($lanterna)){
                                     
                                     echo "<form action='selec_eq.php' method='POST'>";
 
-                                    echo "Armas de Uma Mão(Selecione duas das opções abaixo)";
+                                    echo "<h3>Armas de Uma Mão(Selecione duas das opções abaixo)</h3>";
                                         
                                     echo "<label for='livro_feiticos'>Livro de Feitiços</label>";
                                     echo "<input type='checkbox' id='livro_feiticos' name='livro_feiticos'>";
+                                    echo "<br>";
                                         
                                         if(isset($funda)){
                                             echo "<label for='funda'>Funda</label>";
                                             echo "<input type='checkbox' id='funda' name='funda'>";
+                                            echo "<br>";
                                         }
                                         if(isset($lanterna)){
                                             echo "<label for='lanterna'>Lanterna</label>";
                                             echo "<input type='checkbox' id='lanterna' name='lanterna'>";
+                                            echo "<br>";
                                         }
+                                        echo "<input type='text' name='id4' value='$id_personagem4' hidden>";
+                                        echo "<input type='submit' value='Equipar'>";
+                                        echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem4'] = "Livro de Feitiços";
                                     echo "<li>".$_SESSION['arma1_personagem4']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($funda)){
@@ -2292,22 +2828,30 @@ echo $_SESSION['personagem4'];
                                 if(isset($_SESSION['arma2_personagem4'])){
                                     echo "<li>".$_SESSION['arma2_personagem4']."</li>";
                                 }
+                                echo "<h3><a href='#'>Trocar</a></h3>";
                             } else {
                                 if(isset($lanterna)){
                                     
                                     echo "<form action='selec_eq.php' method='POST'>";
 
-                                    echo "Armas de Uma Mão(Selecione duas das opções abaixo)";
+                                    echo "<h3>Armas de Uma Mão(Selecione duas das opções abaixo)</h3>";
                                         
                                     echo "<label for='funda'>Funda</label>";
                                     echo "<input type='checkbox' id='funda' name='funda'>";
+                                    echo "<br>";
                                     
                                     echo "<label for='lanterna'>Lanterna</label>";
                                     echo "<input type='checkbox' id='lanterna' name='lanterna'>";
-                                        
+                                    echo "<br>";   
+
+                                    echo "<input type='text' name='id4' value='$id_personagem4' hidden>";
+                                    echo "<input type='submit' value='Equipar'>";
+                                    echo "</form>";
+                                    
                                 } else {
                                     $_SESSION['arma1_personagem4'] = "Funda";
                                     echo "<li>".$_SESSION['arma1_personagem4']."</li>";
+                                    echo "<h3><a href='#'>Trocar</a></h3>";
                                 }
                             }
                         }
@@ -2319,6 +2863,20 @@ echo $_SESSION['personagem4'];
             echo "</tr>";
         echo "</table>";
 
+        if(isset($_SESSION['armadura_personagem1']) && isset($_SESSION['armadura_personagem2']) && isset($_SESSION['armadura_personagem3']) && isset($_SESSION['armadura_personagem4'])){
+            if(isset($_SESSION['arma1_personagem1']) && isset($_SESSION['arma1_personagem2']) && isset($_SESSION['arma1_personagem3']) && isset($_SESSION['arma1_personagem4'])){
+                if($_SESSION['armadura_personagem1'] != NULL && $_SESSION['armadura_personagem2'] != NULL && $_SESSION['armadura_personagem3'] != NULL && $_SESSION['armadura_personagem4'] != NULL){
+                    if($_SESSION['arma1_personagem1'] != NULL && $_SESSION['arma1_personagem2'] != NULL && $_SESSION['arma1_personagem3'] != NULL && $_SESSION['arma1_personagem4'] != NULL){
+                        if($_SESSION['arma1_personagem1'] == "Lanterna" || isset($_SESSION['arma2_personagem1']) && $_SESSION['arma2_personagem1'] == "Lanterna" || $_SESSION['arma1_personagem2'] == "Lanterna" || isset($_SESSION['arma2_personagem2']) && $_SESSION['arma2_personagem2'] == "Lanterna" || $_SESSION['arma1_personagem3'] == "Lanterna" || isset($_SESSION['arma2_personagem3']) && $_SESSION['arma2_personagem3'] == "Lanterna" || $_SESSION['arma1_personagem4'] == "Lanterna" || isset($_SESSION['arma2_personagem4']) && $_SESSION['arma2_personagem4'] == "Lanterna"){
+                            echo "<h2><a href='../ordem_marcha/definir_ordem_marcha.php'>Continuar</a></h2>";
+                        } else {
+                            echo "<h2>Nenhum dos seus personagens está levando uma lanterna!!! Troque para algum deles carregar uma lanterna equipada</h2>";
+                        }
+                        
+                    }
+                }
+            }
+        }
     ?>
 </body>
 </html>

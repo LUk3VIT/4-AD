@@ -38,7 +38,7 @@ foreach ($remetente as $key) {
             if($x > 0){
                 echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
             } else {
-                echo "<h2><a href='trocar_itens.php?id=$destinatario'>Trocar</a></h2>";
+                echo "<h2><a href='trocar_itens.php?id=$destinatario'>Dar Item</a></h2>";
             }
         }
         $id = $_SESSION['personagem3'];
@@ -59,7 +59,7 @@ foreach ($remetente as $key) {
             if($x > 0){
                 echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
             } else {
-                echo "<h2><a href='trocar_itens.php?id=$destinatario'>Trocar</a></h2>";
+                echo "<h2><a href='trocar_itens.php?id=$destinatario'>Dar Item</a></h2>";
             }
         }
         $id = $_SESSION['personagem4'];
@@ -80,7 +80,7 @@ foreach ($remetente as $key) {
             if($x > 0){
                 echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
             } else {
-                echo "<h2><a href='trocar_itens.php?id=$destinatario'>Trocar</a></h2>";
+                echo "<h2><a href='trocar_itens.php?id=$destinatario'>Dar Item</a></h2>";
             }
         }
     } else if($_SESSION['personagem2'] == $id_remetente){
@@ -102,7 +102,7 @@ foreach ($remetente as $key) {
             if($x > 0){
                 echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
             } else {
-                echo "<h2><a href='trocar_itens.php?id=$destinatario'>Trocar</a></h2>";
+                echo "<h2><a href='trocar_itens.php?id=$destinatario'>Dar Item</a></h2>";
             }
         }
         $id = $_SESSION['personagem3'];
@@ -123,7 +123,7 @@ foreach ($remetente as $key) {
             if($x > 0){
                 echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
             } else {
-                echo "<h2><a href='trocar_itens.php?id=$destinatario'>Trocar</a></h2>";
+                echo "<h2><a href='trocar_itens.php?id=$destinatario'>Dar Item</a></h2>";
             }
         }
         $id = $_SESSION['personagem4'];
@@ -144,7 +144,7 @@ foreach ($remetente as $key) {
             if($x > 0){
                 echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
             } else {
-                echo "<h2><a href='trocar_itens.php?id=$destinatario'>Trocar</a></h2>";
+                echo "<h2><a href='trocar_itens.php?id=$destinatario'>Dar Item</a></h2>";
             }
         }
     } else if($_SESSION['personagem3'] == $id_remetente){
@@ -166,7 +166,7 @@ foreach ($remetente as $key) {
             if($x > 0){
                 echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
             } else {
-                echo "<h2><a href='trocar_itens.php?id=$destinatario'>Trocar</a></h2>";
+                echo "<h2><a href='trocar_itens.php?id=$destinatario'>Dar Item</a></h2>";
             }
         }
         $id = $_SESSION['personagem2'];
@@ -187,7 +187,7 @@ foreach ($remetente as $key) {
             if($x > 0){
                 echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
             } else {
-                echo "<h2><a href='trocar_itens.php?id=$destinatario'>Trocar</a></h2>";
+                echo "<h2><a href='trocar_itens.php?id=$destinatario'>Dar Item</a></h2>";
             }
         }
         $id = $_SESSION['personagem4'];
@@ -208,7 +208,7 @@ foreach ($remetente as $key) {
             if($x > 0){
                 echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
             } else {
-                echo "<h2><a href='trocar_itens.php?id=$destinatario'>Trocar</a></h2>";
+                echo "<h2><a href='trocar_itens.php?id=$destinatario'>Dar Item</a></h2>";
             }
         }
     } else if($_SESSION['personagem4'] == $id_remetente){
@@ -230,7 +230,7 @@ foreach ($remetente as $key) {
             if($x > 0){
                 echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
             } else {
-                echo "<h2><a href='trocar_itens.php?id=$destinatario'>Trocar</a></h2>";
+                echo "<h2><a href='trocar_itens.php?id=$destinatario'>Dar Item</a></h2>";
             }
         }
         $id = $_SESSION['personagem2'];
@@ -251,7 +251,7 @@ foreach ($remetente as $key) {
             if($x > 0){
                 echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
             } else {
-                echo "<h2><a href='trocar_itens.php?id=$destinatario'>Trocar</a></h2>";
+                echo "<h2><a href='trocar_itens.php?id=$destinatario'>Dar Item</a></h2>";
             }
         }
         $id = $_SESSION['personagem3'];
@@ -272,7 +272,7 @@ foreach ($remetente as $key) {
             if($x > 0){
                 echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
             } else {
-                echo "<h2><a href='trocar_itens.php?id=$destinatario'>Trocar</a></h2>";
+                echo "<h2><a href='trocar_itens.php?id=$destinatario'>Dar Item</a></h2>";
             }
         }
     }
