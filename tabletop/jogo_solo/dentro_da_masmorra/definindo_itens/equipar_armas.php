@@ -15,6 +15,7 @@ $repositorio = new RepositorioTabletopMySQL();
     <title>Equipar Itens</title>
 </head>
 <body>
+    <h2><a href='../../index_jogo_solo.php'>Voltar à sala de preparação</a></h2>
     <?php
 
         echo "<table>";
@@ -129,7 +130,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         if(isset($espada_curta_escudo)){
                             if(isset($_SESSION['arma1_personagem1']) ){
                                 echo "<li>".$_SESSION['arma1_personagem1']."</li>";
-                                if(isset($_SESSION['arma2_personagem1'])){
+                                if(isset($_SESSION['arma2_personagem1']) && $_SESSION['arma1_personagem1'] != $_SESSION['arma2_personagem1']){
                                     echo "<li>".$_SESSION['arma2_personagem1']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -216,7 +217,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($mangual_escudo)){
                             if(isset($_SESSION['arma1_personagem1']) ){
                                 echo "<li>".$_SESSION['arma1_personagem1']."</li>";
-                                if(isset($_SESSION['arma2_personagem1'])){
+                                if(isset($_SESSION['arma2_personagem1']) && $_SESSION['arma1_personagem1'] != $_SESSION['arma2_personagem1']){
                                     echo "<li>".$_SESSION['arma2_personagem1']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -298,7 +299,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($espada_montante)){
                             if(isset($_SESSION['arma1_personagem1']) ){
                                 echo "<li>".$_SESSION['arma1_personagem1']."</li>";
-                                if(isset($_SESSION['arma2_personagem1'])){
+                                if(isset($_SESSION['arma2_personagem1']) && $_SESSION['arma1_personagem1'] != $_SESSION['arma2_personagem1']){
                                     echo "<li>".$_SESSION['arma2_personagem1']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -368,7 +369,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($martelo_guerra)){
                             if(isset($_SESSION['arma1_personagem1']) ){
                                 echo "<li>".$_SESSION['arma1_personagem1']."</li>";
-                                if(isset($_SESSION['arma2_personagem1'])){
+                                if(isset($_SESSION['arma2_personagem1']) && $_SESSION['arma1_personagem1'] != $_SESSION['arma2_personagem1']){
                                     echo "<li>".$_SESSION['arma2_personagem1']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -429,7 +430,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($arco)){
                             if(isset($_SESSION['arma1_personagem1']) ){
                                 echo "<li>".$_SESSION['arma1_personagem1']."</li>";
-                                if(isset($_SESSION['arma2_personagem1'])){
+                                if(isset($_SESSION['arma2_personagem1']) && $_SESSION['arma1_personagem1'] != $_SESSION['arma2_personagem1']){
                                     echo "<li>".$_SESSION['arma2_personagem1']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -483,7 +484,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($mangual)){
                             if(isset($_SESSION['arma1_personagem1'])){
                                 echo "<li>".$_SESSION['arma1_personagem1']."</li>";
-                                if(isset($_SESSION['arma2_personagem1'])){
+                                if(isset($_SESSION['arma2_personagem1']) && $_SESSION['arma1_personagem1'] != $_SESSION['arma2_personagem1']){
                                     echo "<li>".$_SESSION['arma2_personagem1']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -535,7 +536,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($espada_curta)){
                             if(isset($_SESSION['arma1_personagem1'])){
                                 echo "<li>".$_SESSION['arma1_personagem1']."</li>";
-                                if(isset($_SESSION['arma2_personagem1'])){
+                                if(isset($_SESSION['arma2_personagem1']) && $_SESSION['arma1_personagem1'] != $_SESSION['arma2_personagem1']){
                                     echo "<li>".$_SESSION['arma2_personagem1']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -582,7 +583,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($adaga)){
                             if(isset($_SESSION['arma1_personagem1'])){
                                 echo "<li>".$_SESSION['arma1_personagem1']."</li>";
-                                if(isset($_SESSION['arma2_personagem1'])){
+                                if(isset($_SESSION['arma2_personagem1']) && $_SESSION['arma1_personagem1'] != $_SESSION['arma2_personagem1']){
                                     echo "<li>".$_SESSION['arma2_personagem1']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -629,7 +630,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($tonfa)){
                             if(isset($_SESSION['arma1_personagem1'])){
                                 echo "<li>".$_SESSION['arma1_personagem1']."</li>";
-                                if(isset($_SESSION['arma2_personagem1'])){
+                                if(isset($_SESSION['arma2_personagem1']) && $_SESSION['arma1_personagem1'] != $_SESSION['arma2_personagem1']){
                                     echo "<li>".$_SESSION['arma2_personagem1']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -671,7 +672,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($livro_feiticos)){
                             if(isset($_SESSION['arma1_personagem1'])){
                                 echo "<li>".$_SESSION['arma1_personagem1']."</li>";
-                                if(isset($_SESSION['arma2_personagem1'])){
+                                if(isset($_SESSION['arma2_personagem1']) && $_SESSION['arma1_personagem1'] != $_SESSION['arma2_personagem1']){
                                     echo "<li>".$_SESSION['arma2_personagem1']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -708,7 +709,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($funda)){
                             if(isset($_SESSION['arma1_personagem1'])){
                                 echo "<li>".$_SESSION['arma1_personagem1']."</li>";
-                                if(isset($_SESSION['arma2_personagem1'])){
+                                if(isset($_SESSION['arma2_personagem1']) && $_SESSION['arma1_personagem1'] != $_SESSION['arma2_personagem1']){
                                     echo "<li>".$_SESSION['arma2_personagem1']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -850,7 +851,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         if(isset($espada_curta_escudo)){
                             if(isset($_SESSION['arma1_personagem2']) ){
                                 echo "<li>".$_SESSION['arma1_personagem2']."</li>";
-                                if(isset($_SESSION['arma2_personagem2'])){
+                                if(isset($_SESSION['arma2_personagem2']) && $_SESSION['arma1_personagem2'] != $_SESSION['arma2_personagem2']){
                                     echo "<li>".$_SESSION['arma2_personagem2']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -937,7 +938,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($mangual_escudo)){
                             if(isset($_SESSION['arma1_personagem2']) ){
                                 echo "<li>".$_SESSION['arma1_personagem2']."</li>";
-                                if(isset($_SESSION['arma2_personagem2'])){
+                                if(isset($_SESSION['arma2_personagem2']) && $_SESSION['arma1_personagem2'] != $_SESSION['arma2_personagem2']){
                                     echo "<li>".$_SESSION['arma2_personagem2']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -1019,7 +1020,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($espada_montante)){
                             if(isset($_SESSION['arma1_personagem2']) ){
                                 echo "<li>".$_SESSION['arma1_personagem2']."</li>";
-                                if(isset($_SESSION['arma2_personagem2'])){
+                                if(isset($_SESSION['arma2_personagem2']) && $_SESSION['arma1_personagem2'] != $_SESSION['arma2_personagem2']){
                                     echo "<li>".$_SESSION['arma2_personagem2']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -1090,7 +1091,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($martelo_guerra)){
                             if(isset($_SESSION['arma1_personagem2']) ){
                                 echo "<li>".$_SESSION['arma1_personagem2']."</li>";
-                                if(isset($_SESSION['arma2_personagem2'])){
+                                if(isset($_SESSION['arma2_personagem2']) && $_SESSION['arma1_personagem2'] != $_SESSION['arma2_personagem2']){
                                     echo "<li>".$_SESSION['arma2_personagem2']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -1154,7 +1155,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($arco)){
                             if(isset($_SESSION['arma1_personagem2']) ){
                                 echo "<li>".$_SESSION['arma1_personagem2']."</li>";
-                                if(isset($_SESSION['arma2_personagem2'])){
+                                if(isset($_SESSION['arma2_personagem2']) && $_SESSION['arma1_personagem2'] != $_SESSION['arma2_personagem2']){
                                     echo "<li>".$_SESSION['arma2_personagem2']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -1208,7 +1209,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($mangual)){
                             if(isset($_SESSION['arma1_personagem2'])){
                                 echo "<li>".$_SESSION['arma1_personagem2']."</li>";
-                                if(isset($_SESSION['arma2_personagem2'])){
+                                if(isset($_SESSION['arma2_personagem2']) && $_SESSION['arma1_personagem2'] != $_SESSION['arma2_personagem2']){
                                     echo "<li>".$_SESSION['arma2_personagem2']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -1260,7 +1261,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($espada_curta)){
                             if(isset($_SESSION['arma1_personagem2'])){
                                 echo "<li>".$_SESSION['arma1_personagem2']."</li>";
-                                if(isset($_SESSION['arma2_personagem2'])){
+                                if(isset($_SESSION['arma2_personagem2']) && $_SESSION['arma1_personagem2'] != $_SESSION['arma2_personagem2']){
                                     echo "<li>".$_SESSION['arma2_personagem2']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -1307,7 +1308,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($adaga)){
                             if(isset($_SESSION['arma1_personagem2'])){
                                 echo "<li>".$_SESSION['arma1_personagem2']."</li>";
-                                if(isset($_SESSION['arma2_personagem2'])){
+                                if(isset($_SESSION['arma2_personagem2']) && $_SESSION['arma1_personagem2'] != $_SESSION['arma2_personagem2']){
                                     echo "<li>".$_SESSION['arma2_personagem2']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -1354,7 +1355,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($tonfa)){
                             if(isset($_SESSION['arma1_personagem2'])){
                                 echo "<li>".$_SESSION['arma1_personagem2']."</li>";
-                                if(isset($_SESSION['arma2_personagem2'])){
+                                if(isset($_SESSION['arma2_personagem2']) && $_SESSION['arma1_personagem2'] != $_SESSION['arma2_personagem2']){
                                     echo "<li>".$_SESSION['arma2_personagem2']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -1396,7 +1397,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($livro_feiticos)){
                             if(isset($_SESSION['arma1_personagem2'])){
                                 echo "<li>".$_SESSION['arma1_personagem2']."</li>";
-                                if(isset($_SESSION['arma2_personagem2'])){
+                                if(isset($_SESSION['arma2_personagem2']) && $_SESSION['arma1_personagem2'] != $_SESSION['arma2_personagem2']){
                                     echo "<li>".$_SESSION['arma2_personagem2']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -1433,7 +1434,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($funda)){
                             if(isset($_SESSION['arma1_personagem2'])){
                                 echo "<li>".$_SESSION['arma1_personagem2']."</li>";
-                                if(isset($_SESSION['arma2_personagem2'])){
+                                if(isset($_SESSION['arma2_personagem2']) && $_SESSION['arma1_personagem2'] != $_SESSION['arma2_personagem2']){
                                     echo "<li>".$_SESSION['arma2_personagem2']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -1576,7 +1577,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         if(isset($espada_curta_escudo)){
                             if(isset($_SESSION['arma1_personagem3']) ){
                                 echo "<li>".$_SESSION['arma1_personagem3']."</li>";
-                                if(isset($_SESSION['arma2_personagem3'])){
+                                if(isset($_SESSION['arma2_personagem3']) && $_SESSION['arma1_personagem3'] != $_SESSION['arma2_personagem3']){
                                     echo "<li>".$_SESSION['arma2_personagem3']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -1663,7 +1664,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($mangual_escudo)){
                             if(isset($_SESSION['arma1_personagem3']) ){
                                 echo "<li>".$_SESSION['arma1_personagem3']."</li>";
-                                if(isset($_SESSION['arma2_personagem3'])){
+                                if(isset($_SESSION['arma2_personagem3']) && $_SESSION['arma1_personagem3'] != $_SESSION['arma2_personagem3']){
                                     echo "<li>".$_SESSION['arma2_personagem3']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -1745,7 +1746,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($espada_montante)){
                             if(isset($_SESSION['arma1_personagem3']) ){
                                 echo "<li>".$_SESSION['arma1_personagem3']."</li>";
-                                if(isset($_SESSION['arma2_personagem3'])){
+                                if(isset($_SESSION['arma2_personagem3']) && $_SESSION['arma1_personagem3'] != $_SESSION['arma2_personagem3']){
                                     echo "<li>".$_SESSION['arma2_personagem3']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -1815,7 +1816,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($martelo_guerra)){
                             if(isset($_SESSION['arma1_personagem3']) ){
                                 echo "<li>".$_SESSION['arma1_personagem3']."</li>";
-                                if(isset($_SESSION['arma2_personagem3'])){
+                                if(isset($_SESSION['arma2_personagem3']) && $_SESSION['arma1_personagem3'] != $_SESSION['arma2_personagem3']){
                                     echo "<li>".$_SESSION['arma2_personagem3']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -1876,7 +1877,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($arco)){
                             if(isset($_SESSION['arma1_personagem3']) ){
                                 echo "<li>".$_SESSION['arma1_personagem3']."</li>";
-                                if(isset($_SESSION['arma2_personagem3'])){
+                                if(isset($_SESSION['arma2_personagem3']) && $_SESSION['arma1_personagem3'] != $_SESSION['arma2_personagem3']){
                                     echo "<li>".$_SESSION['arma2_personagem3']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -1930,7 +1931,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($mangual)){
                             if(isset($_SESSION['arma1_personagem3'])){
                                 echo "<li>".$_SESSION['arma1_personagem3']."</li>";
-                                if(isset($_SESSION['arma2_personagem3'])){
+                                if(isset($_SESSION['arma2_personagem3']) && $_SESSION['arma1_personagem3'] != $_SESSION['arma2_personagem3']){
                                     echo "<li>".$_SESSION['arma2_personagem3']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -1982,7 +1983,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($espada_curta)){
                             if(isset($_SESSION['arma1_personagem3'])){
                                 echo "<li>".$_SESSION['arma1_personagem3']."</li>";
-                                if(isset($_SESSION['arma2_personagem3'])){
+                                if(isset($_SESSION['arma2_personagem3']) && $_SESSION['arma1_personagem3'] != $_SESSION['arma2_personagem3']){
                                     echo "<li>".$_SESSION['arma2_personagem3']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -2029,7 +2030,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($adaga)){
                             if(isset($_SESSION['arma1_personagem3'])){
                                 echo "<li>".$_SESSION['arma1_personagem3']."</li>";
-                                if(isset($_SESSION['arma2_personagem3'])){
+                                if(isset($_SESSION['arma2_personagem3']) && $_SESSION['arma1_personagem3'] != $_SESSION['arma2_personagem3']){
                                     echo "<li>".$_SESSION['arma2_personagem3']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -2076,7 +2077,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($tonfa)){
                             if(isset($_SESSION['arma1_personagem3'])){
                                 echo "<li>".$_SESSION['arma1_personagem3']."</li>";
-                                if(isset($_SESSION['arma2_personagem3'])){
+                                if(isset($_SESSION['arma2_personagem3']) && $_SESSION['arma1_personagem3'] != $_SESSION['arma2_personagem3']){
                                     echo "<li>".$_SESSION['arma2_personagem3']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -2118,7 +2119,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($livro_feiticos)){
                             if(isset($_SESSION['arma1_personagem3'])){
                                 echo "<li>".$_SESSION['arma1_personagem3']."</li>";
-                                if(isset($_SESSION['arma2_personagem3'])){
+                                if(isset($_SESSION['arma2_personagem3']) && $_SESSION['arma1_personagem3'] != $_SESSION['arma2_personagem3']){
                                     echo "<li>".$_SESSION['arma2_personagem3']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -2155,7 +2156,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($funda)){
                             if(isset($_SESSION['arma1_personagem3'])){
                                 echo "<li>".$_SESSION['arma1_personagem3']."</li>";
-                                if(isset($_SESSION['arma2_personagem3'])){
+                                if(isset($_SESSION['arma2_personagem3']) && $_SESSION['arma1_personagem3'] != $_SESSION['arma2_personagem3']){
                                     echo "<li>".$_SESSION['arma2_personagem3']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -2298,7 +2299,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         if(isset($espada_curta_escudo)){
                             if(isset($_SESSION['arma1_personagem4']) ){
                                 echo "<li>".$_SESSION['arma1_personagem4']."</li>";
-                                if(isset($_SESSION['arma2_personagem4'])){
+                                if(isset($_SESSION['arma2_personagem4']) && $_SESSION['arma1_personagem4'] != $_SESSION['arma2_personagem4']){
                                     echo "<li>".$_SESSION['arma2_personagem4']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -2385,7 +2386,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($mangual_escudo)){
                             if(isset($_SESSION['arma1_personagem4']) ){
                                 echo "<li>".$_SESSION['arma1_personagem4']."</li>";
-                                if(isset($_SESSION['arma2_personagem4'])){
+                                if(isset($_SESSION['arma2_personagem4']) && $_SESSION['arma1_personagem4'] != $_SESSION['arma2_personagem4']){
                                     echo "<li>".$_SESSION['arma2_personagem4']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -2467,7 +2468,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($espada_montante)){
                             if(isset($_SESSION['arma1_personagem4']) ){
                                 echo "<li>".$_SESSION['arma1_personagem4']."</li>";
-                                if(isset($_SESSION['arma2_personagem4'])){
+                                if(isset($_SESSION['arma2_personagem4']) && $_SESSION['arma1_personagem4'] != $_SESSION['arma2_personagem4']){
                                     echo "<li>".$_SESSION['arma2_personagem4']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -2537,7 +2538,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($martelo_guerra)){
                             if(isset($_SESSION['arma1_personagem4']) ){
                                 echo "<li>".$_SESSION['arma1_personagem4']."</li>";
-                                if(isset($_SESSION['arma2_personagem4'])){
+                                if(isset($_SESSION['arma2_personagem4']) && $_SESSION['arma1_personagem4'] != $_SESSION['arma2_personagem4']){
                                     echo "<li>".$_SESSION['arma2_personagem4']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -2598,7 +2599,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($arco)){
                             if(isset($_SESSION['arma1_personagem4']) ){
                                 echo "<li>".$_SESSION['arma1_personagem4']."</li>";
-                                if(isset($_SESSION['arma2_personagem4'])){
+                                if(isset($_SESSION['arma2_personagem4']) && $_SESSION['arma1_personagem4'] != $_SESSION['arma2_personagem4']){
                                     echo "<li>".$_SESSION['arma2_personagem4']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -2652,7 +2653,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($mangual)){
                             if(isset($_SESSION['arma1_personagem4'])){
                                 echo "<li>".$_SESSION['arma1_personagem4']."</li>";
-                                if(isset($_SESSION['arma2_personagem4'])){
+                                if(isset($_SESSION['arma2_personagem4']) && $_SESSION['arma1_personagem4'] != $_SESSION['arma2_personagem4']){
                                     echo "<li>".$_SESSION['arma2_personagem4']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -2704,7 +2705,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($espada_curta)){
                             if(isset($_SESSION['arma1_personagem4'])){
                                 echo "<li>".$_SESSION['arma1_personagem4']."</li>";
-                                if(isset($_SESSION['arma2_personagem4'])){
+                                if(isset($_SESSION['arma2_personagem4']) && $_SESSION['arma1_personagem4'] != $_SESSION['arma2_personagem4']){
                                     echo "<li>".$_SESSION['arma2_personagem4']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -2751,7 +2752,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($adaga)){
                             if(isset($_SESSION['arma1_personagem4'])){
                                 echo "<li>".$_SESSION['arma1_personagem4']."</li>";
-                                if(isset($_SESSION['arma2_personagem4'])){
+                                if(isset($_SESSION['arma2_personagem4']) && $_SESSION['arma1_personagem4'] != $_SESSION['arma2_personagem4']){
                                     echo "<li>".$_SESSION['arma2_personagem4']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -2798,7 +2799,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($tonfa)){
                             if(isset($_SESSION['arma1_personagem4'])){
                                 echo "<li>".$_SESSION['arma1_personagem4']."</li>";
-                                if(isset($_SESSION['arma2_personagem4'])){
+                                if(isset($_SESSION['arma2_personagem4']) && $_SESSION['arma1_personagem4'] != $_SESSION['arma2_personagem4']){
                                     echo "<li>".$_SESSION['arma2_personagem4']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -2840,7 +2841,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($livro_feiticos)){
                             if(isset($_SESSION['arma1_personagem4'])){
                                 echo "<li>".$_SESSION['arma1_personagem4']."</li>";
-                                if(isset($_SESSION['arma2_personagem4'])){
+                                if(isset($_SESSION['arma2_personagem4']) && $_SESSION['arma1_personagem4'] != $_SESSION['arma2_personagem4']){
                                     echo "<li>".$_SESSION['arma2_personagem4']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
@@ -2877,7 +2878,7 @@ $repositorio = new RepositorioTabletopMySQL();
                         } else if(isset($funda)){
                             if(isset($_SESSION['arma1_personagem4'])){
                                 echo "<li>".$_SESSION['arma1_personagem4']."</li>";
-                                if(isset($_SESSION['arma2_personagem4'])){
+                                if(isset($_SESSION['arma2_personagem4']) && $_SESSION['arma1_personagem4'] != $_SESSION['arma2_personagem4']){
                                     echo "<li>".$_SESSION['arma2_personagem4']."</li>";
                                 }
                                 echo "<h3><a href='trocar_itens.php?id=$id'>Trocar</a></h3>";

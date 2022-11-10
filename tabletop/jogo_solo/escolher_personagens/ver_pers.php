@@ -8,6 +8,8 @@ $id = $_SESSION['id_pers'];
 
 $personagem = $repositorio->MostrarPersonagem($id);
 
+echo "<h2><a href='selec_pers.php'>Voltar</a></h2>";
+
 foreach ($personagem as $key) {
     $id = $key['id_pers'];
     $nome = $key['nome'];
@@ -96,6 +98,7 @@ foreach ($personagem as $key) {
             }
         echo "</ul>";
     }
+    echo "</div>";
     if(isset($_SESSION['personagem1']) && $_SESSION['personagem1'] == $id){
         echo "<h1><a href='redirecionar_ver_personagem.php?tirar=$id'>Tirar</a></h1>";
     } else {
@@ -114,7 +117,7 @@ foreach ($personagem as $key) {
         }
     } 
 
-    echo "</div>";
+    echo "<h1><a href='exclui_personagem.php?id=$id'> Excluir Personagem </a></h1>";
 }
 
 ?>

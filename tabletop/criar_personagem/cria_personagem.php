@@ -9,7 +9,7 @@ $nome_pers = $nome = $_SESSION['nome_pers'];
 $classe = $_SESSION['classe'];
 $nivel = $_SESSION['nivel'];
 $nivel_maximo = $_SESSION['nivel_maximo'];
-$vida = $_SESSION['vida_base'];
+$vida = $_SESSION['vida_base'] + $_SESSION['nivel'];
 $dinheiro = $_SESSION['dinheiro'];
 if(isset($_SESSION['ataque'])){
     $ataque = $_SESSION['ataque'];

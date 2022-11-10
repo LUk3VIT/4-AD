@@ -2,7 +2,7 @@
  
 include 'usuario.php'; 
 require_once 'conexao.php'; 
-  
+   
 interface IRepositorioTabletop {
     public function PegarInfoClasse($classe); 
     public function EscolherMagia($id);
@@ -23,6 +23,7 @@ interface IRepositorioTabletop {
     public function ComprarItem($espaco,$item,$nome_pers);
     public function PuxarPreco($item);
     public function VerificarArma($id);
+    public function ApagarPersonagem($id);
 }
  
 class RepositorioTabletopMySQL implements IRepositorioTabletop
@@ -86,13 +87,13 @@ class RepositorioTabletopMySQL implements IRepositorioTabletop
         $consulta = $this->conexao->executarQuery($sql);
         return $consulta;
     }
-
+ 
     public function MostrarPersonagem($id)
     {
         $sql = "SELECT * FROM tbl_personagem WHERE id_pers = '$id'";
         $consulta = $this->conexao->executarQuery($sql);
         return $consulta;
-    }
+    } 
 
     public function MostrarInventario($nome) 
     {
@@ -164,6 +165,12 @@ class RepositorioTabletopMySQL implements IRepositorioTabletop
         $sql = "SELECT * FROM tbl_inventario WHERE id_inventario = '$id' LIKE 'arma %'";
         $consulta = $this->conexao->executarQuery($sql);
         return $consulta;
+    }
+
+    public function ApagarPersonagem($id)
+    {
+        $sql = "DELETE FROM tbl_personagem WHERE id_pers = '$id'";
+        $this->conexao->executarQuery($sql);
     }
 }
    
