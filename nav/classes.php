@@ -87,7 +87,7 @@
                     
                   </div>
                   <div class="apresentacao__caixa__img">
-                    <img src="../assets/img/barbaro.jpg" class="caixa__img__style" alt="">
+                    <img src="../assets/img/players/Personagens/Guerreiro.png" class="caixa__img__style" alt="">
                   </div>
                 </div>
               </div>
@@ -104,25 +104,7 @@
 
                   </div>
                   <div class="apresentacao__caixa__img">
-                    <img src="/assets/img/barbaro.jpg" class="caixa__img__style" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item ">
-                <div class="apresentacao">
-                  <div class="apresentacao__caixa">
-
-                    <h1 class="apresentacao__caixa__h1">Clérigo</h1>
-
-                    <p class="apresentacao__caixa__p">Características: Um clérigo acrescenta metade do seu nível (arredondando para baixo) em seus testes de ataque, e seu nível completo quando ele ataca criaturas mortas-vivas. Ele pode usar armadura leve ou pesada e usar um escudo, uma arma de uma mão, uma arma de duas mãos ou uma funda.</p>
-                    <p class="apresentacao__caixa__p">Habilidades: O Clérigo pode lançar um feitiço de benção e um feitiço de cura (d6 + nível) até 3 vezes cada em uma mesma masmorra, e em qualquer momento, mesmo durante uma luta, mas não poderá atacar. Pode usar seus feitiços em si mesmo.</p>
-                    <p class="apresentacao__caixa__p">Equipamento de partida: Armadura leve, escudo, arma de uma mão. Pode trocar seu escudo e arma de uma mão para uma arma de duas mãos. Clérigos preferem usar armas esmagadoras.</p>
-                    <p class="apresentacao__caixa__p">Riqueza inicial: d6 peças de ouro</p>
-                    <p class="apresentacao__caixa__p">Pontos de Vida: 4 + nível. Um Clérigo de primeiro nível tem 5 de vida.</p>
-
-                  </div>
-                  <div class="apresentacao__caixa__img">
-                    <img src="/assets/img/barbaro.jpg" class="caixa__img__style" alt="">
+                    <img src="../assets/img/players/Personagens/Clerigo.png" class="caixa__img__style" alt="">
                   </div>
                 </div>
               </div>
@@ -140,7 +122,7 @@
 
                   </div>
                   <div class="apresentacao__caixa__img">
-                    <img src="/assets/img/barbaro.jpg" class="caixa__img__style" alt="">
+                    <img src="../assets/img/players/Personagens/Ladino.png" class="caixa__img__style" alt="">
                   </div>
                 </div>
               </div>
@@ -158,7 +140,7 @@
 
                   </div>
                   <div class="apresentacao__caixa__img">
-                    <img src="/assets/img/barbaro.jpg" class="caixa__img__style" alt="">
+                    <img src="../assets/img/players/Personagens/Mago.png" class="caixa__img__style" alt="">
                   </div>
                 </div>
               </div>
@@ -176,7 +158,7 @@
 
                   </div>
                   <div class="apresentacao__caixa__img">
-                    <img src="../assets/img/barbaro.jpg" class="caixa__img__style" alt="">
+                    <img src="../assets/img/players/Personagens/Barbaro.png" class="caixa__img__style" alt="">
                   </div>
                 </div>
               </div>
@@ -194,7 +176,7 @@
 
                   </div>
                   <div class="apresentacao__caixa__img">
-                    <img src="/assets/img/barbaro.jpg" class="caixa__img__style" alt="">
+                    <img src="../assets/img/players/Personagens/Elfo.png" class="caixa__img__style" alt="">
                   </div>
                 </div>
               </div>
@@ -212,7 +194,7 @@
 
                   </div>
                   <div class="apresentacao__caixa__img">
-                    <img src="/assets/img/barbaro.jpg" class="caixa__img__style" alt="">
+                    <img src="../assets/img/players/Personagens/Anao.png" class="caixa__img__style" alt="">
                   </div>
                 </div>
               </div>
@@ -230,7 +212,7 @@
 
                   </div>
                   <div class="apresentacao__caixa__img">
-                    <img src="/assets/img/barbaro.jpg" class="caixa__img__style" alt="">
+                    <img src="../assets/img/players/Personagens/Halfling.png" class="caixa__img__style" alt="">
                   </div>
                 </div>
               </div>

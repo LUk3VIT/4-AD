@@ -15,7 +15,7 @@
 .apresentacao{
     display: flex;
     justify-content: space-between;
-    padding: 60px 160px;
+    padding: 30px 160px;
     flex-wrap: wrap;
     flex-direction: row;
 }
@@ -35,7 +35,7 @@
 }
 
 .caixa__img__style{
-    width: 500px;
+    width: 400px;
 }
 
 .apresentacao__caixa__h1{

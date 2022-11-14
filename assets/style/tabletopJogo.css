@@ -1,5 +1,6 @@
 body{
     background: #1b153ff6;    
+    display: flex;
 }
 
 .titulo{
@@ -164,6 +165,8 @@ body{
     padding: 10px;
     background: #F5DEB3;
     width: 500px;
+    display: flex;
+    justify-content: center;
 }
 
 .informacao__nome{
