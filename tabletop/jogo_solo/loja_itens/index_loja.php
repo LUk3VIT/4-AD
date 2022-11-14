@@ -599,6 +599,598 @@ if(isset($_SESSION['id_comprador'])){
                             echo "</tr>";
                     }
             echo "</table>";
+
+            $nome = $nome_pers;
+            $inventario = $repositorio->MostrarInventario($nome);
+            foreach ($inventario as $key) {
+                if($key['item1'] != NULL){
+                    $item = $key['item1'];
+                    $valor = $repositorio->VerPreco($item);
+                    foreach ($valor as $x) {
+                        $preco_item1 = $x['valor'] / 2;
+                        $tipo_item1 = $x['tipo'];
+                    }
+                }
+                if($key['item2'] != NULL){
+                    $item = $key['item2'];
+                    $valor = $repositorio->VerPreco($item);
+                    foreach ($valor as $x) {
+                        $preco_item2 = $x['valor'] / 2;
+                        $tipo_item2 = $x['tipo'];
+                    }
+                }
+                if($key['item3'] != NULL){
+                    $item = $key['item3'];
+                    $valor = $repositorio->VerPreco($item);
+                    foreach ($valor as $x) {
+                        $preco_item3 = $x['valor'] / 2;
+                        $tipo_item3 = $x['tipo'];
+                    }
+                }
+                if($key['item4'] != NULL){
+                    $item = $key['item4'];
+                    $valor = $repositorio->VerPreco($item);
+                    foreach ($valor as $x) {
+                        $preco_item4 = $x['valor'] / 2;
+                        $tipo_item4 = $x['tipo'];
+                    }
+                }
+                if($key['item5'] != NULL){
+                    $item = $key['item5'];
+                    $valor = $repositorio->VerPreco($item);
+                    foreach ($valor as $x) {
+                        $preco_item5 = $x['valor'] / 2;
+                        $tipo_item5 = $x['tipo'];
+                    }
+                }
+                if($key['item6'] != NULL){
+                    $item = $key['item6'];
+                    $valor = $repositorio->VerPreco($item);
+                    foreach ($valor as $x) {
+                        $preco_item6 = $x['valor'] / 2;
+                        $tipo_item6 = $x['tipo'];
+                    }
+                }
+                if($key['item7'] != NULL){
+                    $item = $key['item7'];
+                    $valor = $repositorio->VerPreco($item);
+                    foreach ($valor as $x) {
+                        $preco_item7 = $x['valor'] / 2;
+                        $tipo_item7 = $x['tipo'];
+                    }
+                }
+                if($key['item8'] != NULL){
+                    $item = $key['item8'];
+                    $valor = $repositorio->VerPreco($item);
+                    foreach ($valor as $x) {
+                        $preco_item8 = $x['valor'] / 2;
+                        $tipo_item8 = $x['tipo'];
+                    }
+                }
+                if($key['item9'] != NULL){
+                    $item = $key['item9'];
+                    $valor = $repositorio->VerPreco($item);
+                    foreach ($valor as $x) {
+                        $preco_item9 = $x['valor'] / 2;
+                        $tipo_item9 = $x['tipo'];
+                    }
+                }
+                if($key['item10'] != NULL){
+                    $item = $key['item10'];
+                    $valor = $repositorio->VerPreco($item);
+                    foreach ($valor as $x) {
+                        $preco_item10 = $x['valor'] / 2;
+                        $tipo_item10 = $x['tipo'];
+                    }
+                }
+                if($key['item11'] != NULL){
+                    $item = $key['item11'];
+                    $valor = $repositorio->VerPreco($item);
+                    foreach ($valor as $x) {
+                        $preco_item11 = $x['valor'] / 2;
+                        $tipo_item11 = $x['tipo'];
+                    }
+                }
+                if($key['item12'] != NULL){
+                    $item = $key['item12'];
+                    $valor = $repositorio->VerPreco($item);
+                    foreach ($valor as $x) {
+                        $preco_item12 = $x['valor'] / 2;
+                        $tipo_item12 = $x['tipo'];
+                    }
+                }
+                if($key['item13'] != NULL){
+                    $item = $key['item13'];
+                    $valor = $repositorio->VerPreco($item);
+                    foreach ($valor as $x) {
+                        $preco_item13 = $x['valor'] / 2;
+                        $tipo_item13 = $x['tipo'];
+                    }
+                }
+                if($key['item14'] != NULL){
+                    $item = $key['item14'];
+                    $valor = $repositorio->VerPreco($item);
+                    foreach ($valor as $x) {
+                        $preco_item14 = $x['valor'] / 2;
+                        $tipo_item14 = $x['tipo'];
+                    }
+                }
+                if($key['item15'] != NULL){
+                    $item = $key['item15'];
+                    $valor = $repositorio->VerPreco($item);
+                    foreach ($valor as $x) {
+                        $preco_item15 = $x['valor'] / 2;
+                        $tipo_item15 = $x['tipo'];
+                    }
+                }
+                if($key['item16'] != NULL){
+                    $item = $key['item16'];
+                    $valor = $repositorio->VerPreco($item);
+                    foreach ($valor as $x) {
+                        $preco_item16 = $x['valor'] / 2;
+                        $tipo_item16 = $x['tipo'];
+                    }
+                }
+                if($key['item17'] != NULL){
+                    $item = $key['item17'];
+                    $valor = $repositorio->VerPreco($item);
+                    foreach ($valor as $x) {
+                        $preco_item17 = $x['valor'] / 2;
+                        $tipo_item17 = $x['tipo'];
+                    }
+                }
+                if($key['item18'] != NULL){
+                    $item = $key['item18'];
+                    $valor = $repositorio->VerPreco($item);
+                    foreach ($valor as $x) {
+                        $preco_item18 = $x['valor'] / 2;
+                        $tipo_item18 = $x['tipo'];
+                    }
+                }
+                if($key['item19'] != NULL){
+                    $item = $key['item19'];
+                    $valor = $repositorio->VerPreco($item);
+                    foreach ($valor as $x) {
+                        $preco_item19 = $x['valor'] / 2;
+                        $tipo_item19 = $x['tipo'];
+                    }
+                }
+                if($key['item20'] != NULL){
+                    $item = $key['item20'];
+                    $valor = $repositorio->VerPreco($item);
+                    foreach ($valor as $x) {
+                        $preco_item20 = $x['valor'] / 2;
+                        $tipo_item20 = $x['tipo'];
+                    }
+                }
+                if($key['item21'] != NULL){
+                    $item = $key['item21'];
+                    $valor = $repositorio->VerPreco($item);
+                    foreach ($valor as $x) {
+                        $preco_item21 = $x['valor'] / 2;
+                        $tipo_item21 = $x['tipo'];
+                    }
+                }
+                if($key['item22'] != NULL){
+                    $item = $key['item22'];
+                    $valor = $repositorio->VerPreco($item);
+                    foreach ($valor as $x) {
+                        $preco_item22 = $x['valor'] / 2;
+                        $tipo_item22 = $x['tipo'];
+                    }
+                }
+                if($key['item23'] != NULL){
+                    $item = $key['item23'];
+                    $valor = $repositorio->VerPreco($item);
+                    foreach ($valor as $x) {
+                        $preco_item23 = $x['valor'] / 2;
+                        $tipo_item23 = $x['tipo'];
+                    }
+                }
+                if($key['item24'] != NULL){
+                    $item = $key['item24'];
+                    $valor = $repositorio->VerPreco($item);
+                    foreach ($valor as $x) {
+                        $preco_item24 = $x['valor'] / 2;
+                        $tipo_item24 = $x['tipo'];
+                    }
+                }
+                if($key['item25'] != NULL){
+                    $item = $key['item25'];
+                    $valor = $repositorio->VerPreco($item);
+                    foreach ($valor as $x) {
+                        $preco_item25 = $x['valor'] / 2;
+                        $tipo_item25 = $x['tipo'];
+                    }
+                }
+            }
+
+            echo "<h4>Vender Seus Itens</h4>";
+            echo "<table style='border: solid 2px black;margin-top: 250px'>";
+                    echo "<tr>";
+                        echo "<td style='border-right: solid 2px black'> Item </td>";
+                        echo "<td style='border-right: solid 2px black'> Tipo </td>";
+                        echo "<td> Preço </td>";
+                    echo "</tr>";
+                    $inventario = $repositorio->MostrarInventario($nome);
+                    foreach ($inventario as $key) {
+                        if($key['item1'] != NULL){
+                            $item1 = $key['item1'];
+                            echo "<tr>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$key['item1']." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$tipo_item1." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$preco_item1." </td>";
+                                echo "<td style='border-top: solid 2px black'>
+                                    <form action='vender.php' method='POST'>
+                                        <input type='text' name='item' value='$item1' hidden>
+                                        <input type='text' name='preco' value='$preco_item1' hidden>
+                                        <input type='submit' value='Vender'>
+                                    </form>
+                                </td>";
+                            echo "</tr>";
+                        }
+                        if($key['item2'] != NULL){
+                            $item2 = $key['item2'];
+                            echo "<tr>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$key['item2']." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$tipo_item2." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$preco_item2." </td>";
+                                echo "<td style='border-top: solid 2px black'>
+                                    <form action='vender.php' method='POST'>
+                                        <input type='text' name='item' value='$item2' hidden>
+                                        <input type='text' name='preco' value='$preco_item2' hidden>
+                                        <input type='submit' value='Vender'>
+                                    </form>
+                                </td>";
+                            echo "</tr>";
+                        }
+                        if($key['item3'] != NULL){
+                            $item3 = $key['item3'];
+                            echo "<tr>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$key['item3']." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$tipo_item3." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$preco_item3." </td>";
+                                echo "<td style='border-top: solid 2px black'>
+                                    <form action='vender.php' method='POST'>
+                                        <input type='text' name='item' value='$item3' hidden>
+                                        <input type='text' name='preco' value='$preco_item3' hidden>
+                                        <input type='submit' value='Vender'>
+                                    </form>
+                                </td>";
+                            echo "</tr>";
+                        }
+                        if($key['item4'] != NULL){
+                            $item4 = $key['item4'];
+                            echo "<tr>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$key['item4']." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$tipo_item4." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$preco_item4." </td>";
+                                echo "<td style='border-top: solid 2px black'>
+                                    <form action='vender.php' method='POST'>
+                                        <input type='text' name='item' value='$item4' hidden>
+                                        <input type='text' name='preco' value='$preco_item4' hidden>
+                                        <input type='submit' value='Vender'>
+                                    </form>
+                                </td>";
+                            echo "</tr>";
+                        }
+                        if($key['item5'] != NULL){
+                            $item5 = $key['item5'];
+                            echo "<tr>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$key['item5']." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$tipo_item5." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$preco_item5." </td>";
+                                echo "<td style='border-top: solid 2px black'>
+                                    <form action='vender.php' method='POST'>
+                                        <input type='text' name='item' value='$item5' hidden>
+                                        <input type='text' name='preco' value='$preco_item5' hidden>
+                                        <input type='submit' value='Vender'>
+                                    </form>
+                                </td>";
+                            echo "</tr>";
+                        }
+                        if($key['item6'] != NULL){
+                            $item6 = $key['item6'];
+                            echo "<tr>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$key['item6']." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$tipo_item6." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$preco_item6." </td>";
+                                echo "<td style='border-top: solid 2px black'>
+                                    <form action='vender.php' method='POST'>
+                                        <input type='text' name='item' value='$item6' hidden>
+                                        <input type='text' name='preco' value='$preco_item6' hidden>
+                                        <input type='submit' value='Vender'>
+                                    </form>
+                                </td>";
+                            echo "</tr>";
+                        }
+                        if($key['item7'] != NULL){
+                            $item7 = $key['item7'];
+                            echo "<tr>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$key['item7']." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$tipo_item7." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$preco_item7." </td>";
+                                echo "<td style='border-top: solid 2px black'>
+                                    <form action='vender.php' method='POST'>
+                                        <input type='text' name='item' value='$item7' hidden>
+                                        <input type='text' name='preco' value='$preco_item7' hidden>
+                                        <input type='submit' value='Vender'>
+                                    </form>
+                                </td>";
+                            echo "</tr>";
+                        }
+                        if($key['item8'] != NULL){
+                            $item8 = $key['item8'];
+                            echo "<tr>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$key['item8']." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$tipo_item8." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$preco_item8." </td>";
+                                echo "<td style='border-top: solid 2px black'>
+                                    <form action='vender.php' method='POST'>
+                                        <input type='text' name='item' value='$item8' hidden>
+                                        <input type='text' name='preco' value='$preco_item8' hidden>
+                                        <input type='submit' value='Vender'>
+                                    </form>
+                                </td>";
+                            echo "</tr>";
+                        }
+                        if($key['item9'] != NULL){
+                            $item9 = $key['item9'];
+                            echo "<tr>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$key['item9']." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$tipo_item9." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$preco_item9." </td>";
+                                echo "<td style='border-top: solid 2px black'>
+                                    <form action='vender.php' method='POST'>
+                                        <input type='text' name='item' value='$item9' hidden>
+                                        <input type='text' name='preco' value='$preco_item9' hidden>
+                                        <input type='submit' value='Vender'>
+                                    </form>
+                                </td>";
+                            echo "</tr>";
+                        }
+                        if($key['item10'] != NULL){
+                            $item10 = $key['item10'];
+                            echo "<tr>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$key['item10']." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$tipo_item10." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$preco_item10." </td>";
+                                echo "<td style='border-top: solid 2px black'>
+                                    <form action='vender.php' method='POST'>
+                                        <input type='text' name='item' value='$item10' hidden>
+                                        <input type='text' name='preco' value='$preco_item10' hidden>
+                                        <input type='submit' value='Vender'>
+                                    </form>
+                                </td>";
+                            echo "</tr>";
+                        }
+                        if($key['item11'] != NULL){
+                            $item11 = $key['item11'];
+                            echo "<tr>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$key['item11']." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$tipo_item11." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$preco_item11." </td>";
+                                echo "<td style='border-top: solid 2px black'>
+                                    <form action='vender.php' method='POST'>
+                                        <input type='text' name='item' value='$item11' hidden>
+                                        <input type='text' name='preco' value='$preco_item11' hidden>
+                                        <input type='submit' value='Vender'>
+                                    </form>
+                                </td>";
+                            echo "</tr>";
+                        }
+                        if($key['item12'] != NULL){
+                            $item12 = $key['item12'];
+                            echo "<tr>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$key['item12']." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$tipo_item12." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$preco_item12." </td>";
+                                echo "<td style='border-top: solid 2px black'>
+                                    <form action='vender.php' method='POST'>
+                                        <input type='text' name='item' value='$item12' hidden>
+                                        <input type='text' name='preco' value='$preco_item12' hidden>
+                                        <input type='submit' value='Vender'>
+                                    </form>
+                                </td>";
+                            echo "</tr>";
+                        }
+                        if($key['item13'] != NULL){
+                            $item13 = $key['item13'];
+                            echo "<tr>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$key['item13']." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$tipo_item13." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$preco_item13." </td>";
+                                echo "<td style='border-top: solid 2px black'>
+                                    <form action='vender.php' method='POST'>
+                                        <input type='text' name='item' value='$item13' hidden>
+                                        <input type='text' name='preco' value='$preco_item13' hidden>
+                                        <input type='submit' value='Vender'>
+                                    </form>
+                                </td>";
+                            echo "</tr>";
+                        }
+                        if($key['item14'] != NULL){
+                            $item14 = $key['item14'];
+                            echo "<tr>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$key['item14']." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$tipo_item14." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$preco_item14." </td>";
+                                echo "<td style='border-top: solid 2px black'>
+                                    <form action='vender.php' method='POST'>
+                                        <input type='text' name='item' value='$item14' hidden>
+                                        <input type='text' name='preco' value='$preco_item14' hidden>
+                                        <input type='submit' value='Vender'>
+                                    </form>
+                                </td>";
+                            echo "</tr>";
+                        }
+                        if($key['item15'] != NULL){
+                            $item15 = $key['item15'];
+                            echo "<tr>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$key['item15']." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$tipo_item15." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$preco_item15." </td>";
+                                echo "<td style='border-top: solid 2px black'>
+                                    <form action='vender.php' method='POST'>
+                                        <input type='text' name='item' value='$item15' hidden>
+                                        <input type='text' name='preco' value='$preco_item15' hidden>
+                                        <input type='submit' value='Vender'>
+                                    </form>
+                                </td>";
+                            echo "</tr>";
+                        }
+                        if($key['item16'] != NULL){
+                            $item16 = $key['item16'];
+                            echo "<tr>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$key['item16']." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$tipo_item16." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$preco_item16." </td>";
+                                echo "<td style='border-top: solid 2px black'>
+                                    <form action='vender.php' method='POST'>
+                                        <input type='text' name='item' value='$item16' hidden>
+                                        <input type='text' name='preco' value='$preco_item16' hidden>
+                                        <input type='submit' value='Vender'>
+                                    </form>
+                                </td>";
+                            echo "</tr>";
+                        }
+                        if($key['item17'] != NULL){
+                            $item17 = $key['item17'];
+                            echo "<tr>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$key['item17']." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$tipo_item17." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$preco_item17." </td>";
+                                echo "<td style='border-top: solid 2px black'>
+                                    <form action='vender.php' method='POST'>
+                                        <input type='text' name='item' value='$item17' hidden>
+                                        <input type='text' name='preco' value='$preco_item17' hidden>
+                                        <input type='submit' value='Vender'>
+                                    </form>
+                                </td>";
+                            echo "</tr>";
+                        }
+                        if($key['item18'] != NULL){
+                            $item18 = $key['item18'];
+                            echo "<tr>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$key['item18']." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$tipo_item18." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$preco_item18." </td>";
+                                echo "<td style='border-top: solid 2px black'>
+                                    <form action='vender.php' method='POST'>
+                                        <input type='text' name='item' value='$item18' hidden>
+                                        <input type='text' name='preco' value='$preco_item18' hidden>
+                                        <input type='submit' value='Vender'>
+                                    </form>
+                                </td>";
+                            echo "</tr>";
+                        }
+                        if($key['item19'] != NULL){
+                            $item19 = $key['item19'];
+                            echo "<tr>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$key['item19']." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$tipo_item19." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$preco_item19." </td>";
+                                echo "<td style='border-top: solid 2px black'>
+                                    <form action='vender.php' method='POST'>
+                                        <input type='text' name='item' value='$item19' hidden>
+                                        <input type='text' name='preco' value='$preco_item19' hidden>
+                                        <input type='submit' value='Vender'>
+                                    </form>
+                                </td>";
+                            echo "</tr>";
+                        }
+                        if($key['item20'] != NULL){
+                            $item20 = $key['item20'];
+                            echo "<tr>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$key['item20']." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$tipo_item20." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$preco_item20." </td>";
+                                echo "<td style='border-top: solid 2px black'>
+                                    <form action='vender.php' method='POST'>
+                                        <input type='text' name='item' value='$item20' hidden>
+                                        <input type='text' name='preco' value='$preco_item20' hidden>
+                                        <input type='submit' value='Vender'>
+                                    </form>
+                                </td>";
+                            echo "</tr>";
+                        }
+                        if($key['item21'] != NULL){
+                            $item21 = $key['item21'];
+                            echo "<tr>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$key['item21']." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$tipo_item21." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$preco_item21." </td>";
+                                echo "<td style='border-top: solid 2px black'>
+                                    <form action='vender.php' method='POST'>
+                                        <input type='text' name='item' value='$item21' hidden>
+                                        <input type='text' name='preco' value='$preco_item21' hidden>
+                                        <input type='submit' value='Vender'>
+                                    </form>
+                                </td>";
+                            echo "</tr>";
+                        }
+                        if($key['item22'] != NULL){
+                            $item22 = $key['item22'];
+                            echo "<tr>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$key['item22']." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$tipo_item22." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$preco_item22." </td>";
+                                echo "<td style='border-top: solid 2px black'>
+                                    <form action='vender.php' method='POST'>
+                                        <input type='text' name='item' value='$item22' hidden>
+                                        <input type='text' name='preco' value='$preco_item22' hidden>
+                                        <input type='submit' value='Vender'>
+                                    </form>
+                                </td>";
+                            echo "</tr>";
+                        }
+                        if($key['item23'] != NULL){
+                            $item23 = $key['item23'];
+                            echo "<tr>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$key['item23']." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$tipo_item23." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$preco_item23." </td>";
+                                echo "<td style='border-top: solid 2px black'>
+                                    <form action='vender.php' method='POST'>
+                                        <input type='text' name='item' value='$item23' hidden>
+                                        <input type='text' name='preco' value='$preco_item23' hidden>
+                                        <input type='submit' value='Vender'>
+                                    </form>
+                                </td>";
+                            echo "</tr>";
+                        }
+                        if($key['item24'] != NULL){
+                            $item24 = $key['item24'];
+                            echo "<tr>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$key['item24']." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$tipo_item24." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$preco_item24." </td>";
+                                echo "<td style='border-top: solid 2px black'>
+                                    <form action='vender.php' method='POST'>
+                                        <input type='text' name='item' value='$item24' hidden>
+                                        <input type='text' name='preco' value='$preco_item24' hidden>
+                                        <input type='submit' value='Vender'>
+                                    </form>
+                                </td>";
+                            echo "</tr>";
+                        }
+                        if($key['item25'] != NULL){
+                            $item25 = $key['item25'];
+                            echo "<tr>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$key['item25']." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$tipo_item25." </td>";
+                                echo "<td style='border-right: solid 2px black; border-top: solid 2px black'> ".$preco_item25." </td>";
+                                echo "<td style='border-top: solid 2px black'>
+                                    <form action='vender.php' method='POST'>
+                                        <input type='text' name='item' value='$item25' hidden>
+                                        <input type='text' name='preco' value='$preco_item25' hidden>
+                                        <input type='submit' value='Vender'>
+                                    </form>
+                                </td>";
+                            echo "</tr>";
+                        }
+                    }
+            echo "</table>";
         ?>
     </div>
 </body>

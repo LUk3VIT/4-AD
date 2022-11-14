@@ -254,7 +254,7 @@ $repositorio = new RepositorioTabletopMySQL();
 
             if(isset($_SESSION['turno1']) && isset($_SESSION['turno2']) && isset($_SESSION['turno3']) && isset($_SESSION['turno4'])){
                 echo "<h2><a href='limpa_ordem.php'>Alterar Toda Ordem</a></h2>";
-                echo "<h2><a href='#'>COMEÇAR!!!</a></h2>";
+                echo "<h2><a href='../tabletop.php'>COMEÇAR!!!</a></h2>";
             }
         ?>
 </body>

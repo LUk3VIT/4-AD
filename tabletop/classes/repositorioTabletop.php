@@ -1,7 +1,7 @@
 <?php
  
 include 'usuario.php'; 
-require_once 'conexao.php'; 
+require_once 'conexao.php';  
    
 interface IRepositorioTabletop {
     public function PegarInfoClasse($classe); 
@@ -24,6 +24,7 @@ interface IRepositorioTabletop {
     public function PuxarPreco($item);
     public function VerificarArma($id);
     public function ApagarPersonagem($id);
+    public function VerPreco($item);
 }
  
 class RepositorioTabletopMySQL implements IRepositorioTabletop
@@ -171,6 +172,13 @@ class RepositorioTabletopMySQL implements IRepositorioTabletop
     {
         $sql = "DELETE FROM tbl_personagem WHERE id_pers = '$id'";
         $this->conexao->executarQuery($sql);
+    }
+
+    public function VerPreco($item)
+    {
+        $sql = "SELECT * FROM itens WHERE nome = '$item'";
+        $consulta = $this->conexao->executarQuery($sql);
+        return $consulta;
     }
 }
    
