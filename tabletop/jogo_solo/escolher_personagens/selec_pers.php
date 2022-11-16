@@ -46,7 +46,10 @@
                     $key['classe'];
                     $key['nivel'];
                 } else {
+                    
                     echo "<div class='mostrar__pers'>"; 
+                        $img = $key['img'];
+                        echo "<img src='../../$img'>";
                         echo "<label for='selecionar'><h2>Nome: ".$key['nome']."</h2>";
                         echo "<h2>Classe: ".$key['classe']."</h2>";
                         echo "<h2>Nível: ".$key['nivel']."</h2></label>";
@@ -65,6 +68,8 @@
                     $recusar = true;
                     $x = $key['id_pers'];
                     echo "<div class='mostrar__pers'>";
+                        $img = $key['img'];
+                        echo "<img src='../../$img'>";
                         echo "<h2>Nome: ".$key['nome']."</h2>";
                         echo "<h2>Classe: ".$key['classe']."</h2>";
                         echo "<h2>Nível: ".$key['nivel']."</h2>";
@@ -80,6 +85,8 @@
                         $recusar = true;
                         $x = $key['id_pers'];
                         echo "<div class='mostrar__pers'>";
+                            $img = $key['img'];
+                            echo "<img src='../../$img'>";
                             echo "<h2>Nome: ".$key['nome']."</h2>";
                             echo "<h2>Classe: ".$key['classe']."</h2>";
                             echo "<h2>Nível: ".$key['nivel']."</h2>";
@@ -95,6 +102,8 @@
                         $recusar = true;
                         $x = $key['id_pers'];
                         echo "<div class='mostrar__pers'>";
+                            $img = $key['img'];
+                            echo "<img src='../../$img'>";
                             echo "<h2>Nome: ".$key['nome']."</h2>";
                             echo "<h2>Classe: ".$key['classe']."</h2>";
                             echo "<h2>Nível: ".$key['nivel']."</h2>";
@@ -110,6 +119,8 @@
                         $recusar = true;
                         $x = $key['id_pers'];
                         echo "<div class='mostrar__pers'>";
+                            $img = $key['img'];
+                            echo "<img src='../../$img'>";
                             echo "<h2>Nome: ".$key['nome']."</h2>";
                             echo "<h2>Classe: ".$key['classe']."</h2>";
                             echo "<h2>Nível: ".$key['nivel']."</h2>";
@@ -131,7 +142,9 @@
                 foreach ($personagem as $key) {
                     $recusar = true;
                     $x = $key['id_pers'];
-                    echo "<div class='mostrar__pers'>";
+                        echo "<div class='mostrar__pers'>";
+                        $img = $key['img'];
+                        echo "<img src='../../$img'>";
                         echo "<h2>Nome: ".$key['nome']."</h2>";
                         echo "<h2>Classe: ".$key['classe']."</h2>";
                         echo "<h2>Nível: ".$key['nivel']."</h2>";
@@ -147,6 +160,8 @@
                         $recusar = true;
                         $x = $key['id_pers'];
                         echo "<div class='mostrar__pers'>";
+                            $img = $key['img'];
+                            echo "<img src='../../$img'>";
                             echo "<h2>Nome: ".$key['nome']."</h2>";
                             echo "<h2>Classe: ".$key['classe']."</h2>";
                             echo "<h2>Nível: ".$key['nivel']."</h2>";
@@ -162,6 +177,8 @@
                         $recusar = true;
                         $x = $key['id_pers'];
                         echo "<div class='mostrar__pers'>";
+                            $img = $key['img'];
+                            echo "<img src='../../$img'>";
                             echo "<h2>Nome: ".$key['nome']."</h2>";
                             echo "<h2>Classe: ".$key['classe']."</h2>";
                             echo "<h2>Nível: ".$key['nivel']."</h2>";
@@ -177,6 +194,8 @@
                         $recusar = true;
                         $x = $key['id_pers'];
                         echo "<div class='mostrar__pers'>";
+                            $img = $key['img'];
+                            echo "<img src='../../$img'>";
                             echo "<h2>Nome: ".$key['nome']."</h2>";
                             echo "<h2>Classe: ".$key['classe']."</h2>";
                             echo "<h2>Nível: ".$key['nivel']."</h2>";
@@ -210,6 +229,8 @@
                         $key['nivel'];
                     } else {
                         echo "<div class='mostrar__pers'>"; 
+                            $img = $key['img'];
+                            echo "<img src='../../$img'>";
                             echo "<label for='selecionar'><h2>Nome: ".$key['nome']."</ver2>";
                             echo "<h2>Classe: ".$key['classe']."</h2>";
                             echo "<h2>Nível: ".$key['nivel']."</h2></label>";

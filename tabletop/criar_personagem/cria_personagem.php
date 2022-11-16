@@ -6,6 +6,7 @@ $repositorio = new RepositorioTabletopMySQL();
 
 $id = $_SESSION['id_usuario'];
 $nome_pers = $nome = $_SESSION['nome_pers'];
+$img = $_SESSION['img'];
 $classe = $_SESSION['classe'];
 $nivel = $_SESSION['nivel'];
 $nivel_maximo = $_SESSION['nivel_maximo'];
@@ -54,7 +55,7 @@ if(isset($_SESSION['magia3'])){
     $mag3 = "";
 }
 
-$criar_pers = $repositorio->CriarPersonagem($id,$nome,$classe,$nivel,$nivel_maximo,$vida,$dinheiro,$ataque,$defesa,$id_inventario,$mag1,$mag2,$mag3);
+$criar_pers = $repositorio->CriarPersonagem($id,$nome,$img,$classe,$nivel,$nivel_maximo,$vida,$dinheiro,$ataque,$defesa,$id_inventario,$mag1,$mag2,$mag3);
 header('Location: voltar_classe.php');
 
 ?>

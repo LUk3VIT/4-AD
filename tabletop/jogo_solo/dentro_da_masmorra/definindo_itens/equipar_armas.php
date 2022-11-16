@@ -41,6 +41,8 @@ $repositorio = new RepositorioTabletopMySQL();
                 foreach ($personagem as $key) {
                     $nome = $key['nome'];
                     echo "<td style='border: solid 2px black'>";
+                        $img = $key['img'];
+                        echo "<img src='../../../$img'>";
                         echo "<h2>Nome: ".$key['nome'];
                         echo " - Classe: ".$key['classe']."</h2>";
                         echo "<h3>Equipamentos:</h3>";
@@ -306,14 +308,14 @@ $repositorio = new RepositorioTabletopMySQL();
                             } else {
                                 if(isset($mangual) || isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($martelo_guerra) || isset($arco) || isset($funda) || isset($lanterna)){
                                     echo "<form action='selec_eq.php' method='POST'>";
+
+                                    echo "<br>";
+                                    echo "<label for='espada_montante'>Espada Montante</label>";
+                                    echo "<input type='checkbox' id='espada_montante' name='espada_montante'>";
+                                    echo "<br>";
                                     
                                     if(isset($martelo_guerra) || isset($arco)){
                                         echo "<h3>Armas de Duas Mãos (Selecione apenas um)</h3>";
-                                    
-                                        echo "<label for='espada_montante'>Espada Montante</label>";
-                                        echo "<input type='checkbox' id='espada_montante' name='espada_montante'>";
-                                        echo "<br>";
-
 
                                         if(isset($martelo_guerra)){
                                             echo "<label for='martelo_guerra'>Martelo de Guerra</label>";
@@ -377,12 +379,14 @@ $repositorio = new RepositorioTabletopMySQL();
                                 if(isset($mangual) || isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($arco) || isset($funda) || isset($lanterna)){
                                     echo "<form action='selec_eq.php' method='POST'>";
 
+                                    echo "<br>";
+                                    echo "<label for='martelo_guerra'>Martelo de Guerra</label>";
+                                    echo "<input type='checkbox' id='martelo_guerra' name='martelo_guerra'>";
+                                    echo "<br>";
+
                                     if(isset($arco)){
                                         echo "<h3>Armas de Duas Mãos (Selecione apenas um)</h3>";
                                     
-                                        echo "<label for='martelo_guerra'>Martelo de Guerra</label>";
-                                        echo "<input type='checkbox' id='martelo_guerra' name='martelo_guerra'>";
-                                        echo "<br>";
                                         echo "<label for='arco'>Arco</label>";
                                         echo "<input type='checkbox' id='arco' name='arco'>";
                                         echo "<br>";
@@ -765,6 +769,8 @@ $repositorio = new RepositorioTabletopMySQL();
                 foreach ($personagem as $key) {
                     $nome = $key['nome'];
                     echo "<td style='border: solid 2px black'>";
+                        $img = $key['img'];
+                        echo "<img src='../../../$img'>";
                         echo "<h2>Nome: ".$key['nome'];
                         echo " - Classe: ".$key['classe']."</h2>";
                         echo "<h3>Equipamentos:</h3>";
@@ -1027,14 +1033,13 @@ $repositorio = new RepositorioTabletopMySQL();
                             } else {
                                 if(isset($mangual) || isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($martelo_guerra) || isset($arco) || isset($funda) || isset($lanterna)){
                                     echo "<form action='selec_eq.php' method='POST'>";
+
+                                    echo "<label for='espada_montante'>Espada Montante</label>";
+                                    echo "<input type='checkbox' id='espada_montante' name='espada_montante'>";
+                                    echo "<br>";
                                     
                                     if(isset($martelo_guerra) || isset($arco)){
                                         echo "<h3>Armas de Duas Mãos (Selecione apenas um)</h3>";
-                                    
-                                        echo "<label for='espada_montante'>Espada Montante</label>";
-                                        echo "<input type='checkbox' id='espada_montante' name='espada_montante'>";
-                                        echo "<br>";
-
 
                                         if(isset($martelo_guerra)){
                                             echo "<label for='martelo_guerra'>Martelo de Guerra</label>";
@@ -1099,12 +1104,13 @@ $repositorio = new RepositorioTabletopMySQL();
                                 if(isset($mangual) || isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($arco) || isset($funda) || isset($lanterna)){
                                     echo "<form action='selec_eq.php' method='POST'>";
 
+                                    echo "<label for='martelo_guerra'>Martelo de Guerra</label>";
+                                    echo "<input type='checkbox' id='martelo_guerra' name='martelo_guerra'>";
+                                    echo "<br>";
+
                                     if(isset($arco)){
                                         echo "<h3>Armas de Duas Mãos (Selecione apenas um)</h3>";
                                     
-                                        echo "<label for='martelo_guerra'>Martelo de Guerra</label>";
-                                        echo "<input type='checkbox' id='martelo_guerra' name='martelo_guerra'>";
-                                        echo "<br>";
                                         echo "<label for='arco'>Arco</label>";
                                         echo "<input type='checkbox' id='arco' name='arco'>";
                                     } 
@@ -1491,6 +1497,8 @@ $repositorio = new RepositorioTabletopMySQL();
                 foreach ($personagem as $key) {
                     $nome = $key['nome'];
                     echo "<td style='border: solid 2px black'>";
+                        $img = $key['img'];
+                        echo "<img src='../../../$img'>";
                         echo "<h2>Nome: ".$key['nome'];
                         echo " - Classe: ".$key['classe']."</h2>";
                         echo "<h3>Equipamentos:</h3>";
@@ -1753,14 +1761,14 @@ $repositorio = new RepositorioTabletopMySQL();
                             } else {
                                 if(isset($mangual) || isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($martelo_guerra) || isset($arco) || isset($funda) || isset($lanterna)){
                                     echo "<form action='selec_eq.php' method='POST'>";
+
+                                    echo "<br>";
+                                    echo "<label for='espada_montante'>Espada Montante</label>";
+                                    echo "<input type='checkbox' id='espada_montante' name='espada_montante'>";
+                                    echo "<br>";
                                     
                                     if(isset($martelo_guerra) || isset($arco)){
                                         echo "<h3>Armas de Duas Mãos (Selecione apenas um)</h3>";
-                                    
-                                        echo "<label for='espada_montante'>Espada Montante</label>";
-                                        echo "<input type='checkbox' id='espada_montante' name='espada_montante'>";
-                                        echo "<br>";
-
 
                                         if(isset($martelo_guerra)){
                                             echo "<label for='martelo_guerra'>Martelo de Guerra</label>";
@@ -1824,12 +1832,14 @@ $repositorio = new RepositorioTabletopMySQL();
                                 if(isset($mangual) || isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($arco) || isset($funda) || isset($lanterna)){
                                     echo "<form action='selec_eq.php' method='POST'>";
 
+                                    echo "<br>";
+                                    echo "<label for='martelo_guerra'>Martelo de Guerra</label>";
+                                    echo "<input type='checkbox' id='martelo_guerra' name='martelo_guerra'>";
+                                    echo "<br>";
+
                                     if(isset($arco)){
                                         echo "<h3>Armas de Duas Mãos (Selecione apenas um)</h3>";
                                     
-                                        echo "<label for='martelo_guerra'>Martelo de Guerra</label>";
-                                        echo "<input type='checkbox' id='martelo_guerra' name='martelo_guerra'>";
-                                        echo "<br>";
                                         echo "<label for='arco'>Arco</label>";
                                         echo "<input type='checkbox' id='arco' name='arco'>";
                                         echo "<br>";
@@ -2213,6 +2223,8 @@ $repositorio = new RepositorioTabletopMySQL();
                 foreach ($personagem as $key) {
                     $nome = $key['nome'];
                     echo "<td style='border: solid 2px black'>";
+                        $img = $key['img'];
+                        echo "<img src='../../../$img'>";
                         echo "<h2>Nome: ".$key['nome'];
                         echo " - Classe: ".$key['classe']."</h2>";
                         echo "<h3>Equipamentos:</h3>";
@@ -2475,14 +2487,14 @@ $repositorio = new RepositorioTabletopMySQL();
                             } else {
                                 if(isset($mangual) || isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($martelo_guerra) || isset($arco) || isset($funda) || isset($lanterna)){
                                     echo "<form action='selec_eq.php' method='POST'>";
+
+                                    echo "<br>";
+                                    echo "<label for='espada_montante'>Espada Montante</label>";
+                                    echo "<input type='checkbox' id='espada_montante' name='espada_montante'>";
+                                    echo "<br>";
                                     
                                     if(isset($martelo_guerra) || isset($arco)){
                                         echo "<h3>Armas de Duas Mãos (Selecione apenas um)</h3>";
-                                    
-                                        echo "<label for='espada_montante'>Espada Montante</label>";
-                                        echo "<input type='checkbox' id='espada_montante' name='espada_montante'>";
-                                        echo "<br>";
-
 
                                         if(isset($martelo_guerra)){
                                             echo "<label for='martelo_guerra'>Martelo de Guerra</label>";
@@ -2546,12 +2558,14 @@ $repositorio = new RepositorioTabletopMySQL();
                                 if(isset($mangual) || isset($espada_curta) || isset($adaga) || isset($tonfa) || isset($arco) || isset($funda) || isset($lanterna)){
                                     echo "<form action='selec_eq.php' method='POST'>";
 
+                                    echo "<br>";
+                                    echo "<label for='martelo_guerra'>Martelo de Guerra</label>";
+                                    echo "<input type='checkbox' id='martelo_guerra' name='martelo_guerra'>";
+                                    echo "<br>";
+
                                     if(isset($arco)){
                                         echo "<h3>Armas de Duas Mãos (Selecione apenas um)</h3>";
                                     
-                                        echo "<label for='martelo_guerra'>Martelo de Guerra</label>";
-                                        echo "<input type='checkbox' id='martelo_guerra' name='martelo_guerra'>";
-                                        echo "<br>";
                                         echo "<label for='arco'>Arco</label>";
                                         echo "<input type='checkbox' id='arco' name='arco'>";
                                         echo "<br>";

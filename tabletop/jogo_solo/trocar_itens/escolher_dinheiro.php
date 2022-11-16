@@ -17,6 +17,8 @@ if($id_remetente == $_SESSION['personagem1']){
         $id_dest = $key['id_pers'];
         $dinheiro_dest = $key['dinheiro'];
         echo "<div style='border: solid 2px red'>";
+            $img = $key['img'];
+            echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
@@ -37,6 +39,8 @@ if($id_remetente == $_SESSION['personagem1']){
         $id_dest = $key['id_pers'];
         $dinheiro_dest = $key['dinheiro'];
         echo "<div style='border: solid 2px red'>";
+            $img = $key['img'];
+            echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
@@ -57,6 +61,8 @@ if($id_remetente == $_SESSION['personagem1']){
         $id_dest = $key['id_pers'];
         $dinheiro_dest = $key['dinheiro'];
         echo "<div style='border: solid 2px red'>";
+            $img = $key['img'];
+            echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
@@ -77,6 +83,8 @@ if($id_remetente == $_SESSION['personagem1']){
         $id_dest = $key['id_pers'];
         $dinheiro_dest = $key['dinheiro'];
         echo "<div style='border: solid 2px red'>";
+            $img = $key['img'];
+            echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
@@ -97,6 +105,8 @@ if($id_remetente == $_SESSION['personagem1']){
         $id_dest = $key['id_pers'];
         $dinheiro_dest = $key['dinheiro'];
         echo "<div style='border: solid 2px red'>";
+            $img = $key['img'];
+            echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
@@ -117,6 +127,8 @@ if($id_remetente == $_SESSION['personagem1']){
         $id_dest = $key['id_pers'];
         $dinheiro_dest = $key['dinheiro'];
         echo "<div style='border: solid 2px red'>";
+            $img = $key['img'];
+            echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
@@ -137,6 +149,8 @@ if($id_remetente == $_SESSION['personagem1']){
         $id_dest = $key['id_pers'];
         $dinheiro_dest = $key['dinheiro'];
         echo "<div style='border: solid 2px red'>";
+            $img = $key['img'];
+            echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
@@ -157,6 +171,8 @@ if($id_remetente == $_SESSION['personagem1']){
         $id_dest = $key['id_pers'];
         $dinheiro_dest = $key['dinheiro'];
         echo "<div style='border: solid 2px red'>";
+            $img = $key['img'];
+            echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
@@ -177,6 +193,8 @@ if($id_remetente == $_SESSION['personagem1']){
         $id_dest = $key['id_pers'];
         $dinheiro_dest = $key['dinheiro'];
         echo "<div style='border: solid 2px red'>";
+            $img = $key['img'];
+            echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
@@ -197,6 +215,8 @@ if($id_remetente == $_SESSION['personagem1']){
         $id_dest = $key['id_pers'];
         $dinheiro_dest = $key['dinheiro'];
         echo "<div style='border: solid 2px red'>";
+            $img = $key['img'];
+            echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
@@ -217,6 +237,8 @@ if($id_remetente == $_SESSION['personagem1']){
         $id_dest = $key['id_pers'];
         $dinheiro_dest = $key['dinheiro'];
         echo "<div style='border: solid 2px red'>";
+            $img = $key['img'];
+            echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
@@ -237,6 +259,8 @@ if($id_remetente == $_SESSION['personagem1']){
         $id_dest = $key['id_pers'];
         $dinheiro_dest = $key['dinheiro'];
         echo "<div style='border: solid 2px red'>";
+            $img = $key['img'];
+            echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";

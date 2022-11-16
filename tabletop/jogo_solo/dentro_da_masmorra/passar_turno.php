@@ -12,6 +12,10 @@ if($_GET['id'] == $_SESSION['turno1']){
     $_SESSION['turno'] = $_SESSION['turno1'];
 }
 
+unset($_SESSION['dar_item']);
+unset($_SESSION['item_troca']);
+unset($_SESSION['mostrar_itens']);
+
 header('Location: tabletop.php');
 
 ?>

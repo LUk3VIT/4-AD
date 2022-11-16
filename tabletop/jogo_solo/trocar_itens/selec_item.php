@@ -24,6 +24,8 @@ foreach ($remetente as $key) {
         $personagem = $repositorio->MostrarPersonagem($id);
         foreach ($personagem as $key) {
             $destinatario = $key['nome'];
+            $img = $key['img'];
+            echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
@@ -45,6 +47,8 @@ foreach ($remetente as $key) {
         $personagem = $repositorio->MostrarPersonagem($id);
         foreach ($personagem as $key) {
             $destinatario = $key['nome'];
+            $img = $key['img'];
+            echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
@@ -66,6 +70,8 @@ foreach ($remetente as $key) {
         $personagem = $repositorio->MostrarPersonagem($id);
         foreach ($personagem as $key) {
             $destinatario = $key['nome'];
+            $img = $key['img'];
+            echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
@@ -88,6 +94,8 @@ foreach ($remetente as $key) {
         $personagem = $repositorio->MostrarPersonagem($id);
         foreach ($personagem as $key) {
             $destinatario = $key['nome'];
+            $img = $key['img'];
+            echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
@@ -109,6 +117,8 @@ foreach ($remetente as $key) {
         $personagem = $repositorio->MostrarPersonagem($id);
         foreach ($personagem as $key) {
             $destinatario = $key['nome'];
+            $img = $key['img'];
+            echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
@@ -130,6 +140,8 @@ foreach ($remetente as $key) {
         $personagem = $repositorio->MostrarPersonagem($id);
         foreach ($personagem as $key) {
             $destinatario = $key['nome'];
+            $img = $key['img'];
+            echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
@@ -152,6 +164,8 @@ foreach ($remetente as $key) {
         $personagem = $repositorio->MostrarPersonagem($id);
         foreach ($personagem as $key) {
             $destinatario = $key['nome'];
+            $img = $key['img'];
+            echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
@@ -173,6 +187,8 @@ foreach ($remetente as $key) {
         $personagem = $repositorio->MostrarPersonagem($id);
         foreach ($personagem as $key) {
             $destinatario = $key['nome'];
+            $img = $key['img'];
+            echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
@@ -194,6 +210,8 @@ foreach ($remetente as $key) {
         $personagem = $repositorio->MostrarPersonagem($id);
         foreach ($personagem as $key) {
             $destinatario = $key['nome'];
+            $img = $key['img'];
+            echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
@@ -216,6 +234,8 @@ foreach ($remetente as $key) {
         $personagem = $repositorio->MostrarPersonagem($id);
         foreach ($personagem as $key) {
             $destinatario = $key['nome'];
+            $img = $key['img'];
+            echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
@@ -237,6 +257,8 @@ foreach ($remetente as $key) {
         $personagem = $repositorio->MostrarPersonagem($id);
         foreach ($personagem as $key) {
             $destinatario = $key['nome'];
+            $img = $key['img'];
+            echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
@@ -258,6 +280,8 @@ foreach ($remetente as $key) {
         $personagem = $repositorio->MostrarPersonagem($id);
         foreach ($personagem as $key) {
             $destinatario = $key['nome'];
+            $img = $key['img'];
+            echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";

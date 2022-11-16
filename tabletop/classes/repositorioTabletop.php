@@ -2,11 +2,11 @@
  
 include 'usuario.php'; 
 require_once 'conexao.php';  
-   
+    
 interface IRepositorioTabletop {
     public function PegarInfoClasse($classe); 
     public function EscolherMagia($id);
-    public function CriarPersonagem($id,$nome,$classe,$nivel,$nivel_maximo,$vida,$dinheiro,$ataque,$defesa,$id_inventario,$mag1,$mag2,$mag3);
+    public function CriarPersonagem($id,$nome,$img,$classe,$nivel,$nivel_maximo,$vida,$dinheiro,$ataque,$defesa,$id_inventario,$mag1,$mag2,$mag3);
     public function CriarInventario($id,$nome_pers,$item1,$item2,$item3,$item4);
     public function PuxarIdInventario($id);
     public function VerificarNome($nome_pers);
@@ -25,6 +25,7 @@ interface IRepositorioTabletop {
     public function VerificarArma($id);
     public function ApagarPersonagem($id);
     public function VerPreco($item);
+    public function VerificarArmaClasse($classe,$item);
 }
  
 class RepositorioTabletopMySQL implements IRepositorioTabletop
@@ -37,7 +38,7 @@ class RepositorioTabletopMySQL implements IRepositorioTabletop
         if($this->conexao->conectar()==false){ 
             echo "Erro de conexao ".mysqli_connect_error(); 
         } 
-    }
+    } 
 
    public function PegarInfoClasse($classe)
     {
@@ -55,9 +56,9 @@ class RepositorioTabletopMySQL implements IRepositorioTabletop
         return $resultado;
     }
 
-    public function CriarPersonagem($id,$nome,$classe,$nivel,$nivel_maximo,$vida,$dinheiro,$ataque,$defesa,$id_inventario,$mag1,$mag2,$mag3)
+    public function CriarPersonagem($id,$nome,$img,$classe,$nivel,$nivel_maximo,$vida,$dinheiro,$ataque,$defesa,$id_inventario,$mag1,$mag2,$mag3)
     {
-        $sql = "INSERT INTO tbl_personagem (id_pers,id_usuario,nome,classe,nivel,nivel_max,vida,dinheiro,ataque,defesa,id_inventario,pistas,mag1,mag2,mag3,mag4,mag5,mag6,mag7) VALUES ('','$id','$nome','$classe','$nivel','$nivel_maximo','$vida','$dinheiro','$ataque','$defesa','$id_inventario','','$mag1','$mag2','$mag3','','','','')" ;
+        $sql = "INSERT INTO tbl_personagem (id_pers,id_usuario,nome,img,classe,nivel,nivel_max,vida,dinheiro,ataque,defesa,id_inventario,pistas,mag1,mag2,mag3,mag4,mag5,mag6,mag7) VALUES ('','$id','$nome','$img','$classe','$nivel','$nivel_maximo','$vida','$dinheiro','$ataque','$defesa','$id_inventario','','$mag1','$mag2','$mag3','','','','')" ;
         $this->conexao->executarQuery($sql);
     }
 
@@ -177,6 +178,19 @@ class RepositorioTabletopMySQL implements IRepositorioTabletop
     public function VerPreco($item)
     {
         $sql = "SELECT * FROM itens WHERE nome = '$item'";
+        $consulta = $this->conexao->executarQuery($sql);
+        return $consulta;
+    }
+
+    public function VerificarArmaClasse($classe,$item){
+        $sql = "SELECT * FROM itens WHERE nome = '$item' AND classes_proibidas LIKE '%$classe%'";
+        $linha = $this->conexao->obtemNumeroLinhas($sql);
+        return $linha;
+    }
+
+    public function SortearVerme($sorteio)
+    {
+        $sql = "SELECT * FROM vermes WHERE numero = '$sorteio'";
         $consulta = $this->conexao->executarQuery($sql);
         return $consulta;
     }

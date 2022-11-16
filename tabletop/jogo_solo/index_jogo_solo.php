@@ -39,6 +39,8 @@ if($_SESSION['personagem4'] == NULL){
         foreach ($mostrar as $key) {
             $id = $key['id_pers'];
             echo "<div class='mostrar__pers'>";
+                $img = $key['img'];
+                echo "<img src='../$img'>";
                 echo "<h2>Nome: ".$key['nome']."</h2>";
                 echo "<h2>Classe: ".$key['classe']."</h2>";
                 echo "<h2>Nível: ".$key['nivel']."</h2>";
@@ -52,6 +54,8 @@ if($_SESSION['personagem4'] == NULL){
         foreach ($mostrar as $key) {
             $id = $key['id_pers'];
             echo "<div class='mostrar__pers'>";
+                $img = $key['img'];
+                echo "<img src='../$img'>";
                 echo "<h2>Nome: ".$key['nome']."</h2>";
                 echo "<h2>Classe: ".$key['classe']."</h2>";
                 echo "<h2>Nível: ".$key['nivel']."</h2>";
@@ -64,6 +68,8 @@ if($_SESSION['personagem4'] == NULL){
         foreach ($mostrar as $key) {
             $id = $key['id_pers'];
             echo "<div class='mostrar__pers'>";
+                $img = $key['img'];
+                echo "<img src='../$img'>";
                 echo "<h2>Nome: ".$key['nome']."</h2>";
                 echo "<h2>Classe: ".$key['classe']."</h2>";
                 echo "<h2>Nível: ".$key['nivel']."</h2>";
@@ -76,6 +82,8 @@ if($_SESSION['personagem4'] == NULL){
         foreach ($mostrar as $key) {
             $id = $key['id_pers'];
             echo "<div class='mostrar__pers'>";
+                $img = $key['img'];
+                echo "<img src='../$img'>";
                 echo "<h2>Nome: ".$key['nome']."</h2>";
                 echo "<h2>Classe: ".$key['classe']."</h2>";
                 echo "<h2>Nível: ".$key['nivel']."</h2>";

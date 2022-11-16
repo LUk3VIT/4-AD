@@ -28,10 +28,11 @@ if(isset($_SESSION['id_comprador'])){
             echo "<a style='color: red'>".$_SESSION['msg']."</a>";
             unset($_SESSION['msg']);
         } ?>
-    <div style='border: solid 2px red; height: 150px; width: 400px'>
+    <div style='border: solid 2px red; height: 550px; width: 300px'>
         <?php
             $personagem = $repositorio->MostrarPersonagem($id);
             foreach ($personagem as $key) {
+                $img = $key['img'];
                 $classe = $key['classe'];
                 $nome_pers = $key['nome'];
                 $dinheiro = $key['dinheiro'];
@@ -117,6 +118,7 @@ if(isset($_SESSION['id_comprador'])){
                     }
                 }
                 ?>
+                <?php echo "<img src='../../$img'>"; ?>
                 <h6>Nome: <?php echo $nome_pers?> Classe: <?php echo $classe?></h6>
                 <h6>Dinheiro: <?php echo $dinheiro?></h6>
                 <?php
@@ -124,7 +126,7 @@ if(isset($_SESSION['id_comprador'])){
                     $nome = $nome_pers;
                     $inventario = $repositorio->MostrarInventario($nome);
                     foreach ($inventario as $key) {
-                        echo "<ul style='border: solid 2px black; margin-bottom: 250px'>";
+                        echo "<div style='border: solid 2px black; margin-bottom: 250px'>";
                             $item1 = $key['item1'];
                             echo "<li>".$key['item1']."</li>";
                             $item2 = $key['item2'];
@@ -221,7 +223,7 @@ if(isset($_SESSION['id_comprador'])){
                                 $item25 = $key['item25'];
                                 echo "<li>".$key['item25']."</li>";
                             }
-                        echo "</ul>";
+                        echo "</div>";
                         echo "<br>";
                         echo "<br>";
                         echo "<br>";

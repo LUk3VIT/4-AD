@@ -4,6 +4,32 @@
     $repositorio = new RepositorioTabletopMySQL();
 
     $classe = $_SESSION['classe'];
+    if($classe == "Clérigo"){
+        $x = rand(1,500);
+        if($x == 297){
+            $img = "imagens/personagens/ClerigoCego.png";
+        } else {
+            $img = "imagens/personagens/Clerigo.png";
+        }
+    } else if($classe == "Guerreiro"){
+        $img = "imagens/personagens/Guerreiro.png";
+    } else if($classe == "Ladino"){
+        $img = "imagens/personagens/Ladino.png";
+    } else if($classe == "Bárbaro"){
+        $img = "imagens/personagens/Barbaro.png";
+    } else if($classe == "Anão"){
+        $img = "imagens/personagens/Anao.png";
+    } else if($classe == "Elfo"){
+        $img = "imagens/personagens/Elfo.png";
+    } else if($classe == "Mago"){
+        $img = "imagens/personagens/Mago.png";
+    } else if($classe == "Halfling"){
+        $img = "imagens/personagens/Halfling.png";
+    }
+
+    echo $img;
+    exit;
+
     $x = 2;
     $dinheiro = 0;
 
@@ -47,6 +73,10 @@
 </head>
 <body>
         <?php
+        echo "<div style='float: left'>";
+            echo "<img src='../$img'>";
+        echo "</div>";
+        echo "<div>";
         if($_SESSION['classe'] == "Ladino"){
             $_SESSION['item1'] = "corda";
             $_SESSION['item2'] = "armadura leve";
@@ -111,6 +141,7 @@
             echo "</select>";
         }
        
+        echo "</div>";
         ?>
 </body>
 </html>

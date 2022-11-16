@@ -14,8 +14,38 @@
 
     <?php
         session_start();
+        
+
         if(isset($_SESSION['nome_pers']) && isset($_SESSION['classe'])){
             unset($_SESSION['msg']);
+
+            $classe = $_SESSION['classe'];
+
+            if($classe == "Clérigo"){
+                $x = rand(1,100);
+                if($x == 69){
+                    $img = "imagens/personagens/ClerigoCego.png";
+                } else {
+                    $img = "imagens/personagens/Clerigo.png";
+                }
+            } else if($classe == "Guerreiro"){
+                $img = "imagens/personagens/Guerreiro.png";
+            } else if($classe == "Ladino"){
+                $img = "imagens/personagens/Ladino.png";
+            } else if($classe == "Bárbaro"){
+                $img = "imagens/personagens/Barbaro.png";
+            } else if($classe == "Anão"){
+                $img = "imagens/personagens/Anao.png";
+            } else if($classe == "Elfo"){
+                $img = "imagens/personagens/Elfo.png";
+            } else if($classe == "Mago"){
+                $img = "imagens/personagens/Mago.png";
+            } else if($classe == "Halfling"){
+                $img = "imagens/personagens/Halfling.png";
+            }
+            $_SESSION['img'] = $img;
+
+            echo "<img src='../$img'>";
             echo "<a class='voltar__a' href='voltar_classe.php'>Escolher outra classe</a>";
             echo "<div class='informacao__personagem'>";
             echo "<h2 class='informacao__nome'>Nome do Personagem: ".$_SESSION['nome_pers']."</h2>";
@@ -23,7 +53,7 @@
             require_once '../classes/repositorioTabletop.php'; 
             $repositorio = new RepositorioTabletopMySQL();
 
-            $classe = $_SESSION['classe'];
+    
 
             $consulta = $repositorio->PegarInfoClasse($classe);
         

@@ -15,6 +15,8 @@ foreach ($personagem as $key) {
     $nome = $key['nome'];
     echo "<h1>Informações do Personagem</h1>";
     echo "<br>";
+    $img = $key['img'];
+    echo "<img src='../../$img'>";
     echo "<h2>Nome: ".$key['nome']."</h2>";
     echo "<h2>Classe: ".$key['classe']."</h2>";
     echo "<h2>Nível: ".$key['nivel']."</h2>";
