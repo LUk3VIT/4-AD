@@ -1,6 +1,7 @@
 body{
     background: #1b153ff6;    
     display: flex;
+    flex-direction: column;
 }
 
 .titulo{
@@ -90,6 +91,8 @@ body{
     flex-direction: column;
 }
 
+
+
 .form__criar__nome{
     margin: 10px 0px;
     font-size: 20px;
@@ -167,6 +170,7 @@ body{
     width: 500px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 .informacao__nome{
@@ -278,5 +282,17 @@ input{
     margin: 10px 25px;
     text-decoration: none;
     font-size: 23px;
-    color: #FFFFFF
+    color: #FFFFFF;
+    padding: 10px;
+    background: #00FF7F;
+    border-radius: 10px;
+}
+
+.rykelmy__entrar:hover{
+    color: #000000;
+}
+
+.rykelmy__loja{
+    margin: 10px 25px;
+    text-decoration: 10px 25px;
 }
