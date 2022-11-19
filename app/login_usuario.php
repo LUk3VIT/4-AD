@@ -19,6 +19,7 @@
             $_SESSION['nome_usuario'] = $nome_usuario;
             $_SESSION['id_usuario'] = $id_usuario;
             $_SESSION['senha_usuario'] = $_POST['senha'];
+            unset($_SESSION['msg']);
             header('Location: perfil.php');
         } else { 
             $_SESSION['msg']= "Login invalido!!!!";

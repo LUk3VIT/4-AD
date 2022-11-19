@@ -43,7 +43,12 @@
             } else if($classe == "Halfling"){
                 $img = "imagens/personagens/Halfling.png";
             }
-            $_SESSION['img'] = $img;
+            if(isset($_SESSION['img'])){
+
+            } else {
+                $_SESSION['img'] = $img;
+            }
+            
 
             echo "<img src='../$img'>";
             echo "<a class='voltar__a' href='voltar_classe.php'>Escolher outra classe</a>";
@@ -134,7 +139,7 @@
             echo "</ul>";
 
             if(isset($_SESSION['dinheiro'])){
-                echo "<h2>Dinheiro Inicial: ".$_SESSION['dinheiro']."</h2>";
+                echo "<h2>Dinheiro Inicial: ".$_SESSION['dinheiro']."  <img src='../imagens/MoedasOuro.png'></h2>";
             } else {
                 ?>
                     <form action="sortear/sortear_dinheiro.php" method="post">
@@ -164,10 +169,19 @@
                 $_SESSION['item1'] = $item3;
                 if(isset($_SESSION['magia1'])){
                     echo "<h3>1ª Magia: ".$_SESSION['magia1']."</h3>";
+                    $magia = $_SESSION['magia1'];
+                    $img = $repositorio->PuxarImagemMagia($magia);
+                    echo "<img src='../$img'>";
                     if(isset($_SESSION['magia2'])){
                         echo "<h3>2ª Magia: ".$_SESSION['magia2']."</h3>";
+                        $magia = $_SESSION['magia2'];
+                        $img = $repositorio->PuxarImagemMagia($magia);
+                        echo "<img src='../$img'>";
                         if(isset($_SESSION['magia3'])){
                             echo "<h3>3ª Magia: ".$_SESSION['magia3']."</h3>";
+                            $magia = $_SESSION['magia3'];
+                            $img = $repositorio->PuxarImagemMagia($magia);
+                            echo "<img src='../$img'>";
                         } else {
                             ?>
                                 <form action="sortear/sortear_magia.php" method="post">
@@ -201,6 +215,9 @@
                 echo "</form>";
                 if(isset($_SESSION['magia1'])){
                     echo "<h3>Magia: ".$_SESSION['magia1']."</h3>";
+                    $magia = $_SESSION['magia1'];
+                    $img = $repositorio->PuxarImagemMagia($magia);
+                    echo "<img src='../$img'>";
                 } else {
                     ?>
                         <form action="sortear/sortear_magia.php" method="post">
@@ -236,7 +253,13 @@
                     $_SESSION['magia1'] = "curar";
                     $_SESSION['magia2'] = "benção";
                     echo "<h3>1ª Magia: ".$_SESSION['magia1']." (3 usos por aventura)</h3>";
+                    $magia = $_SESSION['magia1'];
+                    $img = $repositorio->PuxarImagemMagia($magia);
+                    echo "<img src='../$img'>";
                     echo "<h3>2ª Magia: ".$_SESSION['magia2']." (3 usos por aventura)</h3>";
+                    $magia = $_SESSION['magia2'];
+                    $img = $repositorio->PuxarImagemMagia($magia);
+                    echo "<img src='../$img'>";
                 }
                 $_SESSION['item1'] = $item1;
                     echo "<form action='selec_itens.php' method='get'>";
@@ -260,18 +283,118 @@
             echo "<h2>Itens Iniciais</h2>";
             echo "<ul>";
             if(isset($_SESSION['item1'])){
+                if($_SESSION['item1'] == "espada curta e escudo"){
+                    $item = "espada curta";
+                    $img = $repositorio->PuxarImagemItem($item);
+                    echo "<img src='../$img'>";
+                    $item = "escudo";
+                    $img = $repositorio->PuxarImagemItem($item);
+                    echo "<img src='../$img'";
+                } else if($_SESSION['item1'] == "mangual e escudo"){
+                    $item = "mangual";
+                    $img = $repositorio->PuxarImagemItem($item);
+                    echo "<img src='../$img'>";
+                    $item = "escudo";
+                    $img = $repositorio->PuxarImagemItem($item);
+                    echo "<img src='../$img'";
+                } else {
+                    $item = $_SESSION['item1'];
+                    $img = $repositorio->PuxarImagemItem($item);
+                    echo "<img src='../$img'>";
+                }
+                echo "<br>";
                 echo "<li>".$_SESSION['item1']."</li>";
             }
             if(isset($_SESSION['item2'])){
+                if($_SESSION['item2'] == "espada curta e escudo"){
+                    $item = "espada curta";
+                    $img = $repositorio->PuxarImagemItem($item);
+                    echo "<img src='../$img'>";
+                    $item = "escudo";
+                    $img = $repositorio->PuxarImagemItem($item);
+                    echo "<img src='../$img'";
+                } else if($_SESSION['item2'] == "mangual e escudo"){
+                    $item = "mangual";
+                    $img = $repositorio->PuxarImagemItem($item);
+                    echo "<img src='../$img'>";
+                    $item = "escudo";
+                    $img = $repositorio->PuxarImagemItem($item);
+                    echo "<img src='../$img'";
+                } else {
+                    $item = $_SESSION['item2'];
+                    $img = $repositorio->PuxarImagemItem($item);
+                    echo "<img src='../$img'>";
+                }
+                echo "<br>";
                 echo "<li>".$_SESSION['item2']."</li>";
             }
             if(isset($_SESSION['item3'])){
+                if($_SESSION['item3'] == "espada curta e escudo"){
+                    $item = "espada curta";
+                    $img = $repositorio->PuxarImagemItem($item);
+                    echo "<img src='../$img'>";
+                    $item = "escudo";
+                    $img = $repositorio->PuxarImagemItem($item);
+                    echo "<img src='../$img'";
+                } else if($_SESSION['item3'] == "mangual e escudo"){
+                    $item = "mangual";
+                    $img = $repositorio->PuxarImagemItem($item);
+                    echo "<img src='../$img'>";
+                    $item = "escudo";
+                    $img = $repositorio->PuxarImagemItem($item);
+                    echo "<img src='../$img'";
+                } else {
+                    $item = $_SESSION['item3'];
+                    $img = $repositorio->PuxarImagemItem($item);
+                    echo "<img src='../$img'>";
+                }
+                echo "<br>";
                 echo "<li>".$_SESSION['item3']."</li>";
             }
             if(isset($_SESSION['item4'])){
+                if($_SESSION['item4'] == "espada curta e escudo"){
+                    $item = "espada curta";
+                    $img = $repositorio->PuxarImagemItem($item);
+                    echo "<img src='../$img'>";
+                    $item = "escudo";
+                    $img = $repositorio->PuxarImagemItem($item);
+                    echo "<img src='../$img'";
+                } else if($_SESSION['item4'] == "mangual e escudo"){
+                    $item = "mangual";
+                    $img = $repositorio->PuxarImagemItem($item);
+                    echo "<img src='../$img'>";
+                    $item = "escudo";
+                    $img = $repositorio->PuxarImagemItem($item);
+                    echo "<img src='../$img'";
+                } else {
+                    $item = $_SESSION['item4'];
+                    $img = $repositorio->PuxarImagemItem($item);
+                    echo "<img src='../$img'>";
+                }
+                echo "<br>";
                 echo "<li>".$_SESSION['item4']."</li>";
             }
             if(isset($_SESSION['item5'])){
+                if($_SESSION['item5'] == "espada curta e escudo"){
+                    $item = "espada curta";
+                    $img = $repositorio->PuxarImagemItem($item);
+                    echo "<img src='../$img'>";
+                    $item = "escudo";
+                    $img = $repositorio->PuxarImagemItem($item);
+                    echo "<img src='../$img'";
+                } else if($_SESSION['item5'] == "mangual e escudo"){
+                    $item = "mangual";
+                    $img = $repositorio->PuxarImagemItem($item);
+                    echo "<img src='../$img'>";
+                    $item = "escudo";
+                    $img = $repositorio->PuxarImagemItem($item);
+                    echo "<img src='../$img'";
+                } else {
+                    $item = $_SESSION['item5'];
+                    $img = $repositorio->PuxarImagemItem($item);
+                    echo "<img src='../$img'>";
+                }
+                echo "<br>";
                 echo "<li>".$_SESSION['item5']."</li>";
             }
             echo "</ul>";
@@ -322,8 +445,8 @@
                     <input class='form__criar__nomeInput' type="text" id="nome" name="nome" required>
                     <label class='form__criar__classe' for="classe">Classe</label>
                     <select class='form__criar__classeSelec ls-custom-select' name="classe" id="classe">
-                        <option value="Guerreiro" selected>Guerreiro</option>
-                        <option value="Clérigo" >Clérigo</option>
+                        <option value="Guerreiro" >Guerreiro</option>
+                        <option value="Clérigo" selected>Clérigo</option>
                         <option value="Ladino" >Ladino</option>
                         <option value="Mago" >Mago</option>
                         <option value="Bárbaro" >Bárbaro</option>

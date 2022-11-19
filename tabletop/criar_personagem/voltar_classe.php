@@ -18,6 +18,7 @@ unset($_SESSION['item4']);
 unset($_SESSION['magia1']);
 unset($_SESSION['magia2']);
 unset($_SESSION['magia3']);
+unset($_SESSION['img']);
 header('Location: form_pers.php');
 
 ?>

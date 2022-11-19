@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30-Out-2022 às 04:12
+-- Tempo de geração: 19-Nov-2022 às 16:49
 -- Versão do servidor: 10.4.25-MariaDB
 -- versão do PHP: 8.1.10
 
@@ -72,6 +72,7 @@ INSERT INTO `classes` (`id`, `Classe`, `vida`, `nivel_maximo`, `ouro`, `ataque`,
 
 CREATE TABLE `itens` (
   `id` int(11) NOT NULL,
+  `imagem` varchar(200) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `tipo` varchar(60) NOT NULL,
   `valor` int(11) NOT NULL,
@@ -82,28 +83,28 @@ CREATE TABLE `itens` (
 -- Extraindo dados da tabela `itens`
 --
 
-INSERT INTO `itens` (`id`, `nome`, `tipo`, `valor`, `classes_proibidas`) VALUES
-(1, 'bandagem', 'utilizável', 5, ''),
-(2, 'feitiço de benção', 'utilizável', 100, ''),
-(3, 'frasco de água benta', 'utilizável', 30, ''),
-(4, 'poção de cura', 'utilizável', 100, 'Bárbaro'),
-(5, 'ritual de ressureição', 'utilizável', 1000, ''),
-(6, 'corda', 'utilizável', 4, ''),
-(7, 'lanterna', 'lanterna', 4, ''),
-(8, 'escudo', 'defesa', 5, 'Ladino,Mago,Halfling,'),
-(9, 'armadura de aço', 'defesa', 30, 'Mago,Halfling,Ladino,Bárbaro'),
-(10, 'armadura de malha', 'defesa', 10, 'Mago,Halfling'),
-(11, 'espada curta e escudo', 'arma de uma mão cortante e defesa', 0, 'Mago,Halfling,Ladino'),
-(12, 'mangual e escudo', 'arma de uma mão esmagadora e defesa', 0, 'Mago,Halfling,Ladino'),
-(13, 'espada curta', 'arma de uma mão cortante', 6, 'Mago,Ladino,Halfling'),
-(14, 'mangual', 'arma de uma mão esmagadora', 6, 'Mago,Ladino,Halfling'),
-(15, 'adaga', 'arma de uma mão leve cortante', 5, ''),
-(16, 'tonfa', 'arma de uma mão leve esmagadora', 5, ''),
-(17, 'martelo de guerra', 'arma de duas mãos esmagadora', 15, 'Ladino,Mago,Elfo,Halfling'),
-(18, 'espada montante', 'arma de duas mãos cortante', 15, 'Ladino,Mago,Elfo,Halfling'),
-(19, 'arco', 'arma a distância cortante', 15, 'Mago,Halfling,Ladino,Clérigo'),
-(20, 'funda', 'arma a distância esmagadora', 4, ''),
-(21, 'livro de feitiços', 'arma do mago', 100, 'Guerreiro,Clérigo,Bárbaro,Ladino,Elfo,Anão,Halfling');
+INSERT INTO `itens` (`id`, `imagem`, `nome`, `tipo`, `valor`, `classes_proibidas`) VALUES
+(1, 'imagens/itens/Bandagem.png', 'bandagem', 'utilizável', 5, ''),
+(2, 'imagens/itens/Bençao.png', 'feitiço de benção', 'utilizável', 100, ''),
+(3, 'imagens/itens/ÁguaBenta.png', 'frasco de água benta', 'utilizável', 30, ''),
+(4, 'imagens/itens/PoçãoCura.png', 'poção de cura', 'utilizável', 100, 'Bárbaro'),
+(5, 'imagens/itens/', 'ritual de ressureição', 'utilizável', 1000, ''),
+(6, 'imagens/itens/Corda.png', 'corda', 'utilizável', 4, ''),
+(7, 'imagens/itens/Lanterna.png', 'lanterna', 'lanterna', 4, ''),
+(8, 'imagens/itens/Escudo.png', 'escudo', 'defesa', 5, 'Ladino,Mago,Halfling,'),
+(9, 'imagens/itens/ArmaduraPesada.png', 'armadura de aço', 'defesa', 30, 'Mago,Halfling,Ladino,Bárbaro'),
+(10, 'imagens/itens/ArmaduraLeve.png', 'armadura de malha', 'defesa', 10, 'Mago,Halfling'),
+(11, '', 'espada curta e escudo', 'arma de uma mão cortante e defesa', 0, 'Mago,Halfling,Ladino'),
+(12, '', 'mangual e escudo', 'arma de uma mão esmagadora e defesa', 0, 'Mago,Halfling,Ladino'),
+(13, 'imagens/itens/espada.png', 'espada curta', 'arma de uma mão cortante', 6, 'Mago,Ladino,Halfling'),
+(14, 'imagens/itens/Mangual.png', 'mangual', 'arma de uma mão esmagadora', 6, 'Mago,Ladino,Halfling'),
+(15, 'imagens/itens/adaga.png', 'adaga', 'arma de uma mão leve cortante', 5, ''),
+(16, 'imagens/itens/tonfa.png', 'tonfa', 'arma de uma mão leve esmagadora', 5, ''),
+(17, 'imagens/itens/marreta.png', 'martelo de guerra', 'arma de duas mãos esmagadora', 15, 'Ladino,Mago,Elfo,Halfling'),
+(18, 'imagens/itens/claymore.png', 'espada montante', 'arma de duas mãos cortante', 15, 'Ladino,Mago,Elfo,Halfling'),
+(19, 'imagens/itens/arco.png', 'arco', 'arma a distância cortante', 15, 'Mago,Halfling,Ladino,Clérigo'),
+(20, 'imagens/itens/funda.png', 'funda', 'arma a distância esmagadora', 4, ''),
+(21, 'imagens/itens/LivroFeitiços.png', 'livro de feitiços', 'arma do mago', 100, 'Guerreiro,Clérigo,Bárbaro,Ladino,Elfo,Anão,Halfling');
 
 -- --------------------------------------------------------
 
@@ -113,21 +114,23 @@ INSERT INTO `itens` (`id`, `nome`, `tipo`, `valor`, `classes_proibidas`) VALUES
 
 CREATE TABLE `magias` (
   `id` int(11) NOT NULL,
-  `nome` varchar(20) NOT NULL
+  `imagem` varchar(200) NOT NULL,
+  `nome` varchar(20) NOT NULL,
+  `descricao` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `magias`
 --
 
-INSERT INTO `magias` (`id`, `nome`) VALUES
-(1, 'benção'),
-(2, 'bola de fogo'),
-(3, 'raio'),
-(4, 'sono'),
-(5, 'escape'),
-(6, 'proteger'),
-(7, 'curar');
+INSERT INTO `magias` (`id`, `imagem`, `nome`, `descricao`) VALUES
+(1, 'imagens/magias/Bençao.png', 'benção', 'Este feitiço remove uma maldição de um personagem. Uma maldição é um efeito de jogo ganho ao entrar em uma sala amaldiçoada. Bênção também remova outras condições, como ser transformado em pedra por uma medusa.'),
+(2, 'imagens/magias/BolaDeFogo.png', 'bola de fogo', 'Este feitiço funciona como um teste de Ataque. O mago adiciona seu nível ao teste. Bola de fogo não afeta dragões (mas afeta dragões zumbis). Se usado contra lacaios, a Bola de Fogo mata um número de criaturas igual ao dado do mago menos o nível dos lacaios. Um mínimo de uma criatura é sempre morto. '),
+(3, 'imagens/magias/Raio.png', 'raio', 'Este feitiço funciona como um teste de ataque. Os magos adicionam seu nível ao teste. Contra um grupo de lacaios, o feitiço matará apenas um se ele acertar. Contra um chefe, inflige 2 pontos de vida se ele acertar.'),
+(4, 'imagens/magias/Sono.png', 'sono', 'Esse feitiço funciona como um teste de ataque. Não afetam mortovivos ou dragões. O bruxo adiciona seu nível a rolagem. O sono irá derrotar um chefe ou 1d6 + Nível monstros se ele acertar. Monstros colocados para dormir contam como mortos. '),
+(5, 'imagens/magias/Escape.png', 'escape', 'O feiticeiro desaparece de sua localização atual e reaparece na sala anterior. Este feitiço pode ser lançado em vez de de fazer um teste de Defesa, ou pode ser lançado normalmente no turno da equipe. Isso funciona automaticamente. '),
+(6, 'imagens/magias/Proçao.png', 'proteger', 'Esta magia dá +1 a um na ficha de defesa de um único personagem para toda a duração de uma batalha. '),
+(7, 'imagens/magias/Curar.png', 'curar', '');
 
 -- --------------------------------------------------------
 
@@ -171,10 +174,15 @@ CREATE TABLE `tbl_inventario` (
 --
 
 INSERT INTO `tbl_inventario` (`id_inventario`, `id_usuario`, `nome_pers`, `item1`, `item2`, `item3`, `item4`, `item5`, `item6`, `item7`, `item8`, `item9`, `item10`, `item11`, `item12`, `item13`, `item14`, `item15`, `item16`, `item17`, `item18`, `item19`, `item20`, `item21`, `item22`, `item23`, `item24`, `item25`) VALUES
-(28, 2, 'Rakiniel', 'armadura de malha', 'martelo de guerra', 'bandagem', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(30, 2, 'Rykelmy', 'martelo de guerra', 'armadura de aço', 'bandagem', 'lanterna', 'corda', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(31, 2, 'Lucas', 'armadura de malha', 'mangual e escudo', 'arco', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(32, 2, 'Eduardo Bevenuti', 'livro de feitiços', 'adaga', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
+(46, 2, 'max', 'armadura de malha', 'espada montante', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(47, 2, 'pinóia', 'armadura de malha', 'mangual', 'escudo', 'bandagem', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(48, 2, 'Bridda', 'armadura de malha', 'adaga', 'lanterna', 'corda', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(49, 2, 'Bruno', 'martelo de guerra', 'armadura de aço', 'frasco de água benta', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(50, 2, '13', 'armadura de malha', 'mangual', 'bandagem', 'lanterna', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(51, 2, 'Kauany', 'martelo de guerra', 'armadura de aço', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(52, 2, 'Zóio', 'armadura de malha', 'espada montante', 'escudo', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(53, 2, 'Mamamu ito', 'armadura de malha', 'adaga', '', 'corda', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(54, 2, 'Robertinho', 'livro de feitiços', 'adaga', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -186,11 +194,12 @@ CREATE TABLE `tbl_personagem` (
   `id_pers` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `nome` varchar(50) NOT NULL,
+  `img` varchar(200) NOT NULL,
   `classe` varchar(50) NOT NULL,
   `nivel` int(11) NOT NULL,
   `nivel_max` int(11) NOT NULL,
   `vida` int(11) NOT NULL,
-  `dinheiro` int(11) NOT NULL,
+  `dinheiro` decimal(11,1) NOT NULL,
   `ataque` text NOT NULL,
   `defesa` text NOT NULL,
   `id_inventario` int(11) NOT NULL,
@@ -208,11 +217,45 @@ CREATE TABLE `tbl_personagem` (
 -- Extraindo dados da tabela `tbl_personagem`
 --
 
-INSERT INTO `tbl_personagem` (`id_pers`, `id_usuario`, `nome`, `classe`, `nivel`, `nivel_max`, `vida`, `dinheiro`, `ataque`, `defesa`, `id_inventario`, `pistas`, `mag1`, `mag2`, `mag3`, `mag4`, `mag5`, `mag6`, `mag7`) VALUES
-(23, 2, 'Rakiniel', 'Bárbaro', 1, 5, 7, 2, '+Nível', '', 28, 0, '', '', '', '', '', '', ''),
-(25, 2, 'Rykelmy', 'Anão', 1, 4, 5, 5, '+Nível', '', 30, 0, '', '', '', '', '', '', ''),
-(26, 2, 'Lucas', 'Elfo', 1, 3, 4, 8, '+Nível', '', 31, 0, 'proteger', '', '', '', '', '', ''),
-(27, 2, 'Eduardo Bevenuti', 'Mago', 1, 5, 2, 12, '+Nível para feitiços', '', 32, 0, 'sono', 'sono', 'benção', '', '', '', '');
+INSERT INTO `tbl_personagem` (`id_pers`, `id_usuario`, `nome`, `img`, `classe`, `nivel`, `nivel_max`, `vida`, `dinheiro`, `ataque`, `defesa`, `id_inventario`, `pistas`, `mag1`, `mag2`, `mag3`, `mag4`, `mag5`, `mag6`, `mag7`) VALUES
+(41, 2, 'max', 'imagens/personagens/Barbaro.png', 'Bárbaro', 1, 5, 8, '0.0', '+Nível', '', 46, 0, '', '', '', '', '', '', ''),
+(42, 2, 'pinóia', 'imagens/personagens/Clerigo.png', 'Clérigo', 1, 5, 5, '0.0', '+1/2 Nível', '', 47, 0, 'curar', 'benção', '', '', '', '', ''),
+(43, 2, 'Bridda', 'imagens/personagens/Ladino.png', 'Ladino', 1, 5, 4, '7.0', '', '+Nível', 48, 0, '', '', '', '', '', '', ''),
+(44, 2, 'Bruno', 'imagens/personagens/Anao.png', 'Anão', 1, 4, 6, '0.0', '+Nível', '', 49, 0, '', '', '', '', '', '', ''),
+(45, 2, '13', 'imagens/personagens/ClerigoCego.png', 'Clérigo', 1, 5, 5, '4.5', '+1/2 Nível', '', 50, 0, 'curar', 'benção', '', '', '', '', ''),
+(46, 2, 'Kauany', 'imagens/personagens/Anao.png', 'Anão', 1, 4, 6, '13.0', '+Nível', '', 51, 0, '', '', '', '', '', '', ''),
+(47, 2, 'Zóio', 'imagens/personagens/Barbaro.png', 'Bárbaro', 1, 5, 8, '2.0', '+Nível', '', 52, 0, '', '', '', '', '', '', ''),
+(48, 2, 'Mamamu ito', 'imagens/personagens/Ladino.png', 'Ladino', 1, 5, 4, '13.0', '', '+Nível', 53, 0, '', '', '', '', '', '', ''),
+(49, 2, 'Robertinho', 'imagens/personagens/Mago.png', 'Mago', 1, 5, 3, '15.0', '+Nível para feitiços', '', 54, 0, 'bola de fogo', 'sono', 'raio', '', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `vermes`
+--
+
+CREATE TABLE `vermes` (
+  `numero` int(11) NOT NULL,
+  `img` varchar(200) NOT NULL,
+  `nome` varchar(80) NOT NULL,
+  `nivel` int(11) NOT NULL,
+  `quantidade` int(11) NOT NULL,
+  `tesouro` varchar(50) NOT NULL,
+  `hab1` varchar(200) NOT NULL,
+  `hab2` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `vermes`
+--
+
+INSERT INTO `vermes` (`numero`, `img`, `nome`, `nivel`, `quantidade`, `tesouro`, `hab1`, `hab2`) VALUES
+(1, 'imagens/monstros/vermes/retos.png', 'Ratos', 1, 3, 'não', 'chance de 1 em 6 de receber 1 de dano adicional', ''),
+(2, 'imagens/monstros/vermes/Morcego.png', 'Morcego Vampiro', 1, 3, 'não', 'feitiços tem -1', ''),
+(3, 'imagens/monstros/vermes/Swarmling.png', 'Swarmling', 3, 2, '-1', '', ''),
+(4, 'imagens/monstros/vermes/Centopéia.png', 'Centopéia Gigante', 3, 1, 'não', 'salvar contra veneno nível 2 ou perder 1 de vida', ''),
+(5, 'imagens/monstros/vermes/Sapo.png', 'Sapo Vampiro', 4, 1, '-1', '', ''),
+(6, 'imagens/monstros/vermes/RatoEsquelético.png', 'Rato Esquelético', 3, 2, 'não', 'Ataques com armas esmagadoras tem +1', 'Não pode ser atacado por arco ou funda');
 
 --
 -- Índices para tabelas despejadas
@@ -249,6 +292,12 @@ ALTER TABLE `tbl_personagem`
   ADD PRIMARY KEY (`id_pers`);
 
 --
+-- Índices para tabela `vermes`
+--
+ALTER TABLE `vermes`
+  ADD PRIMARY KEY (`numero`);
+
+--
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
@@ -274,13 +323,19 @@ ALTER TABLE `magias`
 -- AUTO_INCREMENT de tabela `tbl_inventario`
 --
 ALTER TABLE `tbl_inventario`
-  MODIFY `id_inventario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id_inventario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT de tabela `tbl_personagem`
 --
 ALTER TABLE `tbl_personagem`
-  MODIFY `id_pers` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_pers` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+
+--
+-- AUTO_INCREMENT de tabela `vermes`
+--
+ALTER TABLE `vermes`
+  MODIFY `numero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

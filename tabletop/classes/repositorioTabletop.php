@@ -26,6 +26,10 @@ interface IRepositorioTabletop {
     public function ApagarPersonagem($id);
     public function VerPreco($item);
     public function VerificarArmaClasse($classe,$item);
+    public function PuxarImagemItem($item);
+    public function PuxarImagemMagia($magia);
+    public function PuxarDescricaoMagia($magia);
+    public function PuxarTipoArma($item);
 }
  
 class RepositorioTabletopMySQL implements IRepositorioTabletop
@@ -52,7 +56,7 @@ class RepositorioTabletopMySQL implements IRepositorioTabletop
         $sql = "SELECT * FROM magias WHERE id = '$id'";
         $consulta = $this->conexao->executarQuery($sql);
         $registro = mysqli_fetch_array($consulta);
-        $resultado = $registro[1];
+        $resultado = $registro[2];
         return $resultado;
     }
 
@@ -158,7 +162,7 @@ class RepositorioTabletopMySQL implements IRepositorioTabletop
         $sql = "SELECT * FROM itens WHERE nome = '$item'";
         $consulta = $this->conexao->executarQuery($sql);
         $registro = mysqli_fetch_array($consulta);
-        $resultado = $registro[3];
+        $resultado = $registro[4];
         return $resultado;
     }
 
@@ -193,6 +197,51 @@ class RepositorioTabletopMySQL implements IRepositorioTabletop
         $sql = "SELECT * FROM vermes WHERE numero = '$sorteio'";
         $consulta = $this->conexao->executarQuery($sql);
         return $consulta;
+    }
+
+    public function PuxarImagemItem($item)
+    {
+        $sql = "SELECT * FROM itens WHERE nome = '$item'" ;
+        $consulta = $this->conexao->executarQuery($sql);
+        $registro = mysqli_fetch_array($consulta);
+        $resultado = $registro[1];
+        return $resultado;
+    }
+
+    public function PuxarImagemMagia($magia)
+    {
+        $sql = "SELECT * FROM magias WHERE nome = '$magia'";
+        $consulta = $this->conexao->executarQuery($sql);
+        $registro = mysqli_fetch_array($consulta);
+        $resultado = $registro[1];
+        return $resultado;
+    }
+
+    public function PuxarDescricaoMagia($magia)
+    {
+        $sql = "SELECT * FROM magias WHERE nome = '$magia'";
+        $consulta = $this->conexao->executarQuery($sql);
+        $registro = mysqli_fetch_array($consulta);
+        $resultado = $registro[3];
+        return $resultado;
+    }
+
+    public function PuxarTipoArma($item)
+    {
+        $sql = "SELECT * FROM itens WHERE nome = '$item'";
+        $consulta = $this->conexao->executarQuery($sql);
+        $registro = mysqli_fetch_array($consulta);
+        $resultado = $registro[3];
+        return $resultado;
+    }
+
+    public function PuxarImagemVerme($verme)
+    {
+        $sql = "SELECT * FROM vermes WHERE nome = '$verme'";
+        $consulta = $this->conexao->executarQuery($sql);
+        $registro = mysqli_fetch_array($consulta);
+        $resultado = $registro[1];
+        return $resultado;
     }
 }
    

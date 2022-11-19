@@ -4,12 +4,15 @@ session_start();
 require_once '../../../classes/repositorioTabletop.php'; 
 $repositorio = new RepositorioTabletopMySQL();
 
-$_SESSION['turno'] = $_SESSION['turno1'];
+
 $sorteio = rand(1,6);
 
 $verme = $repositorio->SortearVerme($sorteio);
 foreach ($verme as $key) {
     $_SESSION['monstro'] = true;
+    $verme = $key['nome'];
+    $img = $repositorio->PuxarImagemVerme($verme);
+    $_SESSION['img_monstro'] = "../../$img";
     $_SESSION['nome_monstro'] = $key['nome'];
     $_SESSION['nivel_monstro'] = $key['nivel'];
     
