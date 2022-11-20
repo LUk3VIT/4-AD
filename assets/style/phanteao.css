@@ -39,6 +39,10 @@ body {
     border: solid 1px black;
 }
 
+.rodape__pai{
+    background-image: url('../img/heder_phantao.png');
+}
+
 .main{
     color: black;
     margin-top: 25px; 
