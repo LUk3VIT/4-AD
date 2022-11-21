@@ -39,36 +39,36 @@
     </header>
 
     <nav class="nabar navbar-expand-lg top-menu img-fluid">
-        <div class="container-fluid top-menu-bar">
-          <button class="navbar-toggler top-menu-botton" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon top-menu-bar__icon"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-evenly top-menu-caixaList" id="navbarNav">
-            <ul class="navbar-nav top-menu__list">
-              <li class="nav-item top-menu__item">
-                <a class="nav-link active top-menu__item__link" aria-current="page" href="index.php"><i class="fa-solid fa-house"></i></a>
-              </li>
-              <li class="nav-item top-menu__item">
-                <a class="nav-link top-menu__item__link" href="nav/sistemas.php">Sistema</a>
-              </li>
-              <li class="nav-item top-menu__item">
-                <a class="nav-link top-menu__item__link" href="nav/tabelas.php">Tabelas</a>
-              </li>
-              <li class="nav-item top-menu__item">
-                <a class="nav-link top-menu__item__link" href="nav/classes.php">Classes</a>
-              </li>
-              <li class="nav-item top-menu__item">
-                <a class="nav-link top-menu__item__link" href="nav/mapas.php">Mapa</a>
-              </li>
-              <li class="nav-item top-menu__item">
-                <a class="nav-link top-menu__item__link" href="nav/itens.php">Itens</a>
-              </li>
-              <li class="nav-item top-menu__item">
-                <a class="nav-link top-menu__item__link" href="app/Chat/chat_geral/index_chat_geral.php">Chat</a>
-              </li>
-            </ul>
-          </div>
+      <div class="container-fluid top-menu-bar">
+        <button class="navbar-toggler top-menu-botton" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon top-menu-bar__icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-evenly top-menu-caixaList" id="navbarNav">
+          <ul class="navbar-nav top-menu__list">
+            <li class="nav-item top-menu__item">
+              <a class="nav-link active top-menu__item__link" aria-current="page" href="index.php"><i class="fa-solid fa-house"></i></a>
+            </li>
+            <li class="nav-item top-menu__item">
+              <a class="nav-link top-menu__item__link" href="nav/sistemas.php">Sistema</a>
+            </li>
+            <li class="nav-item top-menu__item">
+              <a class="nav-link top-menu__item__link" href="nav/tabelas.php">Tabelas</a>
+            </li>
+            <li class="nav-item top-menu__item">
+              <a class="nav-link top-menu__item__link" href="nav/classes.php">Classes</a>
+            </li>
+            <li class="nav-item top-menu__item">
+              <a class="nav-link top-menu__item__link" href="nav/mapas.php">Mapa</a>
+            </li>
+            <li class="nav-item top-menu__item">
+              <a class="nav-link top-menu__item__link" href="nav/itens.php">Itens</a>
+            </li>
+            <li class="nav-item top-menu__item">
+              <a class="nav-link top-menu__item__link" href="app/Chat/chat_geral/index_chat_geral.php">Chat</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
     
     <div class="caixa__logo">

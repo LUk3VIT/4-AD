@@ -146,7 +146,7 @@ body{
 }
 
 .voltar__a{
-    margin: 10px 25px;
+    margin: 10px auto;
     border: solid 2px #000000;
     display: flex;
     justify-content: center;
@@ -163,7 +163,7 @@ body{
 }
 
 .informacao__personagem{
-    margin: 20px 25px;
+    margin: 20px auto;
     border: 8px #ffffff ridge;
     padding: 10px;
     background: #F5DEB3;
@@ -171,6 +171,19 @@ body{
     display: flex;
     justify-content: center;
     flex-direction: column;
+}
+
+.informacao__img{
+    width: 300px;
+    margin: 5px auto;
+}
+
+.informacao__img__dinheiro{
+    width: 100px;
+}
+
+.informacao__img__magia{
+    width: 130px;
 }
 
 .informacao__nome{
@@ -217,6 +230,10 @@ input{
     padding: 10px;
     background: #FFFFFF;
     border-radius: 8px;
+}
+
+.mostrar__pers__img{
+    width: 220px;
 }
 
 .mostrar__pers__td{
@@ -296,3 +313,111 @@ input{
     margin: 10px 25px;
     text-decoration: 10px 25px;
 }
+
+.selecao__ver{
+    margin: 20px auto;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.voltar__h2{   
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    width: 120px;
+    margin: 10px 25px;
+    padding: 5px;
+    border-radius: 5px;
+    background: #B22222;
+    color: #000000;      
+}
+
+.voltar__h2__a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+
+.form__criar__voltar:hover{
+    padding: 8px 0px;
+}
+
+.img__ver{
+    margin: 5px auto;
+}
+
+.info__ver{
+    margin: 15px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.h2__ver{
+    font-size: 25px;
+    color: #ffffff;
+}
+
+.h2__ver__inventario{
+    margin: 15px 15px;
+    color: #ffffff;
+}
+
+.inventario{
+    border: solid 3px black;
+    margin: 15px 25px;
+    display: flex;
+    flex-wrap: wrap;
+    background: #A0522D;
+    padding: 15px;
+}
+
+.escolhas{
+    display: flex;
+    margin: 5px 15px;
+}
+
+.escolhas__h1{
+    margin: 5px 30px 15px 30px;
+    border: solid 2px black;
+    padding: 10px;
+    background: #DEB887;
+    border-radius: 10px;
+}
+
+.escolhas__h1:hover{
+    padding: 15px;
+}
+
+.escolhas__a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.escolhas__h1__excluir{
+    margin: 5px 30px 15px 30px;
+    border: solid 2px black;
+    padding: 10px;
+    background: #B22222;
+    border-radius: 10px;
+}
+
+.escolhas__h1__excluir{
+    padding: 15px;
+}
+
+.escolhas__a__excluir{
+    text-decoration: none;
+    color: #000000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
