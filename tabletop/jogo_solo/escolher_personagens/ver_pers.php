@@ -3,27 +3,44 @@
 session_start();
 require_once '../../classes/repositorioTabletop.php'; 
 $repositorio = new RepositorioTabletopMySQL();
-
 $id = $_SESSION['id_pers'];
-
 $personagem = $repositorio->MostrarPersonagem($id);
 
-echo "<h2><a href='selec_pers.php'>Voltar</a></h2>";
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ver Personagem</title>
+    <link rel="stylesheet" href="../../../assets/style/reset.css">
+    <link rel="stylesheet" href="../../../assets/style/tabletopJogo.css">
+</head>
+<body>
+    
+<?php
+
+echo "<h2 class='voltar__h2'><a class='voltar__h2__a' href='selec_pers.php'>Voltar</a></h2>";
 
 foreach ($personagem as $key) {
     $id = $key['id_pers'];
     $nome = $key['nome'];
-    echo "<h1>Informações do Personagem</h1>";
+    echo "<h1 class='selecao__ver'>Informações do Personagem</h1>";
     echo "<br>";
     $img = $key['img'];
-    echo "<img src='../../$img'>";
-    echo "<h2>Nome: ".$key['nome']."</h2>";
-    echo "<h2>Classe: ".$key['classe']."</h2>";
-    echo "<h2>Nível: ".$key['nivel']."</h2>";
-    echo "<h2>Vida: ".$key['vida']."</h2>";
-    echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
-    echo "<div style='border: solid 3px black'>";
-    echo "<h2>INVENTARIO</h2>";
+    echo "<img class='img__ver' src='../../$img'>";
+    echo "<div class='info__ver'>";
+    echo "<h2 class='h2__ver'>Nome: ".$key['nome']."</h2>";
+    echo "<h2 class='h2__ver'>Classe: ".$key['classe']."</h2>";
+    echo "<h2 class='h2__ver'>Nível: ".$key['nivel']."</h2>";
+    echo "<h2 class='h2__ver'>Vida: ".$key['vida']."</h2>";
+    echo "<h2 class='h2__ver'>Dinheiro: ".$key['dinheiro']."</h2>";
+    echo "</div>";
+    echo "<h2 class='h2__ver__inventario'>INVENTARIO</h2>";
+    echo "<div class='inventario'";
     $inventario = $repositorio->MostrarInventario($nome);
     foreach ($inventario as $key) {
         echo "<ul>";
@@ -176,25 +193,30 @@ foreach ($personagem as $key) {
         echo "</ul>";
     }
     echo "</div>";
+    echo "<div class='escolhas'>";
     if(isset($_SESSION['personagem1']) && $_SESSION['personagem1'] == $id){
-        echo "<h1><a href='redirecionar_ver_personagem.php?tirar=$id'>Tirar</a></h1>";
+        echo "<h1 class='escolhas__h1'><a class='escolhas__a' href='redirecionar_ver_personagem.php?tirar=$id'>Tirar</a></h1>";
     } else {
         if(isset($_SESSION['personagem2']) && $_SESSION['personagem2'] == $id){
-            echo "<h1><a href='redirecionar_ver_personagem.php?tirar=$id'>Tirar</a></h1>";
+            echo "<h1 class='escolhas__h1'><a class='escolhas__a' href='redirecionar_ver_personagem.php?tirar=$id'>Tirar</a></h1>";
         } else {
             if(isset($_SESSION['personagem3']) && $_SESSION['personagem3'] == $id){
-                echo "<h1><a href='redirecionar_ver_personagem.php?tirar=$id'>Tirar</a></h1>";
+                echo "<h1 class='escolhas__h1'><a class='escolhas__a' href='redirecionar_ver_personagem.php?tirar=$id'>Tirar</a></h1>";
             } else {
                 if(isset($_SESSION['personagem4']) && $_SESSION['personagem4'] == $id){
-                    echo "<h1><a href='redirecionar_ver_personagem.php?tirar=$id'>Tirar</a></h1>";
+                    echo "<h1 class='escolhas__h1'><a class='escolhas__a' href='redirecionar_ver_personagem.php?tirar=$id'>Tirar</a></h1>";
                 } else {
-                    echo "<h1><a href='escolher_personagem.php?id=$id'>Escolher</a></h1>";
+                    echo "<h1 class='escolhas__h1'><a class='escolhas__a' href='escolher_personagem.php?id=$id'>Escolher</a></h1>";
                 }
             }
         }
     } 
 
-    echo "<h1><a href='exclui_personagem.php?id=$id'> Excluir Personagem </a></h1>";
+    echo "<h1 class='escolhas__h1__excluir'><a class='escolhas__a__excluir href='exclui_personagem.php?id=$id'> Excluir Personagem </a></h1>";
+    echo "</div>";
 }
 
 ?>
+
+</body>
+</html>

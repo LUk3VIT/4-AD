@@ -50,9 +50,10 @@
             }
             
 
-            echo "<img src='../$img'>";
+
             echo "<a class='voltar__a' href='voltar_classe.php'>Escolher outra classe</a>";
             echo "<div class='informacao__personagem'>";
+            echo "<img class='informacao__img' src='../$img'>";
             echo "<h2 class='informacao__nome'>Nome do Personagem: ".$_SESSION['nome_pers']."</h2>";
             echo "<h2>Classe: ".$_SESSION['classe']."</h2>";
             require_once '../classes/repositorioTabletop.php'; 
@@ -139,7 +140,7 @@
             echo "</ul>";
 
             if(isset($_SESSION['dinheiro'])){
-                echo "<h2>Dinheiro Inicial: ".$_SESSION['dinheiro']."  <img src='../imagens/MoedasOuro.png'></h2>";
+                echo "<h2>Dinheiro Inicial: ".$_SESSION['dinheiro']." </h2> <img class='informacao__img__dinheiro' src='../imagens/MoedasOuro.png'>";
             } else {
                 ?>
                     <form action="sortear/sortear_dinheiro.php" method="post">
@@ -171,17 +172,17 @@
                     echo "<h3>1ª Magia: ".$_SESSION['magia1']."</h3>";
                     $magia = $_SESSION['magia1'];
                     $img = $repositorio->PuxarImagemMagia($magia);
-                    echo "<img src='../$img'>";
+                    echo "<img class='informacao__img__magia' src='../$img'>";
                     if(isset($_SESSION['magia2'])){
                         echo "<h3>2ª Magia: ".$_SESSION['magia2']."</h3>";
                         $magia = $_SESSION['magia2'];
                         $img = $repositorio->PuxarImagemMagia($magia);
-                        echo "<img src='../$img'>";
+                        echo "<img class='informacao__img__magia' src='../$img'>";
                         if(isset($_SESSION['magia3'])){
                             echo "<h3>3ª Magia: ".$_SESSION['magia3']."</h3>";
                             $magia = $_SESSION['magia3'];
                             $img = $repositorio->PuxarImagemMagia($magia);
-                            echo "<img src='../$img'>";
+                            echo "<img class='informacao__img__magia' src='../$img'>";
                         } else {
                             ?>
                                 <form action="sortear/sortear_magia.php" method="post">

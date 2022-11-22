@@ -170,7 +170,29 @@ body {
   height: 100%;
   color: #ffffff;
   margin: 0% 9%;
-  
+}
+
+.text__home{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.introdus__titulo{
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  margin: 20px;
+}
+
+.introdus__div{
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+}
+
+.introdus__p{
+  font-size: 25px;
 }
 
 .pai__sist{
