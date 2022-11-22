@@ -212,7 +212,7 @@ foreach ($personagem as $key) {
         }
     } 
 
-    echo "<h1 class='escolhas__h1__excluir'><a class='escolhas__a__excluir href='exclui_personagem.php?id=$id'> Excluir Personagem </a></h1>";
+    echo "<h1 class='escolhas__h1__excluir'><a class='escolhas__a__excluir' href='exclui_personagem.php?id=$id'> Excluir Personagem </a></h1>";
     echo "</div>";
 }
 

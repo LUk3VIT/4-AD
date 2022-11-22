@@ -27,11 +27,13 @@ if($_SESSION['personagem4'] == NULL){
 </head>
 <body>
     <h1 class='selecao__prepa'>Sala de preparação para iniciar a aventura</h1>
-    <h2> <a class='rykelmy__entrar' href='dentro_da_masmorra/definindo_itens/equipar_armas.php'>Adentrar a Masmorra :)</a> </h2>
-    <h2> <a class='rykelmy__loja' href='loja_itens/selecionar_personagem.php'>Ir para loja de Itens</a> </h2>
+    <div class='menuzin'>
+    <h2><a class='rykelmy__entrar' href='dentro_da_masmorra/definindo_itens/equipar_armas.php'>Adentrar a Masmorra :)</a> </h2>
+    <h2><a class='rykelmy__loja' href='loja_itens/selecionar_personagem.php'>Ir para loja de Itens</a> </h2>
+    </div>
     <br>
     <br>
-    <h2>Personagens Selecionados:</h2>
+    <h2 class='selecao__prepa'>Personagens Selecionados:</h2>
     <?php
         echo "<div class='exbir__personagens'>";
         $id = $_SESSION['personagem1'];
@@ -93,6 +95,6 @@ if($_SESSION['personagem4'] == NULL){
         }
         echo "</div>";
     ?>
-    <h2><a href='trocar_itens/ver_inventarios.php'>Trocar Itens entre os personagens</a></h2>
+    <h2 class='rykelmy__trocar'><a class='rykelmy__loja' href='trocar_itens/ver_inventarios.php'>Trocar Itens entre os personagens</a></h2>
 </body>
 </html>

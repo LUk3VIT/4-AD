@@ -2,6 +2,7 @@ body{
     background: #1b153ff6;    
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .titulo{
@@ -30,9 +31,10 @@ body{
 }
 
 .selecao{
-    margin: 20px 0px 20px 800px;
+    margin: 20px auto;
     color: #FFFFFF;
     display: flex;
+    font-size: 25px;
 }
 
 .exbir__personagens{
@@ -53,7 +55,7 @@ body{
 }
 
 .rykelmy__personagem{
-    margin: 5px 25px;
+    margin: 15px 25px;
     font-size: 20px;
     color: #FFFFFF;
     text-decoration: none;
@@ -227,7 +229,7 @@ input{
     border: solid black 2px;
     width: 220px;
     margin: 20px;
-    padding: 10px;
+    padding: 40px;
     background: #FFFFFF;
     border-radius: 8px;
 }
@@ -290,9 +292,14 @@ input{
 
 .selecao__prepa{
     font-size: 30px;
-    margin: 20px 0px 20px 650px;
+    margin: 20px auto;
     color: #FFFFFF;
     display: flex;
+}
+
+.menuzin{
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .rykelmy__entrar{
@@ -311,7 +318,20 @@ input{
 
 .rykelmy__loja{
     margin: 10px 25px;
-    text-decoration: 10px 25px;
+    text-decoration: none;
+    font-size: 23px;
+    color: #FFFFFF;
+    padding: 10px;
+    background: #B0C4DE;
+    border-radius: 10px;
+}
+
+.rykelmy__loja:hover{
+    color: #000000;
+}
+
+.rykelmy__trocar{
+    margin: 20px 25px;
 }
 
 .selecao__ver{
@@ -377,15 +397,11 @@ input{
 }
 
 .escolhas__h1{
-    margin: 5px 30px 15px 30px;
+    margin: 15px 30px 15px 30px;
     border: solid 2px black;
     padding: 10px;
     background: #DEB887;
     border-radius: 10px;
-}
-
-.escolhas__h1:hover{
-    padding: 15px;
 }
 
 .escolhas__a{
@@ -394,15 +410,11 @@ input{
 }
 
 .escolhas__h1__excluir{
-    margin: 5px 30px 15px 30px;
+    margin: 15px 30px 15px 30px;
     border: solid 2px black;
     padding: 10px;
     background: #B22222;
     border-radius: 10px;
-}
-
-.escolhas__h1__excluir{
-    padding: 15px;
 }
 
 .escolhas__a__excluir{
