@@ -186,6 +186,7 @@ body{
 
 .informacao__img__magia{
     width: 130px;
+    margin: 10px auto;
 }
 
 .informacao__nome{
@@ -384,7 +385,7 @@ input{
 
 .inventario{
     border: solid 3px black;
-    margin: 15px 25px;
+    margin: 15px auto;
     display: flex;
     flex-wrap: wrap;
     background: #A0522D;
@@ -422,10 +423,73 @@ input{
     color: #000000;
 }
 
+.mamao{
+    display: flex;
+    flex-wrap: wrap;
+}
 
+.caixa__exibir{
+    border: solid 3px black;
+    width: 310px;
+    margin: 15px auto;
+    padding: 15px;
+    border-radius: 20px;
+    background: #DEB887;
+}
 
+.select{
+    text-decoration: none;
+    border: solid 1px black;
+    padding: 3px;
+    border-radius: 5px;
+    background: #FFFFFF;
+    color: #000000;
+}
 
+.inventario__interno{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 900px;
+}
 
+.mostrar__itens__inventario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px auto;
+}
+
+.tabela{
+    border: solid 2px black;
+    margin-top: 150px auto;
+    background: #FFFFFF;
+}
+
+.vento{
+    background: #000000;
+    color: #ffffff;
+}
+
+.coluna{
+    border: #000000 solid 1px;
+}
+
+.coluna__td{
+    border: #000000 solid 1px;
+    text-align: center;
+    float: inline-start;
+    align-content: center;
+}
+
+.linha{
+    background: #000000;
+    color: #FFFFFF;
+}
+
+.linha__tr{
+    align-content: center;
+}
 
 
 
