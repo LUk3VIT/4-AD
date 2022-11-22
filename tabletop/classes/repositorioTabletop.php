@@ -30,6 +30,7 @@ interface IRepositorioTabletop {
     public function PuxarImagemMagia($magia);
     public function PuxarDescricaoMagia($magia);
     public function PuxarTipoArma($item);
+    public function PuxarNumeroPersonagens($id);
 }
  
 class RepositorioTabletopMySQL implements IRepositorioTabletop
@@ -242,6 +243,13 @@ class RepositorioTabletopMySQL implements IRepositorioTabletop
         $registro = mysqli_fetch_array($consulta);
         $resultado = $registro[1];
         return $resultado;
+    }
+
+    public function PuxarNumeroPersonagens($id)
+    {
+        $sql = "SELECT * FROM tbl_personagem WHERE id_usuario = '$id'";
+        $linha = $this->conexao->obtemNumeroLinhas($sql);
+        return $linha;
     }
 }
    

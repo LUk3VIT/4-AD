@@ -162,6 +162,14 @@ if(isset($_SESSION['vida_atual_personagem4'])){
     }
 }
 
+if(isset($a) && isset($_SESSION["cura_personagem$a"])){
+
+} else {
+    if(isset($a)){
+        $_SESSION["cura_personagem$a"] = 3;
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -201,6 +209,92 @@ if(isset($_SESSION['vida_atual_personagem4'])){
     <div class="principal">
         <div style='border: solid 2px black'>
         <?php 
+            // curar com clérigo
+            if(isset($_SESSION['confirmar_ataque'])){
+
+            } else {
+                if($_SESSION['turno'] != "monstros"){
+                    $id = $_SESSION['turno'];
+                    $personagem = $repositorio->MostrarPersonagem($id);
+                    foreach ($personagem as $key) {
+                        $classe = $key['classe'];
+                    }
+                    if($classe == "Clérigo"){
+                        if(isset($_SESSION['escolher_cura'])){
+                            echo "<div>";
+                            
+                                $id = $_SESSION['personagem1'];
+                                $a = "1";
+                                $personagem = $repositorio->MostrarPersonagem($id);
+                                foreach ($personagem as $key) {
+                                    $img = $key['img'];
+                                    $nome = $key['nome'];
+                                    $vida = $key['vida'];
+                                    echo "<div style='border: solid 2px black;float:left'>";
+                                        echo "<img src='../../$img' style='height:260px;width:220px'>";
+                                        echo "<h2>Nome: ".$nome." - Vida: ".$_SESSION['vida_atual_personagem1']."/".$vida."</h2>";
+                                        echo "<h2><a href='curar.php?alvo=$a'>Curar</a></h2>";
+                                    echo "</div>";
+                                }
+                            
+
+                            
+                                $id = $_SESSION['personagem2'];
+                                $a = "2";
+                                $personagem = $repositorio->MostrarPersonagem($id);
+                                foreach ($personagem as $key) {
+                                    $img = $key['img'];
+                                    $nome = $key['nome'];
+                                    $vida = $key['vida'];
+                                    echo "<div style='border: solid 2px black;float:left'>";
+                                        echo "<img src='../../$img' style='height:260px;width:220px'>";
+                                        echo "<h2>Nome: ".$nome." - Vida: ".$_SESSION['vida_atual_personagem2']."/".$vida."</h2>";
+                                        echo "<h2><a href='curar.php?alvo=$a'>Curar</a></h2>";
+                                    echo "</div>";
+                                }
+                            
+
+                            
+                                $id = $_SESSION['personagem3'];
+                                $a = "3";
+                                $personagem = $repositorio->MostrarPersonagem($id);
+                                foreach ($personagem as $key) {
+                                    $img = $key['img'];
+                                    $nome = $key['nome'];
+                                    $vida = $key['vida'];
+                                    echo "<div style='border: solid 2px black;float:left'>";
+                                        echo "<img src='../../$img' style='height:260px;width:220px'>";
+                                        echo "<h2>Nome: ".$nome." - Vida: ".$_SESSION['vida_atual_personagem3']."/".$vida."</h2>";
+                                        echo "<h2><a href='curar.php?alvo=$a'>Curar</a></h2>";
+                                    echo "</div>";
+                                }
+                            
+
+
+                                $id = $_SESSION['personagem4'];
+                                $a = "4";
+                                $personagem = $repositorio->MostrarPersonagem($id);
+                                foreach ($personagem as $key) {
+                                    $img = $key['img'];
+                                    $nome = $key['nome'];
+                                    $vida = $key['vida'];
+                                    echo "<div style='border: solid 2px black;float:left'>";
+                                        echo "<img src='../../$img' style='height:260px;width:220px'>";
+                                        echo "<h2>Nome: ".$nome." - Vida: ".$_SESSION['vida_atual_personagem4']."/".$vida."</h2>";
+                                        echo "<h2><a href='curar.php?alvo=$a'>Curar</a></h2>";
+                                    echo "</div>";
+                                }
+                            
+
+                            echo "</div>";
+                        } else {
+                            $curar = true;
+                            echo "<h2><a href='curar.php?curar=$curar'>Curar</a> ( Curas ainda disponíveis: ".$_SESSION["cura_personagem$a"]."/3 )</h2>";
+                        }
+                    }
+                }   
+            }
+
             // mostrar qualquer erro
             if(isset($_SESSION['erro'])){
                 echo "<h2 style='color:red'>".$_SESSION['erro']."</h2>";
@@ -368,8 +462,13 @@ if(isset($_SESSION['vida_atual_personagem4'])){
                                         } else {
                                             $msg = "";
                                         }
+                                        if(isset($_SESSION['mensagem'])){
+
+                                        } else {
+                                            $_SESSION['mensagem'] = "";
+                                        }
                                         echo "<h2 style='color: red'>Defesa Mal-Sucedida</h2>";
-                                        echo "<h2>Defesa: ".$_SESSION['defesa_total']."</h2>";
+                                        echo "<h2>Defesa: ".$_SESSION['defesa_total']." - <a style='color:red'>".$_SESSION['mensagem']."</a></h2>";
                                         echo "<h2>Vida Perdida: ".$_SESSION['vida_perdida']." ".$msg."</h2>";
                                         echo "<h2><a href='defender.php?id=$id'> Defender </a></h2>";
                                     } else {
@@ -391,8 +490,13 @@ if(isset($_SESSION['vida_atual_personagem4'])){
                                 } else {
                                     $msg = "";
                                 }
+                                if(isset($_SESSION['mensagem'])){
+
+                                } else {
+                                    $_SESSION['mensagem'] = "";
+                                }
                                 echo "<h2 style='color: red'>Defesa Mal-Sucedida</h2>";
-                                echo "<h2>Defesa: ".$_SESSION['defesa_total']."</h2>";
+                                echo "<h2>Defesa: ".$_SESSION['defesa_total']." - <a style='color:red'>".$_SESSION['mensagem']."</a></h2>";
                                 echo "<h2>Vida Perdida: ".$_SESSION['vida_perdida']." ".$msg."</h2>";
                             } else if($_SESSION['defensor'] == $id) {
                                 echo "<h2 style='color:green'>Defesa Bem-Sucedida</h2>";
@@ -419,8 +523,13 @@ if(isset($_SESSION['vida_atual_personagem4'])){
                                         } else {
                                             $msg = "";
                                         }
+                                        if(isset($_SESSION['mensagem'])){
+
+                                        } else {
+                                            $_SESSION['mensagem'] = "";
+                                        }
                                         echo "<h2 style='color: red'>Defesa Mal-Sucedida</h2>";
-                                        echo "<h2>Defesa: ".$_SESSION['defesa_total']."</h2>";
+                                        echo "<h2>Defesa: ".$_SESSION['defesa_total']." - <a style='color:red'>".$_SESSION['mensagem']."</a></h2>";
                                         echo "<h2>Vida Perdida: ".$_SESSION['vida_perdida']." ".$msg."</h2>";
                                         echo "<h2><a href='defender.php?id=$id'> Defender </a></h2>";
                                     } else {
@@ -442,8 +551,13 @@ if(isset($_SESSION['vida_atual_personagem4'])){
                                 } else {
                                     $msg = "";
                                 }
+                                if(isset($_SESSION['mensagem'])){
+
+                                } else {
+                                    $_SESSION['mensagem'] = "";
+                                }
                                 echo "<h2 style='color: red'>Defesa Mal-Sucedida</h2>";
-                                echo "<h2>Defesa: ".$_SESSION['defesa_total']."</h2>";
+                                echo "<h2>Defesa: ".$_SESSION['defesa_total']." - <a style='color:red'>".$_SESSION['mensagem']."</a></h2>";
                                 echo "<h2>Vida Perdida: ".$_SESSION['vida_perdida']." ".$msg."</h2>";
                                 $x = $_SESSION['turno'];
                             } else if($_SESSION['defensor'] == $id) {
@@ -471,8 +585,13 @@ if(isset($_SESSION['vida_atual_personagem4'])){
                                         } else {
                                             $msg = "";
                                         }
+                                        if(isset($_SESSION['mensagem'])){
+
+                                        } else {
+                                            $_SESSION['mensagem'] = "";
+                                        }
                                         echo "<h2 style='color: red'>Defesa Mal-Sucedida</h2>";
-                                        echo "<h2>Defesa: ".$_SESSION['defesa_total']."</h2>";
+                                        echo "<h2>Defesa: ".$_SESSION['defesa_total']." - <a style='color:red'>".$_SESSION['mensagem']."</a></h2>";
                                         echo "<h2>Vida Perdida: ".$_SESSION['vida_perdida']." ".$msg."</h2>";
                                         echo "<h2><a href='defender.php?id=$id'> Defender </a></h2>";
                                     } else {
@@ -494,8 +613,13 @@ if(isset($_SESSION['vida_atual_personagem4'])){
                                 } else {
                                     $msg = "";
                                 }
+                                if(isset($_SESSION['mensagem'])){
+
+                                } else {
+                                    $_SESSION['mensagem'] = "";
+                                }
                                 echo "<h2 style='color: red'>Defesa Mal-Sucedida</h2>";
-                                echo "<h2>Defesa: ".$_SESSION['defesa_total']."</h2>";
+                                echo "<h2>Defesa: ".$_SESSION['defesa_total']." - <a style='color:red'>".$_SESSION['mensagem']."</a></h2>";
                                 echo "<h2>Vida Perdida: ".$_SESSION['vida_perdida']." ".$msg."</h2>";
                             } else if($_SESSION['defensor'] == $id) {
                                 echo "<h2 style='color:green'>Defesa Bem-Sucedida</h2>";
@@ -521,8 +645,13 @@ if(isset($_SESSION['vida_atual_personagem4'])){
                                         } else {
                                             $msg = "";
                                         }
+                                        if(isset($_SESSION['mensagem'])){
+
+                                        } else {
+                                            $_SESSION['mensagem'] = "";
+                                        }
                                         echo "<h2 style='color: red'>Defesa Mal-Sucedida</h2>";
-                                        echo "<h2>Defesa: ".$_SESSION['defesa_total']."</h2>";
+                                        echo "<h2>Defesa: ".$_SESSION['defesa_total']." - <a style='color:red'>".$_SESSION['mensagem']."</a></h2>";
                                         echo "<h2>Vida Perdida: ".$_SESSION['vida_perdida']." ".$msg."</h2>";
                                         echo "<h2><a href='defender.php?id=$id'> Defender </a></h2>";
                                     } else {
@@ -544,8 +673,13 @@ if(isset($_SESSION['vida_atual_personagem4'])){
                                 } else {
                                     $msg = "";
                                 }
+                                if(isset($_SESSION['mensagem'])){
+
+                                } else {
+                                    $_SESSION['mensagem'] = "";
+                                }
                                 echo "<h2 style='color: red'>Defesa Mal-Sucedida</h2>";
-                                echo "<h2>Defesa: ".$_SESSION['defesa_total']."</h2>";
+                                echo "<h2>Defesa: ".$_SESSION['defesa_total']." - <a style='color:red'>".$_SESSION['mensagem']."</a></h2>";
                                 echo "<h2>Vida Perdida: ".$_SESSION['vida_perdida']." ".$msg."</h2>";
                             } else if($_SESSION['defensor'] == $id) {
                                 echo "<h2 style='color:green'>Defesa Bem-Sucedida</h2>";
@@ -798,6 +932,83 @@ if(isset($_SESSION['vida_atual_personagem4'])){
                                     }
 
                                 } 
+                        } else if(isset($_SESSION['escolher_protecao'])){
+                                if(isset($_SESSION['passar_defesa'])){
+                                    $id = $_SESSION['turno'];
+                                    header("Location: passar_turno.php?id=$id");
+                                    exit;
+                                }
+                                $id = $_SESSION['personagem1'];
+                                $personagem = $repositorio->MostrarPersonagem($id);
+                                foreach ($personagem as $key) {
+                                    $nome = $key['nome'];
+                                    $img = $key['img'];
+                                    $vida = $key['vida'];
+                                    $defesa = $key['defesa'];
+                                    echo "<div style='border:solid 2px black; float:left'>";
+                                        echo "<img src='../../$img' style='height:260px;width:220px'>";
+                                        echo "<h2>Nome: ".$nome." - Vida: ".$_SESSION['vida_atual_personagem1']."/".$vida."</h2>";
+                                        if($defesa != NULL){
+                                            echo "<h2>Bônus natural de Defesa: ".$defesa."</h2>";
+                                        }
+                                        $c = "1";
+                                        echo "<h2><a href='atacar.php?defesa=$c'>Escolher</a></h2>";
+                                    echo "</div>";
+                                }
+
+                                $id = $_SESSION['personagem2'];
+                                $personagem = $repositorio->MostrarPersonagem($id);
+                                foreach ($personagem as $key) {
+                                    $nome = $key['nome'];
+                                    $img = $key['img'];
+                                    $vida = $key['vida'];
+                                    $defesa = $key['defesa'];
+                                    echo "<div style='border:solid 2px black; float:left'>";
+                                        echo "<img src='../../$img' style='height:260px;width:220px'>";
+                                        echo "<h2>Nome: ".$nome." - Vida: ".$_SESSION['vida_atual_personagem2']."/".$vida."</h2>";
+                                        if($defesa != NULL){
+                                            echo "<h2>Bônus natural de Defesa: ".$defesa."</h2>";
+                                        }
+                                        $c = "2";
+                                        echo "<h2><a href='atacar.php?defesa=$c'>Escolher</a></h2>";
+                                    echo "</div>";
+                                }
+
+                                $id = $_SESSION['personagem3'];
+                                $personagem = $repositorio->MostrarPersonagem($id);
+                                foreach ($personagem as $key) {
+                                    $nome = $key['nome'];
+                                    $img = $key['img'];
+                                    $vida = $key['vida'];
+                                    $defesa = $key['defesa'];
+                                    echo "<div style='border:solid 2px black; float:left'>";
+                                        echo "<img src='../../$img' style='height:260px;width:220px'>";
+                                        echo "<h2>Nome: ".$nome." - Vida: ".$_SESSION['vida_atual_personagem3']."/".$vida."</h2>";
+                                        if($defesa != NULL){
+                                            echo "<h2>Bônus natural de Defesa: ".$defesa."</h2>";
+                                        }
+                                        $c = "3";
+                                        echo "<h2><a href='atacar.php?defesa=$c'>Escolher</a></h2>";
+                                    echo "</div>";
+                                }
+
+                                $id = $_SESSION['personagem4'];
+                                $personagem = $repositorio->MostrarPersonagem($id);
+                                foreach ($personagem as $key) {
+                                    $nome = $key['nome'];
+                                    $img = $key['img'];
+                                    $vida = $key['vida'];
+                                    $defesa = $key['defesa'];
+                                    echo "<div style='border:solid 2px black; float:left'>";
+                                        echo "<img src='../../$img' style='height:260px;width:220px'>";
+                                        echo "<h2>Nome: ".$nome." - Vida: ".$_SESSION['vida_atual_personagem4']."/".$vida."</h2>";
+                                        if($defesa != NULL){
+                                            echo "<h2>Bônus natural de Defesa: ".$defesa."</h2>";
+                                        }
+                                        $c = "4";
+                                        echo "<h2><a href='atacar.php?defesa=$c'>Escolher</a></h2>";
+                                    echo "</div>";
+                                }
                         } else {
                             if(isset($_SESSION['confirmar_ataque'])){
                                 if(isset($_SESSION['escolher_arma'])){
@@ -840,12 +1051,24 @@ if(isset($_SESSION['vida_atual_personagem4'])){
                                     }
                                 }
                             } else {
-                                echo "<h2><a href='atacar.php?id=$x'>Atacar</a></h2>";
-                                echo "<h2><a href='#'>Fugir</a></h2>";
+                                if(isset($_SESSION['escolher_cura'])){
+
+                                } else {
+                                    echo "<h2><a href='atacar.php?id=$x'>Atacar</a></h2>";
+                                    echo "<h2><a href='#'>Fugir</a></h2>";
+                                }
                             }
                         }
                         
                     } else {
+
+                        // Rodas Tesouro
+                        if($_SESSION['tesouro_monstro'] == "não"){
+
+                        } else if($_SESSION['tesouro_monstro'] == "-1"){
+                            $_SESSION['bonus_tesouro'] = -1;
+                            header('Location: rodar_recompensa.php');
+                        }
 
                         if(isset($_SESSION['magia_usada'])){
                             if($_SESSION['magia_usada'] == $_SESSION["magia1_personagem$a"]){
@@ -883,9 +1106,19 @@ if(isset($_SESSION['vida_atual_personagem4'])){
                         $x = $_SESSION['turno'];
                         echo "<br>";
                         echo "Você derrotou todos os inimigos!!!";
-                        echo "<h2><a href='passar_turno.php?id=$x'>Concluir Turno</a></h2>"; 
+                        if(isset($_SESSION['tesouro'])){
+                            echo "<div>";
+                                if($_SESSION['tesouro'] == "Gema"){
 
-                        
+                                } else {
+                                    echo "<h2>Tesouro:</h2>";
+                                    echo "<img>"
+                                }
+                            echo "</div>";
+                        } else {
+                            echo "<h2><a href='passar_turno.php?id=$x'>Concluir Turno</a></h2>"; 
+                        }
+                            
                     }
                 } 
             }
@@ -1677,12 +1910,16 @@ if(isset($_SESSION['vida_atual_personagem4'])){
                     }
                 echo "</div>";
                 if($turno == $_SESSION['personagem1']){
-                    $id = $turno;
-                    echo "<div style='float:left'>";
-                        echo "<a href='passar_turno.php?id=$id'>Passar Turno</a>";
-                        echo "<br>";
-                        echo "<a href='itens/mostrar_itens.php?id=$id'>Itens</a>";
-                    echo "</div>";
+                    if(isset($_SESSION['ecolher_cura']) || isset($_SESSION['confirmar_ataque'])){
+
+                    } else {
+                        $id = $turno;
+                        echo "<div style='float:left'>";
+                            echo "<a href='passar_turno.php?id=$id'>Passar Turno</a>";
+                            echo "<br>";
+                            echo "<a href='itens/mostrar_itens.php?id=$id'>Itens</a>";
+                        echo "</div>";
+                    } 
                 }
                 echo "<div style='border: solid 2px black;float:left'>";
                     if($turno == $_SESSION['personagem2']){
@@ -1708,12 +1945,16 @@ if(isset($_SESSION['vida_atual_personagem4'])){
                     
                 echo "</div>";
                 if($turno == $_SESSION['personagem2']){
-                    $id = $turno;
-                    echo "<div style='float:left'>";
-                        echo "<a href='passar_turno.php?id=$id'>Passar Turno</a>";
-                        echo "<br>";
-                        echo "<a href='itens/mostrar_itens.php?id=$id'>Itens</a>";
-                    echo "</div>";
+                    if(isset($_SESSION['ecolher_cura']) || isset($_SESSION['confirmar_ataque'])){
+
+                    } else {
+                        $id = $turno;
+                        echo "<div style='float:left'>";
+                            echo "<a href='passar_turno.php?id=$id'>Passar Turno</a>";
+                            echo "<br>";
+                            echo "<a href='itens/mostrar_itens.php?id=$id'>Itens</a>";
+                        echo "</div>";
+                    }
                 }
                 echo "<div style='border: solid 2px black;float:left'>";
                     if($turno == $_SESSION['personagem3']){
@@ -1737,12 +1978,16 @@ if(isset($_SESSION['vida_atual_personagem4'])){
                     }
                 echo "</div>";
                 if($turno == $_SESSION['personagem3']){
-                    $id = $turno;
-                    echo "<div style='float:left'>"; 
-                        echo "<a href='passar_turno.php?id=$id'>Passar Turno</a>";
-                        echo "<br>";
-                        echo "<a href='itens/mostrar_itens.php?id=$id'>Itens</a>";
-                    echo "</div>";
+                    if(isset($_SESSION['ecolher_cura']) || isset($_SESSION['confirmar_ataque'])){
+
+                    } else {
+                        $id = $turno;
+                        echo "<div style='float:left'>"; 
+                            echo "<a href='passar_turno.php?id=$id'>Passar Turno</a>";
+                            echo "<br>";
+                            echo "<a href='itens/mostrar_itens.php?id=$id'>Itens</a>";
+                        echo "</div>";
+                    }
                 }
                 echo "<div style='border: solid 2px black;float:left'>";
                     if($turno == $_SESSION['personagem4']){
@@ -1766,12 +2011,16 @@ if(isset($_SESSION['vida_atual_personagem4'])){
                     }
                 echo "</div>";
                 if($turno == $_SESSION['personagem4']){
-                    $id = $turno;
-                    echo "<div style='float:left'>";
-                        echo "<a href='passar_turno.php?id=$id'>Passar Turno</a>";
-                        echo "<br>";
-                        echo "<a href='itens/mostrar_itens.php?id=$id'>Itens</a>";
-                    echo "</div>";
+                    if(isset($_SESSION['ecolher_cura']) || isset($_SESSION['confirmar_ataque'])){
+
+                    } else {
+                        $id = $turno;
+                        echo "<div style='float:left'>";
+                            echo "<a href='passar_turno.php?id=$id'>Passar Turno</a>";
+                            echo "<br>";
+                            echo "<a href='itens/mostrar_itens.php?id=$id'>Itens</a>";
+                        echo "</div>";  
+                    }
                 }
             ?>
         </div>

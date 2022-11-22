@@ -33,6 +33,10 @@ if(isset($_SESSION['monstro'])){
         $_SESSION['turno'] = "monstros";
     } else if($_GET['id'] == "monstros"){
         $_SESSION['turno'] = $_SESSION['turno1'];
+        unset($_SESSION["proteger_personagem1"]);
+        unset($_SESSION["proteger_personagem2"]);
+        unset($_SESSION["proteger_personagem3"]);
+        unset($_SESSION["proteger_personagem4"]);
     }
 } else {
     if($_GET['id'] == $_SESSION['turno1']){
@@ -93,6 +97,12 @@ unset($_SESSION['dado']);
 unset($_SESSION['defesa']);
 unset($_SESSION['efeito_bonus']);
 unset($_SESSION['vida_perdida']);
+unset($_SESSION['escolher_cura']);
+unset($_SESSION['mensagem']);
+unset($_SESSION['escolher_protecao']);
+unset($_SESSION['passar_defesa']);
+unset($_SESSION['tesouro']);
+unset($_SESSION['valor_tesouro']);
 
 header('Location: tabletop.php');
 

@@ -22,11 +22,13 @@
     <?php
 
         $x = 0;
+        $pau = 3;
         foreach ($consulta as $key) {
             $nome = $key['nome'];
             $x = $x + 1;
         }
         if($x < 4){
+            
             foreach ($consulta as $key) {
                 $id = $key['id_pers'];
                 if(isset($_SESSION['personagem1']) && $_SESSION['personagem1'] == $id){
@@ -206,6 +208,7 @@
                 }
                 echo "</div>";
             if(isset($_SESSION['personagem1']) && isset($_SESSION['personagem2']) && isset($_SESSION['personagem3']) && isset($_SESSION['personagem4'])){
+                $pau = 4;
                 echo "<h1 class='selecao__aviso'>Número máximo de personagens selecionados alcançado!!!</h1>";
                 echo "<h1 class='sala'><a  class='sala__preparacao' href='../index_jogo_solo.php'>Ir para sala de preparação</a></h1>";
             } else {
@@ -240,7 +243,19 @@
                     }                        
                 }
             }
-            echo "<h2><a class='rykelmy__personagem' href='../../criar_personagem/form_pers.php'>Criar mais Personagens</a></h2>";
+            
+
+            if($pau == 3){
+            $id = $_SESSION['id_usuario'];
+            $numeroLinhas = $repositorio->PuxarNumeroPersonagens($id);
+            if($numeroLinhas >= 10){
+                echo "<h2 style='color:darkred;font-size:px; background-color: lightgray;margin-left:40px; border: solid 1px black; border-radius: 5%; width: 230px;text-align:center'>O limite máximo de criação de personagens foi atingido!!!</h2>";
+            } else {
+                echo "<h2><a class='rykelmy__personagem' href='../../criar_personagem/form_pers.php'>Criar mais Personagens</a></h2>";
+            }
+        }else{
+        }
+
         }
 
     ?>

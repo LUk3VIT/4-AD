@@ -4,6 +4,7 @@ session_start();
 require_once '../../classes/repositorioTabletop.php'; 
 $repositorio = new RepositorioTabletopMySQL();
 
+unset($_SESSION['mensagem']);
 unset($_SESSION['vida_perdida']);
 
 $id = $_GET['id'];
@@ -32,6 +33,31 @@ foreach ($personagem as $key) {
 
 // DADO
 $dado = rand(1,6);
+if($dado == 1){
+    $_SESSION["vida_atual_personagem$a"] = $_SESSION["vida_atual_personagem$a"] - 1;
+    if($_SESSION['nome_monstro'] == "Ratos"){
+        $chance = rand(1,6);
+        if($chance == 1){
+            $_SESSION["vida_atual_personagem$a"] = $_SESSION["vida_atual_personagem$a"] - 1;
+            $_SESSION['efeito_bonus'] = true;
+        }
+    } else if($_SESSION['nome_monstro'] == "Centopéia Gigante"){
+        $chance = rand(1,6);
+        if($chance > 2){
+
+        } else {
+            $_SESSION["vida_atual_personagem$a"] = $_SESSION["vida_atual_personagem$a"] - 1;
+            $_SESSION['efeito_bonus'] = true;
+        }
+    }
+
+    $_SESSION['vida_perdida'] = $vida - $_SESSION["vida_atual_personagem$a"];
+    $_SESSION['defesa'] = true;
+    $_SESSION['defensor'] = $id;
+    $_SESSION['monstros_defender'] = $_SESSION['monstros_defender'] - 1;
+    $_SESSION['mensagem'] = "Tirou 1 no dado!!!";
+    header('Location: tabletop.php');
+}
 
 // Bonus Equipamento
 if(strtolower($_SESSION["armadura_personagem$a"]) == "armadura de malha"){
@@ -65,6 +91,11 @@ if(isset($bonus_classe)){
 } else {
     $_SESSION['defesa_total'] = $defesa = $dado + $bonus_defesa + $bonus_equipamento;
     $_SESSION['bonus'] = $bonus_defesa + $bonus_equipamento + $bonus_classe;
+}
+
+if(isset($_SESSION["proteger_personagem$a"])){
+    $_SESSION['defesa_total'] = $defesa = $defesa + 1;
+    $_SESSION['bonus'] = $_SESSION['bonus'] + 1;
 }
 
 if($defesa > $_SESSION['nivel_monstro'] || $dado == 6){

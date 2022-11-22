@@ -206,7 +206,7 @@
                 }
             } else if($_SESSION['classe'] == "Elfo"){
                 $_SESSION['item1'] = $item1;
-                $_SESSION['item3'] = $item4;
+                $_SESSION['item4'] = $item4;
                 echo "<form action='selec_itens.php' method='get'>";
                     echo "<select name='arma' id='arma'>";
                         echo "<option>".$item2."</option>";
@@ -229,7 +229,7 @@
             } else if($_SESSION['classe'] == "Halfling"){
                 echo "<form action='selec_itens.php' method='get'>";
                     echo "<select name='arma' id='arma'>";
-                        echo "<option>".$item1."</option>";
+                        echo "<option>".$item1."</option>"; 
                         echo "<option>".$item2."</option>";
                     echo "</select>";
                     echo "<input class='input__escolher' type='submit' value='Escolher'>";
@@ -237,11 +237,11 @@
                 $_SESSION['item3'] = $item3;
             } else if($_SESSION['classe'] == "Anão"){
                 echo "<form action='selec_itens.php' method='get'>";
-                    echo "<select name='arma' id='arma'>";
+                    echo "<select name='armadura' id='armadura'>";
                         echo "<option>".$item1."</option>";
                         echo "<option>".$item2."</option>";
                     echo "</select>";
-                    echo "<select name='armadura' id='armadura'>";
+                    echo "<select name='arma' id='arma'>";
                         echo "<option>".$item3."</option>";
                         echo "<option>".$item4."</option>";
                         echo "<option>".$item5."</option>";

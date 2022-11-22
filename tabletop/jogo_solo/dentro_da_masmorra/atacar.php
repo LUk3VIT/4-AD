@@ -225,7 +225,7 @@
                             unset($_SESSION['opcao_magia']);
                             $_SESSION['magia'] = true;
                            
-                            if(isset($_GET['mag'])){
+                            if(isset($_GET['mag']) || isset($_GET['defesa'])){
                                 $_SESSION['setar_magia'] = false;
                                 $magia = $_GET['mag'];
                                 
@@ -337,7 +337,7 @@
                                                     $x = $x + 1;
                                                 }            
                                             }
-                                            $_SESSION['dado'] = $_SESSION['dano'] = $dado;
+                                            $_SESSION['dado1'] = $_SESSION['dano'] = $dado;
                                             $_SESSION['magia_usada'] = $magia;
                                             $_SESSION['quantidade_monstro'] = $_SESSION['quantidade_monstro'] - $dado;
                                             $_SESSION['monstros_mortos'] = $dado;
@@ -350,8 +350,26 @@
                                     $id = $_SESSION['turno'];
                                     $_SESSION['magia_usada'] = $magia;
                                     header("Location: passar_turno.php?id=$id");
-                                } else if($magia == "proteger"){
+                                } else if($magia == "proteger" || isset($_SESSION['escolher_protecao'])){
+                                    if(isset($magia)){
 
+                                    } else {
+                                        $magia = "proteger";
+                                    }
+                                    if(isset($_SESSION['escolher_protecao']) && isset($_GET['defesa'])){
+                                        $id = $_SESSION['turno'];
+                                        $_SESSION['magia_usada'] = $magia;
+                                        $a = $_GET['defesa'];
+                                        $_SESSION["proteger_personagem$a"] = true;
+                                        $_SESSION['passar_defesa'] = true;
+                                        header('Location: tabletop.php');
+                                        exit;
+                                    } else {
+                                        $_SESSION['escolher_protecao'] = true;
+                                        unset($_SESSION['atacar_magia']);
+                                        header('Location: tabletop.php');
+                                        exit;
+                                    }
                                 } 
 
                             } else {
