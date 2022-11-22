@@ -24,6 +24,7 @@ foreach ($verme as $key) {
         $x = $x - 1;
     }
     $_SESSION['quantidade_monstro'] = $quantidade;
+    $_SESSION['monstros_defender'] = $quantidade;
     $_SESSION['tesouro_monstro'] = $key['tesouro'];
     if($key['hab1'] != NULL){
         $_SESSION['hab1_monstro'] = $key['hab1'];

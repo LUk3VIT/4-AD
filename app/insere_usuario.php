@@ -7,7 +7,7 @@ if(isset($_SESSION['nome_usuario'])){
         if(isset($_SESSION['senha_usuario'])){
 
         } else {
-            $_SESSION['senha_usuario'] = $_POST['senha'];
+            $_SESSION['senha_usuario'] = $_POST['senha']; 
         }
     } else {
         $_SESSION['email_usuario'] = $_POST['email'];
@@ -37,6 +37,8 @@ if(isset($_POST['verificar'])){
                 $_SESSION['id_usuario'] = $id_usuario;
                 header('Location: perfil.php');
             } else {
+                echo "OI";
+                exit;
                 $_SESSION['msg'] = "Nome de usuário não disponível, tente outro!!!";
                 header('Location: cadastro.php');
             }

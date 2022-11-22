@@ -207,7 +207,7 @@ class RepositorioTabletopMySQL implements IRepositorioTabletop
         $resultado = $registro[1];
         return $resultado;
     }
-
+ 
     public function PuxarImagemMagia($magia)
     {
         $sql = "SELECT * FROM magias WHERE nome = '$magia'";

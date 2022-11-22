@@ -48,6 +48,15 @@
             if(isset($_GET['tipo']) || isset($_SESSION['magia'])){
                 if($_GET['tipo'] == "arma"){
 
+
+                    if(strtolower($_SESSION["arma1_personagem$a"]) == "lanterna" || strtolower($_SESSION["arma1_personagem$a"]) == "livro de feitiços"){
+                        $item = $_SESSION["arma2_personagem$a"];
+                    } else {
+                        $item = $_SESSION["arma1_personagem$a"];
+                    }
+                    
+                    $tipo = $repositorio->PuxarTipoArma($item);
+
                     // DADO
                     $_SESSION['dado1'] = $dado = rand(1,6);
                     if($dado == 6){
@@ -55,16 +64,22 @@
 
                         } else {
                             $novo_dado = 6;
-                        }
-                        $x = 2;
-                        while($novo_dado == 6){
-                            $_SESSION["dado$x"] = $novo_dado = rand(1,6);
-                            $dado = $dado + $novo_dado;
-                            $x = $x + 1;
-                        }            
+                            $x = 2;
+                            while($novo_dado == 6){
+                                $_SESSION["dado$x"] = $novo_dado = rand(1,6);
+                                $dado = $dado + $novo_dado;
+                                $x = $x + 1;
+                            }       
+                        }     
                     } else if($dado == 1){
                         $_SESSION['falha_automatica'] = "Você tirou 1 no dado, falhou no ataque automaticamente!!!";
                         header('Location: tabletop.php');
+
+                        if($tipo == "arma a distância cortante"){
+                            $_SESSION["arco_personagem$a"] = true;
+                        } else if($tipo == "arma a distância esmagadora"){
+                            $_SESSION["funda_personagem$a"] = true;
+                        }
                     }
 
                     // bonus do personagem
@@ -75,6 +90,32 @@
                     }
 
                     // bonus arma
+
+                    if(isset($_SESSION["arco_personagem$a"]) || isset($_SESSION["funda_personagem$a"])){
+                        echo $_SESSION["arco_personagem$a"];
+                        echo $_SESSION["funda_personagem$a"];
+                        if(isset($_SESSION["arco_personagem$a"])){
+                            if($item == "Arco"){
+                                $_SESSION['erro'] = "<h2>Você já fez seu primeiro ataque, não é mais possível usar armas a distancia até o início de um próximo combate!!!</h2>";
+                                header('Location: tabletop.php');
+                                exit;
+                            }
+                        }
+                        if(isset($_SESSION["funda_personagem$a"])){
+                            if($item == "Funda"){
+                                $_SESSION['erro'] = "<h2>Você já fez seu primeiro ataque, não é mais possível usar armas a distancia até o início de um próximo combate!!!</h2>";
+                                header('Location: tabletop.php');
+                                exit;
+                            }
+                        }
+                    } else {
+                        if($tipo == "arma a distância cortante"){
+                            $_SESSION["arco_personagem$a"] = true;
+                        } else if($tipo == "arma a distância esmagadora"){
+                            $_SESSION["funda_personagem$a"] = true;
+                        }
+                    }
+
                     if($_SESSION["arma2_personagem$a"] == "Livro de Feitiços"){
                         $item = $_SESSION["arma1_personagem$a"];
                         $tipo = $repositorio->PuxarTipoArma($item);
@@ -84,11 +125,10 @@
                             $bonus_arma = -2;
                         }
                     } else {
-                        $item = $_SESSION["arma1_personagem$a"];
-                        $tipo = $repositorio->PuxarTipoArma($item);
-                        if($tipo == "arma de uma mão leve esmagadora" || $tipo == "arma de uma mão leve cortante"){
+                        echo $tipo = $repositorio->PuxarTipoArma($item);
+                        if($tipo == "arma de uma mão leve esmagadora" || $tipo == "arma de uma mão leve cortante" || $tipo == "arma a distância esmagadora"){
                             $bonus_arma = -1;
-                        } else if($tipo == "arma de uma mão cortante" || $tipo == "arma de uma mão esmagadora"){
+                        } else if($tipo == "arma de uma mão cortante" || $tipo == "arma de uma mão esmagadora" || $tipo == "arma a distância cortante"){
                             $bonus_arma = 0;
                         } else if($tipo == "arma de duas mãos esmagadora" || $tipo == "arma de duas mãos cortante"){
                             $bonus_arma = 1;
@@ -104,6 +144,7 @@
                         } else if($tipo == "arma a distância esmagadora" || $tipo == "arma a distância cortante"){
                             $_SESSION['erro'] = "Esse monstro não pode ser atacado por um arco ou funda";
                             header('Location: tabletop.php');
+                            exit;
                         }
                     }
 
@@ -138,7 +179,7 @@
                             while($dano >= $_SESSION['nivel_monstro']){
                                 $dano = $dano - $_SESSION['nivel_monstro'];
                                 echo "<br>";
-                                echo $quantidade_monstro = $quantidade_monstro - 1;
+                                $quantidade_monstro = $quantidade_monstro - 1;
                             }
                             $dano = $dano - 1;
                         } else {
@@ -146,7 +187,9 @@
                         }
                     }
 
+                    
                     $_SESSION['monstros_mortos'] = $_SESSION['quantidade_monstro'] - $quantidade_monstro;
+                   
                     $_SESSION['dado'] = $dado;
                     if(isset($bonus_ataque)){
                         if(isset($bonus_classe)){
@@ -164,13 +207,21 @@
                     $_SESSION['confirmar_ataque'] = true;
                     $quantidade_total = $_SESSION['quantidade_monstro'];
                     $_SESSION['quantidade_monstro'] = $quantidade_total - $_SESSION['monstros_mortos'];
-                    header('Location: tabletop.php');
                     unset($_SESSION['opcao_magia']);
-
+                    header('Location: tabletop.php');
                     exit;
+                    
 
-                    } else if($_GET['tipo'] == "magia" || isset($_SESSION['magia'])){
-                        
+                    
+
+                } else if($_GET['tipo'] == "magia" || isset($_SESSION['magia'])){
+
+                    if($_SESSION["magia1_usada_personagem$a"] == true && $_SESSION["magia2_usada_personagem$a"] == true && $_SESSION["magia3_usada_personagem$a"] == true && $_SESSION["magia4_usada_personagem$a"] == true && $_SESSION["magia5_usada_personagem$a"] == true && $_SESSION["magia6_usada_personagem$a"] == true && $_SESSION["magia7_usada_personagem$a"] == true){
+                        $_SESSION['fim'] = "<h2 style='color: red'>Todas as magias foram utilizadas, para usá-las de novo espere até o fim dessa masmorra ou até upar de nível!!!</h2>";
+                        echo $_SESSION['opcao_magia'] = true;
+                        header('Location: tabletop.php');
+                        exit;
+                    } 
                             unset($_SESSION['opcao_magia']);
                             $_SESSION['magia'] = true;
                            
@@ -195,7 +246,6 @@
                                 } else if($dado == 1){
                                     $_SESSION['falha_automatica'] = "Você tirou 1 no dado, falhou no ataque automaticamente!!!";
                                     header('Location: tabletop.php');
-                                    exit;
                                 }
 
                                 $id = $_SESSION['turno'];
@@ -273,10 +323,25 @@
                                         exit;
                                     } else {
                                         if($bonus_total >= $_SESSION['nivel_monstro']){
-                                            $dano = (rand(1,6) + $nivel);
+                                            $dado = (rand(1,6) + $nivel);
+                                            if($dado == 6){
+                                                if(isset($_SESSION['dado2'])){
+            
+                                                } else {
+                                                    $novo_dado = 6;
+                                                }
+                                                $x = 2;
+                                                while($novo_dado == 6){
+                                                    $_SESSION["dado$x"] = $novo_dado = rand(1,6);
+                                                    $dado = $dado + $novo_dado;
+                                                    $x = $x + 1;
+                                                }            
+                                            }
+                                            $_SESSION['dado'] = $_SESSION['dano'] = $dado;
                                             $_SESSION['magia_usada'] = $magia;
-                                            $_SESSION['quantidade_monstro'] = $_SESSION['quantidade_monstro'] - $dano;
-                                            $_SESSION['monstros_mortos'] = $dano;
+                                            $_SESSION['quantidade_monstro'] = $_SESSION['quantidade_monstro'] - $dado;
+                                            $_SESSION['monstros_mortos'] = $dado;
+                                            unset($_SESSION['bonus']);
                                             header('Location: tabletop.php');
                                             exit;
                                         }
@@ -285,27 +350,74 @@
                                     $id = $_SESSION['turno'];
                                     $_SESSION['magia_usada'] = $magia;
                                     header("Location: passar_turno.php?id=$id");
-                                    exit;
                                 } else if($magia == "proteger"){
 
                                 } 
 
                             } else {
                                 $_SESSION['atacar_magia'] = true;
-                                if(isset($_SESSION['setar_magia'])){
-
-                                } else {
-                                    $_SESSION['setar_magia'] = true;
-                                }
                                 header('Location: tabletop.php');
                                 exit;
                             }
                     }
                 } else {
+                    $_SESSION['magia'] = true;
                     header('Location: tabletop.php');
                     exit;
             }
         } else {
+
+            if(isset($_POST['arma'])){
+                echo $item = $_POST['arma'];
+                unset($_SESSION['escolher_arma']);
+            } else {
+                
+                if($_SESSION["arma1_personagem$a"] != $_SESSION["arma2_personagem$a"]){
+                    
+                    $item = $_SESSION["arma1_personagem$a"];
+                    $tipo1 = $repositorio->PuxarTipoArma($item);
+                    $item = $_SESSION["arma2_personagem$a"];
+                    $tipo2 = $repositorio->PuxarTipoArma($item);
+                    
+                    $_SESSION['confirmar_ataque'] = true;
+                    
+                      
+                        if($tipo1 == "arma de uma mão cortante" && $tipo2 == "arma de uma mão esmagadora" || $tipo1 == "arma de uma mão esmagadora" && $tipo2 == "arma de uma mão cortante"){
+                            $_SESSION['escolher_arma'] = true;
+                            header('Location: tabletop.php');
+                            exit;
+                        } else if($tipo1 == "arma de uma mão leve cortante" && $tipo2 == "arma de uma mão esmagadora" || $tipo1 == "arma de uma mão leve esmagadora" && $tipo2 == "arma de uma mão cortante" || $tipo1 == "arma de uma mão cortante" && $tipo2 == "arma de uma mão leve esmagadora" || $tipo1 == "arma de uma mão esmagadora" && $tipo2 == "arma de uma mão leve cortante"){
+                            $_SESSION['escolher_arma'] = true;
+                            header('Location: tabletop.php');
+                            exit;
+                        } else if($tipo1 == "arma a distância esmagadora" && $tipo2 == "arma de uma mão cortante" || $tipo1 == "arma a distância esmagadora" && $tipo2 == "arma de uma mão esmagadora" || $tipo1 == "arma a distância esmagadora" && $tipo2 == "arma de uma mão leve cortante" || $tipo1 == "arma a distância esmagadora" && $tipo2 == "arma de uma mão leve esmagadora" || $tipo1 == "arma de uma mão cortante" && $tipo2 == "arma a distância esmagadora" || $tipo1 == "arma de uma mão esmagadora" && $tipo2 == "arma a distância esmagadora" || $tipo1 == "arma de uma mão leve cortante" && $tipo2 == "arma a distância esmagadora" || $tipo1 == "arma de uma mão leve esmagadora" && $tipo2 == "arma a distância esmagadora"){
+                            $_SESSION['escolher_arma'] = true;
+                            header('Location: tabletop.php');
+                            exit;
+                        } else {
+                            $item = $_SESSION["arma1_personagem$a"];
+                        }
+                    
+                } else {
+                    echo $item = $_SESSION["arma1_personagem$a"];
+                    unset($_SESSION['escolher_arma']);
+                }
+            }
+
+            // verificar bonus arma
+
+            
+            $tipo = $repositorio->PuxarTipoArma($item);
+            if($tipo == "arma de uma mão cortante" || $tipo == "arma de uma mão esmagadora" || $tipo == "arma a distância cortante"){
+                $bonus_arma = 0;
+            } else if($tipo == "arma de uma mão leve cortante" || $tipo == "arma de uma mão leve esmagadora" || $tipo == "arma a distância esmagadora"){
+                $bonus_arma = -1;
+            } else if($tipo == "arma de duas mãos cortante" || $tipo == "arma de duas mãos esmagadora"){
+                $bonus_arma = 1;
+            } else {
+                $bonus_arma = -2;
+            }
+
             $_SESSION['dado1'] = $dado = rand(1,6);
             if($dado == 6){
                 if(isset($_SESSION['dado2'])){
@@ -322,7 +434,7 @@
             } else if($dado == 1){
                 $_SESSION['falha_automatica'] = "Você tirou 1 no dado, falhou no ataque automaticamente!!!";
                 header('Location: tabletop.php');
-                exit;
+                
             }
 
 
@@ -342,18 +454,31 @@
                 }
             }
 
-            // verificar bonus arma
-            $item = $_SESSION["arma1_personagem$a"];
-            $tipo = $repositorio->PuxarTipoArma($item);
-            if($tipo == "arma de uma mão cortante" || $tipo == "arma de uma mão esmagadora" || $tipo == "arma a distância cortante"){
-                $bonus_arma = 0;
-            } else if($tipo == "arma de uma mão leve cortante" || $tipo == "arma de uma mão leve esmagadora" || $tipo == "arma a distância esmagadora"){
-                $bonus_arma = -1;
-            } else if($tipo == "arma de duas mãos cortante" || $tipo == "arma de duas mãos esmagadora"){
-                $bonus_arma = 1;
+            if(isset($_SESSION["arco_personagem$a"]) || isset($_SESSION["funda_personagem$a"])){
+                if(isset($_SESSION["arco_personagem$a"])){
+                    if($item == "Arco"){
+                        $_SESSION['erro'] = "<h2>Você já fez seu primeiro ataque, não é mais possível usar armas a distancia até o início de um próximo combate!!!</h2>";
+                        $_SESSION['escolher_arma'] = true;
+                        header('Location: tabletop.php');
+                        exit;
+                    }
+                }
+                if(isset($_SESSION["funda_personagem$a"])){
+                    if($item == "Funda"){
+                        $_SESSION['erro'] = "<h2>Você já fez seu primeiro ataque, não é mais possível usar armas a distancia até o início de um próximo combate!!!</h2>";
+                        $_SESSION['escolher_arma'] = true;
+                        header('Location: tabletop.php');
+                        exit;
+                    }
+                }
             } else {
-                $bonus_arma = -2;
+                if($tipo == "arma a distância cortante"){
+                    $_SESSION["arco_personagem$a"] = true;
+                } else if($tipo == "arma a distância esmagadora"){
+                    $_SESSION["funda_personagem$a"] = true;
+                }
             }
+            
 
             // bonus arma para tipo de monstro;
             if($_SESSION['nome_monstro'] == "Rato Esquelético"){
@@ -361,7 +486,9 @@
                     $bonus_arma = $bonus_arma + 1;
                 } else if($tipo == "arma a distância esmagadora" || $tipo == "arma a distância cortante"){
                     $_SESSION['erro'] = "Esse monstro não pode ser atacado por um arco ou funda";
+                    unset($_SESSION['confirmar_ataque']);
                     header('Location: tabletop.php');
+                    exit;
                 }
             }
 

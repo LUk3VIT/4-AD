@@ -2,7 +2,7 @@
 
 session_start();
 
-$_SESSION['mostrar_itens'] = $_GET['id'];
+echo $_SESSION['mostrar_itens'] = $_GET['id'];
 header('Location: ../tabletop.php');
 
 ?>

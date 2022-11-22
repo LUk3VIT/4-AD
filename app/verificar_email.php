@@ -5,7 +5,7 @@ require_once('esquece_a_senha/src/PHPMailer.php');
 require_once('esquece_a_senha/src/SMTP.php');
 require_once('esquece_a_senha/src/Exception.php');
 
-use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\PHPMailer; 
 use PHPMailer\PHPMailer\SMTP; 
 use PHPMailer\PHPMailer\Exception;
 

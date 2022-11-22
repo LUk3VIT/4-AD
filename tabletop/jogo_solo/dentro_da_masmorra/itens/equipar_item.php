@@ -46,7 +46,7 @@ if($_GET['item'] == "armadura de malha" || $_GET['item'] == "armadura de aço"){
     }
 } else {
     if($_SESSION["arma1_personagem$a"] == NULL){
-        $_SESSION["arma1_personagem$a"] = $_GET['item'];
+        echo $_SESSION["arma1_personagem$a"] = $_GET['item'];
         header("Location: ../passar_turno.php?id=$id");
     } else if($_SESSION["arma2_personagem$a"] == NULL){
         $_SESSION["arma2_personagem$a"] = $_GET['item'];
