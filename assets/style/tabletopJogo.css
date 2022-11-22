@@ -466,32 +466,48 @@ input{
     background: #FFFFFF;
 }
 
-.vento{
-    background: #000000;
-    color: #ffffff;
-}
-
-.coluna{
-    border: #000000 solid 1px;
-}
-
-.coluna__td{
-    border: #000000 solid 1px;
-    text-align: center;
-    float: inline-start;
-    align-content: center;
-}
-
 .linha{
     background: #000000;
     color: #FFFFFF;
 }
 
-.linha__tr{
-    align-content: center;
+
+.vento{
+    background: #000000;
+    color: #ffffff;
+    text-align: center;
 }
 
 
+.coluna{
+    border: #000000 solid 1px;
+    text-align: center;
+    align-content: center;
+}
+
+.coluna__não{
+    border: #000000 solid 1px;
+    text-align: center;
+    color: #FF0000;
+}
+
+.coluna__comprar{
+    border: #000000 solid 1px;
+    text-align: center;
+}
+
+.coluna__comprar__a{
+    color: #003018ea;
+    text-decoration: none;
+}
+
+.coluna__comprar__vender{
+    color: #D2691E;
+}
+
+.muchila{
+    margin: 25px;
+}
 
 
 
