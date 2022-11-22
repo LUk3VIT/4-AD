@@ -48,7 +48,6 @@
                     $key['classe'];
                     $key['nivel'];
                 } else {
-                    
                     echo "<div class='mostrar__pers'>"; 
                         $img = $key['img'];
                         echo "<img class='mostrar__pers__img' src='../../$img'>";

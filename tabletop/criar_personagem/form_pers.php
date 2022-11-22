@@ -218,7 +218,7 @@
                     echo "<h3>Magia: ".$_SESSION['magia1']."</h3>";
                     $magia = $_SESSION['magia1'];
                     $img = $repositorio->PuxarImagemMagia($magia);
-                    echo "<img src='../$img'>";
+                    echo "<img class='informacao__img__magia' src='../$img'>";
                 } else {
                     ?>
                         <form action="sortear/sortear_magia.php" method="post">
@@ -256,11 +256,11 @@
                     echo "<h3>1ª Magia: ".$_SESSION['magia1']." (3 usos por aventura)</h3>";
                     $magia = $_SESSION['magia1'];
                     $img = $repositorio->PuxarImagemMagia($magia);
-                    echo "<img src='../$img'>";
+                    echo "<img class='informacao__img__magia' src='../$img'>";
                     echo "<h3>2ª Magia: ".$_SESSION['magia2']." (3 usos por aventura)</h3>";
                     $magia = $_SESSION['magia2'];
                     $img = $repositorio->PuxarImagemMagia($magia);
-                    echo "<img src='../$img'>";
+                    echo "<img class='informacao__img__magia' src='../$img'>";
                 }
                 $_SESSION['item1'] = $item1;
                     echo "<form action='selec_itens.php' method='get'>";
@@ -287,7 +287,7 @@
                 if($_SESSION['item1'] == "espada curta e escudo"){
                     $item = "espada curta";
                     $img = $repositorio->PuxarImagemItem($item);
-                    echo "<img src='../$img'>";
+                    echo "<img  src='../$img'>";
                     $item = "escudo";
                     $img = $repositorio->PuxarImagemItem($item);
                     echo "<img src='../$img'";

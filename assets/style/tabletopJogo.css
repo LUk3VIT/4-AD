@@ -2,6 +2,7 @@ body{
     background: #1b153ff6;    
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .titulo{
@@ -30,9 +31,10 @@ body{
 }
 
 .selecao{
-    margin: 20px 0px 20px 800px;
+    margin: 20px auto;
     color: #FFFFFF;
     display: flex;
+    font-size: 25px;
 }
 
 .exbir__personagens{
@@ -53,7 +55,7 @@ body{
 }
 
 .rykelmy__personagem{
-    margin: 5px 25px;
+    margin: 15px 25px;
     font-size: 20px;
     color: #FFFFFF;
     text-decoration: none;
@@ -184,6 +186,7 @@ body{
 
 .informacao__img__magia{
     width: 130px;
+    margin: 10px auto;
 }
 
 .informacao__nome{
@@ -227,7 +230,7 @@ input{
     border: solid black 2px;
     width: 220px;
     margin: 20px;
-    padding: 10px;
+    padding: 40px;
     background: #FFFFFF;
     border-radius: 8px;
 }
@@ -290,9 +293,14 @@ input{
 
 .selecao__prepa{
     font-size: 30px;
-    margin: 20px 0px 20px 650px;
+    margin: 20px auto;
     color: #FFFFFF;
     display: flex;
+}
+
+.menuzin{
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .rykelmy__entrar{
@@ -311,7 +319,20 @@ input{
 
 .rykelmy__loja{
     margin: 10px 25px;
-    text-decoration: 10px 25px;
+    text-decoration: none;
+    font-size: 23px;
+    color: #FFFFFF;
+    padding: 10px;
+    background: #B0C4DE;
+    border-radius: 10px;
+}
+
+.rykelmy__loja:hover{
+    color: #000000;
+}
+
+.rykelmy__trocar{
+    margin: 20px 25px;
 }
 
 .selecao__ver{
@@ -364,7 +385,7 @@ input{
 
 .inventario{
     border: solid 3px black;
-    margin: 15px 25px;
+    margin: 15px auto;
     display: flex;
     flex-wrap: wrap;
     background: #A0522D;
@@ -377,15 +398,11 @@ input{
 }
 
 .escolhas__h1{
-    margin: 5px 30px 15px 30px;
+    margin: 15px 30px 15px 30px;
     border: solid 2px black;
     padding: 10px;
     background: #DEB887;
     border-radius: 10px;
-}
-
-.escolhas__h1:hover{
-    padding: 15px;
 }
 
 .escolhas__a{
@@ -394,15 +411,11 @@ input{
 }
 
 .escolhas__h1__excluir{
-    margin: 5px 30px 15px 30px;
+    margin: 15px 30px 15px 30px;
     border: solid 2px black;
     padding: 10px;
     background: #B22222;
     border-radius: 10px;
-}
-
-.escolhas__h1__excluir{
-    padding: 15px;
 }
 
 .escolhas__a__excluir{
@@ -410,12 +423,91 @@ input{
     color: #000000;
 }
 
+.mamao{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.caixa__exibir{
+    border: solid 3px black;
+    width: 310px;
+    margin: 15px auto;
+    padding: 15px;
+    border-radius: 20px;
+    background: #DEB887;
+}
+
+.select{
+    text-decoration: none;
+    border: solid 1px black;
+    padding: 3px;
+    border-radius: 5px;
+    background: #FFFFFF;
+    color: #000000;
+}
+
+.inventario__interno{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 900px;
+}
+
+.mostrar__itens__inventario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px auto;
+}
+
+.tabela{
+    border: solid 2px black;
+    margin-top: 150px auto;
+    background: #FFFFFF;
+}
+
+.linha{
+    background: #000000;
+    color: #FFFFFF;
+}
 
 
+.vento{
+    background: #000000;
+    color: #ffffff;
+    text-align: center;
+}
 
 
+.coluna{
+    border: #000000 solid 1px;
+    text-align: center;
+    align-content: center;
+}
 
+.coluna__não{
+    border: #000000 solid 1px;
+    text-align: center;
+    color: #FF0000;
+}
 
+.coluna__comprar{
+    border: #000000 solid 1px;
+    text-align: center;
+}
+
+.coluna__comprar__a{
+    color: #003018ea;
+    text-decoration: none;
+}
+
+.coluna__comprar__vender{
+    color: #D2691E;
+}
+
+.muchila{
+    margin: 25px;
+}
 
 
 
