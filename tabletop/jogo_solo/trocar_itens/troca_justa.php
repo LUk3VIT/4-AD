@@ -17,14 +17,18 @@ foreach ($personagem as $key) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escolher Item da Troca Justa</title>
+    <link rel="stylesheet" href="../../../assets/style/reset.css">
+    <link rel="stylesheet" href="../../../assets/style/tabletopJogo.css">
 </head>
 <body>
-    <h2><a href='ver_inventarios.php'>Voltar aos Inventários</a></h2>
-    <h1>Inventários:<h1>
-    <?php echo "<img src='../../$img'>";  ?>
-    <h2>Nome do Remetente: <?php echo $nome_remetente ?></h2>
-    <h2>Classe do Remetente: <?php echo $classe_remetente ?></h2>
-    <h2>Item já escolhido: <?php echo $_SESSION['item'] ?></h2>
+    <h2 class='rykelmy__trocar'><a class='rykelmy__entrar' href='ver_inventarios.php'>Voltar aos Inventários</a></h2>
+    <h1 class='selecao__prepa'>Inventários:<h1>
+    <div class='mostrar__pers__dar'>
+     <?php echo "<img src='../../$img'>";  ?>
+        <h2>Nome do Remetente: <?php echo $nome_remetente ?></h2>
+        <h2>Classe do Remetente: <?php echo $classe_remetente ?></h2>
+        <h2>Item já escolhido: <?php echo $_SESSION['item'] ?></h2>
+    </div>
     <?php
         if($_SESSION['id_remetente'] == $_SESSION['personagem1']){
             $id = $_SESSION['personagem2'];
@@ -32,11 +36,13 @@ foreach ($personagem as $key) {
             foreach ($personagem as $key) {
                 $nome = $key['nome'];
                 $img = $key['img'];
-                echo "<img src='../../$img'>";
-                echo "<h2>Nome: ".$key['nome']."</h2>";
-                echo "<h2>Classe: ".$key['classe']."</h2>";
-                echo "<h2>Nível: ".$key['nivel']."</h2>";
-                echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+                echo "<div class='mostrar__pers__trocas'>";
+                    echo "<img src='../../$img'>";
+                    echo "<h2>Nome: ".$key['nome']."</h2>";
+                    echo "<h2>Classe: ".$key['classe']."</h2>";
+                    echo "<h2>Nível: ".$key['nivel']."</h2>";
+                    echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+                echo "</div>";
                 $classe = $key['classe'];
                 $x = 0;
                 $verificar_itens = $repositorio->VerificarItem($classe);
@@ -567,11 +573,13 @@ foreach ($personagem as $key) {
                     foreach ($personagem as $key) {
                     $nome = $key['nome'];
                     $img = $key['img'];
-                    echo "<img src='../../$img'>";
-                    echo "<h2>Nome: ".$key['nome']."</h2>";
-                    echo "<h2>Classe: ".$key['classe']."</h2>";
-                    echo "<h2>Nível: ".$key['nivel']."</h2>";
-                    echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+                    echo "<div class='mostrar__pers__trocas'>";
+                        echo "<img src='../../$img'>";
+                        echo "<h2>Nome: ".$key['nome']."</h2>";
+                        echo "<h2>Classe: ".$key['classe']."</h2>";
+                        echo "<h2>Nível: ".$key['nivel']."</h2>";
+                        echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+                    echo "</div>";
                     $classe = $key['classe'];
                     $x = 0;
                     $verificar_itens = $repositorio->VerificarItem($classe);
@@ -1103,11 +1111,13 @@ foreach ($personagem as $key) {
                     foreach ($personagem as $key) {
                     $nome = $key['nome'];
                     $img = $key['img'];
-                    echo "<img src='../../$img'>";
-                    echo "<h2>Nome: ".$key['nome']."</h2>";
-                    echo "<h2>Classe: ".$key['classe']."</h2>";
-                    echo "<h2>Nível: ".$key['nivel']."</h2>";
-                    echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+                    echo "<div class='mostrar__pers__trocas'>";
+                        echo "<img src='../../$img'>";
+                        echo "<h2>Nome: ".$key['nome']."</h2>";
+                        echo "<h2>Classe: ".$key['classe']."</h2>";
+                        echo "<h2>Nível: ".$key['nivel']."</h2>";
+                        echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+                    echo "</div>";
                     $classe = $key['classe'];
                     $x = 0;
                     $verificar_itens = $repositorio->VerificarItem($classe);
@@ -1641,11 +1651,13 @@ foreach ($personagem as $key) {
                 foreach ($personagem as $key) {
                 $nome = $key['nome'];
                 $img = $key['img'];
-                echo "<img src='../../$img'>";
-                echo "<h2>Nome: ".$key['nome']."</h2>";
-                echo "<h2>Classe: ".$key['classe']."</h2>";
-                echo "<h2>Nível: ".$key['nivel']."</h2>";
-                echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+                echo "<div class='mostrar__pers__trocas'>";
+                    echo "<img src='../../$img'>";
+                    echo "<h2>Nome: ".$key['nome']."</h2>";
+                    echo "<h2>Classe: ".$key['classe']."</h2>";
+                    echo "<h2>Nível: ".$key['nivel']."</h2>";
+                    echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+                echo "</div>";
                 $classe = $key['classe'];
                 $x = 0;
                 $verificar_itens = $repositorio->VerificarItem($classe);
@@ -2175,11 +2187,13 @@ foreach ($personagem as $key) {
                     foreach ($personagem as $key) {
                     $nome = $key['nome'];
                     $img = $key['img'];
-                    echo "<img src='../../$img'>";
-                    echo "<h2>Nome: ".$key['nome']."</h2>";
-                    echo "<h2>Classe: ".$key['classe']."</h2>";
-                    echo "<h2>Nível: ".$key['nivel']."</h2>";
-                    echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+                    echo "<div class='mostrar__pers__trocas'>";
+                        echo "<img src='../../$img'>";
+                        echo "<h2>Nome: ".$key['nome']."</h2>";
+                        echo "<h2>Classe: ".$key['classe']."</h2>";
+                        echo "<h2>Nível: ".$key['nivel']."</h2>";
+                        echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+                    echo "</div>";
                     $classe = $key['classe'];
                     $x = 0;
                     $verificar_itens = $repositorio->VerificarItem($classe);
@@ -2711,11 +2725,13 @@ foreach ($personagem as $key) {
                     foreach ($personagem as $key) {
                     $nome = $key['nome'];
                     $img = $key['img'];
-                    echo "<img src='../../$img'>";
-                    echo "<h2>Nome: ".$key['nome']."</h2>";
-                    echo "<h2>Classe: ".$key['classe']."</h2>";
-                    echo "<h2>Nível: ".$key['nivel']."</h2>";
-                    echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+                    echo "<div class='mostrar__pers__trocas'>";
+                        echo "<img src='../../$img'>";
+                        echo "<h2>Nome: ".$key['nome']."</h2>";
+                        echo "<h2>Classe: ".$key['classe']."</h2>";
+                        echo "<h2>Nível: ".$key['nivel']."</h2>";
+                        echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+                    echo "</div>";
                     $classe = $key['classe'];
                     $x = 0;
                     $verificar_itens = $repositorio->VerificarItem($classe);
@@ -3249,11 +3265,13 @@ foreach ($personagem as $key) {
                 foreach ($personagem as $key) {
                 $nome = $key['nome'];
                 $img = $key['img'];
-                echo "<img src='../../$img'>";
-                echo "<h2>Nome: ".$key['nome']."</h2>";
-                echo "<h2>Classe: ".$key['classe']."</h2>";
-                echo "<h2>Nível: ".$key['nivel']."</h2>";
-                echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+                echo "<div class='mostrar__pers__trocas'>";
+                    echo "<img src='../../$img'>";
+                    echo "<h2>Nome: ".$key['nome']."</h2>";
+                    echo "<h2>Classe: ".$key['classe']."</h2>";
+                    echo "<h2>Nível: ".$key['nivel']."</h2>";
+                    echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+                echo "</div>";
                 $classe = $key['classe'];
                 $x = 0;
                 $verificar_itens = $repositorio->VerificarItem($classe);
@@ -3783,11 +3801,13 @@ foreach ($personagem as $key) {
                     foreach ($personagem as $key) {
                     $nome = $key['nome'];
                     $img = $key['img'];
-                    echo "<img src='../../$img'>";
-                    echo "<h2>Nome: ".$key['nome']."</h2>";
-                    echo "<h2>Classe: ".$key['classe']."</h2>";
-                    echo "<h2>Nível: ".$key['nivel']."</h2>";
-                    echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+                    echo "<div class='mostrar__pers__trocas'>";
+                        echo "<img src='../../$img'>";
+                        echo "<h2>Nome: ".$key['nome']."</h2>";
+                        echo "<h2>Classe: ".$key['classe']."</h2>";
+                        echo "<h2>Nível: ".$key['nivel']."</h2>";
+                        echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+                    echo '/div';
                     $classe = $key['classe'];
                     $x = 0;
                     $verificar_itens = $repositorio->VerificarItem($classe);
@@ -4319,11 +4339,13 @@ foreach ($personagem as $key) {
                     foreach ($personagem as $key) {
                     $nome = $key['nome'];
                     $img = $key['img'];
-                    echo "<img src='../../$img'>";
-                    echo "<h2>Nome: ".$key['nome']."</h2>";
-                    echo "<h2>Classe: ".$key['classe']."</h2>";
-                    echo "<h2>Nível: ".$key['nivel']."</h2>";
-                    echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+                    echo "<div class='mostrar__pers__trocas'>";
+                        echo "<img src='../../$img'>";
+                        echo "<h2>Nome: ".$key['nome']."</h2>";
+                        echo "<h2>Classe: ".$key['classe']."</h2>";
+                        echo "<h2>Nível: ".$key['nivel']."</h2>";
+                        echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+                    echo "</div>";
                     $classe = $key['classe'];
                     $x = 0;
                     $verificar_itens = $repositorio->VerificarItem($classe);
@@ -4857,11 +4879,13 @@ foreach ($personagem as $key) {
                 foreach ($personagem as $key) {
                 $nome = $key['nome'];
                 $img = $key['img'];
-                echo "<img src='../../$img'>";
-                echo "<h2>Nome: ".$key['nome']."</h2>";
-                echo "<h2>Classe: ".$key['classe']."</h2>";
-                echo "<h2>Nível: ".$key['nivel']."</h2>";
-                echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+                echo "<div class='mostrar__pers__trocas'>";
+                    echo "<img src='../../$img'>";
+                    echo "<h2>Nome: ".$key['nome']."</h2>";
+                    echo "<h2>Classe: ".$key['classe']."</h2>";
+                    echo "<h2>Nível: ".$key['nivel']."</h2>";
+                    echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+                echo "/div";
                 $classe = $key['classe'];
                 $x = 0;
                 $verificar_itens = $repositorio->VerificarItem($classe);
@@ -5392,11 +5416,13 @@ foreach ($personagem as $key) {
                     foreach ($personagem as $key) {
                     $nome = $key['nome'];
                     $img = $key['img'];
-                    echo "<img src='../../$img'>";
-                    echo "<h2>Nome: ".$key['nome']."</h2>";
-                    echo "<h2>Classe: ".$key['classe']."</h2>";
-                    echo "<h2>Nível: ".$key['nivel']."</h2>";
-                    echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+                    echo "<div class='mostrar__pers__trocas'>";
+                        echo "<img src='../../$img'>";
+                        echo "<h2>Nome: ".$key['nome']."</h2>";
+                        echo "<h2>Classe: ".$key['classe']."</h2>";
+                        echo "<h2>Nível: ".$key['nivel']."</h2>";
+                        echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+                    echo "</div>";
                     $classe = $key['classe'];
                     $x = 0;
                     $verificar_itens = $repositorio->VerificarItem($classe);
@@ -5928,11 +5954,13 @@ foreach ($personagem as $key) {
                     foreach ($personagem as $key) {
                     $nome = $key['nome'];
                     $img = $key['img'];
-                    echo "<img src='../../$img'>";
-                    echo "<h2>Nome: ".$key['nome']."</h2>";
-                    echo "<h2>Classe: ".$key['classe']."</h2>";
-                    echo "<h2>Nível: ".$key['nivel']."</h2>";
-                    echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+                    echo "<div class='mostrar__pers__trocas'>";
+                        echo "<img src='../../$img'>";
+                        echo "<h2>Nome: ".$key['nome']."</h2>";
+                        echo "<h2>Classe: ".$key['classe']."</h2>";
+                        echo "<h2>Nível: ".$key['nivel']."</h2>";
+                        echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+                    echo "</div>";
                     $classe = $key['classe'];
                     $x = 0;
                     $verificar_itens = $repositorio->VerificarItem($classe);

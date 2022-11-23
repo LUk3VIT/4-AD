@@ -509,7 +509,119 @@ input{
     margin: 25px;
 }
 
+.trocas{
+    display: flex;
+    flex-wrap: wrap;
+}
 
+.mostrar__pers__trocas{
+    border: solid black 2px;
+    width: 220px;
+    margin: 20px 0px 20px 20px;
+    padding: 40px;
+    background: #FFFFFF;
+    border-radius: 8px;
+}
 
+.dar__dinheiro{
+    margin: 21px 0px;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px black;
+    width: 150px;
+    height: 125px;
+    padding: 5px;
+    background: #ffffff;
+    border-radius: 5px;
+}
 
+.dar__itens{
+    display: flex;
+    flex-direction: column;
+    margin: 160px 0px 0px -162px;
+    padding: 5px;
+    border: 2px solid black;
+    max-width: 100%;
+    max-height: 100%;
+    width: 148px;
+    height: 425px;
+    background: #ffffff;
+    border-radius: 5px;
+    transform-origin: 50% 50%;
+    transform: rotate(180deg);
+    overflow-y: auto;
+    direction: rtl;
+    text-align: left;
+}
 
+.rykeymy__mandou{
+    transform: rotate(180deg);
+}
+
+.iten__troca{
+    border: solid black 5px;
+    width: 150px;
+    padding: 15px;
+    margin: auto;
+    background: #ffffff;
+    border-radius: 8px;
+}
+
+.selecap__prepa__segundario{
+    margin: 20px;
+    color: #ffffff;
+}
+
+.troca__justa:hover{  
+    background: #00FF7F;   
+}
+
+.troca__justa__a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.mostrar__pers__dar{
+    border: solid black 2px;
+    width: 220px;
+    padding: 40px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.botao__troca{
+    text-decoration: none;
+    color: #F5DEB3;
+    border: solid 1px black;
+    background: black;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.botao__troca:hover{
+    background: #00FF7F;
+    color: #000000;
+}
+
+.botao__troca__h3{
+    margin: 0px 25px;
+}
+
+.botao__troca__div{
+    width: 120px;
+    text-decoration: none;
+    color: #F5DEB3;
+    border: solid 1px black;
+    background: black;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.botao__troca__div:hover{
+    background: #00FF7F;
+    color: #000000;
+}
