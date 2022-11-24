@@ -29,6 +29,7 @@ foreach ($personagem as $key) {
         <h2>Classe do Remetente: <?php echo $classe_remetente ?></h2>
         <h2>Item já escolhido: <?php echo $_SESSION['item'] ?></h2>
     </div>
+    <main class="trocas">
     <?php
         if($_SESSION['id_remetente'] == $_SESSION['personagem1']){
             $id = $_SESSION['personagem2'];
@@ -53,7 +54,11 @@ foreach ($personagem as $key) {
                     } 
                 }
                 if($x > 0){
-                    echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
+                    echo "<div class='dar__itens__nao'>";
+                    echo "<div class='dar__itens__nao2'>";
+                        echo "<h2 class='dar__itens__h2'>A classe deste personagem não pode usar este Item!!!</h2>";
+                    echo "</div>";
+                    echo "</div>";
                 } else {
                     $id = $_SESSION['id_remetente'];
                     $personagem = $repositorio->MostrarPersonagem($id);
@@ -142,12 +147,12 @@ foreach ($personagem as $key) {
                         }
                         $inventario = $repositorio->MostrarInventario($nome);
                         foreach ($inventario as $key) {
-                            
+                            echo "<div class='dar__itens__troca'>";
+                            echo "<div class='rykeymy__mandou'>";
                             echo "<ul>";
                                 $item1 = $key['item1'];
                                 if(isset($proib1) && $proib1 == $item1 || isset($proib2) && $proib2 == $item1 || isset($proib3) && $proib3 == $item1 || isset($proib4) && $proib4 == $item1 || isset($proib5) && $proib5 == $item1 || isset($proib6) && $proib6 == $item1 || isset($proib7) && $proib7 == $item1 || isset($proib8) && $proib8 == $item1 || isset($proib9) && $proib9 == $item1 || isset($proib10) && $proib10 == $item1 || isset($proib11) && $proib11 == $item1 ){
-                                    echo "<li>".$key['item1']."<a style='color:red'> (Este item não pode ser recebido pela classe do seu personagem!!!)</a>
-                                    </li>";
+                                    echo "<li>".$key['item1']."<a style='color:red'> (Este item não pode ser recebido pela classe do seu personagem!!!)</a> </li>";
                                 } else {
                                     echo "<li>".$key['item1']."
                                         <form action='s_item2.php' method='post'>
@@ -565,6 +570,8 @@ foreach ($personagem as $key) {
                                     }
                                 }
                                 echo "</ul>";
+                                echo "</div>";
+                                echo "</div>";
                             }
                         }
                     }
@@ -590,7 +597,11 @@ foreach ($personagem as $key) {
                         } 
                     }
                     if($x > 0){
-                        echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
+                        echo "<div class='dar__itens__nao'>";
+                        echo "<div class='dar__itens__nao2'>";
+                            echo "<h2 class='dar__itens__h2'>A classe deste personagem não pode usar este Item!!!</h2>";
+                        echo "</div>";
+                        echo "</div>";
                     } else {
                     $id = $_SESSION['id_remetente'];
                     $personagem = $repositorio->MostrarPersonagem($id);
@@ -679,7 +690,8 @@ foreach ($personagem as $key) {
                         }
                         $inventario = $repositorio->MostrarInventario($nome);
                         foreach ($inventario as $key) {
-                            
+                            echo "<div class='dar__itens__troca'>";
+                            echo "<div class='rykeymy__mandou'>";
                             echo "<ul>";
                                 $item1 = $key['item1'];
                                 if(isset($proib1) && $proib1 == $item1 || isset($proib2) && $proib2 == $item1 || isset($proib3) && $proib3 == $item1 || isset($proib4) && $proib4 == $item1 || isset($proib5) && $proib5 == $item1 || isset($proib6) && $proib6 == $item1 || isset($proib7) && $proib7 == $item1 || isset($proib8) && $proib8 == $item1 || isset($proib9) && $proib9 == $item1 || isset($proib10) && $proib10 == $item1 || isset($proib11) && $proib11 == $item1 ){
@@ -1102,6 +1114,8 @@ foreach ($personagem as $key) {
                                     }
                                 }
                                 echo "</ul>";
+                                echo "</div>";
+                                echo "</div>";
                             }
                         }
                         }
@@ -1128,7 +1142,11 @@ foreach ($personagem as $key) {
                         } 
                     }
                     if($x > 0){
-                        echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
+                        echo "<div class='dar__itens__nao'>";
+                        echo "<div class='dar__itens__nao2'>";
+                            echo "<h2 class='dar__itens__h2'>A classe deste personagem não pode usar este Item!!!</h2>";
+                        echo "</div>";
+                        echo "</div>";
                     } else {
                     $id = $_SESSION['id_remetente'];
                     $personagem = $repositorio->MostrarPersonagem($id);
@@ -1217,7 +1235,8 @@ foreach ($personagem as $key) {
                         }
                         $inventario = $repositorio->MostrarInventario($nome);
                         foreach ($inventario as $key) {
-                            
+                            echo "<div class='dar__itens__troca'>";
+                            echo "<div class='rykeymy__mandou'>";
                             echo "<ul>";
                                 $item1 = $key['item1'];
                                 if(isset($proib1) && $proib1 == $item1 || isset($proib2) && $proib2 == $item1 || isset($proib3) && $proib3 == $item1 || isset($proib4) && $proib4 == $item1 || isset($proib5) && $proib5 == $item1 || isset($proib6) && $proib6 == $item1 || isset($proib7) && $proib7 == $item1 || isset($proib8) && $proib8 == $item1 || isset($proib9) && $proib9 == $item1 || isset($proib10) && $proib10 == $item1 || isset($proib11) && $proib11 == $item1 ){
@@ -1640,6 +1659,8 @@ foreach ($personagem as $key) {
                                     }
                                 }
                                 echo "</ul>";
+                                echo "</div>";
+                                echo "</div>";
                             }
                         }
                         }
@@ -1667,7 +1688,11 @@ foreach ($personagem as $key) {
                     } 
                 }
                 if($x > 0){
-                    echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
+                    echo "<div class='dar__itens__nao'>";
+                    echo "<div class='dar__itens__nao2'>";
+                        echo "<h2 class='dar__itens__h2'>A classe deste personagem não pode usar este Item!!!</h2>";
+                    echo "</div>";
+                    echo "</div>";
                 } else {
                     $id = $_SESSION['id_remetente'];
                     $personagem = $repositorio->MostrarPersonagem($id);
@@ -1756,7 +1781,8 @@ foreach ($personagem as $key) {
                         }
                         $inventario = $repositorio->MostrarInventario($nome);
                         foreach ($inventario as $key) {
-                            
+                            echo "<div class='dar__itens__troca'>";
+                            echo "<div class='rykeymy__mandou'>";
                             echo "<ul>";
                                 $item1 = $key['item1'];
                                 if(isset($proib1) && $proib1 == $item1 || isset($proib2) && $proib2 == $item1 || isset($proib3) && $proib3 == $item1 || isset($proib4) && $proib4 == $item1 || isset($proib5) && $proib5 == $item1 || isset($proib6) && $proib6 == $item1 || isset($proib7) && $proib7 == $item1 || isset($proib8) && $proib8 == $item1 || isset($proib9) && $proib9 == $item1 || isset($proib10) && $proib10 == $item1 || isset($proib11) && $proib11 == $item1 ){
@@ -2179,6 +2205,8 @@ foreach ($personagem as $key) {
                                     }
                                 }
                                 echo "</ul>";
+                                echo "</div>";
+                                echo "</div>";
                             }
                         }
                     }
@@ -2204,7 +2232,11 @@ foreach ($personagem as $key) {
                         } 
                     }
                     if($x > 0){
-                        echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
+                    echo "<div class='dar__itens__nao'>";
+                    echo "<div class='dar__itens__nao2'>";
+                        echo "<h2 class='dar__itens__h2'>A classe deste personagem não pode usar este Item!!!</h2>";
+                    echo "</div>";
+                    echo "</div>";
                     } else {
                     $id = $_SESSION['id_remetente'];
                     $personagem = $repositorio->MostrarPersonagem($id);
@@ -2293,7 +2325,8 @@ foreach ($personagem as $key) {
                         }
                         $inventario = $repositorio->MostrarInventario($nome);
                         foreach ($inventario as $key) {
-                            
+                            echo "<div class='dar__itens__troca'>";
+                            echo "<div class='rykeymy__mandou'>";
                             echo "<ul>";
                             $item1 = $key['item1'];
                             if(isset($proib1) && $proib1 == $item1 || isset($proib2) && $proib2 == $item1 || isset($proib3) && $proib3 == $item1 || isset($proib4) && $proib4 == $item1 || isset($proib5) && $proib5 == $item1 || isset($proib6) && $proib6 == $item1 || isset($proib7) && $proib7 == $item1 || isset($proib8) && $proib8 == $item1 || isset($proib9) && $proib9 == $item1 || isset($proib10) && $proib10 == $item1 || isset($proib11) && $proib11 == $item1 ){
@@ -2716,6 +2749,8 @@ foreach ($personagem as $key) {
                                 }
                             }
                             echo "</ul>";
+                            echo "</div>";
+                            echo "</div>";
                             }
                         }
                         }
@@ -2742,7 +2777,11 @@ foreach ($personagem as $key) {
                         } 
                     }
                     if($x > 0){
-                        echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
+                    echo "<div class='dar__itens__nao'>";
+                    echo "<div class='dar__itens__nao2'>";
+                        echo "<h2 class='dar__itens__h2'>A classe deste personagem não pode usar este Item!!!</h2>";
+                    echo "</div>";
+                    echo "</div>";
                     } else {
                     $id = $_SESSION['id_remetente'];
                     $personagem = $repositorio->MostrarPersonagem($id);
@@ -2831,7 +2870,8 @@ foreach ($personagem as $key) {
                         }
                         $inventario = $repositorio->MostrarInventario($nome);
                         foreach ($inventario as $key) {
-                            
+                            echo "<div class='dar__itens__troca'>";
+                            echo "<div class='rykeymy__mandou'>";
                             echo "<ul>";
                                 $item1 = $key['item1'];
                                 if(isset($proib1) && $proib1 == $item1 || isset($proib2) && $proib2 == $item1 || isset($proib3) && $proib3 == $item1 || isset($proib4) && $proib4 == $item1 || isset($proib5) && $proib5 == $item1 || isset($proib6) && $proib6 == $item1 || isset($proib7) && $proib7 == $item1 || isset($proib8) && $proib8 == $item1 || isset($proib9) && $proib9 == $item1 || isset($proib10) && $proib10 == $item1 || isset($proib11) && $proib11 == $item1 ){
@@ -3254,6 +3294,8 @@ foreach ($personagem as $key) {
                                     }
                                 }
                                 echo "</ul>";
+                                echo "</div>";
+                                echo "</div>";
                             }
                         }
                         }
@@ -3281,7 +3323,11 @@ foreach ($personagem as $key) {
                     } 
                 }
                 if($x > 0){
-                    echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
+                    echo "<div class='dar__itens__nao'>";
+                    echo "<div class='dar__itens__nao2'>";
+                        echo "<h2 class='dar__itens__h2'>A classe deste personagem não pode usar este Item!!!</h2>";
+                    echo "</div>";
+                    echo "</div>";
                 } else {
                     $id = $_SESSION['id_remetente'];
                     $personagem = $repositorio->MostrarPersonagem($id);
@@ -3370,7 +3416,8 @@ foreach ($personagem as $key) {
                         }
                         $inventario = $repositorio->MostrarInventario($nome);
                         foreach ($inventario as $key) {
-                            
+                            echo "<div class='dar__itens__troca'>";
+                            echo "<div class='rykeymy__mandou'>";
                             echo "<ul>";
                                 $item1 = $key['item1'];
                                 if(isset($proib1) && $proib1 == $item1 || isset($proib2) && $proib2 == $item1 || isset($proib3) && $proib3 == $item1 || isset($proib4) && $proib4 == $item1 || isset($proib5) && $proib5 == $item1 || isset($proib6) && $proib6 == $item1 || isset($proib7) && $proib7 == $item1 || isset($proib8) && $proib8 == $item1 || isset($proib9) && $proib9 == $item1 || isset($proib10) && $proib10 == $item1 || isset($proib11) && $proib11 == $item1 ){
@@ -3793,6 +3840,8 @@ foreach ($personagem as $key) {
                                     }
                                 }
                                 echo "</ul>";
+                                echo "</div>";
+                                echo "</div>";
                             }
                         }
                     }
@@ -3818,7 +3867,11 @@ foreach ($personagem as $key) {
                         } 
                     }
                     if($x > 0){
-                        echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
+                    echo "<div class='dar__itens__nao'>";
+                    echo "<div class='dar__itens__nao2'>";
+                        echo "<h2 class='dar__itens__h2'>A classe deste personagem não pode usar este Item!!!</h2>";
+                    echo "</div>";
+                    echo "</div>";
                     } else {
                     $id = $_SESSION['id_remetente'];
                     $personagem = $repositorio->MostrarPersonagem($id);
@@ -3907,7 +3960,8 @@ foreach ($personagem as $key) {
                         }
                         $inventario = $repositorio->MostrarInventario($nome);
                         foreach ($inventario as $key) {
-                            
+                            echo "<div class='dar__itens__troca'>";
+                            echo "<div class='rykeymy__mandou'>";
                             echo "<ul>";
                                 $item1 = $key['item1'];
                                 if(isset($proib1) && $proib1 == $item1 || isset($proib2) && $proib2 == $item1 || isset($proib3) && $proib3 == $item1 || isset($proib4) && $proib4 == $item1 || isset($proib5) && $proib5 == $item1 || isset($proib6) && $proib6 == $item1 || isset($proib7) && $proib7 == $item1 || isset($proib8) && $proib8 == $item1 || isset($proib9) && $proib9 == $item1 || isset($proib10) && $proib10 == $item1 || isset($proib11) && $proib11 == $item1 ){
@@ -4330,6 +4384,8 @@ foreach ($personagem as $key) {
                                     }
                                 }
                                 echo "</ul>";
+                                echo "</div>";
+                                echo "</div>";
                             }
                         }
                         }
@@ -4356,7 +4412,11 @@ foreach ($personagem as $key) {
                         } 
                     }
                     if($x > 0){
-                        echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
+                    echo "<div class='dar__itens__nao'>";
+                    echo "<div class='dar__itens__nao2'>";
+                        echo "<h2 class='dar__itens__h2'>A classe deste personagem não pode usar este Item!!!</h2>";
+                    echo "</div>";
+                    echo "</div>";
                     } else {
                     $id = $_SESSION['id_remetente'];
                     $personagem = $repositorio->MostrarPersonagem($id);
@@ -4445,7 +4505,8 @@ foreach ($personagem as $key) {
                         }
                         $inventario = $repositorio->MostrarInventario($nome);
                         foreach ($inventario as $key) {
-                            
+                            echo "<div class='dar__itens__troca'>";
+                            echo "<div class='rykeymy__mandou'>";
                             echo "<ul>";
                                 $item1 = $key['item1'];
                                 if(isset($proib1) && $proib1 == $item1 || isset($proib2) && $proib2 == $item1 || isset($proib3) && $proib3 == $item1 || isset($proib4) && $proib4 == $item1 || isset($proib5) && $proib5 == $item1 || isset($proib6) && $proib6 == $item1 || isset($proib7) && $proib7 == $item1 || isset($proib8) && $proib8 == $item1 || isset($proib9) && $proib9 == $item1 || isset($proib10) && $proib10 == $item1 || isset($proib11) && $proib11 == $item1 ){
@@ -4868,6 +4929,8 @@ foreach ($personagem as $key) {
                                     }
                                 }
                                 echo "</ul>";
+                                echo "</div>";
+                                echo "</div>";
                             }
                         }
                         }
@@ -4896,7 +4959,11 @@ foreach ($personagem as $key) {
                     } 
                 }
                 if($x > 0){
-                    echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
+                    echo "<div class='dar__itens__nao'>";
+                    echo "<div class='dar__itens__nao2'>";
+                        echo "<h2 class='dar__itens__h2'>A classe deste personagem não pode usar este Item!!!</h2>";
+                    echo "</div>";
+                    echo "</div>";
                 } else {
                     $id = $_SESSION['id_remetente'];
                     $personagem = $repositorio->MostrarPersonagem($id);
@@ -4985,7 +5052,8 @@ foreach ($personagem as $key) {
                         }
                         $inventario = $repositorio->MostrarInventario($nome);
                         foreach ($inventario as $key) {
-                            
+                            echo "<div class='dar__itens__troca'>";
+                            echo "<div class='rykeymy__mandou'>";
                             echo "<ul>";
                                 $item1 = $key['item1'];
                                 if(isset($proib1) && $proib1 == $item1 || isset($proib2) && $proib2 == $item1 || isset($proib3) && $proib3 == $item1 || isset($proib4) && $proib4 == $item1 || isset($proib5) && $proib5 == $item1 || isset($proib6) && $proib6 == $item1 || isset($proib7) && $proib7 == $item1 || isset($proib8) && $proib8 == $item1 || isset($proib9) && $proib9 == $item1 || isset($proib10) && $proib10 == $item1 || isset($proib11) && $proib11 == $item1 ){
@@ -5408,6 +5476,8 @@ foreach ($personagem as $key) {
                                     }
                                 }
                                 echo "</ul>";
+                                echo "</div>";
+                                echo "</div>";
                             }
                         }
                     }
@@ -5433,7 +5503,11 @@ foreach ($personagem as $key) {
                         } 
                     }
                     if($x > 0){
-                        echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
+                    echo "<div class='dar__itens__nao'>";
+                    echo "<div class='dar__itens__nao2'>";
+                        echo "<h2 class='dar__itens__h2'>A classe deste personagem não pode usar este Item!!!</h2>";
+                    echo "</div>";
+                    echo "</div>";
                     } else {
                     $id = $_SESSION['id_remetente'];
                     $personagem = $repositorio->MostrarPersonagem($id);
@@ -5522,7 +5596,8 @@ foreach ($personagem as $key) {
                         }
                         $inventario = $repositorio->MostrarInventario($nome);
                         foreach ($inventario as $key) {
-                            
+                            echo "<div class='dar__itens__troca'>";
+                            echo "<div class='rykeymy__mandou'>";
                             echo "<ul>";
                                 $item1 = $key['item1'];
                                 if(isset($proib1) && $proib1 == $item1 || isset($proib2) && $proib2 == $item1 || isset($proib3) && $proib3 == $item1 || isset($proib4) && $proib4 == $item1 || isset($proib5) && $proib5 == $item1 || isset($proib6) && $proib6 == $item1 || isset($proib7) && $proib7 == $item1 || isset($proib8) && $proib8 == $item1 || isset($proib9) && $proib9 == $item1 || isset($proib10) && $proib10 == $item1 || isset($proib11) && $proib11 == $item1 ){
@@ -5945,6 +6020,8 @@ foreach ($personagem as $key) {
                                     }
                                 }
                                 echo "</ul>";
+                                echo "</div>";
+                                echo "</div>";
                             }
                         }
                         }
@@ -5971,7 +6048,11 @@ foreach ($personagem as $key) {
                         } 
                     }
                     if($x > 0){
-                        echo "<h2 style='color:red'>A classe deste personagem não pode usar este Item!!!</h2>";
+                    echo "<div class='dar__itens__nao'>";
+                    echo "<div class='dar__itens__nao2'>";
+                        echo "<h2 class='dar__itens__h2'>A classe deste personagem não pode usar este Item!!!</h2>";
+                    echo "</div>";
+                    echo "</div>";
                     } else {
                     $id = $_SESSION['id_remetente'];
                     $personagem = $repositorio->MostrarPersonagem($id);
@@ -6060,7 +6141,8 @@ foreach ($personagem as $key) {
                         }
                         $inventario = $repositorio->MostrarInventario($nome);
                         foreach ($inventario as $key) {
-                            
+                            echo "<div class='dar__itens__troca'>";
+                            echo "<div class='rykeymy__mandou'>";
                             echo "<ul>";
                                 $item1 = $key['item1'];
                                 if(isset($proib1) && $proib1 == $item1 || isset($proib2) && $proib2 == $item1 || isset($proib3) && $proib3 == $item1 || isset($proib4) && $proib4 == $item1 || isset($proib5) && $proib5 == $item1 || isset($proib6) && $proib6 == $item1 || isset($proib7) && $proib7 == $item1 || isset($proib8) && $proib8 == $item1 || isset($proib9) && $proib9 == $item1 || isset($proib10) && $proib10 == $item1 || isset($proib11) && $proib11 == $item1 ){
@@ -6483,6 +6565,8 @@ foreach ($personagem as $key) {
                                     }
                                 }
                                 echo "</ul>";
+                                echo "</div>";
+                                echo "</div>";
                             }
                         }
                         }
@@ -6490,5 +6574,6 @@ foreach ($personagem as $key) {
                 }
             }
     ?>
+    </main>
 </body>
 </html>

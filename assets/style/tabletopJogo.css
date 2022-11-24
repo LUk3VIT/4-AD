@@ -554,6 +554,50 @@ input{
     text-align: left;
 }
 
+.dar__itens__troca{
+    display: flex;
+    flex-direction: column;
+    margin: 21px 191px 0px 0px;
+    padding: 5px;
+    border: 2px solid black;
+    max-width: 100%;
+    max-height: 100%;
+    width: 148px;
+    height: 564px;
+    background: #ffffff;
+    border-radius: 5px;
+    transform-origin: 50% 50%;
+    transform: rotate(180deg);
+    overflow-y: auto;
+    direction: rtl;
+    text-align: left;
+}
+
+.dar__itens__nao{
+    display: flex;
+    flex-direction: column;
+    margin: 21px 0px 0px 0px;
+    padding: 5px;
+    border: 2px solid black;
+    max-width: 100%;
+    max-height: 100%;
+    width: 148px;
+    height: 564px;
+    background: #ffffff;
+    border-radius: 5px;
+}
+
+.dar__itens__nao2{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.dar__itens__h2{
+    color: #FF0000;
+}
+
+
 .rykeymy__mandou{
     transform: rotate(180deg);
 }
@@ -625,3 +669,4 @@ input{
     background: #00FF7F;
     color: #000000;
 }
+
