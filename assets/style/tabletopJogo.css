@@ -670,3 +670,89 @@ input{
     color: #000000;
 }
 
+.escolher__dar{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px auto;
+}
+
+.form__dar{
+    margin: 5px 95px;
+}
+
+.botao__dar{
+    background: #000000;
+    color: #ffffff;
+    padding: 5px;
+}
+
+.botao__dar:hover{
+    background: #00FF7F;
+    color: #000000;
+}
+
+.exbir__personagens__equip{
+    padding: 30px;
+    border: solid 3px red;
+    margin: 0px 10px 15px 10px;
+    background: #FFFFE0;
+}
+
+.exibir__equip{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+.equi__itens{
+    display: flex;
+    flex-direction: column;
+    margin: 5px auto;
+    padding: 10px;
+    border: 2px solid black;
+    max-width: 100%;
+    max-height: 100%;
+    width: 148px;
+    height: 425px;
+    background: #ffffff;
+    border-radius: 5px;
+    transform-origin: 50% 50%;
+    transform: rotate(180deg);
+    overflow-y: auto;
+    direction: rtl;
+    text-align: left;
+}
+
+
+.botao__trocar__equip{
+    border: solid 1px black;
+    padding: 5px;
+    margin: 5px auto;
+    background: #000000;
+    display: flex;
+    justify-content: center;    
+}
+
+.botao__trocar__equip:hover{
+    background: #00FF7F;
+}  
+
+.a__trocar__equip{
+    text-decoration: none;
+    color: #ffffff;
+    display: flex;
+}
+
+.a__trocar__equip:hover{
+    color: #000000;
+}
+
+
+.aviso__lanterna{
+    color: #B22222;
+    background: #000000;
+    border: solid 3px #D2691E;
+    margin: 25px auto;
+    padding: 3px;
+}
