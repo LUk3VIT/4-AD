@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once '../../classes/repositorioTabletop.php'; 
+require_once '../../classes/repositorioTabletop.php';  
 $repositorio = new RepositorioTabletopMySQL();
 
 $tabela_tesouro = rand(1,6) + $_SESSION['bonus_tesouro'];
@@ -9,19 +9,21 @@ $tabela_tesouro = rand(1,6) + $_SESSION['bonus_tesouro'];
 if($tabela_tesouro <= 0){
     $_SESSION['tesouro'] = "Nenhum tesouro encontrado!!!";
 } else if($tabela_tesouro == 1){
-    $_SESSIO['tesouro'] = rand(1,6);
+    $_SESSION['valor_tesouro'] = rand(1,6);
+    $_SESSION['tesouro'] = "ouro";
 } else if($tabela_tesouro == 2){
-    $_SESSIO['tesouro'] = (rand(1,6)) + (rand(1,6));
+    $_SESSION['valor_tesouro'] = (rand(1,6)) + (rand(1,6));
+    $_SESSION['tesouro'] = "ouro";
 } else if($tabela_tesouro == 3){
     $id = rand(1,6);
     $_SESSION['tesouro'] = $repositorio->EscolherMagia($id);
 } else if($tabela_tesouro == 4){
     $gema = (rand(1,6) + rand(1,6)) * 5;
-    $_SESSION['tesouro'] = "Gema";
+    $_SESSION['tesouro'] = "gema";
     $_SESSION['valor_tesouro'] = $gema;
 } else if($tabela_tesouro == 5){
     $gema = (rand(1,6) + rand(1,6) + rand(1,6)) * 10;
-    $_SESSION['tesouro'] = "Gema";
+    $_SESSION['tesouro'] = "gema";
     $_SESSION['valor_tesouro'] = $gema;
 } else if($tabela_tesouro >= 6){
     $tabela_tesouro_magico = rand(1,6);
@@ -57,6 +59,6 @@ if($tabela_tesouro <= 0){
     }
 }
 
-header('Location: tabletop');
+header('Location: tabletop.php');
 
 ?>

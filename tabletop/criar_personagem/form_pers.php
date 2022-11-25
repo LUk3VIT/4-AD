@@ -16,32 +16,65 @@
         session_start();
         
 
-        if(isset($_SESSION['nome_pers']) && isset($_SESSION['classe'])){
+        if(isset($_SESSION['nome_pers']) && isset($_SESSION['classe']) && isset($_SESSION['sexo'])){
             unset($_SESSION['msg']);
 
             $classe = $_SESSION['classe'];
 
             if($classe == "Clérigo"){
-                $x = rand(1,100);
-                if($x == 69){
-                    $img = "imagens/personagens/ClerigoCego.png";
-                } else {
-                    $img = "imagens/personagens/Clerigo.png";
+                if($_SESSION['sexo'] == "Masculino"){
+                    $x = rand(1,100);
+                    if($x == 69){
+                        $img = "imagens/personagens/masculino/ClerigoCego.png";
+                    } else {
+                        $img = "imagens/personagens/masculino/Clerigo.png";
+                    }
+                } else if($_SESSION['sexo'] == "Feminino"){
+                    $img = "imagens/personagens/feminino/Cleriga.png";
                 }
+                
             } else if($classe == "Guerreiro"){
-                $img = "imagens/personagens/Guerreiro.png";
+                if($_SESSION['sexo'] == "Masculino"){
+                    $img = "imagens/personagens/masculino/Guerreiro.png";
+                } else if($_SESSION['sexo'] == "Feminino"){
+                    $img = "imagens/personagens/feminino/Guerreira.png";
+                }
             } else if($classe == "Ladino"){
-                $img = "imagens/personagens/Ladino.png";
+                if($_SESSION['sexo'] == "Masculino"){
+                    $img = "imagens/personagens/masculino/Ladino.png";
+                } else if($_SESSION['sexo'] == "Feminino"){
+                    $img = "imagens/personagens/feminino/ladina.png";
+                }
             } else if($classe == "Bárbaro"){
-                $img = "imagens/personagens/Barbaro.png";
+                if($_SESSION['sexo'] == "Masculino"){
+                    $img = "imagens/personagens/masculino/Barbaro.png";
+                } else if($_SESSION['sexo'] == "Feminino"){
+                    $img = "imagens/personagens/feminino/Barbara.png";
+                }
             } else if($classe == "Anão"){
-                $img = "imagens/personagens/Anao.png";
+                if($_SESSION['sexo'] == "Masculino"){
+                    $img = "imagens/personagens/masculino/Anao.png";
+                } else if($_SESSION['sexo'] == "Feminino"){
+                    $img = "imagens/personagens/feminino/Anã.png";
+                }
             } else if($classe == "Elfo"){
-                $img = "imagens/personagens/Elfo.png";
+                if($_SESSION['sexo'] == "Masculino"){
+                    $img = "imagens/personagens/masculino/Elfo.png";
+                } else if($_SESSION['sexo'] == "Feminino"){
+                    $img = "imagens/personagens/feminino/Elfa.png";
+                }
             } else if($classe == "Mago"){
-                $img = "imagens/personagens/Mago.png";
+                if($_SESSION['sexo'] == "Masculino"){
+                    $img = "imagens/personagens/masculino/Mago.png";
+                } else if($_SESSION['sexo'] == "Feminino"){
+                    $img = "imagens/personagens/feminino/Maga.png";
+                }
             } else if($classe == "Halfling"){
-                $img = "imagens/personagens/Halfling.png";
+                if($_SESSION['sexo'] == "Masculino"){
+                    $img = "imagens/personagens/masculino/Halfling.png";
+                } else if($_SESSION['sexo'] == "Feminino"){
+                    $img = "imagens/personagens/feminino/Halfling.png";
+                }
             }
             if(isset($_SESSION['img'])){
 
@@ -455,6 +488,12 @@
                         <option value="Anão" >Anão</option>
                         <option value="Halfling" >Halfling</option>
                     </select>
+                    <div class='form__criar__box'>
+                        <label for='masculino'>Masculino</label> 
+                        <input class='form__criar__chekbox' type='checkbox' id='masculino' name='masculino' value='Masculino'>
+                        <label for='feminino'>Feminino</label>
+                        <input class='form__criar__chekbox' type='checkbox' id='feminino' name='feminino' value='Feminino'>
+                    </div>
                     <input class='form__criar__enviar' type="submit" value="Criar">
                     <a class="form__criar__voltar" href='../jogo_solo/escolher_personagens/escolher_personagem.php'>Voltar</a>
                     <?php

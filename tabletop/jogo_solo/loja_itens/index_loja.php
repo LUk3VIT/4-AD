@@ -455,7 +455,7 @@ if(isset($_SESSION['id_comprador'])){
                 $item1 = "ritual de ressureição";
                 if(isset($proib1) && $proib1 == $item1 || isset($proib2) && $proib2 == $item1 || isset($proib3) && $proib3 == $item1 || isset($proib4) && $proib4 == $item1 || isset($proib5) && $proib5 == $item1 || isset($proib6) && $proib6 == $item1 || isset($proib7) && $proib7 == $item1 || isset($proib8) && $proib8 == $item1 || isset($proib9) && $proib9 == $item1 || isset($proib10) && $proib10 == $item1 || isset($proib11) && $proib11 == $item1 ){
                     echo "<tr>";
-                        echo "<td class='vento'> Sem Imagem </td>";
+                        echo "<td class='vento'> <img src='../../imagens/itens/Ressureiçao.png'> </td>";
                         echo "<td class='coluna'> Ritual de Ressurreição </td>";
                         echo "<td class='coluna'> Utilizável </td>";
                         echo "<td class='coluna'> Isso é comprado entre uma aventura e outra para permitir que um personagem morto volte a vida. </td>";
@@ -464,7 +464,7 @@ if(isset($_SESSION['id_comprador'])){
                     echo "</tr>";
                 } else {
                     echo "<tr>";
-                        echo "<td class='vento'> Sem Imagem </td>";
+                        echo "<td class='vento'> <img src='../../imagens/itens/Ressureiçao.png'> </td>";
                         echo "<td class='coluna'> Ritual de Ressurreição </td>";
                         echo "<td class='coluna'> Utilizável </td>";
                         echo "<td class='coluna'> Isso é comprado entre uma aventura e outra para permitir que um personagem morto volte a vida. </td>";

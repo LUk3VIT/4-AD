@@ -125,7 +125,7 @@
                             $bonus_arma = -2;
                         }
                     } else {
-                        echo $tipo = $repositorio->PuxarTipoArma($item);
+                        $tipo = $repositorio->PuxarTipoArma($item);
                         if($tipo == "arma de uma mão leve esmagadora" || $tipo == "arma de uma mão leve cortante" || $tipo == "arma a distância esmagadora"){
                             $bonus_arma = -1;
                         } else if($tipo == "arma de uma mão cortante" || $tipo == "arma de uma mão esmagadora" || $tipo == "arma a distância cortante"){
@@ -169,10 +169,11 @@
                         }
                     }
 
-                    $_SESSION['dano'] = $dano;
-                    echo $quantidade_monstro = $_SESSION['quantidade_monstro'];
+                    echo $_SESSION['dano'] = $dano;
+                    $quantidade_monstro = $_SESSION['quantidade_monstro'];
                     echo "<br>";
                     echo "<br>";
+                    
 
                     while($dano > 0){
                         if($dano >= $_SESSION['nivel_monstro']){
@@ -186,9 +187,15 @@
                             $dano = $dano - 1;
                         }
                     }
+                    
+                    $_SESSION['monstros_mortos'] = $_SESSION['quantidade_monstro'] - $quantidade_monstro;
+                    
 
                     
                     $_SESSION['monstros_mortos'] = $_SESSION['quantidade_monstro'] - $quantidade_monstro;
+                    if($_SESSION['nome_monstro'] == "Trolls" && $tipo == "arma de uma mão esmagadora" || $tipo == "arma de uma mão esmagadora mágica" || $tipo == "arma de uma mão leve esmagadora" || $tipo == "arma de uma mão leve esmagadora mágica" || $tipo == "arma de duas mãos esmagadora" || $tipo == "arma de duas mãos esmagadora mágica" || $tipo == "lanterna" || $tipo == "" || $tipo == "arma a distância cortante"){
+                        $_SESSION['trolls_mortos'] = $_SESSION['monstros_mortos'];
+                    }
                    
                     $_SESSION['dado'] = $dado;
                     if(isset($bonus_ataque)){
@@ -417,7 +424,7 @@
                         }
                     
                 } else {
-                    echo $item = $_SESSION["arma1_personagem$a"];
+                    $item = $_SESSION["arma1_personagem$a"];
                     unset($_SESSION['escolher_arma']);
                 }
             }
@@ -508,6 +515,21 @@
                     header('Location: tabletop.php');
                     exit;
                 }
+            } else if($_SESSION['nome_monstro'] == "Esqueletos"){
+                if($tipo == "arma de uma mão esmagadora" || $tipo == "arma de uma mão leve esmagadora" || $tipo == "arma de duas mãos esmagadora"){
+                    $bonus_arma = $bonus_arma + 1;
+                } else if($tipo == "arma a distância esmagadora"){
+                    $_SESSION['erro'] = "Esse monstro não pode ser atacado por um arco ou funda";
+                    unset($_SESSION['confirmar_ataque']);
+                    header('Location: tabletop.php');
+                    exit;
+                } else if($tipo == "arma a distância cortante"){
+                    $bonus_arma = $bonus_arma - 1;
+                }
+            } else if($_SESSION['nome_monstro'] == "Zumbi"){
+                if($tipo == "arma a distância cortante"){
+                    $bonus_arma = $bonus_arma - 1;
+                }
             }
 
             // bonus de classe
@@ -535,12 +557,6 @@
                 }
             }
 
-            echo $dado;
-            echo "<br>";
-            echo $dano;
-            echo "<br>";
-            echo "<br>";
-
             $_SESSION['dano'] = $dano;
             echo $quantidade_monstro = $_SESSION['quantidade_monstro'];
             echo "<br>";
@@ -549,9 +565,9 @@
             while($dano > 0){
                 if($dano >= $_SESSION['nivel_monstro']){
                     while($dano >= $_SESSION['nivel_monstro']){
-                        $dano = $dano - $_SESSION['nivel_monstro'];
-                        echo "<br>";
-                        echo $quantidade_monstro = $quantidade_monstro - 1;
+                        echo $dano = $dano - $_SESSION['nivel_monstro'];
+                        echo $_SESSION['nivel_monstro'];
+                        $quantidade_monstro = $quantidade_monstro - 1;
                     }
                     $dano = $dano - 1;
                 } else {
@@ -560,6 +576,9 @@
             }
         }
             $_SESSION['monstros_mortos'] = $_SESSION['quantidade_monstro'] - $quantidade_monstro;
+            if($_SESSION['nome_monstro'] == "Trolls" && $tipo == "arma de uma mão esmagadora" || $tipo == "arma de uma mão esmagadora mágica" || $tipo == "arma de uma mão leve esmagadora" || $tipo == "arma de uma mão leve esmagadora mágica" || $tipo == "arma de duas mãos esmagadora" || $tipo == "arma de duas mãos esmagadora mágica" || $tipo == "lanterna" || $tipo == "" || $tipo == "arma a distância cortante"){
+                $_SESSION['trolls_mortos'] = $_SESSION['monstros_mortos'];
+            }
             $_SESSION['dado'] = $dado;
             if(isset($bonus_ataque)){
                 if(isset($bonus_classe)){

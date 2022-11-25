@@ -4,6 +4,59 @@ session_start();
 require_once '../../classes/repositorioTabletop.php'; 
 $repositorio = new RepositorioTabletopMySQL();
 
+if(isset($_SESSION['mapa_atual'])){
+    
+} else {
+    header('Location: mapa/sortear_novo_mapa.php');
+}
+
+if(isset($_SESSION['ataque_surpresa'])){
+
+} else {
+    if(isset($_SESSION['nome_monstro']) && $_SESSION['nome_monstro'] == "Goblins"){
+            $_SESSION['ataque_surpresa'] = true;
+            $dado = rand(1,6);
+            if($dado == 1){
+                $_SESSION['ataque_surpresa'] = true;
+                header('Location: passar_turno.php');
+                exit;
+            } 
+    }
+}
+
+
+if($_SESSION['turno'] == "monstros"){
+    if($_SESSION['nome_monstro'] == "Trolls"){
+        if(isset($_SESSION['trolls_mortos'])){
+            while($_SESSION['trolls_mortos'] > 0){
+                $dado = rand(1,6);
+                if($dado == 5 || $dado == 6){
+                    $_SESSION['quantidade_monstro'] = $_SESSION['quantidade_monstro'] + 1;
+                    $_SESSION['monstros_defender'] = $_SESSION['monstros_defender'] + 1;
+                    $_SESSION['trolls_mortos'] = $_SESSION['trolls_mortos'] - 1;
+                } else {
+                    $_SESSION['trolls_mortos'] = $_SESSION['trolls_mortos'] - 1;
+                }
+            }
+        }
+    }
+}
+
+//if(isset($_SESSION['quantidade_monstro'])){
+//    if(isset($_SESSION['numero_monstro'])){
+//        $div = $_SESSION['numero_monstro'] / 2;
+//        if($_SESSION['quantidade_monstro'] <= $div){
+//           if(isset($_SESSION['reaçao'])){
+//
+//           } else {
+//               header('Location: moral_monstros.php');
+//            }
+//        }
+//    } else {
+//        $_SESSION['numero_monstro'] = $_SESSION['quantidade_monstro'];
+//    }
+//} 
+
 if(isset($_SESSION['turno'])){
 
 } else {
@@ -48,6 +101,8 @@ if(isset($_SESSION['inicio'])){
         $a = "4";
     } 
 }
+
+//$_SESSION['turno'] = "mapa";
 
 
 if(isset($_SESSION['vida_atual_personagem1'])){
@@ -200,6 +255,11 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
                     }
                     if(isset($_SESSION['hab2_monstro'])){
                         echo "<li>".$_SESSION['hab2_monstro']."</li>";
+                    }
+
+                    echo "<br>";
+                    if($_SESSION['ataque_surpresa'] == true){
+                        echo "<p style='color:red'>Ataque Surpresa!!! Por conta de ser um ataque desprevinido a ordem será primeiro os personagens com arco ou funda, depois os monstros e depois volta-se a ordem normal</p>";
                     }
                 } 
             }
@@ -1066,8 +1126,16 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
                         if($_SESSION['tesouro_monstro'] == "não"){
 
                         } else if($_SESSION['tesouro_monstro'] == "-1"){
-                            $_SESSION['bonus_tesouro'] = -1;
-                            header('Location: rodar_recompensa.php');
+                            if(isset($_SESSION['tesouro'])){
+
+                            } else {
+                                if(isset($_SESSION['fim_turno'])){
+
+                                } else {
+                                    $_SESSION['bonus_tesouro'] = -1;
+                                    header('Location: roda_recompensa.php');
+                                }
+                            }
                         }
 
                         if(isset($_SESSION['magia_usada'])){
@@ -1106,19 +1174,81 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
                         $x = $_SESSION['turno'];
                         echo "<br>";
                         echo "Você derrotou todos os inimigos!!!";
-                        if(isset($_SESSION['tesouro'])){
-                            echo "<div>";
-                                if($_SESSION['tesouro'] == "Gema"){
-
+                        echo "<br>";
+                        echo "<br>";
+                        echo "</div>";
+                        
+                        if(isset($_SESSION['tesouro']) && $_SESSION['tesouro'] != "Nenhum tesouro encontrado!!!"){
+                            $item = $_SESSION['tesouro'];
+                            $img = $repositorio->PuxarImagemItem($item);
+                            
+                                if($_SESSION['tesouro'] == "gema" || $_SESSION['tesouro'] == "ouro"){
+                                    echo "<div style='border: solid 2px black; float: left'>";
+                                        echo "<h2>Tesouro: ".$_SESSION['tesouro']." - Valor: ".$_SESSION['valor_tesouro']."</h2>";
+                                        echo "<img src='../../$img' style='height:70px;width:70px'>";
+                                    echo "</div>";
                                 } else {
-                                    echo "<h2>Tesouro:</h2>";
-                                    echo "<img>"
+                                    echo "<div style='border: solid 2px black;float:left'>";
+                                        echo "<h2>Tesouro: ".$_SESSION['tesouro']."</h2>";
+                                        echo "<img src='../../$img' style='height:70px;width:70px'>";
+                                    echo "</div>";
                                 }
-                            echo "</div>";
+                           
+                                
+                            
+                                $id = $_SESSION['personagem1'];
+                                $personagem = $repositorio->MostrarPersonagem($id);
+                                foreach ($personagem as $key) {
+                                    echo "<div style='border: solid 2px black;float:left'>";
+                                        echo "<img src='../../".$key['img']."' style='height:190px;width:175px'>";
+                                        echo "<h2>Nome: ".$key['nome']."</h2>";
+                                        echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+                                        echo "<h2><a href='pegar_recompensa.php?id=$id'>Pegar</a></h2>";
+                                    echo "</div>";
+                                }
+
+                                $id = $_SESSION['personagem2'];
+                                $personagem = $repositorio->MostrarPersonagem($id);
+                                foreach ($personagem as $key) {
+                                    echo "<div style='border: solid 2px black;float:left'>";
+                                        echo "<img src='../../".$key['img']."' style='height:190px;width:175px'>";
+                                        echo "<h2>Nome: ".$key['nome']."</h2>";
+                                        echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+                                        echo "<h2><a href='pegar_recompensa.php?id=$id'>Pegar</a></h2>";
+                                    echo "</div>";
+                                }
+
+                                $id = $_SESSION['personagem3'];
+                                $personagem = $repositorio->MostrarPersonagem($id);
+                                foreach ($personagem as $key) {
+                                    echo "<div style='border: solid 2px black;float:left'>";
+                                        echo "<img src='../../".$key['img']."' style='height:190px;width:175px'>";
+                                        echo "<h2>Nome: ".$key['nome']."</h2>";
+                                        echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+                                        echo "<h2><a href='pegar_recompensa.php?id=$id'>Pegar</a></h2>";
+                                    echo "</div>";
+                                }
+
+                                $id = $_SESSION['personagem4'];
+                                $personagem = $repositorio->MostrarPersonagem($id);
+                                foreach ($personagem as $key) {
+                                    echo "<div style='border: solid 2px black;float:left'>";
+                                        echo "<img src='../../".$key['img']."' style='height:190px;width:175px'>";
+                                        echo "<h2>Nome: ".$key['nome']."</h2>";
+                                        echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+                                        echo "<h2><a href='pegar_recompensa.php?id=$id'>Pegar</a></h2>";
+                                    echo "</div>";
+                                }
+                            
+
                         } else {
+                            if(isset($_SESSION['tesouro']) && $_SESSION['tesouro'] == "Nenhum tesouro encontrado!!!"){
+                                echo "<h2>".$_SESSION['tesouro']."</h2>";
+                            }
+                            echo "<br>";
                             echo "<h2><a href='passar_turno.php?id=$x'>Concluir Turno</a></h2>"; 
                         }
-                            
+                        
                     }
                 } 
             }
@@ -1739,7 +1869,7 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
             if(isset($_SESSION['nome_monstro'])){
                 
             } else {
-                echo "<h2><a href='monstros/sortear_verme.php'>Encontrar Monstro</a></h2>";
+                echo "<h2><a href='monstros/sortear_minion.php'>Encontrar Monstro</a></h2>";
             }
         ?>
         </div>
@@ -1877,16 +2007,76 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
                                 echo "<li>".$_SESSION["arma2_personagem$a"]."</li>";
                             }      
             }
+
+
                 
             ?>
         </ul>
     </div>
-    <div class="mapa">
-        <p>mapas</p>
+    <div class="mapa" style='background-color:white'>
+        <?php
+            
+            list($largura_original,$altura_original) = getimagesize($_SESSION['mapa_atual']);
+
+            if($largura_original > $altura_original){
+                $largura = $largura_original * 6;
+                $altura = $altura_original * 4.9;
+            } else {
+                $largura = $largura_original * 4.7;
+                $altura = $altura_original * 6;
+            }
+
+            $mapa = $_SESSION['mapa_atual'];
+            $direita = $repositorio->VerificarDireita($mapa);
+            $esquerda = $repositorio->VerificarEsquerda($mapa);
+            $cima = $repositorio->VerificarCima($mapa);
+            $baixo = $repositorio->VerificarBaixo($mapa);
+
+            $a = "direita";
+            $b = "esquerda";
+            $c = "cima";
+            $d = "baixo";
+
+            if($direita > 0){
+                if($direita > 1){
+                    echo "A";
+                } else {
+                    echo "<a href='mapa/sortear_novo_mapa.php?id=$a'><img src='../../imagens/mapas/setas2.png' style='width:60px;height:35px'></a>";
+                }
+            }
+            if($esquerda > 0){
+                if($esquerda > 1){
+                    echo "B";
+                } else {
+                    echo "<a href='mapa/sortear_novo_mapa.php?id=$b'><img src='../../imagens/mapas/setas4.png' style='width:60px;height:35px'></a>";
+                }
+            }
+            if($cima > 0){
+                if($cima > 1){
+                    echo "C";
+                } else {
+                    echo "<a href='mapa/sortear_novo_mapa.php?id=$c'><img src='../../imagens/mapas/setas1.png' style='width:35px;height:60px'></a>";
+                }
+            }
+            if($baixo > 0){
+                if($baixo > 1){
+                    echo "D";
+                } else {
+                    echo "<a href='mapa/sortear_novo_mapa.php?id=$d'><img src='../../imagens/mapas/setas3.png' style='width:35px;height:60px'></a>";
+                }
+            }
+
+
+            echo "<img src='".$_SESSION['mapa_atual']."' style='height:".$altura."px;width:".$largura."px'>";
+            
+        ?>
     </div>
     <div class="personagens">
         <div class="p1">
             <?php
+            echo "<h2><a href='mapa/sortear_novo_mapa.php'>Sortear novo mapa</a></h2>";
+            echo "<a href='limpar.php'>Limpar</a>";
+            echo $_SESSION['numero_sala'];
             $turno = $_SESSION['turno'];
                 echo "<div style='border: solid 2px black;float:left'>";
                     if($turno == $_SESSION['personagem1']){
@@ -1910,7 +2100,7 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
                     }
                 echo "</div>";
                 if($turno == $_SESSION['personagem1']){
-                    if(isset($_SESSION['ecolher_cura']) || isset($_SESSION['confirmar_ataque'])){
+                    if(isset($_SESSION['ecolher_cura']) || isset($_SESSION['confirmar_ataque']) || isset($_SESSION['tesouro']) || isset($_SESSION['dano'])){
 
                     } else {
                         $id = $turno;
@@ -1945,7 +2135,7 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
                     
                 echo "</div>";
                 if($turno == $_SESSION['personagem2']){
-                    if(isset($_SESSION['ecolher_cura']) || isset($_SESSION['confirmar_ataque'])){
+                    if(isset($_SESSION['ecolher_cura']) || isset($_SESSION['confirmar_ataque']) || isset($_SESSION['tesouro']) || isset($_SESSION['dano'])){
 
                     } else {
                         $id = $turno;
@@ -1978,7 +2168,7 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
                     }
                 echo "</div>";
                 if($turno == $_SESSION['personagem3']){
-                    if(isset($_SESSION['ecolher_cura']) || isset($_SESSION['confirmar_ataque'])){
+                    if(isset($_SESSION['ecolher_cura']) || isset($_SESSION['confirmar_ataque']) || isset($_SESSION['tesouro']) || isset($_SESSION['dano'])){
 
                     } else {
                         $id = $turno;
@@ -2011,7 +2201,7 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
                     }
                 echo "</div>";
                 if($turno == $_SESSION['personagem4']){
-                    if(isset($_SESSION['ecolher_cura']) || isset($_SESSION['confirmar_ataque'])){
+                    if(isset($_SESSION['ecolher_cura']) || isset($_SESSION['confirmar_ataque']) || isset($_SESSION['tesouro']) || isset($_SESSION['dano'])){
 
                     } else {
                         $id = $turno;
@@ -2025,8 +2215,10 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
             ?>
         </div>
     </div>
-    <div class="mapaPrincipal">
-
+    <div class="mapaPrincipal" style='background-color:white'>
+        <?php
+            echo $_SESSION['mapa_geral'];
+        ?>
     </div>
 </body>
 </html>

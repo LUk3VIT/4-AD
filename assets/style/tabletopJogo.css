@@ -119,6 +119,15 @@ body{
     border-radius: 5px;
 }
 
+.form__criar__box{
+    margin: 15px;
+}
+
+.form__criar__chekbox{
+    margin: 0px 25px;
+    width: 15px;
+}
+
 .form__criar__enviar{
     width: 130px;
     margin: 10px 5px;

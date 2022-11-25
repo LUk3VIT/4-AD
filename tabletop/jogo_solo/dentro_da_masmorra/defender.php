@@ -7,6 +7,8 @@ $repositorio = new RepositorioTabletopMySQL();
 unset($_SESSION['mensagem']);
 unset($_SESSION['vida_perdida']);
 
+
+
 $id = $_GET['id'];
 if($id == $_SESSION['personagem1']){
     $a = "1";
@@ -17,6 +19,7 @@ if($id == $_SESSION['personagem1']){
 } else {
     $a = "4";
 }
+$vida = $_SESSION["vida_atual_personagem$a"];
 
 // Bônus de defesa
 $personagem = $repositorio->MostrarPersonagem($id);
@@ -33,31 +36,6 @@ foreach ($personagem as $key) {
 
 // DADO
 $dado = rand(1,6);
-if($dado == 1){
-    $_SESSION["vida_atual_personagem$a"] = $_SESSION["vida_atual_personagem$a"] - 1;
-    if($_SESSION['nome_monstro'] == "Ratos"){
-        $chance = rand(1,6);
-        if($chance == 1){
-            $_SESSION["vida_atual_personagem$a"] = $_SESSION["vida_atual_personagem$a"] - 1;
-            $_SESSION['efeito_bonus'] = true;
-        }
-    } else if($_SESSION['nome_monstro'] == "Centopéia Gigante"){
-        $chance = rand(1,6);
-        if($chance > 2){
-
-        } else {
-            $_SESSION["vida_atual_personagem$a"] = $_SESSION["vida_atual_personagem$a"] - 1;
-            $_SESSION['efeito_bonus'] = true;
-        }
-    }
-
-    $_SESSION['vida_perdida'] = $vida - $_SESSION["vida_atual_personagem$a"];
-    $_SESSION['defesa'] = true;
-    $_SESSION['defensor'] = $id;
-    $_SESSION['monstros_defender'] = $_SESSION['monstros_defender'] - 1;
-    $_SESSION['mensagem'] = "Tirou 1 no dado!!!";
-    header('Location: tabletop.php');
-}
 
 // Bonus Equipamento
 if(strtolower($_SESSION["armadura_personagem$a"]) == "armadura de malha"){
@@ -83,7 +61,7 @@ if($classe == "Anão"){
     }
 }
 
-$vida = $_SESSION["vida_atual_personagem$a"];
+
 
 if(isset($bonus_classe)){
     $_SESSION['defesa_total'] = $defesa = $dado + $bonus_defesa + $bonus_equipamento + $bonus_classe;
@@ -92,6 +70,34 @@ if(isset($bonus_classe)){
     $_SESSION['defesa_total'] = $defesa = $dado + $bonus_defesa + $bonus_equipamento;
     $_SESSION['bonus'] = $bonus_defesa + $bonus_equipamento + $bonus_classe;
 }
+
+if($dado == 1){
+    $_SESSION["vida_atual_personagem$a"] = $_SESSION["vida_atual_personagem$a"] - 1;
+    if($_SESSION['nome_monstro'] == "Ratos"){
+        $chance = rand(1,6);
+        if($chance == 1){
+            $_SESSION["vida_atual_personagem$a"] = $_SESSION["vida_atual_personagem$a"] - 1;
+            $_SESSION['efeito_bonus'] = true;
+        }
+    } else if($_SESSION['nome_monstro'] == "Centopéia Gigante"){
+        $chance = rand(1,6);
+        if($chance > 2){
+
+        } else {
+            $_SESSION["vida_atual_personagem$a"] = $_SESSION["vida_atual_personagem$a"] - 1;
+            $_SESSION['efeito_bonus'] = true;
+        }
+    }
+
+    $_SESSION['vida_perdida'] = $vida - $_SESSION["vida_atual_personagem$a"];
+    $_SESSION['defesa'] = true;
+    $_SESSION['defensor'] = $id;
+    $_SESSION['monstros_defender'] = $_SESSION['monstros_defender'] - 1;
+    $_SESSION['mensagem'] = "Tirou 1 no dado!!!";
+    header('Location: tabletop.php');
+    exit;
+}
+
 
 if(isset($_SESSION["proteger_personagem$a"])){
     $_SESSION['defesa_total'] = $defesa = $defesa + 1;
@@ -116,6 +122,14 @@ if($defesa > $_SESSION['nivel_monstro'] || $dado == 6){
     } else if($_SESSION['nome_monstro'] == "Centopéia Gigante"){
         $chance = rand(1,6);
         if($chance > 2){
+
+        } else {
+            $_SESSION["vida_atual_personagem$a"] = $_SESSION["vida_atual_personagem$a"] - 1;
+            $_SESSION['efeito_bonus'] = true;
+        }
+    } else if($_SESSION['nome_monstro'] == "Povo Fungo"){
+        $chance = rand(1,6);
+        if($chance > 3){
 
         } else {
             $_SESSION["vida_atual_personagem$a"] = $_SESSION["vida_atual_personagem$a"] - 1;

@@ -1,5 +1,5 @@
 <?php
- 
+  
 include 'usuario.php'; 
 require_once 'conexao.php';  
     
@@ -31,6 +31,14 @@ interface IRepositorioTabletop {
     public function PuxarDescricaoMagia($magia);
     public function PuxarTipoArma($item);
     public function PuxarNumeroPersonagens($id);
+    public function SortearMinion($sorteio);
+    public function PuxarImagemMinion($minion);
+    public function SortearMapaInicial($dado);
+    public function VerificarEsquerda($mapa);
+    public function VerificarDireita($mapa);
+    public function VerificarCima($mapa);
+    public function VerificarBaixo($mapa);
+    public function PuxarPixelAberturaBaixo($mapa);
 }
  
 class RepositorioTabletopMySQL implements IRepositorioTabletop
@@ -202,7 +210,7 @@ class RepositorioTabletopMySQL implements IRepositorioTabletop
 
     public function PuxarImagemItem($item)
     {
-        $sql = "SELECT * FROM itens WHERE nome = '$item'" ;
+        $sql = "SELECT * FROM itens WHERE nome LIKE '$item%'" ;
         $consulta = $this->conexao->executarQuery($sql);
         $registro = mysqli_fetch_array($consulta);
         $resultado = $registro[1];
@@ -250,6 +258,76 @@ class RepositorioTabletopMySQL implements IRepositorioTabletop
         $sql = "SELECT * FROM tbl_personagem WHERE id_usuario = '$id'";
         $linha = $this->conexao->obtemNumeroLinhas($sql);
         return $linha;
+    }
+
+    public function SortearMinion($sorteio)
+    {
+        $sql = "SELECT * FROM minions WHERE numero = '$sorteio'";
+        $consulta = $this->conexao->executarQuery($sql);
+        return $consulta;
+    }
+
+    public function PuxarImagemMinion($minion)
+    {
+        $sql = "SELECT * FROM minions WHERE nome = '$minion'";
+        $consulta = $this->conexao->executarQuery($sql);
+        $registro = mysqli_fetch_array($consulta);
+        $resultado = $registro[1];
+        return $resultado;
+    }
+
+    public function SortearMapaInicial($dado)
+    {
+        $sql = "SELECT * FROM mapas_sem_ponto WHERE numero = '$dado'";
+        $consulta = $this->conexao->executarQuery($sql);
+        $registro = mysqli_fetch_array($consulta);
+        $resultado = $registro[2];
+        return $resultado;
+    }
+
+    public function VerificarEsquerda($mapa)
+    {
+        $sql = "SELECT * FROM mapas_sem_ponto WHERE img = '$mapa'";
+        $consulta = $this->conexao->executarQuery($sql);
+        $registro = mysqli_fetch_array($consulta);
+        $resultado = $registro[4];
+        return $resultado;
+    }
+
+    public function VerificarDireita($mapa)
+    {
+        $sql = "SELECT * FROM mapas_sem_ponto WHERE img = '$mapa'";
+        $consulta = $this->conexao->executarQuery($sql);
+        $registro = mysqli_fetch_array($consulta);
+        $resultado = $registro[5];
+        return $resultado;
+    }
+
+    public function VerificarCima($mapa)
+    {
+        $sql = "SELECT * FROM mapas_sem_ponto WHERE img = '$mapa'";
+        $consulta = $this->conexao->executarQuery($sql);
+        $registro = mysqli_fetch_array($consulta);
+        $resultado = $registro[6];
+        return $resultado;
+    }
+
+    public function VerificarBaixo($mapa)
+    {
+        $sql = "SELECT * FROM mapas_sem_ponto WHERE img = '$mapa'";
+        $consulta = $this->conexao->executarQuery($sql);
+        $registro = mysqli_fetch_array($consulta);
+        $resultado = $registro[7];
+        return $resultado;
+    }
+
+    public function PuxarPixelAberturaBaixo($mapa)
+    {
+        $sql = "SELECT * FROM mapas_sem_ponto WHERE img = '$mapa'";
+        $consulta = $this->conexao->executarQuery($sql);
+        $registro = mysqli_fetch_array($consulta);
+        $resultado = $registro[11];
+        return $resultado;
     }
 }
    
