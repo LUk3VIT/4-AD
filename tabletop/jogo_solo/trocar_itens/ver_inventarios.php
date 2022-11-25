@@ -10,35 +10,43 @@ $repositorio = new RepositorioTabletopMySQL();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trocar Itens</title>
+    <link rel="stylesheet" href="../../../assets/style/reset.css">
+    <link rel="stylesheet" href="../../../assets/style/tabletopJogo.css">
 </head>
 <body>
-    <h2><a href='../index_jogo_solo.php'>Voltar à sala de preparação</a></h2>
-    <h1>Inventários:<h1>
+    <h2 class='rykelmy__trocar'><a class='rykelmy__entrar' href='../index_jogo_solo.php'>Voltar à sala de preparação</a></h2>
+    <h1 class='selecao__prepa'>Inventários:<h1>
+        <main class="trocas">
     <?php
         $id = $_SESSION['personagem1'];
         $personagem = $repositorio->MostrarPersonagem($id);
         foreach ($personagem as $key) {
             $nome = $key['nome'];
             $img = $key['img'];
-            echo "<img src='../../$img'>";
-            echo "<h2>Nome: ".$key['nome']."</h2>";
-            echo "<h2>Classe: ".$key['classe']."</h2>";
-            echo "<h2>Nível: ".$key['nivel']."</h2>";
-            echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+            echo "<div class='mostrar__pers__trocas'>";
+                echo "<img src='../../$img'>";
+                echo "<h2>Nome: ".$key['nome']."</h2>";
+                echo "<h2>Classe: ".$key['classe']."</h2>";
+                echo "<h2>Nível: ".$key['nivel']."</h2>";
+                echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+            echo "</div>";
             $id_pers = $key['id_pers'];
             $dinheiro = $key['dinheiro'];
             if($dinheiro > 0){
-                echo "<h2>Dar Dinheiro: 
+                echo "<div class='dar__dinheiro'>
+                        <h2>Dar Dinheiro:</h2> 
                         <form action='escolher_dinheiro.php' method='post'>
                             <input type='text' name='id_remetente' value='$id_pers' hidden>
                             <input type='number' name='dinheiro_total' value='$dinheiro' hidden>
                             <input type='number' min='1' max='$dinheiro' name='dinheiro'>
                             <input type='submit' value='Continuar'>
                         </form>
-                    </h2>";
+                    </div>";
             }
             $inventario = $repositorio->MostrarInventario($nome);
             foreach ($inventario as $key) {
+                echo "<div class='dar__itens'>";
+                echo "<div class='rykeymy__mandou'>";
                 echo "<ul>";
                     $item1 = $key['item1'];
                     echo "<li>".$key['item1']."
@@ -337,6 +345,8 @@ $repositorio = new RepositorioTabletopMySQL();
                         </li>";
                     }
                 echo "</ul>";
+                echo "</div>";
+                echo "</div>";
             }
         }
         $id = $_SESSION['personagem2'];
@@ -344,15 +354,18 @@ $repositorio = new RepositorioTabletopMySQL();
         foreach ($personagem as $key) {
             $nome = $key['nome'];
             $img = $key['img'];
+            echo "<div class='mostrar__pers__trocas'>";
             echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Nível: ".$key['nivel']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+            echo "</div>";
             $id_pers = $key['id_pers'];
             $dinheiro = $key['dinheiro'];
             if($dinheiro > 0){
-                echo "<h2>Dar Dinheiro: 
+                echo "<div class='dar__dinheiro'>";
+                echo "<h2>Dar Dinheiro:
                         <form action='escolher_dinheiro.php' method='post'>
                             <input type='text' name='id_remetente' value='$id_pers' hidden>
                             <input type='number' name='dinheiro_total' value='$dinheiro' hidden>
@@ -360,9 +373,12 @@ $repositorio = new RepositorioTabletopMySQL();
                             <input type='submit' value='Continuar'>
                         </form>
                     </h2>";
+                echo "</div>";
             }
             $inventario = $repositorio->MostrarInventario($nome);
             foreach ($inventario as $key) {
+                echo "<div class='dar__itens'>";
+                echo "<div class='rykeymy__mandou'>";
                 echo "<ul>";
                     $item1 = $key['item1'];
                     echo "<li>".$key['item1']."
@@ -661,6 +677,8 @@ $repositorio = new RepositorioTabletopMySQL();
                         </li>";
                     }
                 echo "</ul>";
+                echo "</div>";
+                echo "</div>";
             }
         }
         $id = $_SESSION['personagem3'];
@@ -668,14 +686,17 @@ $repositorio = new RepositorioTabletopMySQL();
         foreach ($personagem as $key) {
             $nome = $key['nome'];
             $img = $key['img'];
+            echo "<div class='mostrar__pers__trocas'>";
             echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Nível: ".$key['nivel']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+            echo "</div>";
             $id_pers = $key['id_pers'];
             $dinheiro = $key['dinheiro'];
             if($dinheiro > 0){
+                echo "<div class='dar__dinheiro'>";
                 echo "<h2>Dar Dinheiro: 
                         <form action='escolher_dinheiro.php' method='post'>
                             <input type='text' name='id_remetente' value='$id_pers' hidden>
@@ -684,9 +705,12 @@ $repositorio = new RepositorioTabletopMySQL();
                             <input type='submit' value='Continuar'>
                         </form>
                     </h2>";
+                echo "</div>";
             }
             $inventario = $repositorio->MostrarInventario($nome);
             foreach ($inventario as $key) {
+                echo "<div class='dar__itens'>";
+                echo "<div class='rykeymy__mandou'>";
                 echo "<ul>";
                     $item1 = $key['item1'];
                     echo "<li>".$key['item1']."
@@ -985,6 +1009,8 @@ $repositorio = new RepositorioTabletopMySQL();
                         </li>";
                     }
                 echo "</ul>";
+                echo "</div>";
+                echo "</div>";
             }
         }
         $id = $_SESSION['personagem4'];
@@ -992,14 +1018,17 @@ $repositorio = new RepositorioTabletopMySQL();
         foreach ($personagem as $key) {
             $nome = $key['nome'];
             $img = $key['img'];
+            echo "<div class='mostrar__pers__trocas'>";
             echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Nível: ".$key['nivel']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+            echo "</div>";
             $id_pers = $key['id_pers'];
             $dinheiro = $key['dinheiro'];
             if($dinheiro > 0){
+                echo "<div class='dar__dinheiro'>";
                 echo "<h2>Dar Dinheiro: 
                         <form action='escolher_dinheiro.php' method='post'>
                             <input type='text' name='id_remetente' value='$id_pers' hidden>
@@ -1008,9 +1037,12 @@ $repositorio = new RepositorioTabletopMySQL();
                             <input type='submit' value='Continuar'>
                         </form>
                     </h2>";
+                echo "</div>";
             }
             $inventario = $repositorio->MostrarInventario($nome);
             foreach ($inventario as $key) {
+                echo "<div class='dar__itens'>";
+                echo "<div class='rykeymy__mandou'>";
                 echo "<ul>";
                     $item1 = $key['item1'];
                     echo "<li>".$key['item1']."
@@ -1309,8 +1341,11 @@ $repositorio = new RepositorioTabletopMySQL();
                         </li>";
                     }
                 echo "</ul>";
+                echo "</div>";
+                echo "</div>";
             }
         }
     ?>
+    </main>
 </body>
 </html>

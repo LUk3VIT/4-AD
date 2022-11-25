@@ -8,7 +8,26 @@ $id_remetente = $_POST['id_remetente'];
 $dinheiro_total = $_POST['dinheiro_total'];
 $dinheiro = $_POST['dinheiro'];
 
-echo "<h2><a href='ver_inventarios.php'>Voltar</a></h2>";
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../assets/style/reset.css">
+    <link rel="stylesheet" href="../../../assets/style/tabletopJogo.css">
+</head>
+<body>
+
+    <h2 class='rykelmy__trocar'><a class='rykelmy__entrar' href='ver_inventarios.php'>Voltar</a></h2>
+    <main class='escolher__dar'>
+
+<?php
+
 
 if($id_remetente == $_SESSION['personagem1']){
     $id = $_SESSION['personagem2'];
@@ -16,19 +35,19 @@ if($id_remetente == $_SESSION['personagem1']){
     foreach ($personagem as $key) {
         $id_dest = $key['id_pers'];
         $dinheiro_dest = $key['dinheiro'];
-        echo "<div style='border: solid 2px red'>";
+        echo "<div class='mostrar__pers'>";
             $img = $key['img'];
             echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
-            echo "<form action='dar_dinheiro.php' method='post'>";
+            echo "<form class='form__dar' action='dar_dinheiro.php' method='post'>";
                 echo "<input type='text' name='id_remetente' value='$id_remetente' hidden>";
                 echo "<input type='number' name='dinheiro' value='$dinheiro' hidden>";
                 echo "<input type='number' name='dinheiro_total' value='$dinheiro_total' hidden>";
                 echo "<input type='text' name='id_dest' value='$id_dest' hidden>";
                 echo "<input type='number' name='dinheiro_dest' value='$dinheiro_dest' hidden>";
-                echo "<input type='submit' value='Dar'>";
+                echo "<input class='botao__dar' type='submit' value='Dar'>";
             echo "</form>";
         echo "</div>";
     }
@@ -38,19 +57,19 @@ if($id_remetente == $_SESSION['personagem1']){
     foreach ($personagem as $key) {
         $id_dest = $key['id_pers'];
         $dinheiro_dest = $key['dinheiro'];
-        echo "<div style='border: solid 2px red'>";
+        echo "<div class='mostrar__pers'>";
             $img = $key['img'];
             echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
-            echo "<form action='dar_dinheiro.php' method='post'>";
+            echo "<form class='form__dar' action='dar_dinheiro.php' method='post'>";
                 echo "<input type='text' name='id_remetente' value='$id_remetente' hidden>";
                 echo "<input type='number' name='dinheiro' value='$dinheiro' hidden>";
                 echo "<input type='number' name='dinheiro_total' value='$dinheiro_total' hidden>";
                 echo "<input type='text' name='id_dest' value='$id_dest' hidden>";
                 echo "<input type='number' name='dinheiro_dest' value='$dinheiro_dest' hidden>";
-                echo "<input type='submit' value='Dar'>";
+                echo "<input class='botao__dar' type='submit' value='Dar'>";
             echo "</form>";
         echo "</div>";
     }
@@ -60,19 +79,19 @@ if($id_remetente == $_SESSION['personagem1']){
     foreach ($personagem as $key) {
         $id_dest = $key['id_pers'];
         $dinheiro_dest = $key['dinheiro'];
-        echo "<div style='border: solid 2px red'>";
+        echo "<div class='mostrar__pers'>";
             $img = $key['img'];
             echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
-            echo "<form action='dar_dinheiro.php' method='post'>";
+            echo "<form class='form__dar' action='dar_dinheiro.php' method='post'>";
                 echo "<input type='text' name='id_remetente' value='$id_remetente' hidden>";
                 echo "<input type='number' name='dinheiro' value='$dinheiro' hidden>";
                 echo "<input type='number' name='dinheiro_total' value='$dinheiro_total' hidden>";
                 echo "<input type='text' name='id_dest' value='$id_dest' hidden>";
                 echo "<input type='number' name='dinheiro_dest' value='$dinheiro_dest' hidden>";
-                echo "<input type='submit' value='Dar'>";
+                echo "<input class='botao__dar' type='submit' value='Dar'>";
             echo "</form>";
         echo "</div>";
     }
@@ -82,19 +101,19 @@ if($id_remetente == $_SESSION['personagem1']){
     foreach ($personagem as $key) {
         $id_dest = $key['id_pers'];
         $dinheiro_dest = $key['dinheiro'];
-        echo "<div style='border: solid 2px red'>";
+        echo "<div class='mostrar__pers'>";
             $img = $key['img'];
             echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
-            echo "<form action='dar_dinheiro.php' method='post'>";
+            echo "<form class='form__dar' action='dar_dinheiro.php' method='post'>";
                 echo "<input type='text' name='id_remetente' value='$id_remetente' hidden>";
                 echo "<input type='number' name='dinheiro' value='$dinheiro' hidden>";
                 echo "<input type='number' name='dinheiro_total' value='$dinheiro_total' hidden>";
                 echo "<input type='text' name='id_dest' value='$id_dest' hidden>";
                 echo "<input type='number' name='dinheiro_dest' value='$dinheiro_dest' hidden>";
-                echo "<input type='submit' value='Dar'>";
+                echo "<input class='botao__dar' type='submit' value='Dar'>";
             echo "</form>";
         echo "</div>";
     }
@@ -104,19 +123,19 @@ if($id_remetente == $_SESSION['personagem1']){
     foreach ($personagem as $key) {
         $id_dest = $key['id_pers'];
         $dinheiro_dest = $key['dinheiro'];
-        echo "<div style='border: solid 2px red'>";
+        echo "<div class='mostrar__pers'>";
             $img = $key['img'];
             echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
-            echo "<form action='dar_dinheiro.php' method='post'>";
+            echo "<form class='form__dar' action='dar_dinheiro.php' method='post'>";
                 echo "<input type='text' name='id_remetente' value='$id_remetente' hidden>";
                 echo "<input type='number' name='dinheiro' value='$dinheiro' hidden>";
                 echo "<input type='number' name='dinheiro_total' value='$dinheiro_total' hidden>";
                 echo "<input type='text' name='id_dest' value='$id_dest' hidden>";
                 echo "<input type='number' name='dinheiro_dest' value='$dinheiro_dest' hidden>";
-                echo "<input type='submit' value='Dar'>";
+                echo "<input class='botao__dar' type='submit' value='Dar'>";
             echo "</form>";
         echo "</div>";
     }
@@ -126,19 +145,19 @@ if($id_remetente == $_SESSION['personagem1']){
     foreach ($personagem as $key) {
         $id_dest = $key['id_pers'];
         $dinheiro_dest = $key['dinheiro'];
-        echo "<div style='border: solid 2px red'>";
+        echo "<div class='mostrar__pers'>";
             $img = $key['img'];
             echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
-            echo "<form action='dar_dinheiro.php' method='post'>";
+            echo "<form class='form__dar' action='dar_dinheiro.php' method='post'>";
                 echo "<input type='text' name='id_remetente' value='$id_remetente' hidden>";
                 echo "<input type='number' name='dinheiro' value='$dinheiro' hidden>";
                 echo "<input type='number' name='dinheiro_total' value='$dinheiro_total' hidden>";
                 echo "<input type='text' name='id_dest' value='$id_dest' hidden>";
                 echo "<input type='number' name='dinheiro_dest' value='$dinheiro_dest' hidden>";
-                echo "<input type='submit' value='Dar'>";
+                echo "<input class='botao__dar' type='submit' value='Dar'>";
             echo "</form>";
         echo "</div>";
     }
@@ -148,19 +167,19 @@ if($id_remetente == $_SESSION['personagem1']){
     foreach ($personagem as $key) {
         $id_dest = $key['id_pers'];
         $dinheiro_dest = $key['dinheiro'];
-        echo "<div style='border: solid 2px red'>";
+        echo "<div class='mostrar__pers'>";
             $img = $key['img'];
             echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
-            echo "<form action='dar_dinheiro.php' method='post'>";
+            echo "<form class='form__dar' action='dar_dinheiro.php' method='post'>";
                 echo "<input type='text' name='id_remetente' value='$id_remetente' hidden>";
                 echo "<input type='number' name='dinheiro' value='$dinheiro' hidden>";
                 echo "<input type='number' name='dinheiro_total' value='$dinheiro_total' hidden>";
                 echo "<input type='text' name='id_dest' value='$id_dest' hidden>";
                 echo "<input type='number' name='dinheiro_dest' value='$dinheiro_dest' hidden>";
-                echo "<input type='submit' value='Dar'>";
+                echo "<input class='botao__dar' type='submit' value='Dar'>";
             echo "</form>";
         echo "</div>";
     }
@@ -170,19 +189,19 @@ if($id_remetente == $_SESSION['personagem1']){
     foreach ($personagem as $key) {
         $id_dest = $key['id_pers'];
         $dinheiro_dest = $key['dinheiro'];
-        echo "<div style='border: solid 2px red'>";
+        echo "<div class='mostrar__pers'>";
             $img = $key['img'];
             echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
-            echo "<form action='dar_dinheiro.php' method='post'>";
+            echo "<form class='form__dar' action='dar_dinheiro.php' method='post'>";
                 echo "<input type='text' name='id_remetente' value='$id_remetente' hidden>";
                 echo "<input type='number' name='dinheiro' value='$dinheiro' hidden>";
                 echo "<input type='number' name='dinheiro_total' value='$dinheiro_total' hidden>";
                 echo "<input type='text' name='id_dest' value='$id_dest' hidden>";
                 echo "<input type='number' name='dinheiro_dest' value='$dinheiro_dest' hidden>";
-                echo "<input type='submit' value='Dar'>";
+                echo "<input class='botao__dar' type='submit' value='Dar'>";
             echo "</form>";
         echo "</div>";
     }
@@ -192,19 +211,19 @@ if($id_remetente == $_SESSION['personagem1']){
     foreach ($personagem as $key) {
         $id_dest = $key['id_pers'];
         $dinheiro_dest = $key['dinheiro'];
-        echo "<div style='border: solid 2px red'>";
+        echo "<div class='mostrar__pers'>";
             $img = $key['img'];
             echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
-            echo "<form action='dar_dinheiro.php' method='post'>";
+            echo "<form class='form__dar' action='dar_dinheiro.php' method='post'>";
                 echo "<input type='text' name='id_remetente' value='$id_remetente' hidden>";
                 echo "<input type='number' name='dinheiro' value='$dinheiro' hidden>";
                 echo "<input type='number' name='dinheiro_total' value='$dinheiro_total' hidden>";
                 echo "<input type='text' name='id_dest' value='$id_dest' hidden>";
                 echo "<input type='number' name='dinheiro_dest' value='$dinheiro_dest' hidden>";
-                echo "<input type='submit' value='Dar'>";
+                echo "<input class='botao__dar' type='submit' value='Dar'>";
             echo "</form>";
         echo "</div>";
     }
@@ -214,19 +233,19 @@ if($id_remetente == $_SESSION['personagem1']){
     foreach ($personagem as $key) {
         $id_dest = $key['id_pers'];
         $dinheiro_dest = $key['dinheiro'];
-        echo "<div style='border: solid 2px red'>";
+        echo "<div class='mostrar__pers'>";
             $img = $key['img'];
             echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
-            echo "<form action='dar_dinheiro.php' method='post'>";
+            echo "<form class='form__dar' action='dar_dinheiro.php' method='post'>";
                 echo "<input type='text' name='id_remetente' value='$id_remetente' hidden>";
                 echo "<input type='number' name='dinheiro' value='$dinheiro' hidden>";
                 echo "<input type='number' name='dinheiro_total' value='$dinheiro_total' hidden>";
                 echo "<input type='text' name='id_dest' value='$id_dest' hidden>";
                 echo "<input type='number' name='dinheiro_dest' value='$dinheiro_dest' hidden>";
-                echo "<input type='submit' value='Dar'>";
+                echo "<input class='botao__dar' type='submit' value='Dar'>";
             echo "</form>";
         echo "</div>";
     }
@@ -236,19 +255,19 @@ if($id_remetente == $_SESSION['personagem1']){
     foreach ($personagem as $key) {
         $id_dest = $key['id_pers'];
         $dinheiro_dest = $key['dinheiro'];
-        echo "<div style='border: solid 2px red'>";
+        echo "<div class='mostrar__pers'>";
             $img = $key['img'];
             echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
-            echo "<form action='dar_dinheiro.php' method='post'>";
+            echo "<form class='form__dar' action='dar_dinheiro.php' method='post'>";
                 echo "<input type='text' name='id_remetente' value='$id_remetente' hidden>";
                 echo "<input type='number' name='dinheiro' value='$dinheiro' hidden>";
                 echo "<input type='number' name='dinheiro_total' value='$dinheiro_total' hidden>";
                 echo "<input type='text' name='id_dest' value='$id_dest' hidden>";
                 echo "<input type='number' name='dinheiro_dest' value='$dinheiro_dest' hidden>";
-                echo "<input type='submit' value='Dar'>";
+                echo "<input class='botao__dar' type='submit' value='Dar'>";
             echo "</form>";
         echo "</div>";
     }
@@ -258,19 +277,19 @@ if($id_remetente == $_SESSION['personagem1']){
     foreach ($personagem as $key) {
         $id_dest = $key['id_pers'];
         $dinheiro_dest = $key['dinheiro'];
-        echo "<div style='border: solid 2px red'>";
+        echo "<div class='mostrar__pers'>";
             $img = $key['img'];
             echo "<img src='../../$img'>";
             echo "<h2>Nome: ".$key['nome']."</h2>";
             echo "<h2>Classe: ".$key['classe']."</h2>";
             echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
-            echo "<form action='dar_dinheiro.php' method='post'>";
+            echo "<form class='form__dar' action='dar_dinheiro.php' method='post'>";
                 echo "<input type='text' name='id_remetente' value='$id_remetente' hidden>";
                 echo "<input type='number' name='dinheiro' value='$dinheiro' hidden>";
                 echo "<input type='number' name='dinheiro_total' value='$dinheiro_total' hidden>";
                 echo "<input type='text' name='id_dest' value='$id_dest' hidden>";
                 echo "<input type='number' name='dinheiro_dest' value='$dinheiro_dest' hidden>";
-                echo "<input type='submit' value='Dar'>";
+                echo "<input class='botao__dar' type='submit' value='Dar'>";
             echo "</form>";
         echo "</div>";
     }
@@ -278,3 +297,7 @@ if($id_remetente == $_SESSION['personagem1']){
 
 ?>
 
+</main>
+
+</body>
+</html>
