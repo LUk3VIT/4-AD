@@ -765,3 +765,25 @@ input{
     margin: 25px auto;
     padding: 3px;
 }
+
+.botao__troca__equip{
+    margin: 40px auto;
+}
+
+.ordem__marcha{
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.ordem{ 
+    margin: 10px auto;
+    color: #D2691E;
+    font-size: 25px;
+}
+
+.comecaaaa{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}

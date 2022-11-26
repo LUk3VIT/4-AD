@@ -489,9 +489,9 @@
                         <option value="Halfling" >Halfling</option>
                     </select>
                     <div class='form__criar__box'>
-                        <label for='masculino'>Masculino</label> 
+                        <label class='form__criar__classe' for='masculino'>Masculino</label> 
                         <input class='form__criar__chekbox' type='checkbox' id='masculino' name='masculino' value='Masculino'>
-                        <label for='feminino'>Feminino</label>
+                        <label class='form__criar__classe' for='feminino'>Feminino</label>
                         <input class='form__criar__chekbox' type='checkbox' id='feminino' name='feminino' value='Feminino'>
                     </div>
                     <input class='form__criar__enviar' type="submit" value="Criar">
