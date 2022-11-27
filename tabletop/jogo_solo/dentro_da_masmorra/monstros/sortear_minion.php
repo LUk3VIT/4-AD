@@ -5,7 +5,7 @@ require_once '../../../classes/repositorioTabletop.php';
 $repositorio = new RepositorioTabletopMySQL();
 
 
-$sorteio = 2;
+$sorteio = 5;
 
 $minion = $repositorio->SortearMinion($sorteio);
 foreach ($minion as $key) {

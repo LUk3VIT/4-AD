@@ -320,17 +320,17 @@
                 if($_SESSION['item1'] == "espada curta e escudo"){
                     $item = "espada curta";
                     $img = $repositorio->PuxarImagemItem($item);
-                    echo "<img  src='../$img'>";
+                    echo "<img src='../$img'>";
                     $item = "escudo";
                     $img = $repositorio->PuxarImagemItem($item);
-                    echo "<img src='../$img'";
+                    echo "<img src='../$img'>";
                 } else if($_SESSION['item1'] == "mangual e escudo"){
                     $item = "mangual";
                     $img = $repositorio->PuxarImagemItem($item);
                     echo "<img src='../$img'>";
                     $item = "escudo";
                     $img = $repositorio->PuxarImagemItem($item);
-                    echo "<img src='../$img'";
+                    echo "<img src='../$img'>";
                 } else {
                     $item = $_SESSION['item1'];
                     $img = $repositorio->PuxarImagemItem($item);
@@ -346,14 +346,14 @@
                     echo "<img src='../$img'>";
                     $item = "escudo";
                     $img = $repositorio->PuxarImagemItem($item);
-                    echo "<img src='../$img'";
+                    echo "<img src='../$img'>";
                 } else if($_SESSION['item2'] == "mangual e escudo"){
                     $item = "mangual";
                     $img = $repositorio->PuxarImagemItem($item);
                     echo "<img src='../$img'>";
                     $item = "escudo";
                     $img = $repositorio->PuxarImagemItem($item);
-                    echo "<img src='../$img'";
+                    echo "<img src='../$img'>";
                 } else {
                     $item = $_SESSION['item2'];
                     $img = $repositorio->PuxarImagemItem($item);
@@ -369,14 +369,14 @@
                     echo "<img src='../$img'>";
                     $item = "escudo";
                     $img = $repositorio->PuxarImagemItem($item);
-                    echo "<img src='../$img'";
+                    echo "<img src='../$img'>";
                 } else if($_SESSION['item3'] == "mangual e escudo"){
                     $item = "mangual";
                     $img = $repositorio->PuxarImagemItem($item);
                     echo "<img src='../$img'>";
                     $item = "escudo";
                     $img = $repositorio->PuxarImagemItem($item);
-                    echo "<img src='../$img'";
+                    echo "<img src='../$img'>";
                 } else {
                     $item = $_SESSION['item3'];
                     $img = $repositorio->PuxarImagemItem($item);
@@ -392,14 +392,14 @@
                     echo "<img src='../$img'>";
                     $item = "escudo";
                     $img = $repositorio->PuxarImagemItem($item);
-                    echo "<img src='../$img'";
+                    echo "<img src='../$img'>";
                 } else if($_SESSION['item4'] == "mangual e escudo"){
                     $item = "mangual";
                     $img = $repositorio->PuxarImagemItem($item);
                     echo "<img src='../$img'>";
                     $item = "escudo";
                     $img = $repositorio->PuxarImagemItem($item);
-                    echo "<img src='../$img'";
+                    echo "<img src='../$img'>";
                 } else {
                     $item = $_SESSION['item4'];
                     $img = $repositorio->PuxarImagemItem($item);
@@ -415,14 +415,14 @@
                     echo "<img src='../$img'>";
                     $item = "escudo";
                     $img = $repositorio->PuxarImagemItem($item);
-                    echo "<img src='../$img'";
+                    echo "<img src='../$img'>";
                 } else if($_SESSION['item5'] == "mangual e escudo"){
                     $item = "mangual";
                     $img = $repositorio->PuxarImagemItem($item);
                     echo "<img src='../$img'>";
                     $item = "escudo";
                     $img = $repositorio->PuxarImagemItem($item);
-                    echo "<img src='../$img'";
+                    echo "<img src='../$img'>";
                 } else {
                     $item = $_SESSION['item5'];
                     $img = $repositorio->PuxarImagemItem($item);

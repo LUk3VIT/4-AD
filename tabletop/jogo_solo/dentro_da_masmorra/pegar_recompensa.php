@@ -8,6 +8,7 @@ $id = $_GET['id'];
 $personagem = $repositorio->MostrarPersonagem($id);
 foreach ($personagem as $key) {
     $nome = $key['nome'];
+    $dinheiro = $key['dinheiro'];
 }
 
 $inventario = $repositorio->MostrarInventario($nome);
@@ -45,7 +46,7 @@ foreach ($inventario as $key) {
 
 
 if($_SESSION['tesouro'] == "ouro"){
-    $dinheiro = $_SESSION['valor_tesouro'];
+    $dinheiro = $dinheiro + $_SESSION['valor_tesouro'];
     $pegar_dinheiro = $repositorio->DarDinheiro($id,$dinheiro);
 } else if($_SESSION['tesouro'] == "gema"){
 

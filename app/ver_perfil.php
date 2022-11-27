@@ -6,6 +6,7 @@ $repositorio = new RepositorioUsuariosMySQL();
 $id_usuario = $_SESSION['id_amg'];
 
 $informacoes = $repositorio->ListarDados($id_usuario);
+$img = $repositorio->SetarImagemUsuario($id_usuario);
 
 ?>
 <!DOCTYPE html>
@@ -28,7 +29,7 @@ $informacoes = $repositorio->ListarDados($id_usuario);
                 <button class="caixa__botao"><a href="perfil.php" class="caixa__botao__link">Voltar</a></button>
             </div>
             <div class="caixa__foto__outroUsuario">
-                <img class="caixa__foto__perfil" src="../assets/img/barbaro.jpg" alt="foto de perfil">
+                <img class="caixa__foto__perfil" src="<?php echo $img ?>" alt="foto de perfil">
             </div>        
             <?php
             $dados = array_shift($informacoes);

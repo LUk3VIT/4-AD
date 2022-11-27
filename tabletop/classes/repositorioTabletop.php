@@ -39,6 +39,9 @@ interface IRepositorioTabletop {
     public function VerificarCima($mapa);
     public function VerificarBaixo($mapa);
     public function PuxarPixelAberturaBaixo($mapa);
+    public function SortearChefe($dado);
+    public function UparNivel($id,$nivel,$vida);
+    public function SortearBizarro($dado);
 }
  
 class RepositorioTabletopMySQL implements IRepositorioTabletop
@@ -210,7 +213,7 @@ class RepositorioTabletopMySQL implements IRepositorioTabletop
 
     public function PuxarImagemItem($item)
     {
-        $sql = "SELECT * FROM itens WHERE nome LIKE '$item%'" ;
+        $sql = "SELECT * FROM itens WHERE nome LIKE '$item'" ;
         $consulta = $this->conexao->executarQuery($sql);
         $registro = mysqli_fetch_array($consulta);
         $resultado = $registro[1];
@@ -328,6 +331,26 @@ class RepositorioTabletopMySQL implements IRepositorioTabletop
         $registro = mysqli_fetch_array($consulta);
         $resultado = $registro[11];
         return $resultado;
+    }
+
+    public function SortearChefe($dado)
+    {
+        $sql = "SELECT * FROM boss WHERE numero = '$dado'";
+        $consulta = $this->conexao->executarQuery($sql);
+        return $consulta;
+    }
+
+    public function UparNivel($id,$nivel,$vida)
+    {
+        $sql = "UPDATE tbl_personagem SET nivel = '$nivel', vida = '$vida' WHERE id_pers = '$id'";
+        $this->conexao->executarQuery($sql);
+    }
+
+    public function SortearBizarro($dado)
+    {
+        $sql = "SELECT * FROM bizarros WHERE numero = '$dado'";
+        $consulta = $this->conexao->executarQuery($sql);
+        return $consulta;
     }
 }
    
