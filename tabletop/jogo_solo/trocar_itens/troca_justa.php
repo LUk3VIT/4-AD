@@ -3856,7 +3856,7 @@ foreach ($personagem as $key) {
                         echo "<h2>Classe: ".$key['classe']."</h2>";
                         echo "<h2>Nível: ".$key['nivel']."</h2>";
                         echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
-                    echo '/div';
+                    echo '</div>';
                     $classe = $key['classe'];
                     $x = 0;
                     $verificar_itens = $repositorio->VerificarItem($classe);
@@ -4948,7 +4948,7 @@ foreach ($personagem as $key) {
                     echo "<h2>Classe: ".$key['classe']."</h2>";
                     echo "<h2>Nível: ".$key['nivel']."</h2>";
                     echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
-                echo "/div";
+                echo "</div>";
                 $classe = $key['classe'];
                 $x = 0;
                 $verificar_itens = $repositorio->VerificarItem($classe);
@@ -5491,7 +5491,7 @@ foreach ($personagem as $key) {
                         echo "<h2>Nome: ".$key['nome']."</h2>";
                         echo "<h2>Classe: ".$key['classe']."</h2>";
                         echo "<h2>Nível: ".$key['nivel']."</h2>";
-                        echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";
+                        echo "<h2>Dinheiro: ".$key['dinheiro']."</h2>";  
                     echo "</div>";
                     $classe = $key['classe'];
                     $x = 0;
@@ -6050,7 +6050,7 @@ foreach ($personagem as $key) {
                     if($x > 0){
                     echo "<div class='dar__itens__nao'>";
                     echo "<div class='dar__itens__nao2'>";
-                        echo "<h2 class='dar__itens__h2'>A classe deste personagem não pode usar este Item!!!</h2>";
+                            echo "<h2 class='dar__itens__h2'>A classe deste personagem não pode usar este Item!!!</h2>";                                               
                     echo "</div>";
                     echo "</div>";
                     } else {

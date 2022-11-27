@@ -928,7 +928,7 @@ $repositorio = new RepositorioTabletopMySQL();
                                 } else {
                                     $_SESSION['arma1_personagem2'] = "Mangual";
                                     echo "<li>".$_SESSION['arma1_personagem2']."</li>";
-                                    echo "<h3 class='botao__trocar__equip'><a class='a__trocar__equip' class='a__trocar__equip' href='trocar_itens.php?id=$id'>Trocar</a></h3>";
+                                    echo "<h3><a class='a__trocar__equip' class='a__trocar__equip' href='trocar_itens.php?id=$id'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($espada_curta)){
@@ -980,7 +980,7 @@ $repositorio = new RepositorioTabletopMySQL();
                                 } else {
                                     $_SESSION['arma1_personagem2'] = "Espada Curta";
                                     echo "<li>".$_SESSION['arma1_personagem2']."</li>";
-                                    echo "<h3 class='botao__trocar__equip'><a class='a__trocar__equip' href='trocar_itens.php?id=$id'>Trocar</a></h3>";
+                                    echo "<a class='a__trocar__equip' href='trocar_itens.php?id=$id'>Trocar</a>";
                                 }
                             }
                         } else if(isset($adaga)){
@@ -1022,7 +1022,7 @@ $repositorio = new RepositorioTabletopMySQL();
                                             echo "<br>";
                                         }
                                     echo "<input type='text' name='id2' value='$id_personagem2' hidden>";
-                                    echo "<h3 class='botao__trocar__equip'><input type='submit' value='Equipar'>";
+                                    echo "<input type='submit' value='Equipar'>";
                                     echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem2'] = "Adaga";
@@ -1064,7 +1064,7 @@ $repositorio = new RepositorioTabletopMySQL();
                                             echo "<br>";
                                         }
                                     echo "<input type='text' name='id2' value='$id_personagem2' hidden>";
-                                    echo "<h3 class='botao__trocar__equip'><input type='submit' value='Equipar'>";
+                                    echo "<input type='submit' value='Equipar'>";
                                     echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem2'] = "Tonfa";
@@ -1132,7 +1132,7 @@ $repositorio = new RepositorioTabletopMySQL();
                                     echo "<br>";
 
                                     echo "<input type='text' name='id2' value='$id_personagem2' hidden>";
-                                    echo "<h3 class='botao__trocar__equip'><input type='submit' value='Equipar'>";
+                                    echo "<input type='submit' value='Equipar'>";
                                     echo "</form>";
                                         
                                 } else {
@@ -1309,7 +1309,7 @@ $repositorio = new RepositorioTabletopMySQL();
                                         }
                                     }
                                     echo "<input type='text' name='id3' value='$id_personagem3' hidden>";
-                                    echo "<input <h3 class='botao__trocar__equip'> type='submit' value='Equipar'>";
+                                    echo "<input type='submit' value='Equipar'>";
                                     echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem3'] = "Espada Montante";
@@ -1372,7 +1372,7 @@ $repositorio = new RepositorioTabletopMySQL();
                                         }
                                     }
                                     echo "<input type='text' name='id3' value='$id_personagem3' hidden>";
-                                    echo "<h3 class='botao__trocar__equip'><input type='submit' value='Equipar'>";
+                                    echo "<input type='submit' value='Equipar'>";
                                     echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem3'] = "Martelo de Guerra";
@@ -1426,7 +1426,7 @@ $repositorio = new RepositorioTabletopMySQL();
                                             echo "<br>";
                                         }
                                     echo "<input type='text' name='id3' value='$id_personagem3' hidden>";
-                                    echo "<h3 class='botao__trocar__equip'><input type='submit' value='Equipar'>";
+                                    echo "<input type='submit' value='Equipar'>";
                                     echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem3'] = "Arco";
@@ -1484,7 +1484,7 @@ $repositorio = new RepositorioTabletopMySQL();
                                             echo "<br>";
                                         }
                                     echo "<input type='text' name='id3' value='$id_personagem3' hidden>";
-                                    echo "<h3 class='botao__trocar__equip'><input type='submit' value='Equipar'>";
+                                    echo "<input type='submit' value='Equipar'>";
                                     echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem3'] = "Mangual";
@@ -1536,7 +1536,7 @@ $repositorio = new RepositorioTabletopMySQL();
                                             echo "<br>";
                                         }
                                     echo "<input type='text' name='id3' value='$id_personagem3' hidden>";
-                                    echo "<h3 class='botao__trocar__equip'><input type='submit' value='Equipar'>";
+                                    echo "<input type='submit' value='Equipar'>";
                                     echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem3'] = "Espada Curta";
@@ -1583,7 +1583,7 @@ $repositorio = new RepositorioTabletopMySQL();
                                             echo "<br>";
                                         }
                                     echo "<input type='text' name='id3' value='$id_personagem3' hidden>";
-                                    echo "<h3 class='botao__trocar__equip'><input type='submit' value='Equipar'>";
+                                    echo "<input type='submit' value='Equipar'>";
                                     echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem3'] = "Adaga";
@@ -1630,7 +1630,7 @@ $repositorio = new RepositorioTabletopMySQL();
                                 } else {
                                     $_SESSION['arma1_personagem3'] = "Tonfa";
                                     echo "<li>".$_SESSION['arma1_personagem3']."</li>";
-                                    echo "<h3 class='botao__trocar__equip'><a class='a__trocar__equip' href='trocar_itens.php?id=$id'>Trocar</a></h3>";
+                                    echo "<a href='trocar_itens.php?id=$id'>Trocar</a></h3>";
                                 }
                             }
                         } else if(isset($livro_feiticos)){
@@ -1693,7 +1693,7 @@ $repositorio = new RepositorioTabletopMySQL();
                                     echo "<br>";
 
                                     echo "<input type='text' name='id3' value='$id_personagem3' hidden>";
-                                    echo "<h3 class='botao__trocar__equip'><input type='submit' value='Equipar'>";
+                                    echo "<input type='submit' value='Equipar'>";
                                     echo "</form>";
                                         
                                 } else {
@@ -1869,7 +1869,7 @@ $repositorio = new RepositorioTabletopMySQL();
                                         }
                                     }
                                     echo "<input type='text' name='id4' value='$id_personagem4' hidden>";
-                                    echo "<h3 class='botao__trocar__equip'><input type='submit' value='Equipar'>";
+                                    echo "<input type='submit' value='Equipar'>";
                                     echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem4'] = "Espada Montante";
@@ -1932,7 +1932,7 @@ $repositorio = new RepositorioTabletopMySQL();
                                         }
                                     }
                                     echo "<input type='text' name='id4' value='$id_personagem4' hidden>";
-                                    echo "<h3 class='botao__trocar__equip'><input type='submit' value='Equipar'>";
+                                    echo "<input type='submit' value='Equipar'>";
                                     echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem4'] = "Martelo de Guerra";
@@ -1986,7 +1986,7 @@ $repositorio = new RepositorioTabletopMySQL();
                                             echo "<br>";
                                         }
                                     echo "<input type='text' name='id4' value='$id_personagem4' hidden>";
-                                    echo "<h3 class='botao__trocar__equip'><input type='submit' value='Equipar'>";
+                                    echo "<input type='submit' value='Equipar'>";
                                     echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem4'] = "Arco";
@@ -2044,7 +2044,7 @@ $repositorio = new RepositorioTabletopMySQL();
                                             echo "<br>";
                                         }
                                         echo "<input type='text' name='id4' value='$id_personagem4' hidden>";
-                                        echo "<h3 class='botao__trocar__equip'><input type='submit' value='Equipar'>";
+                                        echo "<input type='submit' value='Equipar'>";
                                         echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem4'] = "Mangual";
@@ -2096,7 +2096,7 @@ $repositorio = new RepositorioTabletopMySQL();
                                             echo "<br>";
                                         }
                                         echo "<input type='text' name='id4' value='$id_personagem4' hidden>";
-                                        echo "<h3 class='botao__trocar__equip'><input type='submit' value='Equipar'>";
+                                        echo "<input type='submit' value='Equipar'>";
                                         echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem4'] = "Espada Curta";
@@ -2143,7 +2143,7 @@ $repositorio = new RepositorioTabletopMySQL();
                                             echo "<br>";
                                         }
                                         echo "<input type='text' name='id4' value='$id_personagem4' hidden>";
-                                        echo "<h3 class='botao__trocar__equip'><input type='submit' value='Equipar'>";
+                                        echo "<input type='submit' value='Equipar'>";
                                         echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem4'] = "Adaga";
@@ -2185,7 +2185,7 @@ $repositorio = new RepositorioTabletopMySQL();
                                             echo "<br>";
                                         }
                                         echo "<input type='text' name='id4' value='$id_personagem4' hidden>";
-                                        echo "<h3 class='botao__trocar__equip'><input type='submit' value='Equipar'>";
+                                        echo "<input type='submit' value='Equipar'>";
                                         echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem4'] = "Tonfa";
@@ -2222,7 +2222,7 @@ $repositorio = new RepositorioTabletopMySQL();
                                             echo "<br>";
                                         }
                                         echo "<input type='text' name='id4' value='$id_personagem4' hidden>";
-                                        echo "<h3 class='botao__trocar__equip'><input type='submit' value='Equipar'>";
+                                        echo "<input type='submit' value='Equipar'>";
                                         echo "</form>";
                                 } else {
                                     $_SESSION['arma1_personagem4'] = "Livro de Feitiços";
@@ -2253,7 +2253,7 @@ $repositorio = new RepositorioTabletopMySQL();
                                     echo "<br>";   
 
                                     echo "<input type='text' name='id4' value='$id_personagem4' hidden>";
-                                    echo "<h3 class='botao__trocar__equip'><input class='a__trocar__equip' type='submit' value='Equipar'></h3>";
+                                    echo "<input type='submit' value='Equipar'>";
                                     echo "</form>";
                                     
                                 } else {
@@ -2277,7 +2277,7 @@ $repositorio = new RepositorioTabletopMySQL();
                 if($_SESSION['armadura_personagem1'] != NULL && $_SESSION['armadura_personagem2'] != NULL && $_SESSION['armadura_personagem3'] != NULL && $_SESSION['armadura_personagem4'] != NULL){
                     if($_SESSION['arma1_personagem1'] != NULL && $_SESSION['arma1_personagem2'] != NULL && $_SESSION['arma1_personagem3'] != NULL && $_SESSION['arma1_personagem4'] != NULL){
                         if($_SESSION['arma1_personagem1'] == "Lanterna" || isset($_SESSION['arma2_personagem1']) && $_SESSION['arma2_personagem1'] == "Lanterna" || $_SESSION['arma1_personagem2'] == "Lanterna" || isset($_SESSION['arma2_personagem2']) && $_SESSION['arma2_personagem2'] == "Lanterna" || $_SESSION['arma1_personagem3'] == "Lanterna" || isset($_SESSION['arma2_personagem3']) && $_SESSION['arma2_personagem3'] == "Lanterna" || $_SESSION['arma1_personagem4'] == "Lanterna" || isset($_SESSION['arma2_personagem4']) && $_SESSION['arma2_personagem4'] == "Lanterna"){
-                            echo "<h2><a href='../ordem_marcha/definir_ordem_marcha.php'>Continuar</a></h2>";
+                            echo "<h2 class='botao__troca__equip'><a class='botao__troca' href='../ordem_marcha/definir_ordem_marcha.php'>Continuar</a></h2>";
                         } else {
                             echo "<h2 class='aviso__lanterna'>Nenhum dos seus personagens está levando uma lanterna!!! Troque para algum deles carregar uma lanterna equipada</h2>";
                         }
