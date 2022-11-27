@@ -6,6 +6,16 @@ $repositorio = new RepositorioTabletopMySQL();
 
 $id = $_GET['id'];
 
+if($id == $_SESSION['personagem1']){
+    $a = "1";
+} else if($id == $_SESSION['personagem2']){
+    $a = "2";
+} else if($id == $_SESSION['personagem3']){
+    $a = "3";
+} else if($id == $_SESSION['personagem4']){
+    $a = "4";
+}
+
 $personagem = $repositorio->MostrarPersonagem($id);
 foreach ($personagem as $key) {
     $nome = $key['nome'];
@@ -37,5 +47,13 @@ foreach ($inventario as $key) {
     $item24 = $key['item24'];
     $item25 = $key['item25'];
 }
+
+if($_SESSION["armadura_personagem$a"] == "armadura de aço"){
+
+} else if($_SESSION["armadura_personagem$a"] == "armadura de malha"){
+
+} 
+
+
 
 ?>
