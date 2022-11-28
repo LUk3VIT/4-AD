@@ -4,7 +4,7 @@ session_start();
 require_once '../../classes/repositorioTabletop.php'; 
 $repositorio = new RepositorioTabletopMySQL();
 
-echo "<a href='limpar.php'>Preguiça</a>";
+
 
 if(isset($_SESSION['mapa_atual'])){
     
@@ -414,9 +414,7 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
     <link rel="stylesheet" href="../../../assets/style/tabletop.css">
 </head>
 <body>
-    <div class="caixaVolta">
-        <button>Salvar</button>
-    </div>
+<a class='preguica' href='limpar.php'>Preguiça</a>
     <div class="monstros"> 
         <?php
             if(isset($_SESSION['monstro'])){
@@ -3379,7 +3377,7 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
         <div class="p1">
             <?php
             echo "<h2><a href='mapa/sortear_novo_mapa.php'>Sortear novo mapa</a></h2>";
-            echo "<a href='limpar.php'>Limpar</a>";
+            echo "<h2><a href='limpar.php'>Limpar</a></h2>";
             echo $_SESSION['numero_sala'];
             echo $_SESSION['turno'];
             $turno = $_SESSION['turno'];

@@ -787,3 +787,7 @@ input{
     display: flex;
     justify-content: center;
 }
+
+.preguica{
+    width: 100px;
+}
