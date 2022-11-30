@@ -87,9 +87,17 @@
             <p class="introdus__p">Sendo possível jogar tanto com amigos disputando que consegue ir mais longe no jogo quanto sozinho apenas explorando a masmorra e ficando mais forte, por ser um sistema de fácil compreensão e que não exigi muito compromisso.</p>
           </div>
             <br>
-          <div class="introdus__div">
+
+          <div class="textImg">
+            <div>
+              <img src="assets/img/img2.PNG" alt="">
+            </div>
+          </div>
+
+          <div class="introdus__div__textimg">
             <p class="introdus__p">Utilizando um chat como maneira de se comunicar (Geral/Privado), uma página de tabelas onde ficam as informações principais, e a página principal na qual será jogado.</p>
           </div>
+          
         </div>
     </main>
 

@@ -958,6 +958,53 @@ input{
     transform: scale(1.1)
 }
 
+.dano{
+    border: #000000 solid 2px;
+    border-radius: 20px;
+    padding: 10px;
+    background-image: linear-gradient(to bottom, red 50%, #ffffff 50%);
+    transition: 5ms;
+    display: flex;
+    justify-content: center;
+}
+
+.dano:hover{
+    background: red;
+    transform: scale(1.1)
+}
+
+.cura{
+    border: #000000 solid 2px;
+    border-radius: 20px;
+    padding: 10px;
+    background-image: linear-gradient(to bottom, #f808e8 50%, #ffffff 50%);
+    transition: 5ms;
+    display: flex;
+    justify-content: center;
+    width: 50px;
+}
+
+.cura:hover{
+    background: #f808e8;
+    transform: scale(1.1);
+}
+
+.bencao{
+    border: #000000 solid 2px;
+    border-radius: 20px;
+    padding: 10px;
+    background-image: linear-gradient(to bottom, #f8ec08 50%, #ffffff 50%);
+    transition: 5ms;
+    display: flex;
+    justify-content: center;
+    width: 50px;
+}
+
+.bencao:hover{
+    background: #f8ec08;
+    transform: scale(1.1);
+}
+
 .link{
     text-decoration: none;
     color: #000000;
@@ -968,6 +1015,38 @@ input{
     background-color: #000000;
     padding: 5px;
     margin: 10px auto;
+}
+
+.exibir__magias{
+    transform-origin: 50% 50%;
+    transform: rotate(180deg);
+    overflow-y: auto;
+    direction: rtl;
+    text-align: left;
+}
+
+.magias__use__info{
+    color: #FFFFFF;
+}
+
+.magias__use__fim{
+    color: red;
+    text-decoration: none;
+}
+
+.magias__use__atirar{
+    text-decoration: none;
+    color: #A0522D;
+}
+
+.dago{
+    display: flex;
+}
+
+
+
+.ico{
+    width: 100px;
 }
 
 .acao__link{
@@ -982,6 +1061,7 @@ input{
 
 .acao__link:hover{
     background: #7FFF00;
+    transform: scale(1.1);
 }
 
 .sorte__mapa__h3{
