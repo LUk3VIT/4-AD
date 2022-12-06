@@ -28,7 +28,7 @@
             $x = $x + 1;
         }
         if($x < 4){
-            
+        echo "<div class='feito'>";
             foreach ($consulta as $key) {
                 $id = $key['id_pers'];
                 if(isset($_SESSION['personagem1']) && $_SESSION['personagem1'] == $id){
@@ -48,23 +48,25 @@
                     $key['classe'];
                     $key['nivel'];
                 } else {
-                    echo "<div class='mostrar__pers'>"; 
-                        $img = $key['img'];
-                        echo "<img class='mostrar__pers__img' src='../../$img'>";
-                        echo "<label for='selecionar'><h2>Nome: ".$key['nome']."</h2>";
-                        echo "<h2>Classe: ".$key['classe']."</h2>";
-                        echo "<h2>Nível: ".$key['nivel']."</h2></label>";
-                        echo "<h2><a class='mostrar__pers__info' href='redirecionar_ver_personagem.php?ver=$id'>Ver mais Informações</a></h2>";
-                        echo "<h2><a class='mostrar__pers__escolher' href='escolher_personagem.php?id=$id'>Escolher</a></h1>";
-                    echo "</div>";
+                        echo "<div class='mostrar__pers'>"; 
+                            $img = $key['img'];
+                            echo "<img class='mostrar__pers__img' src='../../$img'>";
+                            echo "<label for='selecionar'><h2>Nome: ".$key['nome']."</h2>";
+                            echo "<h2>Classe: ".$key['classe']."</h2>";
+                            echo "<h2>Nível: ".$key['nivel']."</h2></label>";
+                            echo "<h2><a class='mostrar__pers__info' href='redirecionar_ver_personagem.php?ver=$id'>Ver mais Informações</a></h2>";
+                            echo "<h2><a class='mostrar__pers__escolher' href='escolher_personagem.php?id=$id'>Escolher</a></h1>";
+                        echo "</div>";
                 }                        
             }
+            echo "</div>";
 
             echo "<h1 class='selecao'>Personagens Selecionados:</h1>";
             echo "<div class='exbir__personagens'>";
                 if(isset($_SESSION['personagem1'])){
                 $id = $_SESSION['personagem1'];
                 $personagem = $repositorio->MostrarPersonagem($id);
+
                 foreach ($personagem as $key) {
                     $recusar = true;
                     $x = $key['id_pers'];
@@ -210,7 +212,9 @@
                 $pau = 4;
                 echo "<h1 class='selecao__aviso'>Número máximo de personagens selecionados alcançado!!!</h1>";
                 echo "<h1 class='sala'><a  class='sala__preparacao' href='../index_jogo_solo.php'>Ir para sala de preparação</a></h1>";
+                
             } else {
+                echo "<div class='feito2'>";
                 foreach ($consulta as $key) {
                     $id = $key['id_pers'];
                     if(isset($_SESSION['personagem1']) && $_SESSION['personagem1'] == $id){
@@ -240,8 +244,10 @@
                             echo "<h2><a class='mostrar__pers__escolher' href='escolher_personagem.php?id=$id'>Escolher</a></h1>";
                         echo "</div>";
                     }                        
-                }
+                } 
+                echo "</div>";
             }
+            
             
 
             if($pau == 3){
@@ -256,7 +262,6 @@
         }
 
         }
-
     ?>
 </body>
 </html>
