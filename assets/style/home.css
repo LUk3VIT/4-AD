@@ -13,7 +13,6 @@ body {
    /*VH View Height = que dizer que vai esticar para a tela inteira */
    height: 100vh;
    flex: 1;
-   
    background: #1b153ff6;
 
 }
@@ -166,7 +165,7 @@ body {
 }
 
 .main{
-  grid-area: container ;
+  grid-area: container;
   height: 100%;
   color: #ffffff;
   margin: 0% 9%;
@@ -192,7 +191,7 @@ body {
 }
 
 .introdus__p{
-  font-size: 25px;
+  font-size: 35px;
 }
 
 .pai__sist{
@@ -271,7 +270,7 @@ body {
 }
 
 .sistemas__caixas__p{
-  font-size: 17px;
+  font-size: 25px;
   margin: 10px 0px 20px 0px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

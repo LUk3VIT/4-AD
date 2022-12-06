@@ -14,11 +14,11 @@
 
 .caixa__tabela__h2{
     font-size: 30px;
-    margin: 15px 290px;
+    margin: 15px auto;
 }
 
 .caixa__tabela__p{
-    font-size: 25px;
+    font-size: 30px;
     font-family: 'Times New Roman', Times, serif;
     margin-bottom: 35px;
 }
@@ -38,7 +38,8 @@
 }
 
 .tabela__p{
-    margin: 0px 20px;
+    margin: 5px auto;
+    font-size: 25px;
 }
 
 .tabela__valor{

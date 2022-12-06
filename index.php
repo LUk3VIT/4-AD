@@ -77,7 +77,6 @@
 
     <main class="main">
         <div class="text__home">
-          <h1 class="introdus__titulo">Para que serve o site</h1>
             <br>
           <div class="introdus__div">
             <p class="introdus__p">Esse site foi feito com o intuito de facilitar e deixar mais dinâmico o funcionamento do jogo de tabuleiro Four Against Darkness, dando suporte para os jogadores e possibilitando as partidas online, a partir de uma maneira simples e intuitiva onde as tabelas (Forma em que a informação é passada para o jogador) se encontram bem mais facilmente.</p>
@@ -97,7 +96,6 @@
           <div class="introdus__div__textimg">
             <p class="introdus__p">Utilizando um chat como maneira de se comunicar (Geral/Privado), uma página de tabelas onde ficam as informações principais, e a página principal na qual será jogado.</p>
           </div>
-          
         </div>
     </main>
 

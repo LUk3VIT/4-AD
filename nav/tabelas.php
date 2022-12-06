@@ -4,27 +4,27 @@
 
   } else {
     $_SESSION['tabela'] = "<ul>
-    <li> 1. 3d6 ratos Level 1, sem tesouro. Qualquer personagem ferido tem 1 em 6 chance de
+    <li class='tabela__informacao__p'> 1. 3d6 ratos Level 1, sem tesouro. Qualquer personagem ferido tem 1 em 6 chance de
     perder 1 vida adicional devido a uma ferida infectada.
     Reações (1d6): 1–3 fugir, 4-6 lutar </li>
     <br>
-    <li> 2. 3d6 morcegos vampiros, nível 1, sem tesouros. Feitiços são lançados em -1 devido a
+    <li class='tabela__informacao__p'> 2. 3d6 morcegos vampiros, nível 1, sem tesouros. Feitiços são lançados em -1 devido a
     seus gritos perturbadores.
     Reações (1d6): 1–3 fugir, 4-6 lutar </li>
     <br>
-    <li> 3. 2d6 swarmlings de goblins, nível 3, tesouro -1, moral -1 .
+    <li class='tabela__informacao__p'> 3. 2d6 swarmlings de goblins, nível 3, tesouro -1, moral -1 .
     Reações (1d6): 1 fugir, 2-3 fugir se em menor número, 4 suborno (5 PO x goblin),
     5–6 luta. </li>
     <br>
-    <li> 4. D6 centopéias gigantes, nível 3, sem tesouro. Qualquer personagem ferido por uma
+    <li class='tabela__informacao__p'> 4. D6 centopéias gigantes, nível 3, sem tesouro. Qualquer personagem ferido por uma
     centopéia gigante deve salvar contra o nível 2 de veneno ou perder 1
     vida adicional.
     Reações (1d6): 1 fugir, 2-3 fugir se em desvantagem, 4-6 lutar. </li>
     <br>
-    <li> 5. D6 sapos vampiros, nível 4, tesouro -1.
+    <li class='tabela__informacao__p'> 5. D6 sapos vampiros, nível 4, tesouro -1.
     Reações (1d6): 1 fugir, 2-4 lutar, 5-6 lutar até a morte </li>
     <br>
-    <li> 6. 2d6 ratos esqueléticos, mortos-vivos nível 3, sem tesouro. Arma de esmagamento
+    <li class='tabela__informacao__p'> 6. 2d6 ratos esqueléticos, mortos-vivos nível 3, sem tesouro. Arma de esmagamento
     ataques estão em +1 contra ratos esqueléticos, mas eles não podem ser atacados
     por arcos e fundas.
     Reações (1d6): 1-2 fugir, 3-6 lutar  </li>
@@ -143,25 +143,23 @@
           
 
           <div class="tabela__informacao">
-            <p class>
             <?php
 
               echo $_SESSION['tabela'];
 
             ?>
-            </p>
             <img class="tabela__informacao__img" src="../assets/img/Minions.png" alt="">
           </div>
 
           <div class="tabela__sistema">
             <select class="form-select sistema__select" aria-label="Default select example">
-
               <option selected><h2 class="sistema__select__h2">sistemas</h2></option>
               <option value="1" class="sistema__select__option">Four Against Darkness</option>
               <option value="2" class="sistema__select__option">Ordem</option>
               <option value="3" class="sistema__select__option">Panteão</option>
             </select>
           </div>
+
         </div>
     </main>
 
