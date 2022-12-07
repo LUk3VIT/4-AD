@@ -75,7 +75,8 @@
                 <img class="sistemas__caixas__img" src="../assets/img/four_against_darkness.png" alt="four against darkness">
                 <h2 class="sistemas__caixas__h2">Four Against Darkness</h2>
                 <P class="sistemas__caixas__p">REQUESITOS</P>
-                <p class="sistemas__caixas__p">Jogadores: 2-4 <br> Dados: D6</p>
+                <p class="sistemas__caixas__p">Jogadores: 2-4 </p>
+                <p class="sistemas__caixas__p"><br>Dados: D6</p>
                 <a class="sistemas__caixas__a" href="../Four_Against_Darkness/Four_Against_Darkness.html">Como Jogar</a>
             </div>
 
@@ -83,7 +84,8 @@
                 <img class="sistemas__caixas__img" src="../assets/img/ordem.png" alt="Ordem">
                 <h2 class="sistemas__caixas__h2">Ordem</h2>
                 <p class="sistemas__caixas__p">REQUESITOS</p>
-                <p class="sistemas__caixas__p">Jogadores: 2-4 <br> Dados: D4 D6 D10</p>
+                <p class="sistemas__caixas__p">Jogadores: 2-4</p>
+                <p class="sistemas__caixas__p"><br> Dados: D4 D6 D10</p>
                 <a class="sistemas__caixas__a"href="../Ordem/ordem.php">Como Jogar</a>
             </div>
 
@@ -91,7 +93,8 @@
                 <img class="sistemas__caixas__img" src="../assets/img/Pantheon of Darkness.jpeg" alt="Panteao">
                 <h2 class="sistemas__caixas__h2">Panteão</h2>
                 <p class="sistemas__caixas__p">REQUESITOS</P>
-                <p class="sistemas__caixas__p">Jogadores: 1-4 <br> Dados: D4 D6 D10</p>
+                <p class="sistemas__caixas__p">Jogadores: 1-4 </p>
+                <p class="sistemas__caixas__p"><br> Dados: D4 D6 D10</p>
                 <a class="sistemas__caixas__a" href="../phanteão/phanteao.php">Como Jogar</a>
             </div>
         </div>

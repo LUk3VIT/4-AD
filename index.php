@@ -77,7 +77,6 @@
 
     <main class="main">
         <div class="text__home">
-          <h1 class="introdus__titulo">Para que serve o site</h1>
             <br>
           <div class="introdus__div">
             <p class="introdus__p">Esse site foi feito com o intuito de facilitar e deixar mais dinâmico o funcionamento do jogo de tabuleiro Four Against Darkness, dando suporte para os jogadores e possibilitando as partidas online, a partir de uma maneira simples e intuitiva onde as tabelas (Forma em que a informação é passada para o jogador) se encontram bem mais facilmente.</p>
@@ -97,7 +96,21 @@
           <div class="introdus__div__textimg">
             <p class="introdus__p">Utilizando um chat como maneira de se comunicar (Geral/Privado), uma página de tabelas onde ficam as informações principais, e a página principal na qual será jogado.</p>
           </div>
-          
+
+          <h1 class="introdus__h1">Sistema explicação</h1>
+
+          <div class="introdus__div">
+            <p class="introdus__p">Four Against Darkness é um jogo de tabuleiro que consiste em escolher seus quatro personagens, que possuem as seguintes classes: Anão, Bárbaro, Clérigo, Elfo, Guerreiro, Halfling, Ladino e Mago. Com as informações de uma disposta na página de classes. E assim seguir para dentro de uma masmorra. Utilizando o dado de seis lado (d6), como forma de randomizar os itens e o formato de sua masmorra para que não se repitam, assim fazendo com que cada aventura seja diferente umas das outras</p>
+          </div>
+          <div class="introdus__div">
+            <p class="introdus__p">Dentro destas masmorras você pode encontrar monstros dispostos nas tabelas: Vermes, Capangas, Monstros bizarros e Chefes. Ou outros tipos de conteúdo como tesouros, armadilhas e muitos outros (Citados na tabela de conteúdo).</p>
+          </div>
+
+          <h1 class="introdus__h1">Adaptações</h1>
+
+          <div class="introdus__div">
+            <p class="introdus__p">Utilizando como base o sistema original, foi feito pelos próprios criadores deste site algumas variações em inimigos, conteúdos e no jogo em geral para o deixar mais diversificado.</p>
+          </div>
         </div>
     </main>
 

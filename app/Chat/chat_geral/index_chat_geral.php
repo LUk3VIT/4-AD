@@ -102,10 +102,14 @@ if(isset($_SESSION['id_usuario'])){
 
 			</div>
 		</div>
-		<form class='form' method="post" action="index_chat_geral.php">
+
+		<div class="chat__escrever">
+			<form class='form' method="post" action="index_chat_geral.php">
 				<input class='form__input' type="text" name="mensagem" placeholder="Digite uma Mensagem" required>
 				<input class='form__enviar' type="submit" value="Enviar">
 			</form>
+		</div>
+		
 			<?php
 				$data = date('d/m/Y');
 				include("../bd_conect.php");
