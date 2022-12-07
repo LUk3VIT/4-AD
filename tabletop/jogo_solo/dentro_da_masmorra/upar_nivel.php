@@ -4,6 +4,8 @@ session_start();
 require_once '../../classes/repositorioTabletop.php'; 
 $repositorio = new RepositorioTabletopMySQL();
 
+unset($_SESSION['upar_nivel_minion']);
+
 $id = $_GET['id'];
 if($id == $_SESSION['personagem1']){
     $a = "1";

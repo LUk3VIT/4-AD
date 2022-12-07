@@ -34,6 +34,7 @@ foreach ($verme as $key) {
     }
 }
 
+$_SESSION['turno'] = $_SESSION['turno1'];
 header('Location: ../tabletop.php');
 
 ?>

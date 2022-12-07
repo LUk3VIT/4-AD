@@ -4,7 +4,13 @@ session_start();
 require_once '../../../classes/repositorioTabletop.php'; 
 $repositorio = new RepositorioTabletopMySQL();
 
-$dado = 2;
+if(isset($_SESSION['cont_chefe'])){
+    $_SESSION['cont_chefe'] = $_SESSION['cont_chefe'] + 1;
+} else {
+    $_SESSION['cont_chefe'] = 1;
+}
+
+$dado = rand(1,6);
 
 $bizarro = $repositorio->SortearBizarro($dado);
 foreach ($bizarro as $key) {
@@ -31,6 +37,7 @@ if($_SESSION['nome_boss'] == "Gremlins Invisíveis"){
     $_SESSION['vida_boss'] = "?????";
 }
 
+$_SESSION['turno'] = $_SESSION['turno1'];
 header('Location: ../tabletop.php');
 
 ?>

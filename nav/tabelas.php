@@ -1,6 +1,6 @@
 <?php
   session_start();
-  if(isset($_SESSION['tabela'])){
+  if(isset($_SESSION['tabela'])){ 
 
   } else {
     $_SESSION['tabela'] = "<ul>
@@ -29,6 +29,12 @@
     por arcos e fundas.
     Reações (1d6): 1-2 fugir, 3-6 lutar  </li>
     </ul>";
+    $_SESSION['img_tab_1'] = "../tabletop/imagens/monstros/vermes/Centopéia.png";
+    $_SESSION['img_tab_2'] = "../tabletop/imagens/monstros/vermes/Morcego.png";
+    $_SESSION['img_tab_3'] = "../tabletop/imagens/monstros/vermes/RatoEsquelético.png";
+    $_SESSION['img_tab_4'] = "../tabletop/imagens/monstros/vermes/retos.png";
+    $_SESSION['img_tab_5'] = "../tabletop/imagens/monstros/vermes/Sapo.png";
+    $_SESSION['img_tab_6'] = "../tabletop/imagens/monstros/vermes/Swarmling.png";
   }
 ?>
 <!DOCTYPE html>
@@ -105,10 +111,10 @@
           <form action="../app/carregar_tabelas.php" method="post">
           <select class="form-select tabela__select" name="tabelas" id="tabelas" aria-label="Default select example">
             <option>
-              <h2 class="tabela__select__h2" >Tabela de Minions (1D6)</h2>
+              <h2 class="tabela__select__h2">Tabela de Vermes (1D6)</h2>
             </option>
             <option>
-              <h2 class="tabela__select__h2">Tabela de Vermes (1D6)</h2>
+              <h2 class="tabela__select__h2" >Tabela de Minions (1D6)</h2>
             </option>
             <option>
               <h2 class="tabela__select__h2">Tabela de Chefes (1D6)</h2>
@@ -143,14 +149,25 @@
           
 
           <div class="tabela__informacao">
-            <p class>
             <?php
-
+            echo "<p>";
+            
               echo $_SESSION['tabela'];
-
+            
+            echo "</p>";
+            echo "<br>";
+            echo "<div style='display: flex'>";
+              echo "<img class='tabela__informacao__img' src='".$_SESSION['img_tab_1']."' alt='' style='width:150px;height:150px'>";
+              echo "<img class='tabela__informacao__img' src='".$_SESSION['img_tab_2']."' alt='' style='width:150px;height:150px'>";
+              echo "<img class='tabela__informacao__img' src='".$_SESSION['img_tab_3']."' alt='' style='width:150px;height:150px'>";
+              echo "<img class='tabela__informacao__img' src='".$_SESSION['img_tab_4']."' alt='' style='width:150px;height:150px'>";
+              echo "<img class='tabela__informacao__img' src='".$_SESSION['img_tab_5']."' alt='' style='width:150px;height:150px'>";
+              echo "<img class='tabela__informacao__img' src='".$_SESSION['img_tab_6']."' alt='' style='width:150px;height:150px'>";
+              if(isset($_SESSION['img_tab_7'])){
+                echo "<img class='tabela__informacao__img' src='".$_SESSION['img_tab_7']."' alt='' style='width:150px;height:150px'>";
+              }
+            echo "</div>";
             ?>
-            </p>
-            <img class="tabela__informacao__img" src="../assets/img/Minions.png" alt="">
           </div>
 
           <div class="tabela__sistema">

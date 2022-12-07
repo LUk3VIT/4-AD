@@ -280,6 +280,11 @@ if($_SESSION['tesouro'] == "ouro"){
 
 unset($_SESSION['tesouro']);
 unset($_SESSION['valor_tesouro']);
+if(isset($_SESSION['tesouro_enc'])){
+    unset($_SESSION['tesouro_enc']);
+    header('Location: passar_turno.php');
+    exit;
+}
 $_SESSION['fim_turno'] = true;
 header('Location: tabletop.php');
 

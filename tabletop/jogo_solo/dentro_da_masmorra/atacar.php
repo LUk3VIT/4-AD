@@ -331,6 +331,7 @@
                                     $id = $_SESSION['turno'];
                                     $_SESSION['bencao_ataque'] = true;
                                     $_SESSION['escolher_bencao'] = true;
+                                    $_SESSION['atacante_bencao'] = $_SESSION['turno'];
                                     unset($_SESSION['atacar_magia']);
                                     unset($_SESSION['confirmar_ataque']);
                                     header('Location: tabletop.php');

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 27-Nov-2022 às 16:40
+-- Tempo de geração: 07-Dez-2022 às 20:30
 -- Versão do servidor: 10.4.25-MariaDB
 -- versão do PHP: 8.1.10
 
@@ -49,7 +49,7 @@ INSERT INTO `bizarros` (`numero`, `img`, `nome`, `nivel`, `vida`, `tesouro`, `mo
 (1, 'imagens/monstros/bizarros/Minotauro.png', 'Minotauro', 5, 4, '', '', 2, 'Devido ao poder de sua carga de corrida de touro, o primeiro teste de Defesa contra um minotauro é em 1.', '', ''),
 (2, 'imagens/monstros/bizarros/ComedorDeFerro.png', 'Comedor de Ferro', 3, 4, 'não', '', 3, 'Rolagem de defesa contra o comedor de ferro não desfruta de bônus de armadura pesada.', 'Se o monstro acertar, o personagem não sofre dano, mas perde sua armadura, escudo, arma principal ou 3d6 PO, nesta ordem.', ''),
 (3, 'imagens/monstros/bizarros/Quimera.png', 'Quimera', 5, 6, '', '', 3, 'Em cada um dos rounds da quimera se rola 1d6. Em um 1 ou 2 a quimera cospe fogo em vez de executar seus múltiplos ataques. Todos os personagens devem salvar versus fogo nível 4 ou\r\nperder 1 vida.', '', ''),
-(4, 'imagens/monstros/bizarros/Catoplebas.png', 'Catoplebas', 4, 4, '+1', '', 1, 'Todos os personagens no início da batalha deve se salvar contra um ataque de olhar nível 4 ou perder 1 vida.', '', ''),
+(4, 'imagens/monstros/bizarros/Catoplebas.png', 'Catoplebas', 4, 4, '1', '', 1, 'Todos os personagens no início da batalha deve se salvar contra um ataque de olhar nível 4 ou perder 1 vida.', '', ''),
 (5, 'imagens/monstros/bizarros/Aranha.png', 'Aranha Gigante', 5, 3, '2 roll', '', 2, 'Personagens tomando uma ferida devem se salvar contra o veneno de nível 3 ou perder uma vida\r\nadicional.', '', ''),
 (6, 'imagens/monstros/bizarros/GremlingsINV.png', 'Gremlins Invisíveis', 0, 0, '?????????', '', 0, 'ROUBAM', 'SEUS', 'ITENS!!!!');
 
@@ -252,6 +252,7 @@ CREATE TABLE `mapas_sem_ponto` (
   `numero` int(11) NOT NULL,
   `img` varchar(300) NOT NULL,
   `giro` varchar(200) NOT NULL,
+  `corredor` varchar(50) NOT NULL,
   `esquerda` int(11) NOT NULL,
   `direita` int(11) NOT NULL,
   `cima` int(11) NOT NULL,
@@ -266,29 +267,29 @@ CREATE TABLE `mapas_sem_ponto` (
 -- Extraindo dados da tabela `mapas_sem_ponto`
 --
 
-INSERT INTO `mapas_sem_ponto` (`id`, `numero`, `img`, `giro`, `esquerda`, `direita`, `cima`, `baixo`, `esquerda_px`, `direita_px`, `cima_px`, `baixo_px`) VALUES
-(1, 1, '../../imagens/mapas/Sem_Ponto/1.png', 'original', 0, 0, 3, 0, 0, 0, 0, 0),
-(2, 2, '../../imagens/mapas/Sem_Ponto/2.png', 'original', 0, 1, 2, 0, 0, 0, 0, 0),
-(3, 3, '../../imagens/mapas/Sem_Ponto/3.png', 'original', 0, 0, 3, 0, 0, 0, 0, 0),
-(4, 4, '../../imagens/mapas/Sem_Ponto/4.png', 'original', 0, 0, 2, 0, 0, 0, 0, 0),
-(5, 5, '../../imagens/mapas/Sem_Ponto/5.png', 'original', 1, 1, 1, 0, 0, 0, 0, 0),
-(6, 6, '../../imagens/mapas/Sem_Ponto/6.png', 'original', 1, 1, 0, 0, 0, 0, 0, 0),
-(7, 11, '../../imagens/mapas/Sem_Ponto/mapa11/11-1.png', 'original', 1, 1, 0, 0, 0, 0, 0, 0),
-(8, 11, '../../imagens/mapas/Sem_Ponto/mapa11/11-2.png', '90', 0, 0, 1, 1, 0, 0, 0, 0),
-(9, 11, '../../imagens/mapas/Sem_Ponto/mapa11/11-3.png', '180', 1, 1, 1, 0, 0, 0, 0, 0),
-(10, 11, '../../imagens/mapas/Sem_Ponto/mapa11/11-4.png', '270', 0, 1, 1, 1, 0, 0, 0, 0),
-(11, 12, '../../imagens/mapas/Sem_Ponto/mapa12/12-1.png', 'original', 0, 0, 1, 1, 0, 0, 0, 0),
-(12, 12, '../../imagens/mapas/Sem_Ponto/mapa12/12-2.png', '90', 1, 1, 0, 0, 0, 0, 0, 0),
-(13, 13, '../../imagens/mapas/Sem_Ponto/mapa13/13-1.png', 'original', 1, 1, 1, 0, 0, 0, 0, 0),
-(14, 13, '../../imagens/mapas/Sem_Ponto/mapa13/13-2.png', '90', 0, 1, 1, 1, 0, 0, 0, 0),
-(15, 13, '../../imagens/mapas/Sem_Ponto/mapa13/13-3.png', '180', 1, 1, 0, 1, 0, 0, 0, 0),
-(16, 13, '../../imagens/mapas/Sem_Ponto/mapa13/13-4.png', '270', 1, 0, 1, 1, 0, 0, 0, 0),
-(17, 14, '../../imagens/mapas/Sem_Ponto/mapa14/14-1.png', 'original', 2, 2, 0, 0, 0, 0, 0, 0),
-(18, 14, '../../imagens/mapas/Sem_Ponto/mapa14/14-2.png', '90', 0, 0, 2, 2, 0, 0, 0, 0),
-(19, 15, '../../imagens/mapas/Sem_Ponto/mapa15/15-1.png', 'original', 1, 0, 1, 1, 0, 0, 0, 10),
-(20, 15, '../../imagens/mapas/Sem_Ponto/mapa15/15-2.png', '90', 1, 1, 1, 0, 0, 0, 0, 0),
-(21, 15, '../../imagens/mapas/Sem_Ponto/mapa15/15-3.png', '180', 0, 1, 1, 1, 0, 0, 0, 0),
-(22, 15, '../../imagens/mapas/Sem_Ponto/mapa15/15-4.png', '270', 1, 1, 0, 1, 0, 0, 0, 0);
+INSERT INTO `mapas_sem_ponto` (`id`, `numero`, `img`, `giro`, `corredor`, `esquerda`, `direita`, `cima`, `baixo`, `esquerda_px`, `direita_px`, `cima_px`, `baixo_px`) VALUES
+(1, 1, '../../imagens/mapas/Sem_Ponto/1.png', 'original', '', 0, 0, 3, 0, 0, 0, 0, 0),
+(2, 2, '../../imagens/mapas/Sem_Ponto/2.png', 'original', '', 0, 1, 2, 0, 0, 0, 0, 0),
+(3, 3, '../../imagens/mapas/Sem_Ponto/3.png', 'original', '', 0, 0, 3, 0, 0, 0, 0, 0),
+(4, 4, '../../imagens/mapas/Sem_Ponto/4.png', 'original', '', 0, 0, 2, 0, 0, 0, 0, 0),
+(5, 5, '../../imagens/mapas/Sem_Ponto/5.png', 'original', '', 1, 1, 1, 0, 0, 0, 0, 0),
+(6, 6, '../../imagens/mapas/Sem_Ponto/6.png', 'original', '', 1, 1, 0, 0, 0, 0, 0, 0),
+(7, 11, '../../imagens/mapas/Sem_Ponto/mapa11/11-1.png', 'original', 'sim', 1, 1, 0, 1, 0, 0, 0, 0),
+(8, 11, '../../imagens/mapas/Sem_Ponto/mapa11/11-2.png', '90', 'sim', 0, 0, 1, 1, 0, 0, 0, 0),
+(9, 11, '../../imagens/mapas/Sem_Ponto/mapa11/11-3.png', '180', 'sim', 1, 1, 1, 0, 0, 0, 0, 0),
+(10, 11, '../../imagens/mapas/Sem_Ponto/mapa11/11-4.png', '270', 'sim', 0, 1, 1, 1, 0, 0, 0, 0),
+(11, 12, '../../imagens/mapas/Sem_Ponto/mapa12/12-1.png', 'original', 'sim', 0, 0, 1, 1, 0, 0, 0, 0),
+(12, 12, '../../imagens/mapas/Sem_Ponto/mapa12/12-2.png', '90', 'sim', 1, 1, 0, 0, 0, 0, 0, 0),
+(13, 13, '../../imagens/mapas/Sem_Ponto/mapa13/13-1.png', 'original', 'sim', 1, 1, 1, 0, 0, 0, 0, 0),
+(14, 13, '../../imagens/mapas/Sem_Ponto/mapa13/13-2.png', '90', 'sim', 0, 1, 1, 1, 0, 0, 0, 0),
+(15, 13, '../../imagens/mapas/Sem_Ponto/mapa13/13-3.png', '180', 'sim', 1, 1, 0, 1, 0, 0, 0, 0),
+(16, 13, '../../imagens/mapas/Sem_Ponto/mapa13/13-4.png', '270', 'sim', 1, 0, 1, 1, 0, 0, 0, 0),
+(17, 14, '../../imagens/mapas/Sem_Ponto/mapa14/14-1.png', 'original', 'sim', 2, 2, 0, 0, 0, 0, 0, 0),
+(18, 14, '../../imagens/mapas/Sem_Ponto/mapa14/14-2.png', '90', 'sim', 0, 0, 2, 2, 0, 0, 0, 0),
+(19, 15, '../../imagens/mapas/Sem_Ponto/mapa15/15-1.png', 'original', '', 1, 0, 1, 1, 0, 0, 0, 10),
+(20, 15, '../../imagens/mapas/Sem_Ponto/mapa15/15-2.png', '90', '', 1, 1, 1, 0, 0, 0, 0, 0),
+(21, 15, '../../imagens/mapas/Sem_Ponto/mapa15/15-3.png', '180', '', 0, 1, 1, 1, 0, 0, 0, 0),
+(22, 15, '../../imagens/mapas/Sem_Ponto/mapa15/15-4.png', '270', '', 1, 1, 0, 1, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -363,13 +364,14 @@ CREATE TABLE `tbl_inventario` (
 --
 
 INSERT INTO `tbl_inventario` (`id_inventario`, `id_usuario`, `nome_pers`, `item1`, `item2`, `item3`, `item4`, `item5`, `item6`, `item7`, `item8`, `item9`, `item10`, `item11`, `item12`, `item13`, `item14`, `item15`, `item16`, `item17`, `item18`, `item19`, `item20`, `item21`, `item22`, `item23`, `item24`, `item25`) VALUES
-(49, 2, 'Bruno', 'martelo de guerra', 'armadura de aço', 'frasco de água benta', 'gema(35)', 'gema(130)', 'gema(35)', 'gema(20)', 'gema(80)', 'gema(40)', 'gema(150)', 'gema(110)', 'Poção de Cura', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(50, 2, '13', 'armadura de malha', 'mangual', 'bandagem', 'lanterna', 'escudo', 'gema(110)', '', '', '', 'Cajado com Bola de Fogo', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(56, 2, 'Legolas', 'armadura de malha', 'espada curta', 'arco', 'gema(80)', 'gema(50)', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(59, 2, 'Erza', 'livro de feitiços', 'adaga', 'bandagem', 'lanterna', 'funda', 'gema(110)', 'Poção de Cura', 'bola de fogo', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(60, 2, 'Bridda', 'armadura de malha', 'adaga', 'bandagem', 'corda', 'bandagem', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(61, 2, 'calvão', 'armadura de malha', 'espada curta', 'escudo', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(62, 2, 'Zoio', 'armadura de malha', 'martelo de guerra', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
+(69, 20, 'Santa', 'mangual', '', 'escudo', 'armadura de malha', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(70, 20, 'Patolino', 'livro de feitiços', 'adaga', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(71, 20, 'Edilene', 'espada curta', 'armadura de malha', 'escudo', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(73, 20, 'Esquivas', 'armadura de malha', 'corda', 'adaga', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(80, 2, 'Erza', 'gema(160)', 'espada curta', 'escudo', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(81, 2, 'Robertinho', '', 'martelo de guerra', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(82, 2, 'Rykelmy', 'corda', 'espada curta', 'escudo', 'arco', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(83, 2, 'Santinha', 'armadura de malha', 'mangual', 'escudo', 'lanterna', 'bola de fogo', 'benção', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -405,13 +407,14 @@ CREATE TABLE `tbl_personagem` (
 --
 
 INSERT INTO `tbl_personagem` (`id_pers`, `id_usuario`, `nome`, `img`, `classe`, `nivel`, `nivel_max`, `vida`, `dinheiro`, `ataque`, `defesa`, `id_inventario`, `pistas`, `mag1`, `mag2`, `mag3`, `mag4`, `mag5`, `mag6`, `mag7`) VALUES
-(44, 2, 'Bruno', 'imagens/personagens/masculino/Anao.png', 'Anão', 5, 4, 10, '41.0', '+Nível', '', 49, 0, '', '', '', '', '', '', ''),
-(45, 2, '13', 'imagens/personagens/masculino/ClerigoCego.png', 'Clérigo', 5, 5, 9, '24.0', '+1/2 Nível', '', 50, 0, 'curar', 'benção', '', '', '', '', ''),
-(51, 2, 'Legolas', 'imagens/personagens/masculino/Elfo.png', 'Elfo', 1, 3, 5, '9.0', '+Nível', '', 56, 0, 'proteger', '', '', '', '', '', ''),
-(54, 2, 'Erza', 'imagens/personagens/feminino/Maga.png', 'Mago', 4, 5, 6, '11.0', '+Nível para feitiços', '', 59, 0, 'bola de fogo', 'benção', 'raio', '', '', '', ''),
-(55, 2, 'Bridda', 'imagens/personagens/feminino/ladina.png', 'Ladino', 4, 5, 7, '3.0', '', '+Nível', 60, 0, '', '', '', '', '', '', ''),
-(56, 2, 'calvão', 'imagens/personagens/masculino/Clerigo.png', 'Clérigo', 1, 5, 5, '5.0', '+1/2 Nível', '', 61, 0, 'curar', 'benção', '', '', '', '', ''),
-(57, 2, 'Zoio', 'imagens/personagens/masculino/Barbaro.png', 'Bárbaro', 1, 5, 8, '9.0', '+Nível', '', 62, 0, '', '', '', '', '', '', '');
+(64, 20, 'Santa', 'imagens/personagens/feminino/Cleriga.png', 'Clérigo', 1, 5, 5, '0.0', '+1/2 Nível', '', 69, 0, 'curar', 'benção', '', '', '', '', ''),
+(65, 20, 'Patolino', 'imagens/personagens/masculino/Mago.png', 'Mago', 1, 5, 3, '55.0', '+Nível para feitiços', '', 70, 0, 'sono', 'proteger', 'benção', '', '', '', ''),
+(66, 20, 'Edilene', 'imagens/personagens/feminino/Guerreira.png', 'Guerreiro', 1, 5, 7, '0.0', '+Nível', '', 71, 0, '', '', '', '', '', '', ''),
+(68, 20, 'Esquivas', 'imagens/personagens/feminino/ladina.png', 'Ladino', 1, 5, 4, '0.0', '', '+Nível', 73, 0, '', '', '', '', '', '', ''),
+(75, 2, 'Erza', 'imagens/personagens/feminino/Guerreira.png', 'Guerreiro', 2, 5, 8, '14.0', '+Nível', '', 80, 0, '', '', '', '', '', '', ''),
+(76, 2, 'Robertinho', 'imagens/personagens/masculino/Anao.png', 'Anão', 3, 4, 8, '10.0', '+Nível', '', 81, 0, '', '', '', '', '', '', ''),
+(77, 2, 'Rykelmy', 'imagens/personagens/feminino/Elfa.png', 'Elfo', 2, 3, 6, '25.0', '+Nível', '', 82, 0, 'benção', '', '', '', '', '', ''),
+(78, 2, 'Santinha', 'imagens/personagens/feminino/Cleriga.png', 'Clérigo', 2, 5, 6, '2.0', '+1/2 Nível', '', 83, 0, 'curar', 'benção', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -569,13 +572,13 @@ ALTER TABLE `minions`
 -- AUTO_INCREMENT de tabela `tbl_inventario`
 --
 ALTER TABLE `tbl_inventario`
-  MODIFY `id_inventario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id_inventario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT de tabela `tbl_personagem`
 --
 ALTER TABLE `tbl_personagem`
-  MODIFY `id_pers` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id_pers` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- AUTO_INCREMENT de tabela `vermes`

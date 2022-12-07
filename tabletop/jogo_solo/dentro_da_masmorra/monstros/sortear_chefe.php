@@ -4,7 +4,21 @@ session_start();
 require_once '../../../classes/repositorioTabletop.php'; 
 $repositorio = new RepositorioTabletopMySQL();
 
-$dado = rand(1,6);
+if($_SESSION['cont_chefe']){
+    $_SESSION['cont_chefe'] = $_SESSION['cont_chefe'] + 1;
+    $x = rand(1,6) + $_SESSION['cont_chefe'];
+    if($x >= 6){
+        $_SESSION['boss_final'] = true;
+    }
+} else {
+    $_SESSION['cont_chefe'] = 1;
+    $x = rand(1,6) + $_SESSION['cont_chefe'];
+    if($x >= 6){
+        $_SESSION['boss_final'] = true;
+    }
+}
+
+$dado = 5;
 $chefe = $repositorio->SortearChefe($dado);
 foreach ($chefe as $key) {
     $_SESSION['boss'] = true;
@@ -48,6 +62,12 @@ if($_SESSION['nome_boss'] == "Senhor do Caos"){
     }
 }
 
+if(isset($_SESSION['boss_final'])){
+    $_SESSION['ataques_boss'] = $_SESSION['ataques_defender'] = $_SESSION['ataques_boss'] + 1;
+    $_SESSION['vida_total_boss'] = $_SESSION['vida_total_boss'] + 1;
+}
+
+$_SESSION['turno'] = $_SESSION['turno1'];
 header('Location: ../tabletop.php');
 
 ?>

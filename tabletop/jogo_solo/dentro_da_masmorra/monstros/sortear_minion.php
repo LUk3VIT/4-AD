@@ -4,8 +4,18 @@ session_start();
 require_once '../../../classes/repositorioTabletop.php'; 
 $repositorio = new RepositorioTabletopMySQL();
 
+if(isset($_SESSION['cont_minions'])){
+    $_SESSION['cont_minions'] = $_SESSION['cont_minions'] + 1;
+} else {
+    $_SESSION['cont_minions'] = 1;
+}
 
-$sorteio = 5;
+if($_SESSION['cont_minions'] == 10){
+    unset($_SESSION['cont_minions']);
+    $_SESSION['upar_nivel_minion'] = true;
+}
+
+$sorteio = rand(1,6);
 
 $minion = $repositorio->SortearMinion($sorteio);
 foreach ($minion as $key) {
@@ -88,6 +98,7 @@ foreach ($minion as $key) {
     }
 }
 
+$_SESSION['turno'] = $_SESSION['turno1'];
 header('Location: ../tabletop.php');
 
 ?>

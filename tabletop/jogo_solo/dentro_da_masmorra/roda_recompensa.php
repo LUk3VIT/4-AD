@@ -4,6 +4,11 @@ session_start();
 require_once '../../classes/repositorioTabletop.php';  
 $repositorio = new RepositorioTabletopMySQL();
 
+if(isset($_SESSION['tesouro_armadilha'])){
+    unset($_SESSION['tesouro_armadilha']);
+    $_SESSION['tesouro_enc'] = true;
+}
+
 $tabela_tesouro = rand(1,6) + $_SESSION['bonus_tesouro'];
 
 if($tabela_tesouro <= 0){

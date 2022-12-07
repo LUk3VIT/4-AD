@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 26-Out-2022 às 14:32
+-- Tempo de geração: 07-Dez-2022 às 20:30
 -- Versão do servidor: 10.4.25-MariaDB
 -- versão do PHP: 8.1.10
 
@@ -93,7 +93,19 @@ INSERT INTO `chat_privado` (`id_msg`, `data_msg`, `msg`, `nome_usuario`, `id_usu
 (40, '2022-10-14 15:32:36', 'Oi', 'Lucas', 3, 2),
 (41, '2022-10-15 02:03:46', 'Ola', 'Carla', 8, 2),
 (42, '2022-10-15 02:03:56', 'OI, tudo bem?', 'Rykelmy', 2, 8),
-(43, '2022-10-16 22:37:59', 'Bao Dia', 'Rykelmy', 2, 6);
+(43, '2022-10-16 22:37:59', 'Bao Dia', 'Rykelmy', 2, 6),
+(44, '2022-11-16 12:59:58', 'Ola Mundo', 'Rykelmy', 2, 4),
+(45, '2022-11-16 13:00:01', 'Bao Dia', 'Rykelmy', 2, 4),
+(46, '2022-11-16 13:00:05', ' Oi Parceiro', 'Rykelmy', 2, 4),
+(47, '2022-11-28 10:28:35', 'csas', 'Lucas', 3, 2),
+(48, '2022-11-28 10:28:40', 'dsadsadas', 'Lucas', 3, 2),
+(49, '2022-11-28 10:28:42', 'sadasda', 'Lucas', 3, 2),
+(50, '2022-11-28 10:28:45', 'dsadsadas]', 'Lucas', 3, 2),
+(51, '2022-11-28 10:28:48', 'oi', 'Lucas', 3, 2),
+(52, '2022-11-28 10:28:54', 'bo dia', 'Lucas', 3, 2),
+(53, '2022-11-28 10:29:01', 'como ta', 'Lucas', 3, 2),
+(54, '2022-11-28 10:29:04', 'blz', 'Lucas', 3, 2),
+(55, '2022-11-28 10:29:11', 'mano', 'Lucas', 3, 2);
 
 --
 -- Índices para tabelas despejadas
@@ -119,13 +131,13 @@ ALTER TABLE `chat_privado`
 -- AUTO_INCREMENT de tabela `chat_geral`
 --
 ALTER TABLE `chat_geral`
-  MODIFY `id_msg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id_msg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT de tabela `chat_privado`
 --
 ALTER TABLE `chat_privado`
-  MODIFY `id_msg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id_msg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

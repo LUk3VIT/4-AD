@@ -2,6 +2,44 @@
 
 session_start(); 
 
+unset($_SESSION['nome_armadilha']);
+unset($_SESSION['img_armadilha']);
+unset($_SESSION['nivel_armadilha']);
+unset($_SESSION['alvo']);
+unset($_SESSION['dano_armadilha']);
+unset($_SESSION['tesouro_armadilha']);
+unset($_SESSION['dano_t1']);
+unset($_SESSION['dano_t2']);
+unset($_SESSION['dano_t3']);
+unset($_SESSION['dano_t4']);
+unset($_SESSION['msg1']);
+unset($_SESSION['msg2']);
+unset($_SESSION['msg3']);
+unset($_SESSION['msg4']);
+unset($_SESSION['personagem1_salvo']);
+unset($_SESSION['personagem2_salvo']);
+unset($_SESSION['personagem3_salvo']);
+unset($_SESSION['personagem4_salvo']);
+unset($_SESSION['msg']);
+unset($_SESSION['pers_salvo']);
+unset($_SESSION['pers_alç']);
+unset($_SESSION['dano_alç']);
+unset($_SESSION['pers_caido']);
+unset($_SESSION['dano_t']);
+unset($_SESSION['arm_urs']);
+unset($_SESSION['id_pers']);
+unset($_SESSION['dano_t1']);
+unset($_SESSION['dano_t2']);
+unset($_SESSION['dado_pers1']);
+unset($_SESSION['dado_pers2']);
+
+
+if($_SESSION['turno'] == "armadilha"){
+    $_SESSION['turno'] = $_SESSION['turno1'];
+    header('Location: tabletop.php');
+    exit;
+}
+
 if($_SESSION['turno'] == $_SESSION['personagem1']){
     $a = "1";
 } else if($_SESSION['turno'] == $_SESSION['personagem2']){
@@ -158,6 +196,11 @@ if($_SESSION['quantidade_monstro'] > 0 || $_SESSION['vida_atual_boss'] > 0){
     unset($_SESSION['mau_olhado_2']);
     unset($_SESSION['dreno_energia']);
     unset($_SESSION['ataq_touro']);
+    if(isset($_SESSION['boss_final'])){
+        $_SESSION['cont_chefe'] = -100;
+    }
+    unset($_SESSION['boss_final']);
+    unset($_SESSION['upar_nivel_minion']);
 }
 
     if(isset($_SESSION['monstro']) || isset($_SESSION['boss'])){

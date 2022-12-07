@@ -1,6 +1,7 @@
 <?php
-session_start();
+session_start(); 
 
+unset($_SESSION['img_tab_7']);
 
 if($_POST['tabelas'] == "Tabela de Vermes (1D6)"){
     $_SESSION['tabela'] = "<ul>
@@ -29,6 +30,12 @@ if($_POST['tabelas'] == "Tabela de Vermes (1D6)"){
     por arcos e fundas.
     Reações (1d6): 1-2 fugir, 3-6 lutar  </li>
     </ul>";
+    $_SESSION['img_tab_1'] = "../tabletop/imagens/monstros/vermes/Centopéia.png";
+    $_SESSION['img_tab_2'] = "../tabletop/imagens/monstros/vermes/Morcego.png";
+    $_SESSION['img_tab_3'] = "../tabletop/imagens/monstros/vermes/RatoEsquelético.png";
+    $_SESSION['img_tab_4'] = "../tabletop/imagens/monstros/vermes/retos.png";
+    $_SESSION['img_tab_5'] = "../tabletop/imagens/monstros/vermes/Sapo.png";
+    $_SESSION['img_tab_6'] = "../tabletop/imagens/monstros/vermes/Swarmling.png";
     header('Location: ../nav/tabelas.php');
 } else if($_POST['tabelas'] == "Tabela de Minions (1D6)"){
     $_SESSION['tabela'] =  "<ul>
@@ -64,6 +71,13 @@ if($_POST['tabelas'] == "Tabela de Vermes (1D6)"){
         adicionam seu nível neste save.
         Reações (d6): 1-2 pedir suborno (d6 PO por fungo), 3-6 lutar. </li>
     </ul>";
+    $_SESSION['img_tab_1'] = "../tabletop/imagens/monstros/minions/esqueleto.png";
+    $_SESSION['img_tab_2'] = "../tabletop/imagens/monstros/minions/zumbi.png";
+    $_SESSION['img_tab_3'] = "../tabletop/imagens/monstros/minions/Fungo.png";
+    $_SESSION['img_tab_4'] = "../tabletop/imagens/monstros/minions/Goblin.png";
+    $_SESSION['img_tab_5'] = "../tabletop/imagens/monstros/minions/Hobgoblin.png";
+    $_SESSION['img_tab_6'] = "../tabletop/imagens/monstros/minions/Orc.png";
+    $_SESSION['img_tab_7'] = "../tabletop/imagens/monstros/minions/Troll.png";
     header('Location: ../nav/tabelas.php');
 } else if($_POST['tabelas'] == "Tabela de Conteúdos da Sala (2D6)"){
     $_SESSION['tabela'] = "<ul>
@@ -94,6 +108,12 @@ if($_POST['tabelas'] == "Tabela de Vermes (1D6)"){
         tabela de chefe para regras de dragão). O pequeno dragão conta como chefe e pode ser o
         chefe final.</li> 
     </ul>";
+    $_SESSION['img_tab_1'] = "";
+    $_SESSION['img_tab_2'] = "";
+    $_SESSION['img_tab_3'] = "";
+    $_SESSION['img_tab_4'] = "";
+    $_SESSION['img_tab_5'] = "";
+    $_SESSION['img_tab_6'] = "";
     header('Location: ../nav/tabelas.php');
 } else if($_POST['tabelas'] == "Tabela de Recursos Especiais (1D6)"){
     $_SESSION['tabela'] = "<ul>
@@ -125,6 +145,12 @@ if($_POST['tabelas'] == "Tabela de Vermes (1D6)"){
         de resolução de quebra-cabeças. Se o quebra-cabeça for resolvido, a caixa se abre: faça
         uma rolagem de Tesouro para determinar seu conteúdo.</li> 
     </ul>";
+    $_SESSION['img_tab_1'] = "../tabletop/imagens/recursos/AltAbençoado.png";
+    $_SESSION['img_tab_2'] = "../tabletop/imagens/recursos/AltAmaldiçoado.png";
+    $_SESSION['img_tab_3'] = "../tabletop/imagens/recursos/Arsenal.png";
+    $_SESSION['img_tab_4'] = "../tabletop/imagens/recursos/Estatua.png";
+    $_SESSION['img_tab_5'] = "../tabletop/imagens/recursos/Fonte.png";
+    $_SESSION['img_tab_6'] = "../tabletop/imagens/recursos/Puzzle.png";
     header('Location: ../nav/tabelas.php');
 } else if($_POST['tabelas'] == "Tabela de Eventos Especiais (1D6)"){
     $_SESSION['tabela'] = "<ul>
@@ -157,6 +183,12 @@ if($_POST['tabelas'] == "Tabela de Vermes (1D6)"){
     ou vivos estátuas. Você pode encontrar um alquimista errante apenas uma vez por
     jogo. Se você conhecer novamente, trate esse resultado como uma armadilha.</li> 
     </ul>";
+    $_SESSION['img_tab_1'] = "../tabletop/imagens/eventos/Alquimista.png";
+    $_SESSION['img_tab_2'] = "../tabletop/imagens/eventos/Armadilha.png";
+    $_SESSION['img_tab_3'] = "../tabletop/imagens/eventos/Curandeiro.png";
+    $_SESSION['img_tab_4'] = "../tabletop/imagens/eventos/Fantasma.png";
+    $_SESSION['img_tab_5'] = "../tabletop/imagens/eventos/MontroErrante.png";
+    $_SESSION['img_tab_6'] = "../tabletop/imagens/eventos/MulherdeBranco.png";
     header('Location: ../nav/tabelas.php');
 } else if($_POST['tabelas'] == "Tabela do Tesouro (1D6)"){
     $_SESSION['tabela'] = "<ul>
@@ -174,6 +206,12 @@ if($_POST['tabelas'] == "Tabela de Vermes (1D6)"){
     <br>
     <li>6 ou Mais Um item mágico aleatório da tabela do Tesouro Mágico abaixo</li>
     </ul>";
+    $_SESSION['img_tab_1'] = "../tabletop/imagens//.png";
+    $_SESSION['img_tab_2'] = "../tabletop/imagens//.png";
+    $_SESSION['img_tab_3'] = "../tabletop/imagens//.png";
+    $_SESSION['img_tab_4'] = "../tabletop/imagens//.png";
+    $_SESSION['img_tab_5'] = "../tabletop/imagens//.png";
+    $_SESSION['img_tab_6'] = "../tabletop/imagens//.png";
     header('Location: ../nav/tabelas.php');
 } else if($_POST['tabelas'] == "Tabela do Tesouro Mágico (1D6)"){
     $_SESSION['tabela'] = "<ul>
@@ -205,6 +243,12 @@ if($_POST['tabelas'] == "Tabela de Vermes (1D6)"){
     assistentes podem usá-lo. Adicione o usuário nível para determinar o feitiço, como você
     faria para um feitiço Fireball elenco por esse personagem</li>
     </ul>";
+    $_SESSION['img_tab_1'] = "../tabletop/imagens//.png";
+    $_SESSION['img_tab_2'] = "../tabletop/imagens//.png";
+    $_SESSION['img_tab_3'] = "../tabletop/imagens//.png";
+    $_SESSION['img_tab_4'] = "../tabletop/imagens//.png";
+    $_SESSION['img_tab_5'] = "../tabletop/imagens//.png";
+    $_SESSION['img_tab_6'] = "../tabletop/imagens//.png";
     header('Location: ../nav/tabelas.php');
 } else if($_POST['tabelas'] == "Tabela de Chefes (1D6)"){
     $_SESSION['tabela'] = "<ul>
@@ -248,6 +292,12 @@ if($_POST['tabelas'] == "Tabela de Vermes (1D6)"){
     ataque), 2–3 suborno (todo o ouro do grupo, com um mínimo de 100 ou um item
     mágico), 4-5 luta, 6 tabela de missões.</li>
     </ul>";
+    $_SESSION['img_tab_1'] = "../tabletop/imagens/monstros/chefes/Dragão.png";
+    $_SESSION['img_tab_2'] = "../tabletop/imagens/monstros/chefes/Medusa.png";
+    $_SESSION['img_tab_3'] = "../tabletop/imagens/monstros/chefes/Múmia.png";
+    $_SESSION['img_tab_4'] = "../tabletop/imagens/monstros/chefes/Ogro.png";
+    $_SESSION['img_tab_5'] = "../tabletop/imagens/monstros/chefes/OrcBrutal.png";
+    $_SESSION['img_tab_6'] = "../tabletop/imagens/monstros/chefes/SrDoCaos.png";
     header('Location: ../nav/tabelas.php');
 } else if($_POST['tabelas'] == "Tabela de Mostros Bizarros (1D6)"){
     $_SESSION['tabela'] = "<ul>
@@ -287,6 +337,12 @@ if($_POST['tabelas'] == "Tabela de Vermes (1D6)"){
     gremlins não têm estatísticas de combate porque é impossível lutar eles. Encontrá-los
     não dá nenhum teste XP </li>
     </ul>";
+    $_SESSION['img_tab_1'] = "../tabletop/imagens/monstros/bizarros/Aranha.png";
+    $_SESSION['img_tab_2'] = "../tabletop/imagens/monstros/bizarros/Catoplebas.png";
+    $_SESSION['img_tab_3'] = "../tabletop/imagens/monstros/bizarros/ComedorDeFerro.png";
+    $_SESSION['img_tab_4'] = "../tabletop/imagens/monstros/bizarros/GremlingsINV.png";
+    $_SESSION['img_tab_5'] = "../tabletop/imagens/monstros/bizarros/Minotauro.png";
+    $_SESSION['img_tab_6'] = "../tabletop/imagens/monstros/bizarros/Quimera.png";
     header('Location: ../nav/tabelas.php');
 } else if($_POST['tabelas'] == "Tabela de Missão (1D6)"){
     $_SESSION['tabela'] = "<ul>
@@ -359,6 +415,12 @@ if($_POST['tabelas'] == "Tabela de Vermes (1D6)"){
     ressuscitar esse clérigo será paga pela igreja. E se não utilizado, o santo símbolo pode
     ser vendido por 700 peças de ouro.</li> 
     </ul>";
+    $_SESSION['img_tab_1'] = "../tabletop/imagens//.png";
+    $_SESSION['img_tab_2'] = "../tabletop/imagens//.png";
+    $_SESSION['img_tab_3'] = "../tabletop/imagens//.png";
+    $_SESSION['img_tab_4'] = "../tabletop/imagens//.png";
+    $_SESSION['img_tab_5'] = "../tabletop/imagens//.png";
+    $_SESSION['img_tab_6'] = "../tabletop/imagens//.png";
     header('Location: ../nav/tabelas.php');
 }
 

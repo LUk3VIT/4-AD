@@ -1,5 +1,5 @@
 <?php
-
+ 
 session_start();
 
 $id = $_SESSION['turno'];
@@ -69,6 +69,34 @@ if(isset($_GET['id'])){
         unset($_SESSION['personagem4_pedra']);
     }
     $_SESSION["bencao_personagem$a"] = $_SESSION["bencao_personagem$a"] - 1;
+    if(isset($_SESSION['bencao_ataque'])){
+        if($_SESSION['atacante_bencao'] == $_SESSION['personagem1']){
+            $a = "1";
+        } else if($_SESSION['atacante_bencao'] == $_SESSION['personagem2']){
+            $a = "2";
+        } else if($_SESSION['atacante_bencao'] == $_SESSION['personagem2']){
+            $a = "3";
+        } else if($_SESSION['atacante_bencao'] == $_SESSION['personagem2']){
+            $a = "4";
+        }
+
+        $_SESSION['magia_usada'] = "benção";
+        if($_SESSION['magia_usada'] == $_SESSION["magia1_personagem$a"]){
+            $_SESSION["magia1_usada_personagem$a"] = true;
+        } else if($_SESSION["magia_usada"] == $_SESSION["magia2_personagem$a"]){
+            $_SESSION["magia2_usada_personagem$a"] = true;
+        } else if($_SESSION["magia_usada"] == $_SESSION["magia3_personagem$a"]){
+            $_SESSION["magia3_usada_personagem$a"] = true;
+        } else if($_SESSION["magia_usada"] == $_SESSION["magia4_personagem$a"]){
+            $_SESSION["magia4_usada_personagem$a"] = true;
+        } else if($_SESSION["magia_usada"] == $_SESSION["magia5_personagem$a"]){
+            $_SESSION["magia5_usada_personagem$a"] = true;
+        } else if($_SESSION["magia_usada"] == $_SESSION["magia6_personagem$a"]){
+            $_SESSION["magia6_usada_personagem$a"] = true;
+        } else if($_SESSION["magia_usada"] == $_SESSION["magia7_personagem$a"]){
+            $_SESSION["magia7_usada_personagem$a"] = true;
+        }
+    }
     header('Location: passar_turno.php');
 } else  {
     $_SESSION['escolher_bençao'] = true;
