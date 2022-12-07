@@ -959,7 +959,7 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
                     foreach ($personagem as $key) {
                         $img = $key['img'];
                     }
-                    echo "<div class=''>";
+                    echo "<div>";
                         echo "<img src='../../$img' style='height:260px;width:220px'>";
                         if($_SESSION['monstros_defender'] != 0 || $_SESSION['ataques_defender'] != 0){
                             if(isset($_SESSION['defesa'])){
@@ -1020,7 +1020,7 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
                     foreach ($personagem as $key) {
                         $img = $key['img'];
                     }
-                    echo "<div style='border:solid 2px black;float:left'>";
+                    echo "<div>";
                         echo "<img src='../../$img' style='height:260px;width:220px'>";
                         if($_SESSION['monstros_defender'] != 0 || $_SESSION['ataques_defender'] != 0){
                             if(isset($_SESSION['defesa'])){
@@ -1082,7 +1082,7 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
                     foreach ($personagem as $key) {
                         $img = $key['img'];
                     }
-                    echo "<div style='border:solid 2px black;float:left'>";
+                    echo "<div>";
                         echo "<img src='../../$img' style='height:260px;width:220px'>";
                         if($_SESSION['monstros_defender'] != 0 || $_SESSION['ataques_defender'] != 0){
                             if(isset($_SESSION['defesa'])){
@@ -1142,7 +1142,7 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
                     foreach ($personagem as $key) {
                         $img = $key['img'];
                     }
-                    echo "<div style='border:solid 2px black;float:left'>";
+                    echo "<div>";
                         echo "<img src='../../$img' style='height:260px;width:220px'>";
                         if($_SESSION['monstros_defender'] != 0 || $_SESSION['ataques_defender'] != 0){
                             if(isset($_SESSION['defesa'])){
@@ -1202,7 +1202,7 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
                 if($_SESSION['monstros_defender'] == 0 || $_SESSION['ataques_defender'] == 0){
                     echo "<br>";
                     echo "<br>";
-                    echo "<h2><a href='passar_turno.php?id=monstros'>Concluir Turno</a></h2>";
+                    echo "<h2 class='defesa__pers'><a class='defesa__pers__a' href='passar_turno.php?id=monstros'>Concluir Turno</a></h2>";
                 }
                 
 

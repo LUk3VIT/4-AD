@@ -49,12 +49,17 @@
     display: flex;
     flex-direction: column;
     transform: rotate(180deg);
+    margin: 10px 0px;
 }
 
 .form{
-    position: absolute;
-    top: 860px;
-    left: 480px;
+    margin: 0px auto;
+}
+
+.form{
+    transform: rotate(180deg);
+    display: flex;
+    flex-direction: column;
 }
 
 .form__input{    

@@ -876,11 +876,33 @@ input{
     overflow-y: auto;
     direction: rtl;
     text-align: left;
+    align-items: center;
+    justify-content: center;
 }
 
 .defesa2{
     transform: rotate(180deg);
     margin: 0px;
+}
+
+.defesa__pers{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    border: #000000 solid 2px;
+    width: 135px;
+    padding: 2px;
+    border-radius: 20px;
+    background-image: linear-gradient(to bottom, #FF6347 50%, #ffffff 50%);
+}
+
+.defesa__pers:hover{
+    background: #ff6347;
+}
+
+.defesa__pers__a{
+    text-decoration: none;
+    color: #000000;
 }
 
 .dinheiro-upar__1{
@@ -1050,8 +1072,6 @@ input{
 .dago{
     display: flex;
 }
-
-
 
 .ico{
     width: 100px;
