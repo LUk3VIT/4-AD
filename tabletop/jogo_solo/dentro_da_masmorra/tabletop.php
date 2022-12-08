@@ -4,6 +4,10 @@ session_start();
 require_once '../../classes/repositorioTabletop.php'; 
 $repositorio = new RepositorioTabletopMySQL();
 
+if(isset($_SESSION['sala_final'])){
+    header('Location: encerrar_masmorra.php');
+    exit;
+}
 
 if(isset($_SESSION['mapa_atual'])){
      
@@ -413,6 +417,7 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
     <link rel="stylesheet" href="../../../assets/style/tabletopJogo.css">  
 </head>
 <body class='tabletop'>
+
 <div class='cima'>
     <div class="monstros">
         <div class='monstros2'>
@@ -607,7 +612,14 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
     </div>
 
     <div class="principal">
-        <?php 
+        <?php
+        
+        if(isset($_SESSION['sala_finalizada'])){
+            echo "<h2 class='fim'>Sala finalizada, passe para outra sala!!!</h2>";
+        } else if(isset($_SESSION['sala_vazia'])){
+            echo "<h2 class='fim'>'fim'>Sala vazia, passe para outra sala!!!</h2>";
+        }
+
             // curar com clérigo
             if(isset($_SESSION['confirmar_ataque']) || isset($_SESSION['tesouro_armadilha']) || isset($_SESSION['tesouro_enc']) || isset($_SESSION['monstro']) || isset($_SESSION['boss'])){
 
