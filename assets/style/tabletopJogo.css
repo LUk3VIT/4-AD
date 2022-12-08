@@ -850,7 +850,7 @@ input{
     max-width: 100%;
     max-height: 100%;
     width: 1100px;
-    height: 450px;
+    height: 480px;
     margin: 10px auto;
     display: flex;
     flex-direction: column;
@@ -883,6 +883,12 @@ input{
 .defesa2{
     transform: rotate(180deg);
     margin: 0px;
+}
+
+.defesa3{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
 }
 
 .defesa__pers{
@@ -937,6 +943,8 @@ input{
     transition: 5ms;
     display: flex;
     justify-content: center;
+    width: 140px;
+    margin: -35px auto;
 }
 
 .finalizar__h2:hover{
@@ -950,13 +958,16 @@ input{
     background-image: linear-gradient(to bottom, #708090 50%, #ffffff 50%);
     transition: 5ms;
     display: flex;
-    justify-content: center;
+    justify-content: center; 
+    width: 60px;
+    margin: 10px auto;
 }
 
 .ataca:hover{
     background: #708090;
     transform: scale(1.1)
 }
+
 
 .magia{
     border: #000000 solid 2px;
@@ -966,6 +977,8 @@ input{
     transition: 5ms;
     display: flex;
     justify-content: center;
+    width: 115px;
+    margin: 10px auto;
 }
 
 .magia:hover{
@@ -981,6 +994,8 @@ input{
     transition: 5ms;
     display: flex;
     justify-content: center;
+    width: 60px;
+    margin: 10px auto;
 }
 
 .fugas:hover{
@@ -996,6 +1011,8 @@ input{
     transition: 5ms;
     display: flex;
     justify-content: center;
+    width: 115px;
+    margin: 10px auto;
 }
 
 .dano:hover{
@@ -1017,6 +1034,10 @@ input{
 .cura:hover{
     background: #f808e8;
     transform: scale(1.1);
+}
+
+.cura__pers{
+    display: flex;
 }
 
 .bencao{
@@ -1085,6 +1106,8 @@ input{
     transition: 5ms;
     display: flex;
     justify-content: center;
+    width: 125px;
+    margin: auto;
 }
 
 .acao__link:hover{
@@ -1211,5 +1234,12 @@ input{
     margin: 130px 5px;
 }
 
+.up__mostra{
+    display: flex;
+    width: 100px;
+    margin: 0px 315px;
+}
 
-
+.up__img{
+    width: 110px;
+}

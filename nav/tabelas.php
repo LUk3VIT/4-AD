@@ -168,10 +168,6 @@
               }
             echo "</div>";
             ?>
-<<<<<<< HEAD
-=======
-            <img class="tabela__informacao__img" src="../assets/img/Minions.png" alt="">
->>>>>>> b1d94f2b42b1a04de2e7ae93ab31c2e1bfdd007f
           </div>
 
           <div class="tabela__sistema">
