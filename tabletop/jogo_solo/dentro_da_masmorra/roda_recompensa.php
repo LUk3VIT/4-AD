@@ -16,7 +16,7 @@ if($tabela_tesouro <= 0){
 } else if($tabela_tesouro == 1){
     $_SESSION['valor_tesouro'] = rand(1,6);
     $_SESSION['tesouro'] = "ouro";
-} else if($tabela_tesouro == 2){
+} else if($tabela_tesouro == 2 || $tabela_tesouro == 3 || $tabela_tesouro == 4){
     $_SESSION['valor_tesouro'] = (rand(1,6)) + (rand(1,6));
     $_SESSION['tesouro'] = "ouro";
 } else if($tabela_tesouro == 3){
