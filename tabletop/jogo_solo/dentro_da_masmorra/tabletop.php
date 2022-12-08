@@ -417,6 +417,7 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
     <link rel="stylesheet" href="../../../assets/style/tabletopJogo.css">  
 </head>
 <body class='tabletop'>
+
 <div class='cima'>
     <div class="monstros">
         <div class='monstros2'>
@@ -611,6 +612,15 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
     </div>
 
     <div class="principal">
+<<<<<<< HEAD
+        <?php
+        
+        if(isset($_SESSION['sala_finalizada'])){
+            echo "<h2 class='fim'>Sala finalizada, passe para outra sala!!!</h2>";
+        } else if(isset($_SESSION['sala_vazia'])){
+            echo "<h2 class='fim'>'fim'>Sala vazia, passe para outra sala!!!</h2>";
+        }
+=======
         <?php 
 
             if(isset($_SESSION['sala_finalizada'])){
@@ -618,6 +628,7 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
             } else if(isset($_SESSION['sala_vazia'])){
                 echo "<h2>Sala vazia, passe para outra sala!!!</h2>";
             }
+>>>>>>> 0731ab3ec0907fe24747575d24f287019810f17b
 
             // curar com clérigo
             if(isset($_SESSION['confirmar_ataque']) || isset($_SESSION['tesouro_armadilha']) || isset($_SESSION['tesouro_enc']) || isset($_SESSION['monstro']) || isset($_SESSION['boss'])){
