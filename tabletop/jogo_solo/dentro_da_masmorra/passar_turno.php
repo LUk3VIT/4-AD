@@ -198,9 +198,14 @@ if($_SESSION['quantidade_monstro'] > 0 || $_SESSION['vida_atual_boss'] > 0){
     unset($_SESSION['ataq_touro']);
     if(isset($_SESSION['boss_final'])){
         $_SESSION['cont_chefe'] = -100;
+        $_SESSION['sala_final'] = true;
     }
     unset($_SESSION['boss_final']);
     unset($_SESSION['upar_nivel_minion']);
+    if(isset($_SESSION['encontro'])){
+        unset($_SESSION['encontro']);
+    }
+    $_SESSION['sala_finalizada'] = true;
 }
 
     if(isset($_SESSION['monstro']) || isset($_SESSION['boss'])){
@@ -242,7 +247,7 @@ if($_SESSION['quantidade_monstro'] > 0 || $_SESSION['vida_atual_boss'] > 0){
                     if($_SESSION['turno3'] == $_SESSION["personagem1_pedra"] || $_SESSION['turno3'] == $_SESSION["personagem2_pedra"] || $_SESSION['turno3'] == $_SESSION["personagem3_pedra"] || $_SESSION['turno3'] == $_SESSION["personagem4_pedra"]){
                         $_SESSION['turno'] = $_SESSION['turno4'];
                     } else {
-                        $_SESSION['turno'] = $_SESSION['turno3'];
+                        $_SESSION['turno'] = $_SESSION['turno3']; 
                     }
                 } else {
                     $_SESSION['turno'] = $_SESSION['turno2'];

@@ -4,6 +4,10 @@ session_start();
 require_once '../../classes/repositorioTabletop.php'; 
 $repositorio = new RepositorioTabletopMySQL();
 
+if(isset($_SESSION['sala_final'])){
+    header('Location: encerrar_masmorra.php');
+    exit;
+}
 
 if(isset($_SESSION['mapa_atual'])){
      
@@ -608,6 +612,13 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
 
     <div class="principal">
         <?php 
+
+            if(isset($_SESSION['sala_finalizada'])){
+                echo "<h2>Sala finalizada, passe para outra sala!!!</h2>";
+            } else if(isset($_SESSION['sala_vazia'])){
+                echo "<h2>Sala vazia, passe para outra sala!!!</h2>";
+            }
+
             // curar com clérigo
             if(isset($_SESSION['confirmar_ataque']) || isset($_SESSION['tesouro_armadilha']) || isset($_SESSION['tesouro_enc']) || isset($_SESSION['monstro']) || isset($_SESSION['boss'])){
 
@@ -1604,7 +1615,6 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
                                             }
                                             if(isset($_SESSION['mensagem'])){
 
-<<<<<<< HEAD
                                             } else {
                                                 $_SESSION['mensagem'] = "";
                                             }
@@ -1612,35 +1622,6 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
                                             echo "<h2>Defesa: ".$_SESSION['defesa_total']."  <a style='color:red'>".$_SESSION['mensagem']."</a></h2>";
                                             echo "<h2>Vida Perdida: ".$_SESSION['vida_perdida']." ".$msg."</h2>";
                                             echo "<h2><a href='defender.php?id=$id'> Defender </a></h2>";
-=======
-                if(isset($_SESSION['boss'])){
-                    echo "<h2>Número de ataques para defender: ".$_SESSION['ataques_defender']."</h2>";
-                    echo "<br>";
-                } else {
-                    echo "<h2>Número de inimigos para defender: ".$_SESSION['monstros_defender']."</h2>";
-                    echo "<br>";
-                }
-
-                echo "</div>";
-
-                echo "<div class='defesa'>";
-                echo "<div class='defesa1'>";
-                echo "<div class='defesa2'>";
-                
-                    $id = $_SESSION['turno1'];
-                    $personagem = $repositorio->MostrarPersonagem($id);
-                    foreach ($personagem as $key) {
-                        $img = $key['img'];
-                    }
-                    echo "<div>";
-                        echo "<img src='../../$img' style='height:260px;width:220px'>";
-                        if($_SESSION['monstros_defender'] != 0 || $_SESSION['ataques_defender'] != 0){
-                            if(isset($_SESSION['defesa'])){
-                                if(isset($_SESSION['defensor']) && $_SESSION['defensor'] == $id){
-                                    if(isset($_SESSION['vida_perdida'])){
-                                        if(isset($_SESSION['efeito_bonus'])){
-                                            $msg = "(Dano adicional devido a efeitos causados pelo inimigo!)";
->>>>>>> b1d94f2b42b1a04de2e7ae93ab31c2e1bfdd007f
                                         } else {
                                             echo "<h2 style='color:green'>Defesa Bem-Sucedida</h2>";
                                             echo "<h2>Defesa: ".$_SESSION['defesa_total']."</h2>";
@@ -1880,7 +1861,6 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
 
                     
 
-<<<<<<< HEAD
                     echo "<div>";
                     
                         $id = $_SESSION['turno1'];
@@ -1900,25 +1880,6 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
                                                 $msg = "";
                                             }
                                             if(isset($_SESSION['mensagem'])){
-=======
-                    $id = $_SESSION['turno2'];
-                    $personagem = $repositorio->MostrarPersonagem($id);
-                    foreach ($personagem as $key) {
-                        $img = $key['img'];
-                    }
-                    echo "<div>";
-                        echo "<img src='../../$img' style='height:260px;width:220px'>";
-                        if($_SESSION['monstros_defender'] != 0 || $_SESSION['ataques_defender'] != 0){
-                            if(isset($_SESSION['defesa'])){
-                                if(isset($_SESSION['defensor']) && $_SESSION['defensor'] == $id){
-                                    if(isset($_SESSION['vida_perdida'])){
-                                        if(isset($_SESSION['efeito_bonus'])){
-                                            $msg = "(Dano adicional devido a efeitos causados pelo inimigo!)";
-                                        } else {
-                                            $msg = "";
-                                        }
-                                        if(isset($_SESSION['mensagem'])){
->>>>>>> b1d94f2b42b1a04de2e7ae93ab31c2e1bfdd007f
 
                                             } else {
                                                 $_SESSION['mensagem'] = "";
@@ -1940,7 +1901,6 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
                                     echo "<h2><a href='defender.php?id=$id'> Defender </a></h2>";
                                 }
                             } else {
-<<<<<<< HEAD
                                 if(isset($_SESSION['vida_perdida']) && $_SESSION['defensor'] == $id){
                                     if(isset($_SESSION['efeito_bonus'])){
                                         $msg = "(Dano adicional devido a efeitos causados pelo inimigo!)";
@@ -1995,60 +1955,6 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
                                             echo "<h2>Dado: ".$_SESSION['dado']." - Bônus: ".$_SESSION['bonus']."</h2>";
                                             echo "<h2><a href='defender.php?id=$id'> Defender </a></h2>";
                                         }
-=======
-                                echo "<h2><a href='defender.php?id=$id'> Defender </a></h2>";
-                            }
-                        } else {
-                            if(isset($_SESSION['vida_perdida']) && $_SESSION['defensor'] == $id){
-                                if(isset($_SESSION['efeito_bonus'])){
-                                    $msg = "(Dano adicional devido a efeitos causados pelo inimigo!)";
-                                } else {
-                                    $msg = "";
-                                }
-                                if(isset($_SESSION['mensagem'])){
-
-                                } else {
-                                    $_SESSION['mensagem'] = "";
-                                }
-                                echo "<h2 style='color: red'>Defesa Mal-Sucedida</h2>";
-                                echo "<h2>Defesa: ".$_SESSION['defesa_total']."  <a style='color:red'>".$_SESSION['mensagem']."</a></h2>";
-                                echo "<h2>Vida Perdida: ".$_SESSION['vida_perdida']." ".$msg."</h2>";
-                                $x = $_SESSION['turno'];
-                            } else if($_SESSION['defensor'] == $id) {
-                                echo "<h2 style='color:green'>Defesa Bem-Sucedida</h2>";
-                                echo "<h2>Defesa: ".$_SESSION['defesa_total']."</h2>";
-                                echo "<h2>Dado: ".$_SESSION['dado']." - Bônus: ".$_SESSION['bonus']."</h2>";
-                                $x = $_SESSION['turno'];
-                            }
-                        }
-                    echo "</div>";
-
-                    $id = $_SESSION['turno3'];
-                    $personagem = $repositorio->MostrarPersonagem($id);
-                    foreach ($personagem as $key) {
-                        $img = $key['img'];
-                    }
-                    echo "<div>";
-                        echo "<img src='../../$img' style='height:260px;width:220px'>";
-                        if($_SESSION['monstros_defender'] != 0 || $_SESSION['ataques_defender'] != 0){
-                            if(isset($_SESSION['defesa'])){
-                                if(isset($_SESSION['defensor']) && $_SESSION['defensor'] == $id){
-                                    if(isset($_SESSION['vida_perdida'])){
-                                        if(isset($_SESSION['efeito_bonus'])){
-                                            $msg = "(Dano adicional devido a efeitos causados pelo inimigo!)";
-                                        } else {
-                                            $msg = "";
-                                        }
-                                        if(isset($_SESSION['mensagem'])){
-
-                                        } else {
-                                            $_SESSION['mensagem'] = "";
-                                        }
-                                        echo "<h2 style='color: red'>Defesa Mal-Sucedida</h2>";
-                                        echo "<h2>Defesa: ".$_SESSION['defesa_total']."  <a style='color:red'>".$_SESSION['mensagem']."</a></h2>";
-                                        echo "<h2>Vida Perdida: ".$_SESSION['vida_perdida']." ".$msg."</h2>";
-                                        echo "<h2><a href='defender.php?id=$id'> Defender </a></h2>";
->>>>>>> b1d94f2b42b1a04de2e7ae93ab31c2e1bfdd007f
                                     } else {
                                         echo "<h2><a href='defender.php?id=$id'> Defender </a></h2>";
                                     }
@@ -2056,7 +1962,6 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
                                     echo "<h2><a href='defender.php?id=$id'> Defender </a></h2>";
                                 }
                             } else {
-<<<<<<< HEAD
                                 if(isset($_SESSION['vida_perdida']) && $_SESSION['defensor'] == $id){
                                     if(isset($_SESSION['efeito_bonus'])){
                                         $msg = "(Dano adicional devido a efeitos causados pelo inimigo!)";
@@ -2112,58 +2017,6 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
                                             echo "<h2>Dado: ".$_SESSION['dado']." - Bônus: ".$_SESSION['bonus']."</h2>";
                                             echo "<h2><a href='defender.php?id=$id'> Defender </a></h2>";
                                         }
-=======
-                                echo "<h2><a href='defender.php?id=$id'> Defender </a></h2>";
-                            }
-                        } else {
-                            if(isset($_SESSION['vida_perdida']) && $_SESSION['defensor'] == $id){
-                                if(isset($_SESSION['efeito_bonus'])){
-                                    $msg = "(Dano adicional devido a efeitos causados pelo inimigo!)";
-                                } else {
-                                    $msg = "";
-                                }
-                                if(isset($_SESSION['mensagem'])){
-
-                                } else {
-                                    $_SESSION['mensagem'] = "";
-                                }
-                                echo "<h2 style='color: red'>Defesa Mal-Sucedida</h2>";
-                                echo "<h2>Defesa: ".$_SESSION['defesa_total']."  <a style='color:red'>".$_SESSION['mensagem']."</a></h2>";
-                                echo "<h2>Vida Perdida: ".$_SESSION['vida_perdida']." ".$msg."</h2>";
-                            } else if($_SESSION['defensor'] == $id) {
-                                echo "<h2 style='color:green'>Defesa Bem-Sucedida</h2>";
-                                echo "<h2>Defesa: ".$_SESSION['defesa_total']."</h2>";
-                                echo "<h2>Dado: ".$_SESSION['dado']." - Bônus: ".$_SESSION['bonus']."</h2>";
-                            }
-                        }
-                    echo "</div>";
-
-                    $id = $_SESSION['turno4'];
-                    $personagem = $repositorio->MostrarPersonagem($id);
-                    foreach ($personagem as $key) {
-                        $img = $key['img'];
-                    }
-                    echo "<div>";
-                        echo "<img src='../../$img' style='height:260px;width:220px'>";
-                        if($_SESSION['monstros_defender'] != 0 || $_SESSION['ataques_defender'] != 0){
-                            if(isset($_SESSION['defesa'])){
-                                if(isset($_SESSION['defensor']) && $_SESSION['defensor'] == $id){
-                                    if(isset($_SESSION['vida_perdida'])){
-                                        if(isset($_SESSION['efeito_bonus'])){
-                                            $msg = "(Dano adicional devido a efeitos causados pelo inimigo!)";
-                                        } else {
-                                            $msg = "";
-                                        }
-                                        if(isset($_SESSION['mensagem'])){
-
-                                        } else {
-                                            $_SESSION['mensagem'] = "";
-                                        }
-                                        echo "<h2 style='color: red'>Defesa Mal-Sucedida</h2>";
-                                        echo "<h2>Defesa: ".$_SESSION['defesa_total']."  <a style='color:red'>".$_SESSION['mensagem']."</a></h2>";
-                                        echo "<h2>Vida Perdida: ".$_SESSION['vida_perdida']." ".$msg."</h2>";
-                                        echo "<h2><a href='defender.php?id=$id'> Defender </a></h2>";
->>>>>>> b1d94f2b42b1a04de2e7ae93ab31c2e1bfdd007f
                                     } else {
                                         echo "<h2><a href='defender.php?id=$id'> Defender </a></h2>";
                                     }
@@ -2255,18 +2108,11 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
             
                     echo "</div>";
 
-<<<<<<< HEAD
                     if($_SESSION['monstros_defender'] == 0 || $_SESSION['ataques_defender'] != NULL && $_SESSION['ataques_defender'] == 0){
                         echo "<br>";
                         echo "<br>";
                         echo "<h2><a href='passar_turno.php?id=monstros'>Concluir Turno</a></h2>";
                     }
-=======
-                if($_SESSION['monstros_defender'] == 0 || $_SESSION['ataques_defender'] == 0){
-                    echo "<br>";
-                    echo "<br>";
-                    echo "<h2 class='defesa__pers'><a class='defesa__pers__a' href='passar_turno.php?id=monstros'>Concluir Turno</a></h2>";
->>>>>>> b1d94f2b42b1a04de2e7ae93ab31c2e1bfdd007f
                 }
              
                 
@@ -3270,7 +3116,6 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
                                 }
                             }
                         } else {
-                            echo "OI";
 
                             if(isset($_SESSION['subir_nivel'])){
 

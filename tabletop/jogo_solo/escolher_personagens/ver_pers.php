@@ -44,14 +44,18 @@ foreach ($personagem as $key) {
     $inventario = $repositorio->MostrarInventario($nome);
     foreach ($inventario as $key) {
         echo "<ul>";
-            $item = $key['item1'];
-            $img = $repositorio->PuxarImagemItem($item);
-            echo "<img src='../../$img'>";
-            echo "<li>".$key['item1']."</li>";
-            $item = $key['item2'];
-            $img = $repositorio->PuxarImagemItem($item);
-            echo "<img src='../../$img'>";
-            echo "<li>".$key['item2']."</li>";
+            if($key['item1'] != NULL){
+                $item = $key['item1'];
+                $img = $repositorio->PuxarImagemItem($item);
+                echo "<img src='../../$img'>";
+                echo "<li>".$key['item1']."</li>";
+            }
+            if($key['item2'] != NULL){
+                $item = $key['item2'];
+                $img = $repositorio->PuxarImagemItem($item);
+                echo "<img src='../../$img'>";
+                echo "<li>".$key['item2']."</li>";
+            }
             if($key['item3'] != NULL){
                 $item = $key['item3'];
                 $img = $repositorio->PuxarImagemItem($item);

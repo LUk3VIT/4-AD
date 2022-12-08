@@ -4,6 +4,9 @@ session_start();
 require_once '../../../classes/repositorioTabletop.php'; 
 $repositorio = new RepositorioTabletopMySQL();
 
+unset($_SESSION['sala_finalizada']);
+unset($_SESSION['sala_vazia']);
+
 if(isset($_SESSION['mapa_inicial'])){
     if(isset($_SESSION['contador'])){
         $_SESSION['contador'] = $_SESSION['contador'] + 1;
