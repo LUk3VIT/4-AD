@@ -9,7 +9,7 @@ if($_SESSION['cont_chefe']){
     $x = rand(1,6) + $_SESSION['cont_chefe'];
     if($x >= 6){
         $_SESSION['boss_final'] = true;
-    }
+    } 
 } else {
     $_SESSION['cont_chefe'] = 1;
     $x = rand(1,6) + $_SESSION['cont_chefe'];
@@ -18,7 +18,7 @@ if($_SESSION['cont_chefe']){
     }
 }
 
-$dado = 5;
+$dado = rand(1,6);
 $chefe = $repositorio->SortearChefe($dado);
 foreach ($chefe as $key) {
     $_SESSION['boss'] = true;

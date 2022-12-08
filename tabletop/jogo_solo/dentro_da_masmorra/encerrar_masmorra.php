@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,3 +16,16 @@
     </div>
 </body>
 </html>
+=======
+<?php
+
+session_start();
+require_once '../../classes/repositorioTabletop.php'; 
+$repositorio = new RepositorioTabletopMySQL();
+
+echo "Masmorra Finalizada";
+echo "<br>";
+echo "<a href='#'>Sair</a>";
+
+?>
+>>>>>>> 0731ab3ec0907fe24747575d24f287019810f17b

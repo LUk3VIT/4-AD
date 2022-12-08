@@ -612,6 +612,7 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
     </div>
 
     <div class="principal">
+<<<<<<< HEAD
         <?php
         
         if(isset($_SESSION['sala_finalizada'])){
@@ -619,6 +620,15 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
         } else if(isset($_SESSION['sala_vazia'])){
             echo "<h2 class='fim'>'fim'>Sala vazia, passe para outra sala!!!</h2>";
         }
+=======
+        <?php 
+
+            if(isset($_SESSION['sala_finalizada'])){
+                echo "<h2>Sala finalizada, passe para outra sala!!!</h2>";
+            } else if(isset($_SESSION['sala_vazia'])){
+                echo "<h2>Sala vazia, passe para outra sala!!!</h2>";
+            }
+>>>>>>> 0731ab3ec0907fe24747575d24f287019810f17b
 
             // curar com clérigo
             if(isset($_SESSION['confirmar_ataque']) || isset($_SESSION['tesouro_armadilha']) || isset($_SESSION['tesouro_enc']) || isset($_SESSION['monstro']) || isset($_SESSION['boss'])){
@@ -1621,7 +1631,7 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
                                             echo "<h2 style='color: red'>Defesa Mal-Sucedida</h2>";
                                             echo "<h2>Defesa: ".$_SESSION['defesa_total']."  <a style='color:red'>".$_SESSION['mensagem']."</a></h2>";
                                             echo "<h2>Vida Perdida: ".$_SESSION['vida_perdida']." ".$msg."</h2>";
-                                            echo "<h2 class='defesa__pers'><a href='defender.php?id=$id'> Defender </a></h2>";
+                                            echo "<h2><a href='defender.php?id=$id'> Defender </a></h2>";
                                         } else {
                                             echo "<h2 style='color:green'>Defesa Bem-Sucedida</h2>";
                                             echo "<h2>Defesa: ".$_SESSION['defesa_total']."</h2>";
@@ -3117,8 +3127,6 @@ if(isset($a) && isset($_SESSION["cura_personagem$a"])){
                                 }
                             }
                         } else {
-                            echo "<div class='up'>";
-                            echo "OI";
 
                             if(isset($_SESSION['subir_nivel'])){
 

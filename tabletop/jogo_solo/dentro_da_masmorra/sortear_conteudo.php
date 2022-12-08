@@ -2,7 +2,7 @@
 
 session_start();
 
-$dado = 11;
+$dado = rand(1,6) + rand(1,6);
 
 if($dado == 2){
     header('Location: roda_recompensa.php');
